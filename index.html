@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>澤村 友里 ｜ ベトナムトレーディング株式会社 代表取締役社長</title>
+<meta name="description" content="ベトナムトレーディング株式会社 代表取締役社長 澤村友里。ホーチミン生まれ、熊本育ち。日本一ベトナム人を理解している会社へ。">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<style>
+:root{
+  --red:#D7192D;
+  --red-bright:#FF2E45;
+  --red-deep:#7E0A18;
+  --red-soft:#FDECEA;
+  --bg:#FDFBF9;
+  --bg-2:#FFF6F2;
+  --ink:#241D1C;
+  --line:rgba(36,29,28,.1);
+  --muted:#8A7F7C;
+  --sans:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Meiryo","Segoe UI",sans-serif;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","MS PMincho",serif;
+  --pad:clamp(20px,5vw,80px);
+  --shadow:0 14px 44px rgba(126,10,24,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--sans);
+  line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  letter-spacing:.02em;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- progress + header ---------- */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--red-bright));z-index:100;transition:width .1s linear}
+header{
+  position:fixed;top:0;left:0;right:0;z-index:90;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--pad);
+  background:rgba(253,251,249,0);backdrop-filter:blur(0px);
+  transition:background .4s ease,backdrop-filter .4s ease,padding .4s ease,box-shadow .4s;
+}
+header.solid{background:rgba(253,251,249,.85);backdrop-filter:blur(14px);padding:10px var(--pad);box-shadow:0 1px 0 var(--line),0 10px 30px rgba(126,10,24,.05)}
+.brand{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.22em;font-weight:700}
+.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red-bright)}
+nav{display:flex;align-items:center;gap:clamp(14px,2vw,30px);font-size:12px;letter-spacing:.14em}
+nav a{opacity:.6;transition:opacity .25s,color .25s;font-weight:700}
+nav a:hover{opacity:1;color:var(--red)}
+.lang{display:flex;border:1px solid rgba(36,29,28,.18);border-radius:999px;overflow:hidden;font-size:11px;letter-spacing:.1em;background:#fff}
+.lang button{background:none;border:0;color:var(--ink);opacity:.5;padding:6px 12px;cursor:pointer;font-family:inherit;letter-spacing:.1em;transition:.25s}
+.lang button.on{background:var(--red);color:#fff;opacity:1;font-weight:700}
+@media(max-width:820px){nav .navlink{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;overflow:hidden;
+  background:linear-gradient(180deg,#FFF 0%,var(--bg) 100%)}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg::before{content:"";position:absolute;width:78vw;height:78vw;left:-30vw;top:-25vw;border-radius:50%;
+  background:radial-gradient(circle at 40% 40%,rgba(255,46,69,.14),rgba(255,46,69,0) 62%);filter:blur(10px)}
+.hero-bg::after{content:"";position:absolute;width:40vw;height:40vw;right:8vw;bottom:-18vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(215,25,45,.08),transparent 65%)}
+.hero-l{position:relative;z-index:2;padding:120px var(--pad) 80px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;color:var(--red);margin-bottom:26px;font-weight:700}
+.eyebrow::before{content:"";width:44px;height:1px;background:var(--red)}
+.hero h1{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:.02em;
+  font-size:clamp(48px,8.4vw,116px);margin-bottom:8px}
+.hero h1 .sur{display:block}
+.hero h1 em{font-style:normal;color:var(--red)}
+.romaji{font-size:12px;letter-spacing:.42em;color:var(--muted);margin:18px 0 30px}
+.role{font-size:clamp(13px,1.5vw,16px);font-weight:700;letter-spacing:.1em;line-height:2.1}
+.role span{color:var(--red)}
+.tagline{margin-top:34px;font-family:var(--serif);font-size:clamp(17px,2.1vw,25px);line-height:1.8;max-width:22em;
+  border-left:3px solid var(--red);padding-left:20px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:999px;font-size:13px;letter-spacing:.12em;font-weight:700;transition:.3s;border:1px solid transparent}
+.btn-r{background:var(--red);color:#fff;box-shadow:0 12px 34px rgba(215,25,45,.28)}
+.btn-r:hover{background:var(--red-bright);transform:translateY(-3px);box-shadow:0 18px 40px rgba(255,46,69,.34)}
+.btn-o{border-color:rgba(36,29,28,.22);color:var(--ink);background:#fff}
+.btn-o:hover{border-color:var(--red);color:var(--red)}
+.hero-r{position:relative;z-index:1;height:100svh}
+.hero-r img{width:100%;height:100%;object-fit:cover;object-position:62% 22%;filter:saturate(1.02)}
+.hero-r::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,#FFF 0%,rgba(255,255,255,.4) 22%,rgba(255,255,255,0) 55%),
+             linear-gradient(0deg,var(--bg) 2%,rgba(253,251,249,0) 30%);}
+.scrolldown{position:absolute;left:var(--pad);bottom:26px;z-index:3;font-size:10px;letter-spacing:.3em;color:var(--muted);display:flex;align-items:center;gap:12px}
+.scrolldown i{display:block;width:1px;height:44px;background:linear-gradient(var(--red),transparent);animation:sd 1.9s infinite}
+@keyframes sd{0%{transform:scaleY(.2);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(.2);transform-origin:bottom}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-r{height:62svh;order:-1}
+  .hero-r img{object-position:62% 18%}
+  .hero-r::after{background:linear-gradient(0deg,#FFF 4%,rgba(255,255,255,0) 65%)}
+  .hero-l{padding:34px var(--pad) 70px}
+  .scrolldown{display:none}
+}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+.stat{padding:38px var(--pad);border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(32px,4.4vw,54px);line-height:1;color:var(--red);letter-spacing:.01em}
+.stat b small{font-size:.42em;letter-spacing:.06em;margin-left:6px;color:var(--ink)}
+.stat p{font-size:11.5px;letter-spacing:.16em;color:var(--muted);margin-top:12px}
+@media(max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line);padding:26px var(--pad)}.stat:nth-child(2n){border-right:0}}
+
+/* ---------- generic section ---------- */
+section{padding:clamp(80px,11vw,150px) var(--pad);position:relative}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:52px}
+.sec-num{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--red)}
+.sec-title{font-family:var(--serif);font-size:clamp(28px,4.4vw,50px);font-weight:500;line-height:1.3}
+.sec-sub{font-size:11px;letter-spacing:.3em;color:var(--muted);margin-left:auto;text-align:right}
+@media(max-width:700px){.sec-sub{display:none}}
+
+/* ---------- message ---------- */
+#message{background:#fff}
+.msg-wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(30px,5vw,80px);align-items:start}
+.msg-photo{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow)}
+.msg-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;transition:transform 1.2s ease}
+.msg-photo:hover img{transform:scale(1.04)}
+.msg-photo .cap{position:absolute;left:0;bottom:0;z-index:2;background:var(--red);color:#fff;font-size:10.5px;letter-spacing:.2em;padding:9px 16px;border-radius:0 6px 0 0}
+.msg-body p{font-size:clamp(14.5px,1.35vw,16.5px);margin-bottom:1.55em;color:#4C4341}
+.msg-body p.lead{font-family:var(--serif);font-size:clamp(20px,2.6vw,32px);line-height:1.75;color:var(--ink);margin-bottom:1.1em}
+.msg-body p.lead em{font-style:normal;background:linear-gradient(transparent 62%,rgba(255,46,69,.22) 62%)}
+.sign{margin-top:34px;display:flex;align-items:center;gap:16px;font-size:12px;letter-spacing:.16em;color:var(--muted)}
+.sign strong{font-family:var(--serif);font-size:26px;letter-spacing:.1em;color:var(--ink);font-weight:500}
+@media(max-width:860px){.msg-wrap{grid-template-columns:1fr}.msg-photo{aspect-ratio:4/3;max-height:52vh}}
+
+/* ---------- timeline ---------- */
+#story{background:linear-gradient(180deg,var(--bg-2),var(--bg))}
+.tl{position:relative;max-width:940px;margin:0 auto;padding-left:clamp(24px,5vw,60px)}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--red),rgba(215,25,45,.12))}
+.tl-item{position:relative;padding:0 0 clamp(30px,4vw,46px) 0}
+.tl-item::before{content:"";position:absolute;left:calc(-1 * clamp(24px,5vw,60px) + 1px);top:12px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2.5px solid var(--red);transition:.4s}
+.tl-item:hover::before{background:var(--red);box-shadow:0 0 0 6px rgba(215,25,45,.14)}
+.tl-year{font-family:var(--serif);font-size:clamp(26px,3.6vw,40px);color:var(--red);line-height:1;letter-spacing:.02em}
+.tl-item h3{font-size:clamp(16px,1.9vw,20px);font-weight:700;margin:10px 0 6px;letter-spacing:.04em}
+.tl-item p{font-size:14.5px;color:#5C5250;max-width:46em}
+
+/* ---------- band (full-width photo) ---------- */
+.band{position:relative;min-height:64svh;display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,14,14,.8) 0%,rgba(18,14,14,.42) 34%,rgba(18,14,14,.05) 66%,rgba(215,25,45,.1) 100%)}
+.band .band-in{position:relative;z-index:2;padding:60px var(--pad);width:100%;color:#fff}
+.band h3{font-family:var(--serif);font-size:clamp(22px,3.6vw,42px);font-weight:500;line-height:1.5;max-width:24em;text-shadow:0 2px 18px rgba(18,14,14,.65)}
+.band h3 em{font-style:normal;color:#FF8A97}
+.band p{margin-top:10px;font-size:12px;letter-spacing:.24em;color:rgba(255,255,255,.85);text-shadow:0 2px 12px rgba(18,14,14,.6)}
+
+/* ---------- philosophy ---------- */
+#philosophy{background:var(--bg);position:relative;overflow:hidden}
+#philosophy::before{content:"KODAWARI";position:absolute;right:-4vw;top:6%;font-family:var(--serif);font-size:clamp(90px,19vw,300px);color:rgba(215,25,45,.05);letter-spacing:.06em;pointer-events:none;white-space:nowrap}
+.philo-top{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(26px,4vw,60px);align-items:center;margin-bottom:60px}
+.philo-img{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;max-height:520px;box-shadow:var(--shadow)}
+.philo-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform 1.2s ease}
+.philo-img:hover img{transform:scale(1.05)}
+.philo-img .tag{position:absolute;right:0;bottom:0;z-index:2;background:var(--red);color:#fff;font-size:10px;letter-spacing:.2em;padding:8px 14px;border-radius:6px 0 0 0}
+@media(max-width:860px){.philo-top{grid-template-columns:1fr}.philo-img{aspect-ratio:4/3;max-height:none}.philo-img img{object-position:50% 18%}}
+.kodawari{font-family:var(--serif);font-size:clamp(34px,6.6vw,86px);font-weight:500;line-height:1.2;margin-bottom:26px}
+.kodawari em{font-style:normal;color:var(--red)}
+.philo-lead{max-width:34em;color:#4C4341;font-size:clamp(14.5px,1.4vw,17px)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:10px;padding:34px 28px 38px;background:#fff;position:relative;overflow:hidden;transition:.45s;box-shadow:0 6px 24px rgba(126,10,24,.05)}
+.card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),var(--red-bright));transition:width .55s ease}
+.card:hover{transform:translateY(-6px);border-color:rgba(215,25,45,.35);box-shadow:0 20px 44px rgba(126,10,24,.13)}
+.card:hover::before{width:100%}
+.card .ico{font-size:22px;color:var(--red);margin-bottom:16px;font-family:var(--serif);letter-spacing:.1em}
+.card h4{font-size:17px;letter-spacing:.06em;margin-bottom:12px;line-height:1.7}
+.card p{font-size:14px;color:#5C5250}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+
+/* ---------- group ---------- */
+#group{background:linear-gradient(180deg,#fff,var(--bg-2))}
+.grp{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grp-item{border:1px solid var(--line);border-radius:10px;padding:32px 26px;position:relative;transition:.45s;background:#fff;box-shadow:0 6px 24px rgba(126,10,24,.05)}
+.grp-item:hover{border-color:rgba(215,25,45,.4);transform:translateY(-5px);box-shadow:0 20px 44px rgba(126,10,24,.12)}
+.grp-item .yr{font-size:11px;letter-spacing:.24em;color:var(--red);font-weight:700}
+.grp-item h4{font-family:var(--serif);font-size:clamp(19px,2.1vw,25px);font-weight:500;margin:12px 0 4px;line-height:1.4}
+.grp-item .en{font-size:10.5px;letter-spacing:.16em;color:var(--muted);margin-bottom:16px}
+.grp-item p{font-size:13.5px;color:#5C5250}
+.grp-item .pos{display:inline-block;margin-top:18px;font-size:11px;letter-spacing:.14em;border:1px solid var(--red);color:var(--red);padding:5px 12px;border-radius:999px;background:var(--red-soft)}
+@media(max-width:860px){.grp{grid-template-columns:1fr}}
+
+/* ---------- company ---------- */
+#company{background:#fff}
+.cmp-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(26px,4vw,60px);align-items:start}
+.cmp-img{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+.cmp-img img{width:100%;display:block;transition:transform 1.2s ease}
+.cmp-img:hover img{transform:scale(1.04)}
+.cmp-img .tag{position:absolute;left:0;bottom:0;background:var(--red);color:#fff;font-size:10px;letter-spacing:.2em;padding:8px 14px;border-radius:0 6px 0 0}
+@media(max-width:900px){.cmp-wrap{grid-template-columns:1fr}}
+.tbl{max-width:920px;border-top:1px solid rgba(36,29,28,.14)}
+.row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:20px 4px;border-bottom:1px solid rgba(36,29,28,.14)}
+.row dt{font-size:12px;letter-spacing:.18em;color:var(--red);font-weight:700;padding-top:3px}
+.row dd{font-size:14.5px;color:#3B3231}
+@media(max-width:700px){.row{grid-template-columns:1fr;gap:4px}}
+
+/* ---------- gallery ---------- */
+#gallery{background:var(--bg);padding-top:0}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gal figure{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4;margin:0;box-shadow:0 10px 30px rgba(126,10,24,.08)}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.gal figure:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 16px 12px;font-size:10.5px;letter-spacing:.18em;color:#fff;background:linear-gradient(transparent,rgba(18,14,14,.75))}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal figure:last-child{grid-column:1/-1;aspect-ratio:16/10}}
+.gal-more{text-align:center;margin-top:34px}
+
+/* ---------- cta ---------- */
+#contact{background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center;position:relative;overflow:hidden}
+#contact::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 130%,rgba(255,255,255,.3),transparent 60%)}
+#contact .inner{position:relative;z-index:2}
+#contact h2{font-family:var(--serif);font-size:clamp(28px,5vw,58px);font-weight:500;line-height:1.35;margin-bottom:20px}
+#contact p{max-width:34em;margin:0 auto 40px;font-size:15px;opacity:.96}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-w{background:#fff;color:var(--red);font-size:14px;padding:17px 34px;border-radius:999px;font-weight:700;letter-spacing:.1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+.btn-w:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,.22)}
+.btn-gh{border:1px solid rgba(255,255,255,.65);color:#fff;font-size:14px;padding:17px 34px;border-radius:999px;font-weight:700;letter-spacing:.1em;transition:.3s;display:inline-flex;align-items:center;gap:10px}
+.btn-gh:hover{background:rgba(255,255,255,.16)}
+
+footer{background:#fff;padding:44px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.14em;color:var(--muted);border-top:1px solid var(--line)}
+footer .fb{display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:700}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{animation:none!important;transition:none!important}}
+body.vi .serif-ja{font-family:var(--sans)}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<header id="hd">
+  <div class="brand"><span class="dot"></span><span>VIETNAM TRADING</span></div>
+  <nav>
+    <a class="navlink i18n" data-vi="Thông điệp" href="#message">MESSAGE</a>
+    <a class="navlink i18n" data-vi="Hành trình" href="#story">STORY</a>
+    <a class="navlink i18n" data-vi="Triết lý" href="#philosophy">PHILOSOPHY</a>
+    <a class="navlink i18n" data-vi="Tập đoàn" href="#group">GROUP</a>
+    <a class="navlink" href="gallery.html">GALLERY</a>
+    <a class="navlink" href="lecture.html">LECTURE</a>
+    <a class="navlink i18n" data-vi="Liên hệ" href="#contact">CONTACT</a>
+    <div class="lang">
+      <button id="bja" class="on" type="button">日本語</button>
+      <button id="bvi" type="button">VN</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-l">
+    <div class="eyebrow i18n" data-vi="ĐẠI DIỆN TẬP ĐOÀN">REPRESENTATIVE</div>
+    <h1 class="serif-ja">
+      <span class="sur">澤村</span><em>友里</em>
+    </h1>
+    <div class="romaji">YURI SAWAMURA</div>
+    <div class="role">
+      <span>ベトナムトレーディング株式会社</span> <span class="i18n" data-vi="Tổng giám đốc">代表取締役社長</span><br>
+      VIETNAM TRADING CO., LTD.（HCMC）<span class="i18n" data-vi="Chủ tịch">会長</span><br>
+      <span class="i18n" data-vi="Nghiệp đoàn Nichietsu">日越協同組合</span> <span class="i18n" data-vi="Chủ tịch">理事長</span>
+    </div>
+    <p class="tagline serif-ja i18n" data-vi="&quot;Công ty thấu hiểu người Việt hàng đầu tại Nhật Bản.&quot;">「日本一、ベトナム人を理解している会社」へ。</p>
+    <div class="hero-cta">
+      <a class="btn btn-r i18n" data-vi="Thông điệp từ đại diện" href="#message">代表メッセージ →</a>
+      <a class="btn btn-o i18n" data-vi="Hồ sơ công ty" href="#company">会社概要</a>
+    </div>
+  </div>
+  <div class="hero-r"><img src="img/p_8743.jpg" alt="澤村友里 代表取締役社長"></div>
+  <div class="scrolldown"><i></i><span>SCROLL</span></div>
+</div>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="stat rv"><b>2013<small class="i18n" data-vi="">年</small></b><p class="i18n" data-vi="THÀNH LẬP TẠI KUMAMOTO">熊本にて創業</p></div>
+  <div class="stat rv"><b>3<small class="i18n" data-vi="công ty">社</small></b><p class="i18n" data-vi="TẬP ĐOÀN NHẬT – VIỆT">日越にまたがるグループ経営</p></div>
+  <div class="stat rv"><b>2011<small class="i18n" data-vi="">年</small></b><p class="i18n" data-vi="KHỞI NGHIỆP KHI CÒN LÀ SINH VIÊN">大学在学中に起業</p></div>
+  <div class="stat rv"><b>2<small class="i18n" data-vi="quốc gia">カ国</small></b><p class="i18n" data-vi="KUMAMOTO ・ TP. HỒ CHÍ MINH">熊本 ／ ホーチミン</p></div>
+</div>
+
+<!-- ============ MESSAGE ============ -->
+<section id="message">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title serif-ja i18n" data-vi="Thông điệp từ đại diện">代表メッセージ</h2>
+    <span class="sec-sub">MESSAGE</span>
+  </div>
+  <div class="msg-wrap">
+    <div class="msg-photo rv">
+      <img src="img/p_135.jpg" alt="澤村友里">
+      <span class="cap i18n" data-vi="YURI SAWAMURA ／ TỔNG GIÁM ĐỐC">YURI SAWAMURA ／ 代表取締役社長</span>
+    </div>
+    <div class="msg-body rv">
+      <p class="lead serif-ja i18n" data-vi="Tôi sinh ra tại TP.HCM, lớn lên tại Kumamoto — <em>là nhịp cầu nối giữa hai quê hương</em>.">ホーチミンに生まれ、熊本で育ちました。<em>ふたつの故郷をつなぐ架け橋でありたい</em>。</p>
+      <p class="i18n" data-vi="Tôi là người Nhật gốc Việt, sinh ra tại TP. Hồ Chí Minh. Năm 2003 tôi sang Nhật, trải qua những năm cấp 2 và cấp 3 tại tỉnh Kumamoto, và tốt nghiệp Đại học tỉnh lập Kumamoto.">私はホーチミン市で生まれた、ベトナム系日本人です。2003年に来日し、熊本県で中学・高校時代を過ごしたのち、熊本県立大学を卒業しました。</p>
+      <p class="i18n" data-vi="Năm 2011, khi còn là sinh viên năm 3, tôi khởi nghiệp và thành lập LCC JAPAN. Năm 2013 tôi thành lập Công ty cổ phần Vietnam Trading và giữ vị trí Tổng giám đốc. Sau đó là nghiệp đoàn Nichietsu (2016) và công ty tại TP.HCM (2017).">2011年、大学3年生のときに学生起業家としてLCC JAPANを設立。2013年にベトナムトレーディング株式会社を設立し、代表取締役社長に就任しました。その後、2016年に日越協同組合、2017年にはホーチミンの現地法人を設立しています。</p>
+      <p class="i18n" data-vi="Hiện tại tôi điều hành 3 công ty trong tập đoàn, với các lĩnh vực trọng tâm là giới thiệu nguồn nhân lực và giáo dục chuyên biệt dành cho người Việt Nam — theo phương châm &quot;công ty thấu hiểu người Việt hàng đầu tại Nhật&quot;.">現在はグループ3社を経営し、ベトナム人に特化した人材紹介と人材教育を中心に事業を展開しています。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>
+      <p class="i18n" data-vi="Chúng tôi xem ứng viên là khách hàng trân quý. Sự hài lòng của quý khách chính là thành công của chúng tôi.">求職者の一人ひとりを、大切なお客様として。皆さまの満足が、私たちの成功だと信じています。</p>
+      <div class="sign">
+        <span class="i18n" data-vi="Tổng giám đốc">代表取締役社長</span>
+        <strong class="serif-ja">澤村 友里</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section id="story">
+  <div class="sec-head rv">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title serif-ja i18n" data-vi="Hành trình">歩み</h2>
+    <span class="sec-sub">STORY</span>
+  </div>
+  <div class="tl">
+    <div class="tl-item rv">
+      <div class="tl-year">2003</div>
+      <h3 class="i18n" data-vi="Sang Nhật Bản">来日</h3>
+      <p class="i18n" data-vi="Sinh ra tại TP. Hồ Chí Minh, là người Nhật gốc Việt. Sang Nhật và trải qua thời cấp 2, cấp 3 tại tỉnh Kumamoto.">ホーチミン市生まれのベトナム系日本人として来日。熊本県で中学・高校時代を過ごす。</p>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-year">2011</div>
+      <h3 class="i18n" data-vi="Khởi nghiệp — thành lập LCC JAPAN">学生起業 ── LCC JAPAN 設立</h3>
+      <p class="i18n" data-vi="Khởi nghiệp khi đang là sinh viên năm 3 Đại học tỉnh lập Kumamoto.">熊本県立大学在学中（3年次）に起業。のちに熊本県立大学を卒業。</p>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-year">2013</div>
+      <h3 class="i18n" data-vi="Thành lập Công ty CP Vietnam Trading">ベトナムトレーディング株式会社 設立</h3>
+      <p class="i18n" data-vi="Thành lập tại tỉnh Kumamoto, Nhật Bản và giữ vị trí Tổng giám đốc. Lĩnh vực chủ chốt: tuyển dụng và giới thiệu việc làm.">熊本県にて創業し、代表取締役社長に就任。人材採用・職業紹介を中核事業に据える。</p>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-year">2016</div>
+      <h3 class="i18n" data-vi="Thành lập nghiệp đoàn Nichietsu">日越協同組合 設立</h3>
+      <p class="i18n" data-vi="Mở rộng sang lĩnh vực tiếp nhận và hỗ trợ thực tập sinh.">技能実習生の受入れ・支援へと領域を広げる。</p>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-year">2017</div>
+      <h3 class="i18n" data-vi="Thành lập VIETNAM TRADING CO., LTD (TP.HCM)">VIETNAM TRADING CO., LTD.（ホーチミン）設立</h3>
+      <p class="i18n" data-vi="Thành lập công ty con tại TP. Hồ Chí Minh, Việt Nam và giữ vị trí Chủ tịch.">ベトナム現地法人を設立し、会長に就任。日本とベトナムを直接つなぐ体制を構築。</p>
+    </div>
+    <div class="tl-item rv">
+      <div class="tl-year">2018</div>
+      <h3 class="i18n" data-vi="Được bổ nhiệm Chủ tịch nghiệp đoàn Nichietsu">日越協同組合 理事長 就任</h3>
+      <p class="i18n" data-vi="Hiện điều hành 3 công ty trong tập đoàn tại Nhật Bản và Việt Nam.">現在は日越にまたがるグループ3社を率いる。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAND ============ -->
+<section class="band">
+  <img src="img/p_49.jpg" alt="スタッフとともに">
+  <div class="band-in rv">
+    <h3 class="serif-ja i18n" data-vi="Không ai phải bước đi một mình — <em>chúng tôi luôn ở bên cạnh bạn</em>, từ Việt Nam đến Nhật Bản.">ひとりで来日させない、ひとりで働かせない。<em>いつもそばに、仲間がいる。</em></h3>
+    <p>WITH OUR MEMBERS ／ VIETNAM × JAPAN</p>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section id="philosophy">
+  <div class="sec-head rv">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title serif-ja i18n" data-vi="Triết lý kinh doanh">経営理念</h2>
+    <span class="sec-sub">PHILOSOPHY</span>
+  </div>
+  <div class="philo-top">
+    <div>
+      <h3 class="kodawari serif-ja rv i18n" data-vi="kodawari — <em>tận tâm trong từng điều nhỏ</em>">こだわり、<em>真心をかたちに。</em></h3>
+      <p class="philo-lead rv i18n" style="margin-bottom:0" data-vi="&quot;Trở thành cầu nối giữa Nhật Bản và Việt Nam, hành động vì tương lai 100 năm tới của cả hai nước Nhật – Việt.&quot; — Đây chính là triết lý kinh doanh của chúng tôi.">「日本とベトナムをつなぐ架け橋となり、日越両国100年先の未来のために行動する。」── これが私たちの経営理念です。</p>
+    </div>
+    <div class="philo-img rv">
+      <img src="img/p_9002.jpg" alt="澤村友里 アオザイ">
+      <span class="tag">ÁO DÀI ／ VIETNAM HEART</span>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="card rv">
+      <div class="ico">壱</div>
+      <h4 class="i18n" data-vi="Bình đẳng để cùng cộng hưởng">対等だからこそ、響き合う。</h4>
+      <p class="i18n" data-vi="Doanh nghiệp và người lao động là những đối tác bình đẳng. Mối quan hệ mà một bên phải chịu đựng sẽ không có tương lai. Chúng tôi bảo vệ phẩm giá của cả hai bên và trở thành cầu nối Nhật – Việt bằng mối quan hệ WIN-WIN đích thực.">企業と人材は、対等なパートナー。どちらか一方が我慢する関係に未来はありません。互いの尊厳を守り、真の「WIN-WIN」で日越の架け橋となります。</p>
+    </div>
+    <div class="card rv">
+      <div class="ico">弐</div>
+      <h4 class="i18n" data-vi="Sự tiếp đón tận tâm nhất cho những người dám thử thách">挑戦者こそ、最高のおもてなしを。</h4>
+      <p class="i18n" data-vi="Gửi đến những người bạn vượt biển để mở ra tương lai — chúng tôi không chỉ đơn thuần &quot;tuyển chọn&quot;, mà đón tiếp bằng sự tận tâm cao nhất, đồng hành cùng cuộc đời của từng người và mang đến cơ hội tốt nhất.">海を渡り、未来を拓こうとするすべての仲間へ。私たちは単なる「選考」ではなく「極上のおもてなし」で向き合い、一人ひとりの人生に寄り添う最良の機会を届けます。</p>
+    </div>
+    <div class="card rv">
+      <div class="ico">参</div>
+      <h4 class="i18n" data-vi="Một hành trình minh bạch, không dối trá">嘘のない、オープンな道のりを。</h4>
+      <p class="i18n" data-vi="Công khai rõ ràng mọi bước tuyển chọn. Từ hỗ trợ chuẩn bị đến phản hồi chân thành cho bước tiếp theo — quy trình minh bạch xóa tan mọi lo lắng và đồng hành cùng thử thách của bạn đến cùng.">選考の全ステップをクリアに開示。準備のサポートから、次に繋がる誠実なフィードバックまで、不安をゼロにする透明なプロセスであなたの挑戦にどこまでも伴走します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GROUP ============ -->
+<section id="group">
+  <div class="sec-head rv">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title serif-ja i18n" data-vi="Tập đoàn">グループ体制</h2>
+    <span class="sec-sub">GROUP</span>
+  </div>
+  <div class="grp">
+    <div class="grp-item rv">
+      <div class="yr">EST. 2013 ／ KUMAMOTO</div>
+      <h4 class="serif-ja">ベトナムトレーディング株式会社</h4>
+      <div class="en">VIETNAM TRADING CO., LTD. (JAPAN)</div>
+      <p class="i18n" data-vi="Công ty đa ngành nghề, trong đó tuyển dụng nhân sự và giới thiệu việc làm là lĩnh vực chủ chốt. Sở hữu website tuyển dụng kodawari.vn.">多角的に事業を展開しながら、人材採用・職業紹介を中核に。求人サイト kodawari.vn を運営。</p>
+      <span class="pos i18n" data-vi="Tổng giám đốc">代表取締役社長</span>
+    </div>
+    <div class="grp-item rv">
+      <div class="yr">EST. 2016 ／ JAPAN</div>
+      <h4 class="serif-ja i18n" data-vi="Nghiệp đoàn Nichietsu">日越協同組合</h4>
+      <div class="en">NICHIETSU COOPERATIVE</div>
+      <p class="i18n" data-vi="Tiếp nhận và hỗ trợ thực tập sinh kỹ năng người Việt tại Nhật Bản.">ベトナム人技能実習生の受入れと、受入企業・実習生双方への支援を担う。</p>
+      <span class="pos i18n" data-vi="Chủ tịch (từ 2018)">理事長（2018年〜）</span>
+    </div>
+    <div class="grp-item rv">
+      <div class="yr">EST. 2017 ／ HO CHI MINH</div>
+      <h4 class="serif-ja i18n" data-vi="Công ty TNHH Vietnam Trading">VIETNAM TRADING CO., LTD.</h4>
+      <div class="en">HO CHI MINH CITY, VIETNAM</div>
+      <p class="i18n" data-vi="Công ty con tại TP.HCM — tuyển chọn và đào tạo nguồn nhân lực ngay tại Việt Nam.">ベトナム現地法人。母国での人材の発掘と教育を、日本側と一気通貫でつなぐ。</p>
+      <span class="pos i18n" data-vi="Chủ tịch">会長</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPANY ============ -->
+<section id="company">
+  <div class="sec-head rv">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title serif-ja i18n" data-vi="Hồ sơ công ty">会社概要</h2>
+    <span class="sec-sub">COMPANY</span>
+  </div>
+  <div class="cmp-wrap">
+  <dl class="tbl rv">
+    <div class="row"><dt class="i18n" data-vi="TÊN CÔNG TY">商号</dt><dd>ベトナムトレーディング株式会社／Công ty cổ phần Việt Nam Trading</dd></div>
+    <div class="row"><dt class="i18n" data-vi="ĐẠI DIỆN">代表者</dt><dd class="i18n" data-vi="Tổng giám đốc　YURI SAWAMURA">代表取締役社長　澤村 友里（YURI SAWAMURA）</dd></div>
+    <div class="row"><dt class="i18n" data-vi="THÀNH LẬP">設立</dt><dd class="i18n" data-vi="Năm 2013, tại tỉnh Kumamoto, Nhật Bản">2013年　熊本県</dd></div>
+    <div class="row"><dt class="i18n" data-vi="TRỤ SỞ NHẬT BẢN">本社</dt><dd class="i18n" data-vi="1-16-22 Toshima Nishi, Higashi, Kumamoto, tỉnh Kumamoto 861-8043">〒861-8043　熊本県熊本市東区戸島西1-16-22</dd></div>
+    <div class="row"><dt class="i18n" data-vi="CÔNG TY CON">子会社</dt><dd>82/6 Đường số 15, Khu phố 9, P. Bình Hưng Hòa, Q. Bình Tân, TP. Hồ Chí Minh</dd></div>
+    <div class="row"><dt>TEL</dt><dd><a href="tel:+81962348770">(+81) 096-234-8770</a></dd></div>
+    <div class="row"><dt class="i18n" data-vi="LĨNH VỰC">事業内容</dt><dd class="i18n" data-vi="Giới thiệu việc làm・tuyển dụng nhân sự、Giáo dục và đào tạo nhân lực Việt Nam、Vận hành website tuyển dụng kodawari.vn">職業紹介・人材採用支援／ベトナム人材の教育・育成／求人サイト kodawari.vn の運営</dd></div>
+    <div class="row"><dt>WEB</dt><dd><a href="https://www.vietnamtrading.co.jp/" target="_blank" rel="noopener">www.vietnamtrading.co.jp</a></dd></div>
+  </dl>
+  <div class="cmp-img rv">
+    <img src="img/p_32.jpg" alt="ベトナムトレーディング株式会社 本社社屋">
+    <span class="tag i18n" data-vi="TRỤ SỞ CHÍNH ／ KUMAMOTO">本社社屋 ／ 熊本</span>
+  </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="gal">
+    <figure class="rv"><img src="img/p_8480.jpg" alt="澤村友里 ポートレート" style="object-position:50% 20%"><figcaption>PORTRAIT</figcaption></figure>
+    <figure class="rv"><img src="img/p_9298.jpg" alt="アオザイ姿の澤村友里" style="object-position:50% 30%"><figcaption>ÁO DÀI</figcaption></figure>
+    <figure class="rv"><img src="img/p_135.jpg" alt="執務室にて" style="object-position:50% 30%"><figcaption>AT OFFICE ／ KUMAMOTO</figcaption></figure>
+  </div>
+  <div class="gal-more rv"><a class="btn btn-o i18n" data-vi="Xem tất cả ảnh →" href="gallery.html">フォトギャラリーをすべて見る →</a></div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="contact">
+  <div class="inner rv">
+    <h2 class="serif-ja i18n" data-vi="Hãy để chúng tôi<br>trở thành nhịp cầu của bạn.">ベトナムと日本の架け橋に、<br>私たちを使ってください。</h2>
+    <p class="i18n" data-vi="Từ tuyển dụng nhân sự đến hỗ trợ sau khi vào làm — hãy liên hệ với chúng tôi.">人材の採用から、受入れ後の定着支援まで。まずはお気軽にご相談ください。</p>
+    <div class="cta-btns">
+      <a class="btn-w i18n" data-vi="☎ (+81) 096-234-8770" href="tel:+81962348770">☎ (+81) 096-234-8770</a>
+      <a class="btn-gh i18n" data-vi="Xem website chính thức" href="https://www.vietnamtrading.co.jp/" target="_blank" rel="noopener">公式サイトを見る</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fb"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span> VIETNAM TRADING CO., LTD.</div>
+  <div>© 2013–2026 VIETNAM TRADING ／ KUMAMOTO・HO CHI MINH</div>
+</footer>
+
+<script>
+(function(){
+  // scroll progress + header
+  var bar=document.getElementById('bar'),hd=document.getElementById('hd');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+    hd.classList.toggle('solid',window.scrollY>60);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%4*70)+'ms';io.observe(el);});
+
+  // JP / VN switch
+  var nodes=document.querySelectorAll('.i18n');
+  nodes.forEach(function(n){ n.dataset.ja=n.innerHTML; });
+  function setLang(l){
+    nodes.forEach(function(n){
+      var v=(l==='vi')?n.dataset.vi:n.dataset.ja;
+      if(v!==undefined && v!=='') n.innerHTML=v;
+      else if(l==='vi'&&n.dataset.vi==='') n.innerHTML='';
+    });
+    document.body.classList.toggle('vi',l==='vi');
+    document.documentElement.lang=(l==='vi')?'vi':'ja';
+    document.getElementById('bja').classList.toggle('on',l!=='vi');
+    document.getElementById('bvi').classList.toggle('on',l==='vi');
+  }
+  document.getElementById('bja').onclick=function(){setLang('ja');};
+  document.getElementById('bvi').onclick=function(){setLang('vi');};
+})();
+</script>
+</body>
+</html>
