@@ -3,136 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>フォトギャラリー ｜ 澤村 友里 ｜ ベトナムトレーディング株式会社</title>
+<title>フォトギャラリー ｜ 澤村 友里</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
-<style>
-:root{
-  --red:#D7192D;--red-bright:#FF2E45;--red-deep:#7E0A18;
-  --ink:#FDFBF9;--ink-2:#FFF6F2;--paper:#241D1C;
-  --line:rgba(36,29,28,.1);--muted:#8A7F7C;
-  --sans:"Hiragino Kaku Gothic ProN","Yu Gothic Medium","Yu Gothic","Meiryo","Segoe UI",sans-serif;
-  --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","Noto Serif JP","MS PMincho",serif;
-  --pad:clamp(20px,5vw,80px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-header{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);background:rgba(253,251,249,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.22em;font-weight:700}
-.brand .dot{width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 14px var(--red-bright)}
-nav{display:flex;align-items:center;gap:clamp(14px,2vw,30px);font-size:12px;letter-spacing:.14em}
-nav a{opacity:.65;transition:.25s}
-nav a:hover,nav a.cur{opacity:1;color:var(--red-bright)}
-@media(max-width:820px){nav .navlink{display:none}}
-
-.page-hero{padding:clamp(120px,16vw,180px) var(--pad) clamp(40px,6vw,70px);position:relative;overflow:hidden}
-.page-hero::before{content:"";position:absolute;width:60vw;height:60vw;right:-25vw;top:-30vw;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,46,69,.13),transparent 65%);filter:blur(14px)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;color:var(--red-bright);margin-bottom:18px}
-.eyebrow::before{content:"";width:44px;height:1px;background:var(--red)}
-.page-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,6vw,68px);line-height:1.25}
-.page-hero p{margin-top:14px;color:var(--muted);font-size:13.5px;max-width:40em}
-
-.wrap{padding:0 var(--pad) clamp(80px,10vw,140px)}
-.masonry{columns:3;column-gap:16px;max-width:1400px;margin:0 auto}
-@media(max-width:1000px){.masonry{columns:2}}
-@media(max-width:560px){.masonry{columns:1}}
-.ph{position:relative;break-inside:avoid;margin-bottom:16px;border-radius:10px;overflow:hidden;cursor:zoom-in;box-shadow:0 10px 30px rgba(126,10,24,.09)}
-.ph img{width:100%;transition:transform 1s ease}
-.ph:hover img{transform:scale(1.05)}
-.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 16px 12px;font-size:10.5px;letter-spacing:.18em;color:#fff;background:linear-gradient(transparent,rgba(18,14,14,.85));opacity:0;transition:.4s}
-.ph:hover figcaption{opacity:1}
-.ph .num{position:absolute;top:10px;left:12px;font-family:var(--serif);font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.5)}
-
-/* lightbox */
-#lb{position:fixed;inset:0;z-index:200;background:rgba(10,7,7,.94);display:none;align-items:center;justify-content:center;padding:4vw;cursor:zoom-out}
-#lb.on{display:flex}
-#lb img{max-width:100%;max-height:88vh;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
-#lb .cap{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:11.5px;letter-spacing:.22em;color:var(--muted)}
-#lb .x{position:absolute;top:20px;right:26px;font-size:26px;color:#fff;opacity:.7;cursor:pointer;line-height:1}
-#lb .x:hover{opacity:1}
-#lb .nav{position:absolute;top:50%;transform:translateY(-50%);font-size:34px;color:#fff;opacity:.55;cursor:pointer;padding:20px;user-select:none}
-#lb .nav:hover{opacity:1;color:var(--red-bright)}
-#lb .prev{left:6px}#lb .next{right:6px}
-
-footer{background:var(--ink-2);padding:40px var(--pad);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.14em;color:var(--muted);border-top:1px solid var(--line)}
-footer .fb{display:flex;align-items:center;gap:12px;color:var(--paper);font-weight:700}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}*{transition:none!important}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="index.html"><span class="dot"></span><span>VIETNAM TRADING</span></a>
-  <nav>
-    <a class="navlink" href="index.html#message">MESSAGE</a>
-    <a class="navlink" href="index.html#philosophy">PHILOSOPHY</a>
-    <a class="navlink cur" href="gallery.html">GALLERY</a>
-    <a class="navlink" href="lecture.html">LECTURE</a>
-    <a class="navlink" href="index.html#contact">CONTACT</a>
-  </nav>
-</header>
+<div id="bar"></div>
+<header id="site-header" data-cur="gallery.html"></header>
 
 <div class="page-hero">
-  <div class="eyebrow">PHOTO GALLERY</div>
-  <h1>フォトギャラリー</h1>
-  <p>代表・澤村友里のポートレートと、日々の活動の記録。写真をクリックすると拡大表示されます。</p>
-</div>
-
-<div class="wrap">
-  <div class="masonry" id="grid">
-    <figure class="ph rv"><img src="img/p_8743.jpg" alt="百合の花とともに" loading="lazy"><span class="num">01</span><figcaption>PORTRAIT ／ LILY</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_135.jpg" alt="執務室にて" loading="lazy"><span class="num">02</span><figcaption>AT OFFICE ／ KUMAMOTO</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_9002.jpg" alt="アオザイと花" loading="lazy"><span class="num">03</span><figcaption>ÁO DÀI ／ FLOWERS</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_49.jpg" alt="スタッフとともに" loading="lazy"><span class="num">04</span><figcaption>WITH OUR MEMBERS</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_8480.jpg" alt="ポートレート" loading="lazy"><span class="num">05</span><figcaption>PORTRAIT ／ SMILE</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_32.jpg" alt="本社社屋" loading="lazy"><span class="num">06</span><figcaption>HEAD OFFICE ／ KUMAMOTO</figcaption></figure>
-    <figure class="ph rv"><img src="img/p_9298.jpg" alt="アオザイ全身" loading="lazy"><span class="num">07</span><figcaption>ÁO DÀI ／ FULL LENGTH</figcaption></figure>
-    <figure class="ph rv"><img src="img/yuri.jpg" alt="オフィスにて" loading="lazy"><span class="num">08</span><figcaption>PORTRAIT ／ OFFICE</figcaption></figure>
+  <div class="in">
+    <div class="eyebrow">GALLERY</div>
+    <h1 id="ph-title"></h1>
+    <p id="ph-lead"></p>
   </div>
 </div>
 
-<div id="lb">
-  <span class="x">×</span>
-  <span class="nav prev">‹</span>
-  <img src="" alt="">
-  <span class="nav next">›</span>
-  <div class="cap"></div>
-</div>
+<!-- 目次 -->
+<section style="padding-top:clamp(30px,4vw,50px);padding-bottom:0">
+  <div class="toc rv" id="toc"></div>
+</section>
 
-<footer>
-  <div class="fb"><span style="width:8px;height:8px;border-radius:50%;background:var(--red);display:inline-block"></span> VIETNAM TRADING CO., LTD.</div>
-  <div>© 2013–2026 VIETNAM TRADING ／ KUMAMOTO・HO CHI MINH</div>
-</footer>
+<!-- 写真 -->
+<section id="photos" style="padding-top:clamp(40px,5vw,70px)">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" id="t-photos"></h2>
+    <span class="sec-sub">PHOTOS</span>
+  </div>
+  <div class="chips rv" id="chips"></div>
+  <div class="masonry" id="grid"></div>
+</section>
 
+<!-- 写真集 -->
+<section id="albums" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-albums"></h2>
+    <span class="sec-sub">PHOTO BOOKS</span>
+  </div>
+  <div id="alb-sample"></div>
+  <div class="albums" id="alb-list"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<div id="lb"><span class="x">×</span><span class="nv prev">‹</span><img alt=""><span class="nv next">›</span><div class="cap"></div></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
 <script>
-(function(){
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
-  document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3*80)+'ms';io.observe(el);});
+let CUR_CAT = 'all';
 
-  var phs=[].slice.call(document.querySelectorAll('.ph')),lb=document.getElementById('lb'),
-      im=lb.querySelector('img'),cap=lb.querySelector('.cap'),cur=0;
-  function show(i){
-    cur=(i+phs.length)%phs.length;
-    im.src=phs[cur].querySelector('img').src;
-    cap.textContent=phs[cur].querySelector('figcaption').textContent;
-    lb.classList.add('on');
-  }
-  phs.forEach(function(p,i){p.addEventListener('click',function(){show(i);});});
-  lb.addEventListener('click',function(e){
+function renderPage(){
+  document.getElementById('ph-title').textContent = T('secGallery');
+  document.getElementById('ph-lead').textContent = {
+    ja:'ポートレート、講演やイベントの記録、写真集。写真をクリックすると拡大表示されます。',
+    en:'Portraits, records from talks and events, and photo books. Click any photo to enlarge.',
+    vi:'Ảnh chân dung, tư liệu sự kiện và các bộ ảnh. Nhấp vào ảnh để phóng to.'
+  }[LANG];
+
+  document.getElementById('toc').innerHTML = [
+    ['#photos',T('secGallery')],['#albums',T('secAlbums')]
+  ].map((x,i)=>`<a href="${x[0]}">${String(i+1).padStart(2,'0')}　${x[1]}</a>`).join('');
+
+  /* 写真 */
+  document.getElementById('t-photos').textContent = T('secGallery');
+  const cats = PHOTO_CATS.filter(c=>c.key==='all'||PHOTOS.some(p=>p.cat===c.key));
+  document.getElementById('chips').innerHTML = cats.map(c=>
+    `<button class="chip${CUR_CAT===c.key?' on':''}" data-k="${c.key}">${esc(L(c.label))}</button>`).join('');
+  document.querySelectorAll('#chips .chip').forEach(b=>b.onclick=()=>{
+    CUR_CAT=b.dataset.k;
+    document.querySelectorAll('#chips .chip').forEach(x=>x.classList.toggle('on',x.dataset.k===CUR_CAT));
+    drawGrid();
+  });
+  drawGrid();
+
+  /* 写真集 */
+  document.getElementById('t-albums').textContent = T('secAlbums');
+  document.getElementById('alb-sample').innerHTML = sampleNote();
+  document.getElementById('alb-list').innerHTML = ALBUMS.map(a=>{
+    const go = a.url
+      ? `<a class="go" href="${a.url}" target="_blank" rel="noopener">${T('viewAlbum')} ↗</a>`
+      : `<span class="go dim">${T('preparing')}</span>`;
+    return `<article class="card album rv">
+      <div class="ph"><img src="${a.cover}" alt=""></div>
+      <div class="bd">
+        <h4>${esc(a.title)}</h4>
+        <div class="m">${esc(a.date)}　／　${esc(L(a.count))}</div>
+        <p>${esc(L(a.desc))}</p>
+        ${go}
+      </div></article>`;}).join('');
+}
+
+function drawGrid(){
+  const list = PHOTOS.filter(p=>CUR_CAT==='all'||p.cat===CUR_CAT);
+  document.getElementById('grid').innerHTML = list.length
+    ? list.map((p,i)=>`<figure class="rv"><img src="${p.src}" alt="" loading="lazy">
+        <figcaption>${esc(L(p.caption))}</figcaption></figure>`).join('')
+    : `<p class="empty">${T('preparing')}</p>`;
+  bindReveal();
+  bindLightbox('#grid figure');
+}
+
+function bindLightbox(sel){
+  const figs=[...document.querySelectorAll(sel)],lb=document.getElementById('lb');
+  if(!lb) return;
+  const im=lb.querySelector('img'),cap=lb.querySelector('.cap');let cur=0;
+  function show(i){cur=(i+figs.length)%figs.length;
+    im.src=figs[cur].querySelector('img').src;
+    const fc=figs[cur].querySelector('figcaption');
+    cap.textContent=fc?fc.textContent:'';lb.classList.add('on');}
+  figs.forEach((f,i)=>f.onclick=()=>show(i));
+  lb.onclick=e=>{
     if(e.target.classList.contains('prev')){show(cur-1);e.stopPropagation();}
     else if(e.target.classList.contains('next')){show(cur+1);e.stopPropagation();}
-    else if(e.target!==im){lb.classList.remove('on');}
-  });
-  document.addEventListener('keydown',function(e){
+    else if(e.target!==im){lb.classList.remove('on');}};
+  document.onkeydown=e=>{
     if(!lb.classList.contains('on'))return;
     if(e.key==='Escape')lb.classList.remove('on');
     if(e.key==='ArrowLeft')show(cur-1);
-    if(e.key==='ArrowRight')show(cur+1);
-  });
-})();
+    if(e.key==='ArrowRight')show(cur+1);};
+}
 </script>
 </body>
 </html>

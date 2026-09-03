@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ ｜ 澤村 友里</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bar"></div>
+<header id="site-header" data-cur="blog.html"></header>
+
+<!-- 一覧 -->
+<div id="view-list">
+  <div class="page-hero">
+    <div class="in">
+      <div class="eyebrow">BLOG</div>
+      <h1 id="ph-title"></h1>
+      <p id="ph-lead"></p>
+    </div>
+  </div>
+  <section style="padding-top:clamp(34px,4.5vw,56px)">
+    <div id="blog-sample"></div>
+    <div class="chips rv" id="chips"></div>
+    <div class="posts" id="list"></div>
+  </section>
+</div>
+
+<!-- 記事 -->
+<div id="view-post" style="display:none">
+  <section style="padding-top:clamp(112px,15vw,168px)">
+    <article class="article">
+      <div class="hd rv" id="a-head"></div>
+      <div class="rv" id="a-cover"></div>
+      <div class="bd rv" id="a-body"></div>
+      <div style="margin-top:56px;padding-top:26px;border-top:1px solid var(--line)">
+        <a class="btn btn-o" id="a-back" href="blog.html"></a>
+      </div>
+    </article>
+  </section>
+</div>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+let CUR_CAT = 'all';
+
+function renderPage(){
+  const slug = new URLSearchParams(location.search).get('p');
+  const post = slug ? POSTS.find(x=>x.slug===slug) : null;
+  document.getElementById('view-list').style.display = post ? 'none' : '';
+  document.getElementById('view-post').style.display = post ? '' : 'none';
+  if (post) { drawPost(post); return; }
+
+  document.getElementById('ph-title').textContent = T('secBlog');
+  document.getElementById('ph-lead').textContent = {
+    ja:'講演のご報告、日々のお知らせ、日本とベトナムのあいだで考えていること。',
+    en:'Reports from talks, announcements, and thoughts from between Japan and Vietnam.',
+    vi:'Báo cáo các buổi diễn thuyết, thông báo, và những suy nghĩ giữa Nhật Bản và Việt Nam.'
+  }[LANG];
+  document.getElementById('blog-sample').innerHTML = sampleNote();
+
+  const cats = POST_CATS.filter(c=>c.key==='all'||POSTS.some(p=>p.cat===c.key));
+  document.getElementById('chips').innerHTML = cats.map(c=>
+    `<button class="chip${CUR_CAT===c.key?' on':''}" data-k="${c.key}">${esc(L(c.label))}</button>`).join('');
+  document.querySelectorAll('#chips .chip').forEach(b=>b.onclick=()=>{
+    CUR_CAT=b.dataset.k;
+    document.querySelectorAll('#chips .chip').forEach(x=>x.classList.toggle('on',x.dataset.k===CUR_CAT));
+    drawList(); bindReveal();
+  });
+  drawList();
+}
+
+function drawList(){
+  const list = POSTS.filter(p=>CUR_CAT==='all'||p.cat===CUR_CAT)
+                    .sort((a,b)=>b.date.localeCompare(a.date));
+  document.getElementById('list').innerHTML = list.length
+    ? list.map(postCard).join('')
+    : `<p class="empty">${T('preparing')}</p>`;
+}
+
+function postCard(p){
+  const cat = (POST_CATS.find(c=>c.key===p.cat)||{}).label || p.cat;
+  return `<a class="card post rv" href="blog.html?p=${encodeURIComponent(p.slug)}">
+    ${p.image?`<div class="ph"><img src="${p.image}" alt=""></div>`:''}
+    <div class="bd">
+      <div class="top"><span class="tag">${esc(L(cat))}</span><time>${fmtDate(p.date)}</time></div>
+      <h3>${esc(L(p.title))}</h3>
+      <p>${esc(L(p.excerpt))}</p>
+      <span class="go">${T('readMore')} →</span>
+    </div></a>`;
+}
+
+function drawPost(p){
+  document.title = L(p.title) + ' ｜ 澤村 友里';
+  const cat = (POST_CATS.find(c=>c.key===p.cat)||{}).label || p.cat;
+  document.getElementById('a-head').innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <span class="tag">${esc(L(cat))}</span>
+      <time style="font-size:12px;letter-spacing:.1em;color:var(--muted)">${fmtDate(p.date)}</time>
+    </div>
+    <h1>${esc(L(p.title))}</h1>`;
+  document.getElementById('a-cover').innerHTML = p.image
+    ? `<div class="cover"><img src="${p.image}" alt=""></div>` : '';
+  document.getElementById('a-body').innerHTML = L(p.body);
+  document.getElementById('a-back').textContent = T('backToList');
+}
+</script>
+</body>
+</html>
