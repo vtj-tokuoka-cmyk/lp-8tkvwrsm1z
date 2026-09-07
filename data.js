@@ -983,6 +983,9 @@ const KODAWARI_TITLE = {ja:'こだわり、<em>真心をかたちに。</em>',
    16. 各ページの冒頭文
    ========================================================================= */
 const PAGE_LEADS = {
+  profile: { ja: "ベトナムに生まれ、12歳で熊本へ。学生起業から3法人の経営まで、これまでの歩みをまとめています。",
+             en: "Born in Vietnam, in Kumamoto from twelve. From founding a company as a student to running three entities — the journey so far.",
+             vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. Từ khởi nghiệp sinh viên đến điều hành 3 pháp nhân." },
   lecture: {
     ja:'テーマ・パッケージ・ご依頼の流れ・これまでの登壇まで、ご検討に必要な情報をまとめています。',
     en:'Topics, packages, how to book and past appearances — everything you need in order to decide.',
@@ -1004,3 +1007,17 @@ const PAGE_LEADS = {
     vi:'Ảnh chân dung, tư liệu sự kiện và các bộ ảnh. Nhấp vào ảnh để phóng to.'
   }
 };
+
+/* =========================================================================
+   17. トップページ：ヒーロー直下の写真3枚（全幅ストリップ）
+   ------------------------------------------------------------------------
+   写真を差し替えるときは src と pos（表示位置）を書き換えます。
+   ========================================================================= */
+const STRIP = [
+  { src: "img/q_72.jpg",   pos: "45% 30%",
+    label: { ja: "講演", en: "Speaking", vi: "Diễn thuyết" }, sub: "ON STAGE" },
+  { src: "img/q_299.jpg",  pos: "50% 22%",
+    label: { ja: "経営者として", en: "As an executive", vi: "Nhà quản lý" }, sub: "LEADERSHIP" },
+  { src: "img/q_9244.jpg", pos: "45% 35%",
+    label: { ja: "ふたつの故郷", en: "Two homelands", vi: "Hai quê hương" }, sub: "VIETNAM × JAPAN" }
+];

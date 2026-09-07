@@ -18,6 +18,7 @@
 |---|---|
 | **data.js** | 講演実績・パッケージ・略歴・SNS・動画・ブログ・写真 など**全部の内容**。ここだけ触る |
 | index.html | トップページ |
+| profile.html | プロフィール・略歴ページ |
 | lecture.html | 講演実績ページ |
 | blog.html | ブログ（一覧と記事の両方） |
 | gallery.html | フォトギャラリー |
@@ -92,7 +93,8 @@
 | `PROFILE_TEXT` | 「澤村友里について」の本文（`lead` が最初の大きい一文） |
 | `BAND` | 集合写真の上に重ねる一文 |
 | `KODAWARI_TITLE` | 「こだわり」の大見出し |
-| `PAGE_LEADS` | 講演・SNS・ブログ・ギャラリー各ページの冒頭文 |
+| `PAGE_LEADS` | プロフィール・講演・SNS・ブログ・ギャラリー各ページの冒頭文 |
+| `STRIP` | ヒーロー直下の写真3枚（全幅ストリップ）。`src` と `pos` を差し替え |
 
 ### 講演テーマの短い名前（short）
 
@@ -158,7 +160,8 @@ python -m http.server 8783
 
 | ページ | 中身 |
 |---|---|
-| index.html | トップ（9セクション：講演のご依頼について→メディア→プロフィール→こだわり→SNS・動画→グループ→ブログ→ギャラリー→お問い合わせ） |
+| index.html | トップ（8セクション：講演のご依頼→プロフィール（要約）→こだわり→動画・メディア→グループ→ブログ→ギャラリー→お問い合わせ）。ヒーロー直下に写真3枚のストリップ |
+| profile.html | プロフィール・略歴（本文全文・略歴表・年表） |
 | lecture.html | 講演依頼・実績（テーマ／パッケージ／流れ／講師情報／予定／実績） |
 | sns.html | SNS・動画（最新動画の再生＋各SNSの紹介） |
 | blog.html | ブログ（一覧と記事） |
@@ -247,3 +250,17 @@ const YT_CHANNEL_ID = "UCYE6NspnrKTGlC8osbHdvaQ";
 | Instagram | @yuri_jpvn |
 | TikTok | @kodawari.jp（求人サイト「こだわり」の公式アカウント） |
 | Facebook | vietnamtrading（会社の公式ページ） |
+
+---
+
+## フォントについて
+
+Google Fonts から3種類を読み込んでいます（各HTMLの `<head>` にリンクあり）。
+
+| 用途 | フォント |
+|---|---|
+| 見出し・名前 | Zen Old Mincho（明朝） |
+| 本文 | Noto Sans JP |
+| 英字のアクセント（数字・ラベル） | Cormorant Garamond |
+
+変えたいときは `style.css` の `:root` にある `--serif` `--sans` `--latin` と、各HTMLの Google Fonts のリンクを書き換えてください。

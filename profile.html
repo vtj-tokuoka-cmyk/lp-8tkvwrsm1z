@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロフィール・略歴 ｜ 澤村 友里</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bar"></div>
+<header id="site-header" data-cur="profile.html"></header>
+
+<div class="page-hero has-img">
+  <div class="in">
+    <div>
+      <div class="eyebrow">PROFILE</div>
+      <h1 id="ph-title"></h1>
+      <p id="ph-lead"></p>
+    </div>
+    <div class="ph-img rv"><img src="img/q_262.jpg" alt="澤村友里"></div>
+  </div>
+</div>
+
+<!-- 01 澤村友里について -->
+<section id="about" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" id="t-about"></h2>
+    <span class="sec-sub">ABOUT</span>
+  </div>
+  <div class="prof">
+    <div class="prof-photo rv">
+      <img src="img/q_299.jpg" alt="澤村友里">
+      <span class="cap">YURI SAWAMURA</span>
+    </div>
+    <div class="prof-body rv" id="prof-body"></div>
+  </div>
+</section>
+
+<!-- 02 略歴 -->
+<section id="bio" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-bio"></h2>
+    <span class="sec-sub">BIOGRAPHY</span>
+  </div>
+  <dl class="spec rv" id="bio-spec"></dl>
+</section>
+
+<!-- 03 歩み -->
+<section id="story" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title" id="t-story"></h2>
+    <span class="sec-sub">JOURNEY</span>
+  </div>
+  <div class="tl" id="timeline"></div>
+</section>
+
+<!-- 帯 -->
+<section class="band">
+  <img src="img/p_49.jpg" alt="">
+  <div class="band-in rv" id="band"></div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
+  <div class="rv" id="cta-in"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="parts.js"></script>
+<script>
+function renderPage(){
+  document.getElementById('ph-title').textContent = T('secProfile');
+  document.getElementById('ph-lead').textContent  = L(PAGE_LEADS.profile);
+
+  document.getElementById('t-about').textContent = T('secProfile');
+  document.getElementById('prof-body').innerHTML =
+    L(PROFILE_TEXT).join('') +
+    `<div class="sign"><span>${esc(L(HERO.roles[0]))}</span><strong>${T('name')}</strong></div>`;
+
+  document.getElementById('t-bio').textContent = T('secBio');
+  document.getElementById('bio-spec').innerHTML = PROFILE_SPEC.map(specRow).join('');
+
+  document.getElementById('t-story').textContent = T('secStory');
+  document.getElementById('timeline').innerHTML = TIMELINE.map(t=>`
+    <div class="tl-item rv">
+      <div class="tl-year">${t.year}</div>
+      <h3>${esc(L(t.title))}</h3>
+      <p>${esc(L(t.body))}</p>
+    </div>`).join('');
+
+  document.getElementById('band').innerHTML = `<h3>${L(BAND.title)}</h3><p>${esc(BAND.sub)}</p>`;
+
+  document.getElementById('cta-in').innerHTML = `
+    <h2 style="font-family:var(--serif);font-size:clamp(30px,5vw,58px);font-weight:500;line-height:1.35;margin-bottom:18px">
+      ${{ja:'講演・MCのご依頼を<br>お待ちしています。',
+         en:'I would love to speak<br>at your event.',
+         vi:'Rất mong được<br>đồng hành cùng sự kiện của bạn.'}[LANG]}</h2>
+    <p style="max-width:36em;margin:0 auto 34px;font-size:16px;opacity:.95">
+      ${{ja:'テーマ・時間・ご予算はご相談に応じます。まずはお気軽にお問い合わせください。',
+         en:'Topic, length and budget are all negotiable. Please get in touch.',
+         vi:'Chủ đề, thời lượng và ngân sách đều có thể trao đổi. Xin vui lòng liên hệ.'}[LANG]}</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-w" href="index.html#contact">${T('navCta')} →</a>
+      <a class="btn btn-gh" href="lecture.html">${T('navLecture')}</a>
+    </div>`;
+}
+</script>
+</body>
+</html>

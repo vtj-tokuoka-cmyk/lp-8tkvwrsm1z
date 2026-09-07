@@ -140,7 +140,7 @@ const UI = {
   askThis:     { ja: "このテーマで相談する", en: "Enquire about this topic", vi: "Hỏi về chủ đề này" },
   pickPackage: { ja: "このパッケージで相談する", en: "Enquire about this package", vi: "Hỏi về gói này" },
   moreSns:     { ja: "SNS・動画をすべて見る", en: "See all social and video", vi: "Xem tất cả mạng xã hội & video" },
-  secLectureInfo:{ ja: "講演のご依頼について", en: "Speaking Engagements", vi: "Về việc mời diễn thuyết" },
+  secLectureInfo:{ ja: "講演のご依頼", en: "Speaking Engagements", vi: "Mời diễn thuyết" },
   secLectureInfoLead:{ ja: "テーマ・パッケージ・ご依頼の流れ・これまでの登壇は、専用ページにまとめています。",
                        en: "Topics, packages, how to book and past appearances are all gathered on the dedicated page.",
                        vi: "Chủ đề, gói dịch vụ, quy trình và hoạt động đã qua đều được tập hợp ở trang riêng." },
@@ -149,6 +149,9 @@ const UI = {
   teaserSteps:   { ja: "ご依頼の流れ",   en: "How to book", vi: "Quy trình" },
   teaserRecent:  { ja: "直近の登壇",     en: "Recent appearances", vi: "Hoạt động gần đây" },
   moreLecDetail: { ja: "講演依頼の詳細を見る", en: "See full speaking details", vi: "Xem chi tiết diễn thuyết" },
+  moreProfile:   { ja: "略歴・歩みをすべて見る", en: "Full biography and journey", vi: "Xem toàn bộ tiểu sử" },
+  secThemes:     { ja: "お話しできるテーマ", en: "Topics I speak on", vi: "Chủ đề tôi có thể chia sẻ" },
+  secMediaMini:  { ja: "メディア出演", en: "In the media", vi: "Truyền thông" },
   watchOnYt:   { ja: "YouTubeで見る", en: "Watch on YouTube", vi: "Xem trên YouTube" },
   followUs:    { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
 };
@@ -211,7 +214,7 @@ function snsIcon(key) { return SNS_ICONS[key] || ""; }
 
 /* ---------- ヘッダー / フッター ---------- */
 const NAV_ITEMS = [
-  { key: "navProfile",  href: "index.html#profile" },
+  { key: "navProfile",  href: "profile.html" },
   { key: "navKodawari", href: "index.html#kodawari" },
   { key: "navLecture",  href: "lecture.html" },
   { key: "navSns",      href: "sns.html" },
