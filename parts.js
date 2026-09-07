@@ -11,6 +11,7 @@ function topicCard(t) {
     <h3>${esc(L(t.title))}</h3>
     <p>${esc(L(t.body))}</p>
     ${L(t.forwhom) ? `<div class="who"><b>${T('forWhom')}</b>${esc(L(t.forwhom))}</div>` : ''}
+    ${L(t.record) ? `<div class="rec">${esc(L(t.record))}</div>` : ''}
     <div class="tags">${L(t.tags).map(g => `<span class="tag">${esc(g)}</span>`).join('')}</div>
   </article>`;
 }

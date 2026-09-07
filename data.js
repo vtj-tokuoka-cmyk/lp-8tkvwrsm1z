@@ -34,83 +34,96 @@ const CONTACT_TEL_LABEL = "(+81) 096-234-8770";
 const TOPICS = [
   {
     no: "01",
-    catch: { ja: "なぜ、彼らは黙って辞めるのか。",
-             en: "Why do they quit without a word?",
-             vi: "Vì sao họ lặng lẽ nghỉ việc?" },
-    title: {
-      ja: "外国人材の雇用と定着",
-      en: "Hiring and Retaining Foreign Talent",
-      vi: "Tuyển dụng và giữ chân nhân lực nước ngoài"
-    },
-    body: {
-      ja: "技能実習・特定技能の受入れ実務から、辞めない職場のつくり方まで。受入れの現場を支えてきた視点で、きれいごとではない実務をお話しします。",
-      en: "From the practicalities of accepting technical intern and specified skilled workers, to building workplaces people don't leave. An honest, on-the-ground account — not the polished version.",
-      vi: "Từ thực tiễn tiếp nhận thực tập sinh và lao động kỹ năng đặc định, đến cách xây dựng nơi làm việc mà nhân viên không rời bỏ."
-    },
+    catch: { ja: "「採れない」より、「続かない」が本当の課題。",
+             en: "The real problem isn't hiring. It's keeping people.",
+             vi: "Vấn đề thật không phải tuyển được, mà là giữ được." },
+    title: { ja: "人手不足を『外国人材』で勝ち抜く経営戦略",
+             en: "Winning the Labour Shortage with Foreign Talent",
+             vi: "Chiến lược vượt qua thiếu hụt nhân lực bằng nhân sự nước ngoài" },
+    body: { ja: "制度の正しい理解から、定着のノウハウ、そして海外展開まで。技能実習・特定技能の受入れを現場で支えてきた立場から、外国人材を「採用する」だけで終わらせないための実務を、数字と事例でお話しします。",
+            en: "From getting the rules right, to retention, to expanding overseas. Drawing on years of supporting technical intern and specified skilled worker placements, this talk covers what it actually takes so that hiring foreign talent does not end at hiring.",
+            vi: "Từ hiểu đúng chế độ, đến bí quyết giữ chân, và mở rộng ra nước ngoài. Chia sẻ thực tiễn để việc tuyển dụng nhân lực nước ngoài không dừng lại ở khâu tuyển." },
     forwhom: { ja: "外国人材を受け入れている・これから受け入れる企業の経営者、人事、現場管理職の方へ",
                en: "For executives, HR and frontline managers at companies employing foreign workers",
                vi: "Dành cho lãnh đạo, nhân sự và quản lý hiện trường tại doanh nghiệp sử dụng lao động nước ngoài" },
-    tags: { ja: ["企業研修", "経営者向け", "業界団体"], en: ["Corporate", "Executives", "Industry bodies"], vi: ["Đào tạo doanh nghiệp", "Lãnh đạo", "Hiệp hội"] }
+    record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナーで実施",
+              en: "Delivered at a seminar co-hosted by the Kumamoto Bar Association and Chamber of Commerce",
+              vi: "Đã trình bày tại hội thảo do Đoàn luật sư và Phòng Thương mại Kumamoto đồng tổ chức" },
+    tags: { ja: ["経営者向け", "企業研修", "業界団体"], en: ["Executives", "Corporate", "Industry bodies"], vi: ["Lãnh đạo", "Doanh nghiệp", "Hiệp hội"] }
   },
   {
     no: "02",
-    catch: { ja: "ふたつの故郷を持つ、ということ。",
-             en: "What it means to have two homelands.",
-             vi: "Mang trong mình hai quê hương." },
-    title: {
-      ja: "日本一ベトナム人を理解している会社のつくり方",
-      en: "Building Japan's Most Vietnam-Literate Company",
-      vi: "Xây dựng công ty thấu hiểu người Việt nhất Nhật Bản"
-    },
-    body: {
-      ja: "ベトナムに生まれ、日本で育った経営者だから見える、日越の文化のちがいと相互理解のヒント。現場で本当に起きていることをお伝えします。",
-      en: "Cultural differences between Japan and Vietnam, seen through the eyes of someone born in one and raised in the other — and what really happens on the ground.",
-      vi: "Sự khác biệt văn hóa Nhật – Việt qua góc nhìn của người sinh ra ở Việt Nam và lớn lên tại Nhật."
-    },
-    forwhom: { ja: "多国籍の職場づくりに悩む企業、ダイバーシティ研修をお考えの方へ",
-               en: "For companies building multinational workplaces and planning diversity training",
-               vi: "Dành cho doanh nghiệp xây dựng môi trường đa quốc gia, đào tạo đa dạng" },
-    tags: { ja: ["企業研修", "多様性", "管理職向け"], en: ["Corporate", "Diversity", "Managers"], vi: ["Đào tạo", "Đa dạng", "Quản lý"] }
+    catch: { ja: "ことばの通じない教室から、経営者になるまで。",
+             en: "From a classroom where nothing made sense, to running a company.",
+             vi: "Từ lớp học không hiểu một lời, đến khi trở thành nhà quản lý." },
+    title: { ja: "苦難は幸福の門 〜試練をチャンスに変える生き方〜",
+             en: "Hardship is the Gate to Happiness: turning trials into opportunity",
+             vi: "Gian nan là cánh cửa của hạnh phúc" },
+    body: { ja: "ベトナムに生まれ、12歳で熊本へ。日本語がまったく分からないまま中学に編入した日から、学生起業、3法人の経営まで。出産の10日後に組合を立ち上げ、その3か月後に熊本地震で被災した年のことも含め、逆境をどう受け止めてきたかをお話しします。",
+            en: "Born in Vietnam, in Kumamoto from the age of twelve. From the day she joined a Japanese junior high without a word of the language, through founding a company as a student, to running three entities — including the year she launched a cooperative ten days after giving birth and was hit by the Kumamoto earthquakes three months later.",
+            vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. Từ ngày vào trường Nhật khi chưa biết một chữ, đến khởi nghiệp thời sinh viên và điều hành 3 pháp nhân." },
+    forwhom: { ja: "経営者団体、倫理法人会、ロータリークラブ、青年会議所、人材育成をテーマにした研修会へ",
+               en: "For business associations, ethics groups, Rotary clubs, junior chambers and personal-development programmes",
+               vi: "Dành cho hiệp hội doanh nhân, các nhóm đạo đức doanh nghiệp, Rotary, JCI" },
+    record: { ja: "熊本東倫理法人会 モーニングセミナーで実施",
+              en: "Delivered at a Kumamoto East Rinri Corporation Association morning seminar",
+              vi: "Đã trình bày tại hội thảo buổi sáng của Hội Đạo đức doanh nghiệp Kumamoto Đông" },
+    tags: { ja: ["経営者団体", "生き方", "モーニングセミナー"], en: ["Associations", "Life story", "Morning seminar"], vi: ["Hiệp hội", "Câu chuyện đời", "Hội thảo sáng"] }
   },
   {
     no: "03",
-    catch: { ja: "就職活動をせず、会社をつくった。",
-             en: "I skipped job hunting and built a company.",
-             vi: "Tôi không đi xin việc, tôi lập công ty." },
-    title: {
-      ja: "学生起業のリアル",
-      en: "The Reality of Founding a Company as a Student",
-      vi: "Thực tế của việc khởi nghiệp khi còn là sinh viên"
-    },
-    body: {
-      ja: "大学在学中に学生でありながら創業し、いまは日越3法人を経営するまで。失敗も資金繰りも包み隠さず、これから挑戦する若者へ。",
-      en: "From founding a company while still an undergraduate to running three entities across Japan and Vietnam. The failures and the cash-flow problems included.",
-      vi: "Từ khởi nghiệp khi còn là sinh viên đến điều hành 3 pháp nhân. Kể cả thất bại và khó khăn tài chính."
-    },
-    forwhom: { ja: "高校・大学・専門学校、若手社員向けのキャリア研修に",
-               en: "For high schools, universities, vocational colleges and early-career training",
-               vi: "Dành cho trường phổ thông, đại học, cao đẳng và đào tạo nhân viên trẻ" },
-    tags: { ja: ["学校", "大学", "若手向け"], en: ["Schools", "Universities", "Youth"], vi: ["Trường học", "Đại học", "Người trẻ"] }
+    catch: { ja: "命をあずかる現場だからこそ、伝わることばを。",
+             en: "Where lives are at stake, words have to land.",
+             vi: "Nơi giữ tính mạng con người, lời nói phải thật sự đến được." },
+    title: { ja: "医療・介護の現場で、外国人材と共に働く",
+             en: "Working Alongside Foreign Talent in Healthcare and Care",
+             vi: "Làm việc cùng nhân lực nước ngoài trong y tế và điều dưỡng" },
+    body: { ja: "指示が伝わらない、報告が上がってこない、患者さんとの会話が続かない。医療・介護の現場でよく起きるつまずきを、やさしい日本語の使い方と受入れ体制づくりの両面から解きほぐします。",
+            en: "Instructions that don't get through, reports that never come, conversations with patients that stall. This talk unpacks the stumbling blocks common in healthcare and care settings, from both plain-Japanese technique and the design of the receiving organisation.",
+            vi: "Chỉ thị không truyền đạt được, báo cáo không được gửi lên, hội thoại với bệnh nhân bị đứt quãng. Gỡ rối những vướng mắc thường gặp trong y tế và điều dưỡng." },
+    forwhom: { ja: "病院、介護施設、医療・福祉の業界団体、現場の管理職の方へ",
+               en: "For hospitals, care facilities, healthcare associations and frontline managers",
+               vi: "Dành cho bệnh viện, cơ sở điều dưỡng, hiệp hội y tế và quản lý hiện trường" },
+    record: { ja: "熊本県医師会での講演で実施",
+              en: "Delivered for the Kumamoto Medical Association",
+              vi: "Đã trình bày tại Hiệp hội Y khoa Kumamoto" },
+    tags: { ja: ["医療・介護", "管理職向け", "やさしい日本語"], en: ["Healthcare", "Managers", "Plain Japanese"], vi: ["Y tế", "Quản lý", "Tiếng Nhật đơn giản"] }
   },
   {
     no: "04",
+    catch: { ja: "就職活動をせず、大学3年で会社をつくった。",
+             en: "I skipped job hunting and built a company in my third year.",
+             vi: "Tôi không đi xin việc — năm 3 đại học, tôi lập công ty." },
+    title: { ja: "海外人材における情報とイノベーション 〜学生起業のリアルを添えて〜",
+             en: "Information and Innovation in Overseas Talent — with the reality of student entrepreneurship",
+             vi: "Thông tin và đổi mới trong nhân lực nước ngoài — cùng thực tế khởi nghiệp sinh viên" },
+    body: { ja: "これから外国人材がさらに増える日本で、どんなイノベーションが必要なのか。学生のみなさんに問いを投げかけながら、自分自身が大学3年で起業し、失敗も資金繰りも経験してきた道のりを包み隠さずお話しします。",
+            en: "What kind of innovation will Japan need as its foreign workforce keeps growing? Posing that question to students, she also tells the unvarnished story of founding a company in her third year — failures and cash-flow troubles included.",
+            vi: "Nhật Bản cần đổi mới gì khi lực lượng lao động nước ngoài tiếp tục tăng? Đặt câu hỏi cho sinh viên, đồng thời kể thật về hành trình khởi nghiệp năm 3." },
+    forwhom: { ja: "大学、高校、専門学校でのキャリア教育・特別講義、若手社員研修に",
+               en: "For career education and guest lectures at universities, high schools and colleges, and early-career training",
+               vi: "Dành cho giáo dục hướng nghiệp tại đại học, THPT, cao đẳng và đào tạo nhân viên trẻ" },
+    record: { ja: "熊本大学・熊本県立大学の特別講義で実施",
+              en: "Delivered as guest lectures at Kumamoto University and the Prefectural University of Kumamoto",
+              vi: "Đã giảng tại Đại học Kumamoto và Đại học tỉnh lập Kumamoto" },
+    tags: { ja: ["大学・高校", "キャリア教育", "若手向け"], en: ["Universities", "Careers", "Youth"], vi: ["Đại học", "Hướng nghiệp", "Người trẻ"] }
+  },
+  {
+    no: "05",
     catch: { ja: "隣に住む外国人は、もう「お客さん」ではない。",
              en: "Foreign residents are no longer guests.",
              vi: "Cư dân nước ngoài không còn là khách." },
-    title: {
-      ja: "多文化共生のまちづくり",
-      en: "Building Multicultural Communities",
-      vi: "Xây dựng cộng đồng đa văn hóa"
-    },
-    body: {
-      ja: "外国人住民とともに生きる地域社会のあり方。行政・学校・地域の現場で起きている課題と、実際に効いた打ち手を共有します。",
-      en: "What it takes for a community to live well alongside foreign residents — the real problems and what actually worked.",
-      vi: "Cộng đồng chung sống cùng cư dân nước ngoài — vấn đề thực tế và giải pháp hiệu quả."
-    },
+    title: { ja: "多文化共生のまちづくり",
+             en: "Building Multicultural Communities",
+             vi: "Xây dựng cộng đồng đa văn hóa" },
+    body: { ja: "熊本県で働く外国人労働者のうち約4割はベトナム人です。地域で暮らす人として彼らを迎えるために、行政・学校・地域の現場で何が起きていて、何が実際に効いたのか。データと現場の両方から共有します。",
+            en: "About four in ten foreign workers in Kumamoto Prefecture are Vietnamese. What is actually happening in local government, schools and neighbourhoods as they welcome these residents — and what has genuinely worked. Shared from both the data and the ground.",
+            vi: "Khoảng 40% lao động nước ngoài tại Kumamoto là người Việt. Điều gì đang thực sự diễn ra tại chính quyền, trường học, khu dân cư — và giải pháp nào đã hiệu quả." },
     forwhom: { ja: "自治体、国際交流協会、学校、地域団体、社会福祉協議会の方へ",
-               en: "For municipalities, international associations, schools and community organisations",
-               vi: "Dành cho chính quyền, hiệp hội giao lưu quốc tế, trường học, đoàn thể" },
-    tags: { ja: ["行政", "自治体", "地域団体"], en: ["Government", "Municipal", "Community"], vi: ["Chính quyền", "Địa phương", "Cộng đồng"] }
+               en: "For municipalities, international associations, schools, community organisations and welfare councils",
+               vi: "Dành cho chính quyền, hiệp hội giao lưu quốc tế, trường học, đoàn thể, hội phúc lợi" },
+    record: { ja: "", en: "", vi: "" },
+    tags: { ja: ["行政・自治体", "地域団体", "多文化共生"], en: ["Government", "Community", "Diversity"], vi: ["Chính quyền", "Cộng đồng", "Đa văn hóa"] }
   }
 ];
 

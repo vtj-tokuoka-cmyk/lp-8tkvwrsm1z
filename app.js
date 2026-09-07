@@ -149,6 +149,15 @@ const UI = {
   askThis:     { ja: "このテーマで相談する", en: "Enquire about this topic", vi: "Hỏi về chủ đề này" },
   pickPackage: { ja: "このパッケージで相談する", en: "Enquire about this package", vi: "Hỏi về gói này" },
   moreSns:     { ja: "SNS・動画をすべて見る", en: "See all social and video", vi: "Xem tất cả mạng xã hội & video" },
+  secLectureInfo:{ ja: "講演のご依頼について", en: "Speaking Engagements", vi: "Về việc mời diễn thuyết" },
+  secLectureInfoLead:{ ja: "テーマ・パッケージ・ご依頼の流れ・これまでの登壇は、専用ページにまとめています。",
+                       en: "Topics, packages, how to book and past appearances are all gathered on the dedicated page.",
+                       vi: "Chủ đề, gói dịch vụ, quy trình và hoạt động đã qua đều được tập hợp ở trang riêng." },
+  teaserTopics:  { ja: "話せるテーマ",   en: "Topics",   vi: "Chủ đề" },
+  teaserPacks:   { ja: "講演パッケージ", en: "Packages", vi: "Gói dịch vụ" },
+  teaserSteps:   { ja: "ご依頼の流れ",   en: "How to book", vi: "Quy trình" },
+  teaserRecent:  { ja: "直近の登壇",     en: "Recent appearances", vi: "Hoạt động gần đây" },
+  moreLecDetail: { ja: "講演依頼の詳細を見る", en: "See full speaking details", vi: "Xem chi tiết diễn thuyết" },
   watchOnYt:   { ja: "YouTubeで見る", en: "Watch on YouTube", vi: "Xem trên YouTube" },
   followUs:    { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
 };
