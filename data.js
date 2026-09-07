@@ -46,9 +46,9 @@ const TOPICS = [
     forwhom: { ja: "外国人材を受け入れている・これから受け入れる企業の経営者、人事、現場管理職の方へ",
                en: "For executives, HR and frontline managers at companies employing foreign workers",
                vi: "Dành cho lãnh đạo, nhân sự và quản lý hiện trường tại doanh nghiệp sử dụng lao động nước ngoài" },
-    record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナーで実施",
-              en: "Delivered at a seminar co-hosted by the Kumamoto Bar Association and Chamber of Commerce",
-              vi: "Đã trình bày tại hội thảo do Đoàn luật sư và Phòng Thương mại Kumamoto đồng tổ chức" },
+    record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナー、熊本県青果卸市場連合会 経営者研修会ほかで実施",
+              en: "Delivered for the Kumamoto Bar Association and Chamber of Commerce, the Kumamoto Produce Wholesale Market Federation and others",
+              vi: "Đã trình bày tại hội thảo của Đoàn luật sư và Phòng Thương mại Kumamoto, Liên hiệp chợ đầu mối rau quả và nhiều nơi khác" },
     tags: { ja: ["経営者向け", "企業研修", "業界団体"], en: ["Executives", "Corporate", "Industry bodies"], vi: ["Lãnh đạo", "Doanh nghiệp", "Hiệp hội"] }
   },
   {
@@ -103,9 +103,9 @@ const TOPICS = [
     forwhom: { ja: "大学、高校、専門学校でのキャリア教育・特別講義、若手社員研修に",
                en: "For career education and guest lectures at universities, high schools and colleges, and early-career training",
                vi: "Dành cho giáo dục hướng nghiệp tại đại học, THPT, cao đẳng và đào tạo nhân viên trẻ" },
-    record: { ja: "熊本大学・熊本県立大学の特別講義で実施",
-              en: "Delivered as guest lectures at Kumamoto University and the Prefectural University of Kumamoto",
-              vi: "Đã giảng tại Đại học Kumamoto và Đại học tỉnh lập Kumamoto" },
+    record: { ja: "熊本大学・熊本県立大学・ルーテル学院大学・大津高校ほかで実施（県立大学では1年生必修講義も担当）",
+              en: "Delivered at Kumamoto University, the Prefectural University of Kumamoto, Kyushu Lutheran College, Ozu High School and others — including a required first-year course",
+              vi: "Đã giảng tại Đại học Kumamoto, Đại học tỉnh lập Kumamoto, Đại học Lutheran, THPT Ozu và nhiều nơi khác" },
     tags: { ja: ["大学・高校", "キャリア教育", "若手向け"], en: ["Universities", "Careers", "Youth"], vi: ["Đại học", "Hướng nghiệp", "Người trẻ"] }
   },
   {
@@ -122,7 +122,9 @@ const TOPICS = [
     forwhom: { ja: "自治体、国際交流協会、学校、地域団体、社会福祉協議会の方へ",
                en: "For municipalities, international associations, schools, community organisations and welfare councils",
                vi: "Dành cho chính quyền, hiệp hội giao lưu quốc tế, trường học, đoàn thể, hội phúc lợi" },
-    record: { ja: "", en: "", vi: "" },
+    record: { ja: "熊本学園大学「差別と人権に関する講演」で実施",
+              en: "Delivered at Kumamoto Gakuen University as a lecture on discrimination and human rights",
+              vi: "Đã trình bày tại Đại học Kumamoto Gakuen về phân biệt đối xử và quyền con người" },
     tags: { ja: ["行政・自治体", "地域団体", "多文化共生"], en: ["Government", "Community", "Diversity"], vi: ["Chính quyền", "Cộng đồng", "Đa văn hóa"] }
   }
 ];
@@ -144,6 +146,22 @@ const LECTURES = [
     host:  { ja: "熊本県弁護士会・熊本商工会議所（共催）", en: "Kumamoto Bar Association & Kumamoto Chamber of Commerce and Industry", vi: "Đoàn luật sư Kumamoto & Phòng Thương mại Kumamoto" },
     venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
     audience: { ja: "経営者・実務担当者", en: "Business owners and practitioners", vi: "Lãnh đạo và cán bộ phụ trách" },
+    url: ""
+  },
+  {
+    date: "2026-06-11", kind: "講演", upcoming: false,
+    title: { ja: "総合管理学部 1年生必修講義", en: "Required lecture for first-year students, Faculty of Administration", vi: "Bài giảng bắt buộc cho sinh viên năm nhất" },
+    host:  { ja: "熊本県立大学", en: "Prefectural University of Kumamoto", vi: "Đại học tỉnh lập Kumamoto" },
+    venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
+    audience: { ja: "総合管理学部 1年生", en: "First-year undergraduates", vi: "Sinh viên năm nhất" },
+    url: ""
+  },
+  {
+    date: "2025-10-29", kind: "パネル", upcoming: false,
+    title: { ja: "ホンネカフェ 〜学生と本音で語る〜", en: "Honne Cafe — an open conversation with students", vi: "Honne Cafe — trò chuyện thẳng thắn cùng sinh viên" },
+    host:  { ja: "熊本県立大学", en: "Prefectural University of Kumamoto", vi: "Đại học tỉnh lập Kumamoto" },
+    venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
+    audience: { ja: "学生", en: "Students", vi: "Sinh viên" },
     url: ""
   },
   {
@@ -170,7 +188,7 @@ const LECTURES = [
              en: "Hardship is the Gate to Happiness: turning trials into opportunity — born in Vietnam, raised in Kumamoto",
              vi: "Gian nan là cánh cửa của hạnh phúc — sinh ra ở Việt Nam, lớn lên tại Kumamoto" },
     host:  { ja: "熊本東倫理法人会", en: "Kumamoto East Rinri Corporation Association", vi: "Hội Đạo đức doanh nghiệp Kumamoto Đông" },
-    venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
+    venue: { ja: "熊本市 ／ モーニングセミナー", en: "Kumamoto City / morning seminar", vi: "TP. Kumamoto / hội thảo buổi sáng" },
     audience: { ja: "経営者", en: "Business owners", vi: "Doanh nhân" },
     url: ""
   },
@@ -199,6 +217,46 @@ const LECTURES = [
     venue: { ja: "熊本県", en: "Kumamoto", vi: "Kumamoto" },
     audience: { ja: "", en: "", vi: "" },
     url: ""
+  },
+  {
+    date: "2023-07-12", kind: "講演", upcoming: false,
+    title: { ja: "ルーテル学院大学 講話", en: "Guest talk at Kyushu Lutheran College", vi: "Bài nói chuyện tại Đại học Lutheran" },
+    host:  { ja: "ルーテル学院大学", en: "Kyushu Lutheran College", vi: "Đại học Lutheran Kyushu" },
+    venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
+    audience: { ja: "学生", en: "Students", vi: "Sinh viên" },
+    url: ""
+  },
+  {
+    date: "2023-01-08", kind: "出演", upcoming: false,
+    title: { ja: "ミスコンテスト 出演", en: "Beauty pageant appearance", vi: "Tham gia cuộc thi sắc đẹp" },
+    host:  { ja: "", en: "", vi: "" },
+    venue: { ja: "熊本県", en: "Kumamoto", vi: "Kumamoto" },
+    audience: { ja: "", en: "", vi: "" },
+    url: ""
+  },
+  {
+    date: "2022-11-25", kind: "講演", upcoming: false,
+    title: { ja: "差別と人権に関する講演", en: "On Discrimination and Human Rights", vi: "Về phân biệt đối xử và quyền con người" },
+    host:  { ja: "熊本学園大学", en: "Kumamoto Gakuen University", vi: "Đại học Kumamoto Gakuen" },
+    venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
+    audience: { ja: "学生・教職員", en: "Students and faculty", vi: "Sinh viên và giảng viên" },
+    url: ""
+  },
+  {
+    date: "2021-02-22", kind: "研修", upcoming: false,
+    title: { ja: "経営者研修会 〜外国人材の受入れについて〜", en: "Executive training: employing foreign talent", vi: "Tập huấn lãnh đạo: tiếp nhận nhân lực nước ngoài" },
+    host:  { ja: "熊本県青果卸市場連合会", en: "Kumamoto Produce Wholesale Market Federation", vi: "Liên hiệp chợ đầu mối rau quả Kumamoto" },
+    venue: { ja: "熊本市 ／ 田崎市場会館", en: "Kumamoto City / Tasaki Market Hall", vi: "TP. Kumamoto / Hội trường chợ Tasaki" },
+    audience: { ja: "経営者", en: "Business owners", vi: "Doanh nhân" },
+    url: ""
+  },
+  {
+    date: "2020-12-11", kind: "講演", upcoming: false,
+    title: { ja: "大津高校 講演会", en: "Guest lecture at Ozu High School", vi: "Buổi nói chuyện tại THPT Ozu" },
+    host:  { ja: "熊本県立大津高等学校", en: "Ozu High School, Kumamoto", vi: "THPT Ozu, Kumamoto" },
+    venue: { ja: "熊本県大津町", en: "Ozu Town, Kumamoto", vi: "Thị trấn Ozu, Kumamoto" },
+    audience: { ja: "高校生", en: "High school students", vi: "Học sinh THPT" },
+    url: ""
   }
 ];
 
@@ -208,7 +266,8 @@ const KIND_LABELS = {
   "MC":     { ja: "MC・司会", en: "MC",        vi: "Dẫn chương trình" },
   "パネル": { ja: "パネル",   en: "Panel",     vi: "Tọa đàm" },
   "研修":   { ja: "研修",     en: "Training",  vi: "Đào tạo" },
-  "取材":   { ja: "取材",     en: "Interview", vi: "Phỏng vấn" }
+  "取材":   { ja: "取材",     en: "Interview", vi: "Phỏng vấn" },
+  "出演":   { ja: "出演",     en: "Appearance", vi: "Xuất hiện" }
 };
 
 /* =========================================================================
