@@ -9,9 +9,6 @@ const UI = {
   name:        { ja: "澤村 友里",  en: "Yuri Sawamura", vi: "Yuri Sawamura" },
   nameSur:     { ja: "澤村",       en: "Yuri",          vi: "Yuri" },
   nameGiven:   { ja: "友里",       en: "Sawamura",      vi: "Sawamura" },
-  roleLine1:   { ja: "ベトナムトレーディング株式会社 代表取締役社長", en: "President & CEO, Vietnam Trading Co., Ltd.", vi: "Tổng giám đốc Công ty CP Việt Nam Trading" },
-  roleLine2:   { ja: "日越協同組合 代表理事", en: "Representative Director, Nichietsu Cooperative", vi: "Chủ tịch Nghiệp đoàn Nichietsu" },
-  roleLine3:   { ja: "熊本イノベーションベース（KUIB）代表理事", en: "Representative Director, Kumamoto Innovation Base", vi: "Chủ tịch Kumamoto Innovation Base" },
 
   /* ナビ */
   navProfile:  { ja: "プロフィール", en: "Profile",   vi: "Hồ sơ" },
@@ -24,12 +21,6 @@ const UI = {
   navCta:      { ja: "講演を依頼する", en: "Book a talk", vi: "Mời diễn thuyết" },
 
   /* ヒーロー */
-  heroEyebrow: { ja: "講演・イベント出演のご依頼を承ります", en: "Available for talks and events", vi: "Nhận lời mời diễn thuyết và sự kiện" },
-  heroLead:    { ja: "ベトナムに生まれ、12歳で熊本へ。<br>ことばも文化も分からない場所から始めた経営者が、<br>現場で見てきたことを、そのままお話しします。",
-                 en: "Born in Vietnam, in Kumamoto from the age of twelve.<br>An executive who started from a place where she understood neither the language nor the culture, speaking plainly about what she has actually seen.",
-                 vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi.<br>Một nhà quản lý khởi đầu từ nơi không hiểu cả ngôn ngữ lẫn văn hóa, kể lại đúng những gì đã thấy." },
-  heroBtn1:    { ja: "講演を依頼する", en: "Book a talk",     vi: "Mời diễn thuyết" },
-  heroBtn2:    { ja: "講演実績を見る", en: "See past talks",  vi: "Xem hoạt động" },
   scroll:      { ja: "SCROLL", en: "SCROLL", vi: "SCROLL" },
 
   /* 数字 */
@@ -37,7 +28,7 @@ const UI = {
   statSince:   { ja: "学生起業から",   en: "Founded as a student", vi: "Khởi nghiệp sinh viên" },
   statGroup:   { ja: "教育実績（ベトナム人材）", en: "Trained (Vietnamese talent)", vi: "Đã đào tạo (nhân lực Việt)" },
   statLang:    { ja: "受入れ支援した事業所（九州各県）", en: "Client workplaces across Kyushu", vi: "Cơ sở đã hỗ trợ tại Kyushu" },
-  unitTimes:   { ja: "回〜",  en: "+",  vi: "+" },
+  unitTimes:   { ja: "回",  en: "",  vi: "" },
   unitYear:    { ja: "年",   en: "",   vi: "" },
   unitCorp:    { ja: "名", en: "",   vi: "" },
   unitLang:    { ja: "", en: "",   vi: "" },
@@ -176,7 +167,8 @@ if (!LANGS.some(l => l.key === LANG)) LANG = "ja";
 function L(v) {
   if (v === null || v === undefined) return "";
   if (typeof v === "string" || Array.isArray(v)) return v;
-  return v[LANG] || v.ja || v.en || "";
+  if (Object.prototype.hasOwnProperty.call(v, LANG)) return v[LANG];   // 空文字も「その言語では表示しない」として尊重
+  return v.ja !== undefined ? v.ja : (v.en !== undefined ? v.en : "");
 }
 /* UI文言のショートカット */
 function T(key) { return L(UI[key]); }

@@ -58,11 +58,7 @@ let CUR_CAT = 'all';
 
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secGallery');
-  document.getElementById('ph-lead').textContent = {
-    ja:'ポートレート、講演やイベントの記録、写真集。写真をクリックすると拡大表示されます。',
-    en:'Portraits, records from talks and events, and photo books. Click any photo to enlarge.',
-    vi:'Ảnh chân dung, tư liệu sự kiện và các bộ ảnh. Nhấp vào ảnh để phóng to.'
-  }[LANG];
+  document.getElementById('ph-lead').textContent = L(PAGE_LEADS.gallery);
 
   document.getElementById('toc').innerHTML = [
     ['#photos',T('secGallery')],['#albums',T('secAlbums')]
@@ -91,7 +87,7 @@ function renderPage(){
       <div class="ph"><img src="${a.cover}" alt=""></div>
       <div class="bd">
         <h4>${esc(a.title)}</h4>
-        <div class="m">${esc(a.date)}　／　${esc(L(a.count))}</div>
+        <div class="m">${esc(a.date)}${L(a.count)?'　／　'+esc(L(a.count)):''}</div>
         <p>${esc(L(a.desc))}</p>
         ${go}
       </div></article>`;}).join('');

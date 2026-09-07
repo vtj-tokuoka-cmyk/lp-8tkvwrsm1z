@@ -57,11 +57,7 @@ function renderPage(){
   if (post) { drawPost(post); return; }
 
   document.getElementById('ph-title').textContent = T('secBlog');
-  document.getElementById('ph-lead').textContent = {
-    ja:'講演のご報告、日々のお知らせ、日本とベトナムのあいだで考えていること。',
-    en:'Reports from talks, announcements, and thoughts from between Japan and Vietnam.',
-    vi:'Báo cáo các buổi diễn thuyết, thông báo, và những suy nghĩ giữa Nhật Bản và Việt Nam.'
-  }[LANG];
+  document.getElementById('ph-lead').textContent = L(PAGE_LEADS.blog);
   document.getElementById('blog-sample').innerHTML = sampleNote();
 
   const cats = POST_CATS.filter(c=>c.key==='all'||POSTS.some(p=>p.cat===c.key));

@@ -174,29 +174,28 @@
 function renderPage(){
   /* ---- HERO ---- */
   document.getElementById('hero-l').innerHTML = `
-    <div class="eyebrow">${T('heroEyebrow')}</div>
+    <div class="eyebrow">${L(HERO.eyebrow)}</div>
     <h1><span class="sur">${T('nameSur')}</span><em>${T('nameGiven')}</em></h1>
     <div class="romaji">YURI SAWAMURA</div>
     <div class="role">
-      <b>${T('roleLine1')}</b><br>${T('roleLine2')}<br>${T('roleLine3')}
+      ${HERO.roles.map((r,i)=> (i===0?`<b>${esc(L(r))}</b>`:esc(L(r)))).join('<br>')}
     </div>
-    <p class="hero-lead">${T('heroLead')}</p>
+    <p class="hero-lead">${L(HERO.lead)}</p>
     <div class="hero-cta">
-      <a class="btn btn-r" href="#contact">${T('heroBtn1')} →</a>
-      <a class="btn btn-o" href="lecture.html">${T('heroBtn2')}</a>
+      <a class="btn btn-r" href="#contact">${L(HERO.btnPrimary)} →</a>
+      <a class="btn btn-o" href="lecture.html">${L(HERO.btnSecondary)}</a>
     </div>
     <div class="theme-chips">
       <span class="lbl">${T('secTopics')}</span>
-      ${TOPICS.map(t=>`<a href="lecture.html#topics">${esc(L(t.title))}</a>`).join('')}
+      ${TOPICS.map(t=>`<a href="lecture.html#topics" title="${esc(L(t.title))}">${esc(L(t.short||t.title))}</a>`).join('')}
     </div>`;
 
   /* ---- STATS ---- */
   const done = LECTURES.filter(l=>!l.upcoming).length;
-  document.getElementById('stats').innerHTML = `
-    <div class="stat rv"><b>${done}<small>${T('unitTimes')}</small></b><p>${T('statTalks')}</p></div>
-    <div class="stat rv"><b>2011<small>${T('unitYear')}</small></b><p>${T('statSince')}</p></div>
-    <div class="stat rv"><b>1,050<small>${T('unitCorp')}</small></b><p>${T('statGroup')}</p></div>
-    <div class="stat rv"><b>約70<small>${T('unitLang')}</small></b><p>${T('statLang')}</p></div>`;
+  document.getElementById('stats').innerHTML = STATS.map(st=>{
+    const v = st.value==='auto:lectures' ? done : L(st.value);
+    return `<div class="stat rv"><b>${esc(String(v))}<small>${esc(L(st.unit))}</small></b><p>${esc(L(st.label))}</p></div>`;
+  }).join('');
 
   /* ---- 目次 ---- */
   document.getElementById('t-toc').textContent = T('secIndex');
@@ -251,18 +250,12 @@ function renderPage(){
     </div>`).join('');
 
   /* ---- BAND ---- */
-  document.getElementById('band').innerHTML = {
-    ja:`<h3>ひとりで来日させない、ひとりで働かせない。<em>いつもそばに、仲間がいる。</em></h3>`,
-    en:`<h3>No one arrives alone. No one works alone. <em>There are always colleagues beside you.</em></h3>`,
-    vi:`<h3>Không ai đến một mình, không ai làm việc một mình. <em>Luôn có đồng đội bên cạnh.</em></h3>`
-  }[LANG] + `<p>WITH OUR MEMBERS ／ VIETNAM × JAPAN</p>`;
+  document.getElementById('band').innerHTML = `<h3>${L(BAND.title)}</h3><p>${esc(BAND.sub)}</p>`;
 
   /* ---- 07 こだわり ---- */
   document.getElementById('t-kodawari').textContent = T('secKodawari');
   document.getElementById('kod-lead').innerHTML = `
-    <h3 class="kod-title rv">${{ja:'こだわり、<em>真心をかたちに。</em>',
-      en:'Kodawari —<br><em>sincerity, made visible.</em>',
-      vi:'Kodawari —<br><em>tận tâm, thành hình.</em>'}[LANG]}</h3>
+    <h3 class="kod-title rv">${L(KODAWARI_TITLE)}</h3>
     <p class="kod-lead rv">${esc(L(KODAWARI_LEAD))}</p>`;
   document.getElementById('kod-cards').innerHTML = KODAWARI.map(k=>`
     <article class="card kod-card rv">
@@ -307,30 +300,10 @@ function renderPage(){
   renderForm();
 }
 
-/* プロフィール本文 */
+/* プロフィール本文（data.js の PROFILE_TEXT を表示） */
 function profileText(){
-  const txt = {
-    ja:[`<p class="lead">ベトナムに生まれ、12歳で熊本へ。<em>ふたつの故郷をつなぐ架け橋でありたい</em>。</p>`,
-        `<p>1989年、ベトナムに生まれました。10歳のときに両親が離婚し、母とふたりで歩むことになります。2002年、母が日本人と再婚したことで日本へ渡ることが決まり、翌2003年、12歳で熊本県玉名市へ。日本語がほとんど分からないまま、中学1年生の2学期から日本の学校に通い始めました。ことばも文化も分からない場所で過ごした数年間が、いまの仕事の原点です。</p>`,
-        `<p>北稜高校を経て、熊本県立大学 総合管理学部へ。2011年、大学3年生のときに、学生でありながら創業しました。就職活動をせず、自分で会社をつくる道を選んだのです。</p>`,
-        `<p>2013年に大学を卒業し、同じ年にベトナムトレーディング株式会社を設立。専門学校でベトナム人留学生に日本語を教えた経験から母国の若者のニーズを知ったことが、人材事業の出発点になりました。2016年に日越協同組合、2017年にはベトナム現地法人を設立しています。</p>`,
-        `<p>2016年には、第一子を出産した10日後に日越協同組合を設立しました。その3か月後に熊本地震。人生でも事業でもいちばん大きな出来事が、わずか3か月のあいだに重なった年でした。</p>`,
-        `<p>現在はグループ3法人を率いながら、熊本イノベーションベース（KUIB）代表理事、熊本県立大学 総合管理学部OBOG会 代表幹事も務めています。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>`,
-        `<p>講演では、この現場で見てきたことを、きれいごとではない言葉でお話しします。</p>`],
-    en:[`<p class="lead">Born in Vietnam, in Kumamoto from the age of twelve. <em>I want to be the bridge between my two homes.</em></p>`,
-        `<p>I was born in Vietnam in 1989. In 2003, at twelve, I came to Japan with my family and settled in Tamana City, Kumamoto. I entered a Japanese school partway through my first year of junior high, barely able to speak the language. Those years — in a place where I understood neither the words nor the customs — are the origin of everything I do now.</p>`,
-        `<p>After Hokuryo High School I entered the Faculty of Administration at the Prefectural University of Kumamoto. In 2011, in my third year and still a student, I founded my first company. I chose to build something rather than go through recruitment season.</p>`,
-        `<p>I graduated in 2013 and founded Vietnam Trading Co., Ltd. the same year. Teaching Japanese to Vietnamese students at a vocational college had shown me what young people back home actually needed, and that became the starting point of the recruitment business. Nichietsu Cooperative followed in 2016, and our Vietnamese entity in 2017.</p>`,
-        `<p>Today I lead three group entities while also serving as Representative Director of Kumamoto Innovation Base and as Representative Secretary of my university's alumni association. The principle has never changed: to be the company in Japan that understands Vietnamese people best.</p>`,
-        `<p>When I speak, I talk about what I have actually seen on the ground — not the polished version.</p>`],
-    vi:[`<p class="lead">Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. <em>Tôi muốn là nhịp cầu nối hai quê hương.</em></p>`,
-        `<p>Tôi sinh năm 1989 tại Việt Nam. Năm 2003, khi 12 tuổi, tôi cùng gia đình sang Nhật và đến TP. Tamana, Kumamoto. Tôi vào học trường Nhật từ giữa năm lớp 7 khi hầu như chưa biết tiếng. Những năm tháng ở nơi không hiểu cả ngôn ngữ lẫn văn hóa chính là khởi nguồn của công việc hiện tại.</p>`,
-        `<p>Sau THPT Hokuryo, tôi vào Khoa Quản trị tổng hợp, Đại học tỉnh lập Kumamoto. Năm 2011, khi đang là sinh viên năm 3, tôi đã khởi nghiệp thay vì đi xin việc.</p>`,
-        `<p>Năm 2013 tôi tốt nghiệp và thành lập Công ty Việt Nam Trading. Kinh nghiệm dạy tiếng Nhật cho du học sinh Việt đã cho tôi thấy nhu cầu thực sự của người trẻ quê nhà — đó là điểm khởi đầu của mảng nhân lực. Tiếp đó là Nghiệp đoàn Nichietsu (2016) và pháp nhân tại Việt Nam (2017).</p>`,
-        `<p>Hiện tôi dẫn dắt 3 pháp nhân, đồng thời là Chủ tịch Kumamoto Innovation Base và Đại diện Hội cựu sinh viên. Phương châm không đổi: trở thành công ty thấu hiểu người Việt nhất tại Nhật Bản.</p>`,
-        `<p>Khi diễn thuyết, tôi kể đúng những gì đã thấy tại hiện trường.</p>`]
-  }[LANG];
-  return txt.join('') + `<div class="sign"><span>${T('roleLine1')}</span><strong>${T('name')}</strong></div>`;
+  const paras = L(PROFILE_TEXT).join('');
+  return paras + `<div class="sign"><span>${esc(L(HERO.roles[0]))}</span><strong>${T('name')}</strong></div>`;
 }
 
 /* ライトボックス */

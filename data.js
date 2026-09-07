@@ -34,6 +34,7 @@ const CONTACT_TEL_LABEL = "(+81) 096-234-8770";
 const TOPICS = [
   {
     no: "01",
+    short: { ja: "外国人材で勝ち抜く経営戦略", en: "Foreign-talent strategy", vi: "Chiến lược nhân lực nước ngoài" },
     catch: { ja: "「採れない」より、「続かない」が本当の課題。",
              en: "The real problem isn't hiring. It's keeping people.",
              vi: "Vấn đề thật không phải tuyển được, mà là giữ được." },
@@ -43,7 +44,7 @@ const TOPICS = [
     body: { ja: "制度の正しい理解から、定着のノウハウ、そして海外展開まで。技能実習・特定技能の受入れを現場で支えてきた立場から、外国人材を「採用する」だけで終わらせないための実務を、数字と事例でお話しします。",
             en: "From getting the rules right, to retention, to expanding overseas. Drawing on years of supporting technical intern and specified skilled worker placements, this talk covers what it actually takes so that hiring foreign talent does not end at hiring.",
             vi: "Từ hiểu đúng chế độ, đến bí quyết giữ chân, và mở rộng ra nước ngoài. Chia sẻ thực tiễn để việc tuyển dụng nhân lực nước ngoài không dừng lại ở khâu tuyển." },
-    forwhom: { ja: "外国人材を受け入れている・これから受け入れる企業の経営者、人事、現場管理職の方へ",
+    forwhom: { ja: "外国人材を受入れている・これから受入れる企業の経営者、人事、現場管理職の方へ",
                en: "For executives, HR and frontline managers at companies employing foreign workers",
                vi: "Dành cho lãnh đạo, nhân sự và quản lý hiện trường tại doanh nghiệp sử dụng lao động nước ngoài" },
     record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナー、熊本県青果卸市場連合会 経営者研修会ほかで実施",
@@ -53,6 +54,7 @@ const TOPICS = [
   },
   {
     no: "02",
+    short: { ja: "苦難は幸福の門", en: "Hardship is the gate", vi: "Gian nan là cánh cửa" },
     catch: { ja: "ことばの通じない教室から、経営者になるまで。",
              en: "From a classroom where nothing made sense, to running a company.",
              vi: "Từ lớp học không hiểu một lời, đến khi trở thành nhà quản lý." },
@@ -72,6 +74,7 @@ const TOPICS = [
   },
   {
     no: "03",
+    short: { ja: "医療・介護と外国人材", en: "Healthcare & foreign talent", vi: "Y tế & nhân lực nước ngoài" },
     catch: { ja: "命をあずかる現場だからこそ、伝わることばを。",
              en: "Where lives are at stake, words have to land.",
              vi: "Nơi giữ tính mạng con người, lời nói phải thật sự đến được." },
@@ -91,6 +94,7 @@ const TOPICS = [
   },
   {
     no: "04",
+    short: { ja: "学生起業のリアル", en: "Student entrepreneurship", vi: "Khởi nghiệp sinh viên" },
     catch: { ja: "就職活動をせず、大学3年で会社をつくった。",
              en: "I skipped job hunting and built a company in my third year.",
              vi: "Tôi không đi xin việc — năm 3 đại học, tôi lập công ty." },
@@ -110,6 +114,7 @@ const TOPICS = [
   },
   {
     no: "05",
+    short: { ja: "多文化共生のまちづくり", en: "Multicultural communities", vi: "Cộng đồng đa văn hóa" },
     catch: { ja: "隣に住む外国人は、もう「お客さん」ではない。",
              en: "Foreign residents are no longer guests.",
              vi: "Cư dân nước ngoài không còn là khách." },
@@ -285,91 +290,85 @@ const POST_CATS = [
 
 const POSTS = [
   {
-    slug: "kyushu-forum-2026",
-    date: "2026-06-12",
+    slug: "seminar-2026-07",
+    date: "2026-07-30",
     cat: "報告",
     image: "img/p_135.jpg",
-    title: { ja: "九州経済フォーラムで登壇しました",
-             en: "Speaking at the Kyushu Economic Forum",
-             vi: "Phát biểu tại Diễn đàn Kinh tế Kyushu" },
-    excerpt: { ja: "「日本一ベトナム人を理解している会社のつくり方」というテーマで、九州各地の経営者のみなさまへお話しする機会をいただきました。",
-               en: "I had the chance to speak to business owners from across Kyushu on building Japan's most Vietnam-literate company.",
-               vi: "Tôi có cơ hội chia sẻ với các doanh nhân khắp Kyushu về cách xây dựng công ty thấu hiểu người Việt nhất Nhật Bản." },
+    title: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナーに登壇しました",
+             en: "Speaking at the Kumamoto Bar Association & Chamber of Commerce joint seminar",
+             vi: "Phát biểu tại hội thảo của Đoàn luật sư & Phòng Thương mại Kumamoto" },
+    excerpt: { ja: "「人手不足を『外国人材』で勝ち抜く経営戦略」をテーマに、制度の正しい理解から定着のノウハウ、海外展開までを現場目線でお話ししました。",
+               en: "On winning the labour shortage with foreign talent — from getting the rules right, to retention, to expanding overseas.",
+               vi: "Chủ đề: chiến lược vượt qua thiếu hụt nhân lực bằng nhân sự nước ngoài — từ hiểu đúng chế độ đến giữ chân và mở rộng ra nước ngoài." },
     body: {
       ja: `
-      <p>先日、福岡市で開かれた九州経済フォーラムにお招きいただき、「日本一ベトナム人を理解している会社のつくり方」というテーマでお話ししてきました。会場には九州各地から約200名の経営者のみなさまにお集まりいただきました。</p>
-      <h3>いちばん多かった質問</h3>
-      <p>講演後の質疑応答で、いちばん多かったのは「なぜ彼らは、何も言わずに辞めてしまうのか」という質問でした。これは私が長年、ずっと向き合ってきたテーマでもあります。</p>
-      <p>答えはシンプルで、「言えない」のではなく「言っても変わらないと思っている」から。信頼関係ができていれば、彼らはちゃんと相談してくれます。相談されないのは、相談する価値がないと判断されているということなんです。</p>
-      <h3>ご感想をありがとうございました</h3>
-      <p>終了後、たくさんの方から「明日から現場でやってみます」というお声をいただきました。こういう瞬間があるから、講演の仕事はやめられません。お招きいただいた事務局のみなさま、ありがとうございました。</p>`,
+      <p>7月28日、熊本県弁護士会と熊本商工会議所の共催セミナーにお招きいただき、「人手不足を『外国人材』で勝ち抜く経営戦略 〜制度の正しい理解から定着のノウハウ、海外展開までを現場目線で語る〜」と題してお話ししました。</p>
+      <h3>お伝えしたこと</h3>
+      <p>技能実習・特定技能といった制度をまず正しく理解すること。そのうえで、採用したあとに「続く」職場をどうつくるか。さらに、育てた人材とともに海外へ展開していく可能性まで。受入れの現場を支えてきた立場から、きれいごとではない実務をお伝えしました。</p>
+      <h3>ご参加のみなさまへ</h3>
+      <p>経営者・実務担当者の方々にご参加いただき、終了後もたくさんのご質問をいただきました。主催の熊本県弁護士会、熊本商工会議所のみなさま、ありがとうございました。</p>`,
       en: `
-      <p>I was recently invited to the Kyushu Economic Forum in Fukuoka to speak on "Building Japan's Most Vietnam-Literate Company." Around 200 business owners from across Kyushu attended.</p>
-      <h3>The most common question</h3>
-      <p>During the Q&amp;A, the question I heard most was: "Why do they quit without saying anything?" This is something I have spent years thinking about.</p>
-      <p>The answer is simple. It isn't that they can't speak up — it's that they believe speaking up won't change anything. Where trust exists, people do come and talk to you. If nobody is coming to you, it means you have been judged as not worth talking to.</p>
+      <p>On 28 July I was invited to speak at a seminar co-hosted by the Kumamoto Bar Association and the Kumamoto Chamber of Commerce and Industry, under the title "Winning the Labour Shortage with Foreign Talent — from getting the rules right, to retention, to overseas expansion, told from the field."</p>
+      <h3>What I covered</h3>
+      <p>Understanding the technical intern and specified skilled worker systems correctly first; then how to build a workplace where people stay after they are hired; and finally the possibility of expanding overseas together with the people you have trained. I spoke from the practical side, not the polished one.</p>
       <h3>Thank you</h3>
-      <p>Afterwards, many people told me they would try these ideas on their own shop floors the next day. Moments like that are why I keep accepting speaking invitations. My thanks to everyone at the organising office.</p>`
+      <p>Business owners and practitioners attended, and many questions followed the talk. My thanks to the Bar Association and the Chamber for the invitation.</p>`
     }
   },
   {
-    slug: "vietnam-festival-2026",
-    date: "2026-03-25",
-    cat: "お知らせ",
-    image: "img/p_9298.jpg",
-    title: { ja: "ベトナムフェスティバル熊本2026で総合司会をつとめました",
-             en: "Hosting Vietnam Festival Kumamoto 2026",
-             vi: "Dẫn chương trình Lễ hội Việt Nam Kumamoto 2026" },
-    excerpt: { ja: "熊本城ホールで開催されたベトナムフェスティバル熊本2026にて、日本語・ベトナム語の二言語で総合司会をつとめさせていただきました。",
-               en: "I served as master of ceremonies — in both Japanese and Vietnamese — at Vietnam Festival Kumamoto 2026, held at Kumamoto Castle Hall.",
-               vi: "Tôi đảm nhận vai trò dẫn chương trình song ngữ Nhật – Việt tại Lễ hội Việt Nam Kumamoto 2026." },
-    body: {
-      ja: `
-      <p>3月22日、熊本城ホールで開催された「ベトナムフェスティバル熊本2026」にて、総合司会をつとめさせていただきました。当日は約3,000名の方にご来場いただき、会場は一日中にぎやかでした。</p>
-      <h3>二言語での司会について</h3>
-      <p>日本語とベトナム語、両方で進行するイベントの司会は、単なる「翻訳」ではありません。同じことを言っていても、笑いどころも、間の取り方も、ふたつの言語では変わってきます。</p>
-      <p>私は両方の国で育ったので、その「温度差」を肌で分かっているつもりです。日本人のお客さまにもベトナム人のお客さまにも、同じ熱量で楽しんでいただけるように心がけました。</p>
-      <h3>また来年も</h3>
-      <p>ご来場くださったみなさま、運営スタッフのみなさま、本当にありがとうございました。またお会いしましょう。</p>`,
-      en: `
-      <p>On 22 March I hosted Vietnam Festival Kumamoto 2026 at Kumamoto Castle Hall. Around 3,000 people came through the doors, and the hall was lively from open to close.</p>
-      <h3>On hosting in two languages</h3>
-      <p>Hosting an event in both Japanese and Vietnamese is not simply translation. Even when you say the same thing, where the laughs land and how long you hold a pause are different in each language.</p>
-      <p>Having grown up in both countries, I feel that difference in temperature instinctively. My aim was for Japanese and Vietnamese guests alike to enjoy the day with the same intensity.</p>
-      <h3>See you next year</h3>
-      <p>My sincere thanks to everyone who attended and to all the event staff.</p>`
-    }
-  },
-  {
-    slug: "why-i-started",
-    date: "2026-01-08",
-    cat: "コラム",
+    slug: "rinri-2024-12",
+    date: "2024-12-09",
+    cat: "報告",
     image: "img/p_8480.jpg",
-    title: { ja: "なぜ私は、学生のまま会社をつくったのか",
-             en: "Why I Started a Company While Still a Student",
-             vi: "Vì sao tôi lập công ty khi còn là sinh viên" },
-    excerpt: { ja: "大学在学中に、学生でありながら創業しました。あのとき何を考えていたのか、いまだからこそ書けることを書いてみます。",
-               en: "I founded my company while still an undergraduate. Here is what I was actually thinking at the time.",
-               vi: "Tôi lập công ty khi vẫn còn là sinh viên. Đây là những gì tôi đã nghĩ vào thời điểm đó." },
+    title: { ja: "熊本東倫理法人会で「苦難は幸福の門」をお話ししました",
+             en: "“Hardship is the Gate to Happiness” — at Kumamoto East Rinri Corporation Association",
+             vi: "“Gian nan là cánh cửa của hạnh phúc” — tại Hội Đạo đức doanh nghiệp Kumamoto Đông" },
+    excerpt: { ja: "12月6日のモーニングセミナーで、ベトナムに生まれ、12歳で熊本へ来てからの歩みをお話しする機会をいただきました。",
+               en: "At the 6 December morning seminar I shared my journey since arriving in Kumamoto from Vietnam at the age of twelve.",
+               vi: "Tại hội thảo buổi sáng ngày 6/12, tôi chia sẻ hành trình từ khi đến Kumamoto ở tuổi 12." },
     body: {
       ja: `
-      <p>大学3年生のとき、私は学生でありながら会社をつくりました。就職活動の時期です。まわりはみんなスーツを着て説明会に行っていました。</p>
-      <h3>「通訳してくれない?」から始まった</h3>
-      <p>きっかけは本当に小さなことでした。熊本の中小企業の社長さんから「ベトナムの取引先とやりとりしたいんだけど、通訳してくれない?」と頼まれたんです。</p>
-      <p>やってみたら、通訳だけでは足りませんでした。文化がちがう、商習慣がちがう、何を失礼と感じるかがちがう。言葉を訳すだけでは、話がまとまらないんです。</p>
-      <h3>誰かがやらないといけない</h3>
-      <p>そのとき思いました。両方の国が分かる人間が間に立たないと、この2つの国はうまくつながらない。そして私は、たまたま両方が分かる場所に立っていました。</p>
-      <p>だから始めた、というのが正直なところです。壮大なビジョンがあったわけではありません。目の前に困っている人がいて、自分にできることがあった。それだけでした。</p>
-      <p>いまも、やっていることの本質は変わっていないと思います。</p>`,
+      <p>12月6日、熊本東倫理法人会のモーニングセミナーで「苦難は幸福の門 〜試練をチャンスに変える生き方〜」と題し、これまでの歩みをお話ししました。</p>
+      <h3>お話しした内容</h3>
+      <p>ベトナムに生まれ、12歳で熊本県玉名市へ。日本語がほとんど分からないまま中学1年生の2学期から日本の学校に通い始めたこと。大学3年で会社をつくったこと。第一子を出産した10日後に日越協同組合を設立し、その3か月後に熊本地震で被災したこと。</p>
+      <p>いま振り返ると、そのひとつひとつが次の扉を開いてくれていたと感じています。「苦難は幸福の門」という言葉を、自分の歩みに重ねてお伝えしました。</p>
+      <h3>ありがとうございました</h3>
+      <p>早朝からお集まりいただいた会員のみなさま、貴重な機会をありがとうございました。</p>`,
       en: `
-      <p>In my third year at university, while still a student, I started a company. It was recruitment season. Everyone around me was in a suit, going to information sessions.</p>
-      <h3>It began with "could you interpret for us?"</h3>
-      <p>The trigger was genuinely small. The president of a small Kumamoto company asked me: "I want to deal with a Vietnamese supplier — could you interpret for us?"</p>
-      <p>When I tried, interpreting alone wasn't enough. The cultures differ, the business customs differ, what counts as rude differs. Translating the words does not close the deal.</p>
-      <h3>Somebody had to do it</h3>
-      <p>That was when it struck me: unless someone who understands both countries stands in the middle, these two countries will not connect properly. And I happened to be standing exactly there.</p>
-      <p>So I began. Honestly, there was no grand vision. There was someone in front of me with a problem, and there was something I could do about it. That was all.</p>
-      <p>I don't think the essence of what I do has changed since.</p>`
+      <p>On 6 December I spoke at the Kumamoto East Rinri Corporation Association morning seminar under the title "Hardship is the Gate to Happiness — turning trials into opportunity."</p>
+      <h3>What I shared</h3>
+      <p>Being born in Vietnam and moving to Tamana City, Kumamoto at twelve; entering a Japanese junior high partway through the year, barely able to speak the language; founding a company in my third year of university; establishing Nichietsu Cooperative ten days after the birth of my first child, and being hit by the Kumamoto earthquakes three months later.</p>
+      <p>Looking back, each of those moments opened the next door. I tried to convey the phrase "hardship is the gate to happiness" through my own path.</p>
+      <h3>Thank you</h3>
+      <p>My thanks to the members who gathered so early in the morning for this valuable opportunity.</p>`
+    }
+  },
+  {
+    slug: "podcast-ep80",
+    date: "2026-09-04",
+    cat: "お知らせ",
+    image: "img/p_9002.jpg",
+    title: { ja: "「ゆりと学ぶビジネス日本語」第80回を配信しました",
+             en: "Episode 80 of “Business Japanese with Yuri” is out",
+             vi: "Đã phát hành tập 80 “Học tiếng Nhật thương mại cùng Yuri”" },
+    excerpt: { ja: "YouTubeで毎週配信しているビジネス日本語のポッドキャストが第80回を迎えました。日本語版とベトナム語版の両方をお届けしています。",
+               en: "The weekly business-Japanese podcast on YouTube has reached its 80th episode, in both Japanese and Vietnamese editions.",
+               vi: "Podcast tiếng Nhật thương mại hàng tuần trên YouTube đã đến tập 80, có cả bản Nhật và bản Việt." },
+    body: {
+      ja: `
+      <p>YouTubeの「YURI SAWAMURA Channel」で毎週配信している「ゆりと学ぶビジネス日本語」が、第80回を迎えました。</p>
+      <h3>どんな番組か</h3>
+      <p>職場で実際に使われる日本語を、シャドーイングで身につける番組です。聞いて、まねして、口に出す。それを繰り返すことで、自然な聞き取りと会話力を育てていきます。</p>
+      <p>日本語版に加えてベトナム語版も配信しており、日本で働くベトナム人の方はもちろん、外国人材を受入れている企業のみなさまにもご覧いただいています。</p>
+      <h3>ご視聴はこちら</h3>
+      <p>最新回はこのサイトの「SNS・動画」ページからそのまま再生できます。チャンネル登録もぜひお願いします。</p>`,
+      en: `
+      <p>"Business Japanese with Yuri", the weekly series on the YURI SAWAMURA Channel on YouTube, has reached its 80th episode.</p>
+      <h3>About the series</h3>
+      <p>It teaches the Japanese actually used in the workplace through shadowing — listen, imitate, say it aloud — building natural listening and speaking skills through repetition.</p>
+      <p>Alongside the Japanese edition there is a Vietnamese edition, watched by Vietnamese people working in Japan and by the companies that employ them.</p>
+      <h3>Watch</h3>
+      <p>The latest episode plays right on this site's Social &amp; Video page. Subscriptions are very welcome.</p>`
     }
   }
 ];
@@ -414,7 +413,7 @@ const ALBUMS = [
     title: "PORTRAIT 2026",
     cover: "img/p_8743.jpg",
     date: "2026",
-    count: { ja: "全24点", en: "24 photos", vi: "24 ảnh" },
+    count: "",
     desc: { ja: "百合の花とともに撮影したポートレートシリーズ。柔らかい光の中で、自然体の表情を切り取っていただきました。",
             en: "A portrait series shot with lilies, capturing natural expressions in soft light.",
             vi: "Bộ ảnh chân dung cùng hoa loa kèn, ghi lại biểu cảm tự nhiên trong ánh sáng dịu." },
@@ -424,7 +423,7 @@ const ALBUMS = [
     title: "ÁO DÀI",
     cover: "img/p_9298.jpg",
     date: "2026",
-    count: { ja: "全18点", en: "18 photos", vi: "18 ảnh" },
+    count: "",
     desc: { ja: "ベトナムの民族衣装アオザイをまとった撮影シリーズ。もうひとつの故郷への想いを込めて。",
             en: "A series in áo dài, Vietnam's national dress — a tribute to my other home.",
             vi: "Bộ ảnh với áo dài Việt Nam — gửi gắm tình cảm với quê hương thứ hai." },
@@ -434,7 +433,7 @@ const ALBUMS = [
     title: "VIETNAM TRADING の日々",
     cover: "img/p_49.jpg",
     date: "2026",
-    count: { ja: "全32点", en: "32 photos", vi: "32 ảnh" },
+    count: "",
     desc: { ja: "熊本本社とスタッフたちの記録。日本とベトナム、ふたつの国の仲間が働く風景です。",
             en: "Life at our Kumamoto head office — colleagues from two countries at work.",
             vi: "Nhật ký tại trụ sở Kumamoto — đồng nghiệp từ hai quốc gia cùng làm việc." },
@@ -807,7 +806,7 @@ const SNS_ACCOUNTS = [
     lead: { ja: "ビジネス日本語のポッドキャストを配信中",
             en: "A business-Japanese podcast, published regularly",
             vi: "Podcast tiếng Nhật thương mại, cập nhật thường xuyên" },
-    body: { ja: "「ゆりと学ぶビジネス日本語」を毎週配信しています。シャドーイングで自然な聞き取りと会話力が身につく内容で、日本語版とベトナム語版の両方をお届けしています。日本で働くベトナム人の方はもちろん、外国人材を受け入れている企業のみなさまにも見ていただいています。",
+    body: { ja: "「ゆりと学ぶビジネス日本語」を毎週配信しています。シャドーイングで自然な聞き取りと会話力が身につく内容で、日本語版とベトナム語版の両方をお届けしています。日本で働くベトナム人の方はもちろん、外国人材を受入れている企業のみなさまにも見ていただいています。",
             en: "I publish “Business Japanese with Yuri” every week — shadowing practice for natural listening and conversation, in both Japanese and Vietnamese editions. It is watched by Vietnamese people working in Japan and by the companies that employ them.",
             vi: "Tôi phát “Học tiếng Nhật thương mại cùng Yuri” hàng tuần — luyện shadowing để nghe và nói tự nhiên, có cả bản tiếng Nhật và tiếng Việt." },
     cta: { ja: "チャンネル登録する", en: "Subscribe", vi: "Đăng ký kênh" }
@@ -887,3 +886,99 @@ const MEDIA = [
              vi: "Hoạt động của tập đoàn được giới thiệu trong phóng sự về tiếp nhận nhân lực nước ngoài." },
     url: "" }
 ];
+
+/* =========================================================================
+   15. トップページの文言（ヒーロー・数字・帯・本文）
+   ------------------------------------------------------------------------
+   ここを書き換えれば、トップページの主要な文章がすべて変わります。
+   ========================================================================= */
+const HERO = {
+  eyebrow: { ja: "講演・イベント出演のご依頼を承ります", en: "Available for talks and events", vi: "Nhận lời mời diễn thuyết và sự kiện" },
+  roles: [
+    { ja: "ベトナムトレーディング株式会社 代表取締役社長", en: "President & CEO, Vietnam Trading Co., Ltd.", vi: "Tổng giám đốc Công ty CP Việt Nam Trading" },
+    { ja: "日越協同組合 代表理事", en: "Representative Director, Nichietsu Cooperative", vi: "Chủ tịch Nghiệp đoàn Nichietsu" },
+    { ja: "熊本イノベーションベース（KUIB）代表理事", en: "Representative Director, Kumamoto Innovation Base", vi: "Chủ tịch Kumamoto Innovation Base" }
+  ],
+  lead: { ja: "ベトナムに生まれ、12歳で熊本へ。<br>ことばも文化も分からない場所から始めた経営者が、<br>現場で見てきたことを、そのままお話しします。",
+          en: "Born in Vietnam, in Kumamoto from the age of twelve.<br>An executive who started from a place where she understood neither the language nor the culture, speaking plainly about what she has actually seen.",
+          vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi.<br>Một nhà quản lý khởi đầu từ nơi không hiểu cả ngôn ngữ lẫn văn hóa, kể lại đúng những gì đã thấy." },
+  btnPrimary:   { ja: "講演を依頼する", en: "Book a talk",    vi: "Mời diễn thuyết" },
+  btnSecondary: { ja: "講演実績を見る", en: "See past talks", vi: "Xem hoạt động" }
+};
+
+/* ▼ ヒーロー下の4つの数字
+   value に "auto:lectures" と書くと、LECTURES の件数が自動で入ります。   */
+const STATS = [
+  { value: "auto:lectures", unit: { ja: "回", en: "",  vi: "" },
+    label: { ja: "これまでの登壇", en: "Talks delivered", vi: "Buổi đã diễn thuyết" } },
+  { value: "2011",          unit: { ja: "年", en: "",  vi: "" },
+    label: { ja: "学生起業から", en: "Founded as a student", vi: "Khởi nghiệp sinh viên" } },
+  { value: "1,050",         unit: { ja: "名", en: "",  vi: "" },
+    label: { ja: "教育実績（ベトナム人材）", en: "Trained (Vietnamese talent)", vi: "Đã đào tạo (nhân lực Việt)" } },
+  { value: { ja: "約70", en: "70+", vi: "~70" }, unit: "",
+    label: { ja: "受入れ支援した事業所（九州各県）", en: "Client workplaces across Kyushu", vi: "Cơ sở đã hỗ trợ tại Kyushu" } }
+];
+
+/* ▼ プロフィールの本文（lead が最初の大きい一文、あとは段落） */
+const PROFILE_TEXT = {
+    ja:[`<p class="lead">ベトナムに生まれ、12歳で熊本へ。<em>ふたつの故郷をつなぐ架け橋でありたい</em>。</p>`,
+        `<p>1989年、ベトナムに生まれました。10歳のときに両親が離婚し、母とふたりで歩むことになります。2002年、母が日本人と再婚したことで日本へ渡ることが決まり、翌2003年、12歳で熊本県玉名市へ。日本語がほとんど分からないまま、中学1年生の2学期から日本の学校に通い始めました。ことばも文化も分からない場所で過ごした数年間が、いまの仕事の原点です。</p>`,
+        `<p>北稜高校を経て、熊本県立大学 総合管理学部へ。2011年、大学3年生のときに、学生でありながら創業しました。就職活動をせず、自分で会社をつくる道を選んだのです。</p>`,
+        `<p>2013年に大学を卒業し、同じ年にベトナムトレーディング株式会社を設立。専門学校でベトナム人留学生に日本語を教えた経験から母国の若者のニーズを知ったことが、人材事業の出発点になりました。2016年に日越協同組合、2017年にはベトナム現地法人を設立しています。</p>`,
+        `<p>2016年には、第一子を出産した10日後に日越協同組合を設立しました。その3か月後に熊本地震。人生でも事業でもいちばん大きな出来事が、わずか3か月のあいだに重なった年でした。</p>`,
+        `<p>現在はグループ3法人を率いながら、熊本イノベーションベース（KUIB）代表理事、熊本県立大学 総合管理学部OBOG会 代表幹事も務めています。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>`,
+        `<p>講演では、この現場で見てきたことを、きれいごとではない言葉でお話しします。</p>`],
+    en:[`<p class="lead">Born in Vietnam, in Kumamoto from the age of twelve. <em>I want to be the bridge between my two homes.</em></p>`,
+        `<p>I was born in Vietnam in 1989. In 2003, at twelve, I came to Japan with my family and settled in Tamana City, Kumamoto. I entered a Japanese school partway through my first year of junior high, barely able to speak the language. Those years — in a place where I understood neither the words nor the customs — are the origin of everything I do now.</p>`,
+        `<p>After Hokuryo High School I entered the Faculty of Administration at the Prefectural University of Kumamoto. In 2011, in my third year and still a student, I founded my first company. I chose to build something rather than go through recruitment season.</p>`,
+        `<p>I graduated in 2013 and founded Vietnam Trading Co., Ltd. the same year. Teaching Japanese to Vietnamese students at a vocational college had shown me what young people back home actually needed, and that became the starting point of the recruitment business. Nichietsu Cooperative followed in 2016, and our Vietnamese entity in 2017.</p>`,
+        `<p>Today I lead three group entities while also serving as Representative Director of Kumamoto Innovation Base and as Representative Secretary of my university's alumni association. The principle has never changed: to be the company in Japan that understands Vietnamese people best.</p>`,
+        `<p>When I speak, I talk about what I have actually seen on the ground — not the polished version.</p>`],
+    vi:[`<p class="lead">Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. <em>Tôi muốn là nhịp cầu nối hai quê hương.</em></p>`,
+        `<p>Tôi sinh năm 1989 tại Việt Nam. Năm 2003, khi 12 tuổi, tôi cùng gia đình sang Nhật và đến TP. Tamana, Kumamoto. Tôi vào học trường Nhật từ giữa năm lớp 7 khi hầu như chưa biết tiếng. Những năm tháng ở nơi không hiểu cả ngôn ngữ lẫn văn hóa chính là khởi nguồn của công việc hiện tại.</p>`,
+        `<p>Sau THPT Hokuryo, tôi vào Khoa Quản trị tổng hợp, Đại học tỉnh lập Kumamoto. Năm 2011, khi đang là sinh viên năm 3, tôi đã khởi nghiệp thay vì đi xin việc.</p>`,
+        `<p>Năm 2013 tôi tốt nghiệp và thành lập Công ty Việt Nam Trading. Kinh nghiệm dạy tiếng Nhật cho du học sinh Việt đã cho tôi thấy nhu cầu thực sự của người trẻ quê nhà — đó là điểm khởi đầu của mảng nhân lực. Tiếp đó là Nghiệp đoàn Nichietsu (2016) và pháp nhân tại Việt Nam (2017).</p>`,
+        `<p>Hiện tôi dẫn dắt 3 pháp nhân, đồng thời là Chủ tịch Kumamoto Innovation Base và Đại diện Hội cựu sinh viên. Phương châm không đổi: trở thành công ty thấu hiểu người Việt nhất tại Nhật Bản.</p>`,
+        `<p>Khi diễn thuyết, tôi kể đúng những gì đã thấy tại hiện trường.</p>`]
+  };
+
+/* ▼ 集合写真の上に重ねる一文 */
+const BAND = {
+  title: {
+    ja:`ひとりで来日させない、ひとりで働かせない。<em>いつもそばに、仲間がいる。</em>`,
+    en:`No one arrives alone. No one works alone. <em>There are always colleagues beside you.</em>`,
+    vi:`Không ai đến một mình, không ai làm việc một mình. <em>Luôn có đồng đội bên cạnh.</em>`
+  },
+  sub: "WITH OUR MEMBERS ／ VIETNAM × JAPAN"
+};
+
+/* ▼ 「こだわり」の見出し */
+const KODAWARI_TITLE = {ja:'こだわり、<em>真心をかたちに。</em>',
+      en:'Kodawari —<br><em>sincerity, made visible.</em>',
+      vi:'Kodawari —<br><em>tận tâm, thành hình.</em>'};
+
+/* =========================================================================
+   16. 各ページの冒頭文
+   ========================================================================= */
+const PAGE_LEADS = {
+  lecture: {
+    ja:'テーマ・パッケージ・ご依頼の流れ・これまでの登壇まで、ご検討に必要な情報をまとめています。',
+    en:'Topics, packages, how to book and past appearances — everything you need in order to decide.',
+    vi:'Chủ đề, gói dịch vụ, quy trình đặt lịch và hoạt động đã qua — mọi thông tin bạn cần.'
+  },
+  sns:     {
+    ja:'YouTube・Instagram・TikTok・Facebook で発信しています。最新の動画は、このページからそのまま再生できます。',
+    en:'I post on YouTube, Instagram, TikTok and Facebook. The latest videos play right here on this page.',
+    vi:'Tôi hoạt động trên YouTube, Instagram, TikTok và Facebook. Video mới nhất có thể xem ngay tại đây.'
+  },
+  blog:    {
+    ja:'講演のご報告、日々のお知らせ、日本とベトナムのあいだで考えていること。',
+    en:'Reports from talks, announcements, and thoughts from between Japan and Vietnam.',
+    vi:'Báo cáo các buổi diễn thuyết, thông báo, và những suy nghĩ giữa Nhật Bản và Việt Nam.'
+  },
+  gallery: {
+    ja:'ポートレート、講演やイベントの記録、写真集。写真をクリックすると拡大表示されます。',
+    en:'Portraits, records from talks and events, and photo books. Click any photo to enlarge.',
+    vi:'Ảnh chân dung, tư liệu sự kiện và các bộ ảnh. Nhấp vào ảnh để phóng to.'
+  }
+};

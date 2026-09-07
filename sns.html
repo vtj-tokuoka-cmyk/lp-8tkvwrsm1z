@@ -62,11 +62,7 @@
 <script>
 function renderPage(){
   document.getElementById('ph-title').textContent = T('navSns');
-  document.getElementById('ph-lead').textContent = {
-    ja:'YouTube・Instagram・TikTok・Facebook で発信しています。最新の動画は、このページからそのまま再生できます。',
-    en:'I post on YouTube, Instagram, TikTok and Facebook. The latest videos play right here on this page.',
-    vi:'Tôi hoạt động trên YouTube, Instagram, TikTok và Facebook. Video mới nhất có thể xem ngay tại đây.'
-  }[LANG];
+  document.getElementById('ph-lead').textContent = L(PAGE_LEADS.sns);
 
   document.getElementById('toc').innerHTML = [
     ['#video',T('secVideo')],['#accounts',T('secIndex')==='目次'?'各SNSのご紹介':'Accounts'],['#cta',T('navCta')]

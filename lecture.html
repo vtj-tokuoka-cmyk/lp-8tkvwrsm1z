@@ -105,11 +105,7 @@ let CUR_KIND = 'all';
 
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secLecture');
-  document.getElementById('ph-lead').textContent = {
-    ja:'テーマ・パッケージ・ご依頼の流れ・これまでの登壇まで、ご検討に必要な情報をまとめています。',
-    en:'Topics, packages, how to book and past appearances — everything you need in order to decide.',
-    vi:'Chủ đề, gói dịch vụ, quy trình đặt lịch và hoạt động đã qua — mọi thông tin bạn cần.'
-  }[LANG];
+  document.getElementById('ph-lead').textContent = L(PAGE_LEADS.lecture);
 
   document.getElementById('toc').innerHTML = [
     ['#topics',T('secTopics')],['#packages',T('secPackage')],['#steps',T('secSteps')],

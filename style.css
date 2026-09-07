@@ -54,7 +54,7 @@ nav a.navlink:hover,nav a.navlink.cur{opacity:1;color:var(--red)}
 .burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:1000px){
+@media(max-width:1200px){
   .burger{display:block;order:3}
   nav{position:fixed;inset:56px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
     background:rgba(253,251,249,.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
@@ -139,7 +139,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:52px var(--pad) 
   font-size:11px;font-weight:700;letter-spacing:.08em;transition:.25s;white-space:nowrap}
 .lang button:hover{opacity:.85}
 .lang button.on{background:var(--red);color:#fff;opacity:1}
-@media(max-width:1000px){.lang{margin-top:18px;align-self:center}.lang button{padding:9px 18px;font-size:13px}}
+@media(max-width:1200px){.lang{margin-top:18px;align-self:center}.lang button{padding:9px 18px;font-size:13px}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;
@@ -338,7 +338,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:52px var(--pad) 
 
 /* masonry (ギャラリーページ) */
 .masonry{columns:3;column-gap:15px}
-@media(max-width:1000px){.masonry{columns:2}}
+@media(max-width:1200px){.masonry{columns:2}}
 @media(max-width:560px){.masonry{columns:1}}
 .masonry figure{break-inside:avoid;margin:0 0 15px;position:relative;border-radius:var(--radius);overflow:hidden;
   cursor:zoom-in;box-shadow:0 10px 30px rgba(160,14,31,.08)}
@@ -437,7 +437,7 @@ form .btn{width:100%;margin-top:6px}
 .hd-sns{gap:6px}
 .hd-sns a{width:30px;height:30px;border:1px solid var(--line);color:var(--ink-2)}
 .hd-sns svg{width:14px;height:14px}
-@media(max-width:1000px){
+@media(max-width:1200px){
   .hd-sns{justify-content:center;margin-top:18px;gap:12px}
   .hd-sns a{width:42px;height:42px}
   .hd-sns svg{width:18px;height:18px}
