@@ -11,8 +11,8 @@ const UI = {
   nameGiven:   { ja: "友里",       en: "Sawamura",      vi: "Sawamura" },
 
   /* ナビ */
+  navHome:     { ja: "トップ",       en: "Home",      vi: "Trang chủ" },
   navProfile:  { ja: "プロフィール", en: "Profile",   vi: "Hồ sơ" },
-  navKodawari: { ja: "こだわり",     en: "My Values", vi: "Giá trị" },
   navLecture:  { ja: "講演実績",     en: "Speaking",  vi: "Diễn thuyết" },
   navBlog:     { ja: "ブログ",       en: "Blog",      vi: "Blog" },
   navGallery:  { ja: "ギャラリー",   en: "Gallery",   vi: "Thư viện ảnh" },
@@ -214,8 +214,8 @@ function snsIcon(key) { return SNS_ICONS[key] || ""; }
 
 /* ---------- ヘッダー / フッター ---------- */
 const NAV_ITEMS = [
+  { key: "navHome",     href: "index.html" },
   { key: "navProfile",  href: "profile.html" },
-  { key: "navKodawari", href: "index.html#kodawari" },
   { key: "navLecture",  href: "lecture.html" },
   { key: "navSns",      href: "sns.html" },
   { key: "navBlog",     href: "blog.html" },
