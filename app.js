@@ -35,12 +35,12 @@ const UI = {
   /* 数字 */
   statTalks:   { ja: "これまでの登壇", en: "Talks delivered", vi: "Buổi đã diễn thuyết" },
   statSince:   { ja: "学生起業から",   en: "Founded as a student", vi: "Khởi nghiệp sinh viên" },
-  statGroup:   { ja: "受入れ支援した事業所（九州各県）", en: "Client workplaces across Kyushu", vi: "Cơ sở đã hỗ trợ tại Kyushu" },
-  statLang:    { ja: "支援した人材の失踪者数", en: "Trainees who absconded", vi: "Số người bỏ trốn" },
+  statGroup:   { ja: "教育実績（ベトナム人材）", en: "Trained (Vietnamese talent)", vi: "Đã đào tạo (nhân lực Việt)" },
+  statLang:    { ja: "受入れ支援した事業所（九州各県）", en: "Client workplaces across Kyushu", vi: "Cơ sở đã hỗ trợ tại Kyushu" },
   unitTimes:   { ja: "回〜",  en: "+",  vi: "+" },
   unitYear:    { ja: "年",   en: "",   vi: "" },
-  unitCorp:    { ja: "", en: "",   vi: "" },
-  unitLang:    { ja: "人", en: "",   vi: "" },
+  unitCorp:    { ja: "名", en: "",   vi: "" },
+  unitLang:    { ja: "", en: "",   vi: "" },
 
   /* セクション見出し */
   secTopics:   { ja: "講演テーマ",         en: "Speaking Topics",  vi: "Chủ đề diễn thuyết" },

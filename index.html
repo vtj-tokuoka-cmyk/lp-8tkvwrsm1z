@@ -231,8 +231,8 @@ function renderPage(){
   document.getElementById('stats').innerHTML = `
     <div class="stat rv"><b>${done}<small>${T('unitTimes')}</small></b><p>${T('statTalks')}</p></div>
     <div class="stat rv"><b>2011<small>${T('unitYear')}</small></b><p>${T('statSince')}</p></div>
-    <div class="stat rv"><b>約70<small>${T('unitCorp')}</small></b><p>${T('statGroup')}</p></div>
-    <div class="stat rv"><b>0<small>${T('unitLang')}</small></b><p>${T('statLang')}</p></div>`;
+    <div class="stat rv"><b>1,050<small>${T('unitCorp')}</small></b><p>${T('statGroup')}</p></div>
+    <div class="stat rv"><b>約70<small>${T('unitLang')}</small></b><p>${T('statLang')}</p></div>`;
 
   /* ---- 目次 ---- */
   document.getElementById('t-toc').textContent = T('secIndex');
@@ -349,9 +349,10 @@ function renderPage(){
 function profileText(){
   const txt = {
     ja:[`<p class="lead">ベトナムに生まれ、12歳で熊本へ。<em>ふたつの故郷をつなぐ架け橋でありたい</em>。</p>`,
-        `<p>1989年、ベトナムに生まれました。2003年、12歳のときに家族とともに来日し、熊本県玉名市へ。日本語がほとんど分からないまま、中学1年生の2学期から日本の学校に通い始めました。ことばも文化も分からない場所で過ごした数年間が、いまの仕事の原点です。</p>`,
+        `<p>1989年、ベトナムに生まれました。10歳のときに両親が離婚し、母とふたりで歩むことになります。2002年、母が日本人と再婚したことで日本へ渡ることが決まり、翌2003年、12歳で熊本県玉名市へ。日本語がほとんど分からないまま、中学1年生の2学期から日本の学校に通い始めました。ことばも文化も分からない場所で過ごした数年間が、いまの仕事の原点です。</p>`,
         `<p>北稜高校を経て、熊本県立大学 総合管理学部へ。2011年、大学3年生のときに、学生でありながら創業しました。就職活動をせず、自分で会社をつくる道を選んだのです。</p>`,
         `<p>2013年に大学を卒業し、同じ年にベトナムトレーディング株式会社を設立。専門学校でベトナム人留学生に日本語を教えた経験から母国の若者のニーズを知ったことが、人材事業の出発点になりました。2016年に日越協同組合、2017年にはベトナム現地法人を設立しています。</p>`,
+        `<p>2016年には、第一子を出産した10日後に日越協同組合を設立しました。その3か月後に熊本地震。人生でも事業でもいちばん大きな出来事が、わずか3か月のあいだに重なった年でした。</p>`,
         `<p>現在はグループ3法人を率いながら、熊本イノベーションベース（KUIB）代表理事、熊本県立大学 総合管理学部OBOG会 代表幹事も務めています。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>`,
         `<p>講演では、この現場で見てきたことを、きれいごとではない言葉でお話しします。</p>`],
     en:[`<p class="lead">Born in Vietnam, in Kumamoto from the age of twelve. <em>I want to be the bridge between my two homes.</em></p>`,
