@@ -591,3 +591,10 @@ form .btn{width:100%;margin-top:6px}
 .topic .rec{font-size:11.5px;color:var(--red-deep);background:#fff;border:1px dashed rgba(215,25,45,.4);
   border-radius:8px;padding:9px 13px;margin-bottom:16px;line-height:1.6}
 .topic .rec::before{content:"実績　";font-weight:700;letter-spacing:.1em;font-size:10px}
+
+/* ---------- 下層ページ冒頭の写真つきレイアウト ---------- */
+.page-hero.has-img .in{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,60px);align-items:center}
+.page-hero .ph-img{display:block;position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:3/2}
+.page-hero .ph-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:45% 30%;transition:transform 1.2s ease}
+.page-hero .ph-img:hover img{transform:scale(1.03)}
+@media(max-width:900px){.page-hero.has-img .in{grid-template-columns:1fr}.page-hero .ph-img{aspect-ratio:16/10}}
