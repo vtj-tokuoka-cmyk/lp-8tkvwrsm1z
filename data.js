@@ -41,16 +41,16 @@ const TOPICS = [
     title: { ja: "人手不足を『外国人材』で勝ち抜く経営戦略",
              en: "Winning the Labour Shortage with Foreign Talent",
              vi: "Chiến lược vượt qua thiếu hụt nhân lực bằng nhân sự nước ngoài" },
-    body: { ja: "制度の正しい理解から、定着のノウハウ、そして海外展開まで。技能実習・特定技能の受入れを現場で支えてきた立場から、外国人材を「採用する」だけで終わらせないための実務を、数字と事例でお話しします。",
-            en: "From getting the rules right, to retention, to expanding overseas. Drawing on years of supporting technical intern and specified skilled worker placements, this talk covers what it actually takes so that hiring foreign talent does not end at hiring.",
+    body: { ja: "制度の正しい理解から、定着のノウハウ、そして海外展開まで。製造・農業・医療介護など業種ごとの現場を支えてきた立場から、外国人材を「採用する」だけで終わらせないための実務を、数字と事例でお話しします。",
+            en: "From getting the rules right, to retention, to expanding overseas. Drawing on years of supporting placements across manufacturing, agriculture and healthcare, this talk covers what it actually takes so that hiring foreign talent does not end at hiring.",
             vi: "Từ hiểu đúng chế độ, đến bí quyết giữ chân, và mở rộng ra nước ngoài. Chia sẻ thực tiễn để việc tuyển dụng nhân lực nước ngoài không dừng lại ở khâu tuyển." },
-    forwhom: { ja: "外国人材を受入れている・これから受入れる企業の経営者、人事、現場管理職の方へ",
+    forwhom: { ja: "外国人材を受入れている・これから受入れる企業の経営者、人事、現場管理職の方へ（医療・介護向けの構成も可能）",
                en: "For executives, HR and frontline managers at companies employing foreign workers",
                vi: "Dành cho lãnh đạo, nhân sự và quản lý hiện trường tại doanh nghiệp sử dụng lao động nước ngoài" },
-    record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナー、熊本県青果卸市場連合会 経営者研修会ほかで実施",
-              en: "Delivered for the Kumamoto Bar Association and Chamber of Commerce, the Kumamoto Produce Wholesale Market Federation and others",
+    record: { ja: "熊本県弁護士会・熊本商工会議所 共催セミナー、熊本県医師会、熊本県青果卸市場連合会 経営者研修会ほかで実施",
+              en: "Delivered for the Kumamoto Bar Association and Chamber of Commerce, the Kumamoto Medical Association, the Kumamoto Produce Wholesale Market Federation and others",
               vi: "Đã trình bày tại hội thảo của Đoàn luật sư và Phòng Thương mại Kumamoto, Liên hiệp chợ đầu mối rau quả và nhiều nơi khác" },
-    tags: { ja: ["経営者向け", "企業研修", "業界団体"], en: ["Executives", "Corporate", "Industry bodies"], vi: ["Lãnh đạo", "Doanh nghiệp", "Hiệp hội"] }
+    tags: { ja: ["経営者向け", "企業研修", "医療・介護", "業界団体"], en: ["Executives", "Corporate", "Healthcare", "Industry bodies"], vi: ["Lãnh đạo", "Doanh nghiệp", "Y tế", "Hiệp hội"] }
   },
   {
     no: "02",
@@ -74,26 +74,6 @@ const TOPICS = [
   },
   {
     no: "03",
-    short: { ja: "医療・介護と外国人材", en: "Healthcare & foreign talent", vi: "Y tế & nhân lực nước ngoài" },
-    catch: { ja: "命をあずかる現場だからこそ、伝わることばを。",
-             en: "Where lives are at stake, words have to land.",
-             vi: "Nơi giữ tính mạng con người, lời nói phải thật sự đến được." },
-    title: { ja: "医療・介護の現場で、外国人材と共に働く",
-             en: "Working Alongside Foreign Talent in Healthcare and Care",
-             vi: "Làm việc cùng nhân lực nước ngoài trong y tế và điều dưỡng" },
-    body: { ja: "指示が伝わらない、報告が上がってこない、患者さんとの会話が続かない。医療・介護の現場でよく起きるつまずきを、やさしい日本語の使い方と受入れ体制づくりの両面から解きほぐします。",
-            en: "Instructions that don't get through, reports that never come, conversations with patients that stall. This talk unpacks the stumbling blocks common in healthcare and care settings, from both plain-Japanese technique and the design of the receiving organisation.",
-            vi: "Chỉ thị không truyền đạt được, báo cáo không được gửi lên, hội thoại với bệnh nhân bị đứt quãng. Gỡ rối những vướng mắc thường gặp trong y tế và điều dưỡng." },
-    forwhom: { ja: "病院、介護施設、医療・福祉の業界団体、現場の管理職の方へ",
-               en: "For hospitals, care facilities, healthcare associations and frontline managers",
-               vi: "Dành cho bệnh viện, cơ sở điều dưỡng, hiệp hội y tế và quản lý hiện trường" },
-    record: { ja: "熊本県医師会での講演で実施",
-              en: "Delivered for the Kumamoto Medical Association",
-              vi: "Đã trình bày tại Hiệp hội Y khoa Kumamoto" },
-    tags: { ja: ["医療・介護", "管理職向け", "やさしい日本語"], en: ["Healthcare", "Managers", "Plain Japanese"], vi: ["Y tế", "Quản lý", "Tiếng Nhật đơn giản"] }
-  },
-  {
-    no: "04",
     short: { ja: "学生起業のリアル", en: "Student entrepreneurship", vi: "Khởi nghiệp sinh viên" },
     catch: { ja: "就職活動をせず、大学3年で会社をつくった。",
              en: "I skipped job hunting and built a company in my third year.",
@@ -113,7 +93,7 @@ const TOPICS = [
     tags: { ja: ["大学・高校", "キャリア教育", "若手向け"], en: ["Universities", "Careers", "Youth"], vi: ["Đại học", "Hướng nghiệp", "Người trẻ"] }
   },
   {
-    no: "05",
+    no: "04",
     short: { ja: "多文化共生のまちづくり", en: "Multicultural communities", vi: "Cộng đồng đa văn hóa" },
     catch: { ja: "隣に住む外国人は、もう「お客さん」ではない。",
              en: "Foreign residents are no longer guests.",
