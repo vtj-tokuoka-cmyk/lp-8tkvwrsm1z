@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SNS・動画 ｜ 澤村 友里</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bar"></div>
+<header id="site-header" data-cur="sns.html"></header>
+
+<div class="page-hero">
+  <div class="in">
+    <div class="eyebrow">SOCIAL &amp; VIDEO</div>
+    <h1 id="ph-title"></h1>
+    <p id="ph-lead"></p>
+  </div>
+</div>
+
+<!-- 目次 -->
+<section style="padding-top:clamp(30px,4vw,50px);padding-bottom:0">
+  <div class="toc rv" id="toc"></div>
+</section>
+
+<!-- 01 最新動画 -->
+<section id="video" style="padding-top:clamp(40px,5vw,70px)">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" id="t-video"></h2>
+    <span class="sec-sub">LATEST VIDEO</span>
+  </div>
+  <p class="sec-lead rv" id="t-video-lead"></p>
+  <div class="video-main rv" id="player"></div>
+  <h3 class="sub-head rv" id="t-pickup"></h3>
+  <div class="vids" id="vids"></div>
+  <div class="more-wrap rv"><a class="btn btn-o" id="t-yt" href="" target="_blank" rel="noopener"></a></div>
+</section>
+
+<!-- 02 各SNSの紹介 -->
+<section id="accounts" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-accounts"></h2>
+    <span class="sec-sub">ACCOUNTS</span>
+  </div>
+  <p class="sec-lead rv" id="t-accounts-lead"></p>
+  <div class="accs" id="accs"></div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
+  <div class="rv" id="cta-in"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="parts.js"></script>
+<script>
+function renderPage(){
+  document.getElementById('ph-title').textContent = T('navSns');
+  document.getElementById('ph-lead').textContent = {
+    ja:'YouTube・Instagram・TikTok・Facebook で発信しています。最新の動画は、このページからそのまま再生できます。',
+    en:'I post on YouTube, Instagram, TikTok and Facebook. The latest videos play right here on this page.',
+    vi:'Tôi hoạt động trên YouTube, Instagram, TikTok và Facebook. Video mới nhất có thể xem ngay tại đây.'
+  }[LANG];
+
+  document.getElementById('toc').innerHTML = [
+    ['#video',T('secVideo')],['#accounts',T('secIndex')==='目次'?'各SNSのご紹介':'Accounts'],['#cta',T('navCta')]
+  ].map((x,i)=>`<a href="${x[0]}">${String(i+1).padStart(2,'0')}　${x[1]}</a>`).join('');
+
+  /* 01 動画 */
+  document.getElementById('t-video').textContent      = T('secVideo');
+  document.getElementById('t-video-lead').textContent = T('secVideoLead');
+  document.getElementById('t-pickup').textContent     = T('secPickup');
+  renderPlayer();
+  document.getElementById('vids').innerHTML = VIDEOS.map(videoCard).join('');
+  bindVideoClicks();
+
+  const yt = SNS_ACCOUNTS.find(a=>a.key==='youtube');
+  const ytBtn = document.getElementById('t-yt');
+  if (yt) { ytBtn.href = yt.url; ytBtn.textContent = T('watchOnYt') + ' ↗'; }
+  else { ytBtn.style.display = 'none'; }
+
+  /* 02 アカウント紹介 */
+  document.getElementById('t-accounts').textContent = {
+    ja:'各SNSのご紹介', en:'Our Accounts', vi:'Các tài khoản'
+  }[LANG];
+  document.getElementById('t-accounts-lead').textContent = {
+    ja:'それぞれ発信している内容がちがいます。目的に合わせてフォローしてください。',
+    en:'Each account carries different content — follow whichever fits your interest.',
+    vi:'Mỗi tài khoản có nội dung khác nhau — hãy theo dõi kênh phù hợp với bạn.'
+  }[LANG];
+  document.getElementById('accs').innerHTML = SNS_ACCOUNTS.map(accountCard).join('');
+
+  /* CTA */
+  document.getElementById('cta-in').innerHTML = `
+    <h2 style="font-family:var(--serif);font-size:clamp(26px,4.4vw,50px);font-weight:500;line-height:1.4;margin-bottom:18px">
+      ${{ja:'講演・MCのご依頼を<br>お待ちしています。',
+         en:'I would love to speak<br>at your event.',
+         vi:'Rất mong được<br>đồng hành cùng sự kiện của bạn.'}[LANG]}</h2>
+    <p style="max-width:36em;margin:0 auto 34px;font-size:14.5px;opacity:.95">
+      ${{ja:'テーマ・時間・ご予算はご相談に応じます。まずはお気軽にお問い合わせください。',
+         en:'Topic, length and budget are all negotiable. Please get in touch.',
+         vi:'Chủ đề, thời lượng và ngân sách đều có thể trao đổi. Xin vui lòng liên hệ.'}[LANG]}</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-w" href="index.html#contact">${T('navCta')} →</a>
+      <a class="btn btn-gh" href="tel:${CONTACT_TEL}">☎ ${CONTACT_TEL_LABEL}</a>
+    </div>`;
+}
+</script>
+</body>
+</html>

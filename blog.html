@@ -45,6 +45,7 @@
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script src="parts.js"></script>
 <script>
 let CUR_CAT = 'all';
 
@@ -82,17 +83,6 @@ function drawList(){
     : `<p class="empty">${T('preparing')}</p>`;
 }
 
-function postCard(p){
-  const cat = (POST_CATS.find(c=>c.key===p.cat)||{}).label || p.cat;
-  return `<a class="card post rv" href="blog.html?p=${encodeURIComponent(p.slug)}">
-    ${p.image?`<div class="ph"><img src="${p.image}" alt=""></div>`:''}
-    <div class="bd">
-      <div class="top"><span class="tag">${esc(L(cat))}</span><time>${fmtDate(p.date)}</time></div>
-      <h3>${esc(L(p.title))}</h3>
-      <p>${esc(L(p.excerpt))}</p>
-      <span class="go">${T('readMore')} →</span>
-    </div></a>`;
-}
 
 function drawPost(p){
   document.title = L(p.title) + ' ｜ 澤村 友里';

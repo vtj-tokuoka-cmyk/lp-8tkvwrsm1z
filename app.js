@@ -114,7 +114,43 @@ const UI = {
                  en: "Be the bridge between Japan and Vietnam, and act for the next hundred years of both countries.",
                  vi: "Trở thành cầu nối Nhật – Việt, hành động vì tương lai 100 năm tới của hai nước." },
   ftMenu:      { ja: "メニュー",   en: "Menu",     vi: "Menu" },
-  ftGroupSite: { ja: "グループサイト", en: "Group sites", vi: "Trang của tập đoàn" }
+  ftGroupSite: { ja: "グループサイト", en: "Group sites", vi: "Trang của tập đoàn" },
+  ftSns:       { ja: "SNS",        en: "Social",   vi: "Mạng xã hội" },
+
+  /* 追加セクション */
+  navSns:      { ja: "SNS・動画",  en: "Social & Video", vi: "Mạng XH & Video" },
+  secPackage:  { ja: "講演パッケージ", en: "Speaking Packages", vi: "Gói diễn thuyết" },
+  secPackageLead:{ ja: "ご依頼の目的に合わせて、4つの形をご用意しています。ここにない形でもご相談ください。",
+                   en: "Four formats to match your purpose. Other arrangements can be discussed.",
+                   vi: "Bốn hình thức theo mục đích của bạn. Các hình thức khác xin vui lòng trao đổi." },
+  secSteps:    { ja: "ご依頼の流れ", en: "How to Book", vi: "Quy trình đặt lịch" },
+  secStepsLead:{ ja: "はじめてのご依頼でも迷わないよう、お問い合わせから当日まで6つのステップでご案内します。",
+                 en: "Six steps from first enquiry to the day itself, so first-time organisers never feel lost.",
+                 vi: "Sáu bước từ khi liên hệ đến ngày diễn ra, để bạn không bối rối." },
+  secMedia:    { ja: "メディア出演", en: "In the Media", vi: "Truyền thông" },
+  secSpeaker:  { ja: "講師情報", en: "Speaker Information", vi: "Thông tin diễn giả" },
+  secSpeakerLead:{ ja: "ご検討にあたって必要な情報をまとめました。記載のない条件もご相談ください。",
+                   en: "The practical details you need in order to decide. Other arrangements can be discussed.",
+                   vi: "Thông tin thực tế cần cho quyết định của bạn. Điều kiện khác xin trao đổi." },
+  secBio:      { ja: "略歴", en: "Biography", vi: "Tiểu sử" },
+  secVideo:    { ja: "最新の動画", en: "Latest Video", vi: "Video mới nhất" },
+  secVideoLead:{ ja: "YouTubeチャンネルの最新回をそのまま再生できます。",
+                 en: "Play the latest episode from the YouTube channel right here.",
+                 vi: "Xem tập mới nhất từ kênh YouTube ngay tại đây." },
+  secPickup:   { ja: "ピックアップ動画", en: "Featured Videos", vi: "Video nổi bật" },
+
+  /* ボタン・ラベル */
+  perTime:     { ja: "所要時間", en: "Duration", vi: "Thời lượng" },
+  included:    { ja: "含まれるもの", en: "What's included", vi: "Bao gồm" },
+  bestFor:     { ja: "こんな場面に", en: "Best for", vi: "Phù hợp với" },
+  quoteOnly:   { ja: "個別お見積り", en: "Quoted individually", vi: "Báo giá riêng" },
+  popular:     { ja: "いちばん多いご依頼", en: "Most requested", vi: "Được yêu cầu nhiều nhất" },
+  forWhom:     { ja: "こんな方へ", en: "For", vi: "Dành cho" },
+  askThis:     { ja: "このテーマで相談する", en: "Enquire about this topic", vi: "Hỏi về chủ đề này" },
+  pickPackage: { ja: "このパッケージで相談する", en: "Enquire about this package", vi: "Hỏi về gói này" },
+  moreSns:     { ja: "SNS・動画をすべて見る", en: "See all social and video", vi: "Xem tất cả mạng xã hội & video" },
+  watchOnYt:   { ja: "YouTubeで見る", en: "Watch on YouTube", vi: "Xem trên YouTube" },
+  followUs:    { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
 };
 
 /* ---------- 言語 ---------- */
@@ -163,14 +199,23 @@ function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
 
+/* ---------- SNSアイコン ---------- */
+const SNS_ICONS = {
+  youtube:   '<svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>',
+  tiktok:    '<svg viewBox="0 0 24 24"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .52.04.76.12V9.69a5.79 5.79 0 0 0-.76-.05A5.69 5.69 0 0 0 4.17 15.3 5.69 5.69 0 0 0 9.86 21a5.69 5.69 0 0 0 5.69-5.69V9.01a7.35 7.35 0 0 0 4.29 1.38V7.3a4.29 4.29 0 0 1-3.24-1.48z"/></svg>',
+  facebook:  '<svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>'
+};
+function snsIcon(key) { return SNS_ICONS[key] || ""; }
+
 /* ---------- ヘッダー / フッター ---------- */
 const NAV_ITEMS = [
   { key: "navProfile",  href: "index.html#profile" },
   { key: "navKodawari", href: "index.html#kodawari" },
   { key: "navLecture",  href: "lecture.html" },
+  { key: "navSns",      href: "sns.html" },
   { key: "navBlog",     href: "blog.html" },
-  { key: "navGallery",  href: "gallery.html" },
-  { key: "navGroup",    href: "index.html#group" }
+  { key: "navGallery",  href: "gallery.html" }
 ];
 
 function renderHeader() {
@@ -187,6 +232,9 @@ function renderHeader() {
   const langBtns = LANGS.map(l =>
     `<button type="button" data-lang="${l.key}" class="${l.key === LANG ? "on" : ""}">${l.label}</button>`
   ).join("");
+  const snsBtns = SNS_ACCOUNTS.map(a =>
+    `<a href="${a.url}" target="_blank" rel="noopener" aria-label="${esc(a.name)}" title="${esc(a.name)}">${snsIcon(a.key)}</a>`
+  ).join("");
   host.innerHTML = `
     <div class="brand"><span class="dot"></span>
       <span>${T("name")}<small>YURI SAWAMURA</small></span>
@@ -194,6 +242,7 @@ function renderHeader() {
     <button class="burger" id="burger" aria-label="menu"><span></span><span></span><span></span></button>
     <nav id="nav">
       ${nav}
+      <div class="sns hd-sns">${snsBtns}</div>
       <a class="navlink nav-cta" href="${onTop ? "#contact" : "index.html#contact"}">${T("navCta")}</a>
       <div class="lang">${langBtns}</div>
     </nav>`;
@@ -218,13 +267,14 @@ function renderFooter() {
         <div class="ft-brand">${T("name")}<small>YURI SAWAMURA</small></div>
         <p style="max-width:26em;margin-top:16px;font-size:13px;color:var(--ink-2)">${T("ftTagline")}</p>
         <div class="sns" style="margin-top:20px">
-          <a href="${SNS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.12.66.67 1.33 1.09 2.12 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.39.67-.66 1.09-1.33 1.39-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.12C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
-          </a>
+          ${SNS_ACCOUNTS.map(a => `<a href="${a.url}" target="_blank" rel="noopener" aria-label="${esc(a.name)}">${snsIcon(a.key)}</a>`).join("")}
         </div>
       </div>
       <div class="ft-col"><h5>${T("ftMenu")}</h5>${menu}</div>
       <div class="ft-col"><h5>${T("ftGroupSite")}</h5>${sites}</div>
+      <div class="ft-col"><h5>${T("ftSns")}</h5>
+        ${SNS_ACCOUNTS.map(a => `<a href="${a.url}" target="_blank" rel="noopener">${esc(a.name)} ↗</a>`).join("")}
+      </div>
     </div>
     <div class="ft-btm">
       <div>© 2013–2026 VIETNAM TRADING ／ KUMAMOTO・HO CHI MINH</div>

@@ -25,10 +25,7 @@
 
 <!-- ============ 目次 ============ -->
 <section id="toc-sec" style="padding-top:clamp(48px,6vw,80px);padding-bottom:0">
-  <div class="sec-head rv">
-    <span class="sec-num">—</span>
-    <h2 class="sec-title" id="t-toc"></h2>
-  </div>
+  <div class="sec-head rv"><span class="sec-num">—</span><h2 class="sec-title" id="t-toc"></h2></div>
   <div class="toc rv" id="toc"></div>
 </section>
 
@@ -43,10 +40,33 @@
   <div class="topics" id="topics-list"></div>
 </section>
 
-<!-- ============ 02 講演実績 ============ -->
-<section id="lecture" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+<!-- ============ 02 講演パッケージ ============ -->
+<section id="packages" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
   <div class="sec-head rv">
     <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-package"></h2>
+    <span class="sec-sub">PACKAGES</span>
+  </div>
+  <p class="sec-lead rv" id="t-package-lead"></p>
+  <div class="packs" id="packs"></div>
+</section>
+
+<!-- ============ 03 ご依頼の流れ ============ -->
+<section id="steps" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title" id="t-steps"></h2>
+    <span class="sec-sub">HOW TO BOOK</span>
+  </div>
+  <p class="sec-lead rv" id="t-steps-lead"></p>
+  <div class="steps" id="steps-list"></div>
+  <div class="more-wrap rv"><a class="btn btn-r" id="t-steps-cta" href="#contact"></a></div>
+</section>
+
+<!-- ============ 04 講演実績 ============ -->
+<section id="lecture" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">04</span>
     <h2 class="sec-title" id="t-lecture"></h2>
     <span class="sec-sub">SPEAKING</span>
   </div>
@@ -55,10 +75,21 @@
   <div class="more-wrap rv"><a class="btn btn-o" id="t-more-lec" href="lecture.html"></a></div>
 </section>
 
-<!-- ============ 03 プロフィール ============ -->
-<section id="profile" style="background:#fff">
+<!-- ============ 05 メディア出演 ============ -->
+<section id="media" style="background:#fff">
   <div class="sec-head rv">
-    <span class="sec-num">03</span>
+    <span class="sec-num">05</span>
+    <h2 class="sec-title" id="t-media"></h2>
+    <span class="sec-sub">MEDIA</span>
+  </div>
+  <div id="media-sample"></div>
+  <div class="media-list rv" id="media-list"></div>
+</section>
+
+<!-- ============ 06 澤村友里について ============ -->
+<section id="profile" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">06</span>
     <h2 class="sec-title" id="t-profile"></h2>
     <span class="sec-sub">PROFILE</span>
   </div>
@@ -69,10 +100,16 @@
     </div>
     <div class="prof-body rv" id="prof-body"></div>
   </div>
-  <div style="margin-top:clamp(50px,7vw,90px)">
-    <h3 class="sub-head rv" id="t-story"></h3>
-    <div class="tl" id="timeline"></div>
-  </div>
+
+  <h3 class="sub-head rv" id="t-bio"></h3>
+  <dl class="spec rv" id="bio-spec"></dl>
+
+  <h3 class="sub-head rv" id="t-story"></h3>
+  <div class="tl" id="timeline"></div>
+
+  <h3 class="sub-head rv" id="t-speaker"></h3>
+  <p class="rv" id="t-speaker-lead" style="color:var(--ink-2);font-size:14.5px;margin-bottom:22px;max-width:44em"></p>
+  <dl class="spec rv" id="speaker-spec"></dl>
 </section>
 
 <!-- ============ BAND ============ -->
@@ -81,10 +118,10 @@
   <div class="band-in rv" id="band"></div>
 </section>
 
-<!-- ============ 04 こだわり ============ -->
+<!-- ============ 07 こだわり ============ -->
 <section id="kodawari">
   <div class="sec-head rv">
-    <span class="sec-num">04</span>
+    <span class="sec-num">07</span>
     <h2 class="sec-title" id="t-kodawari"></h2>
     <span class="sec-sub">MY VALUES</span>
   </div>
@@ -98,10 +135,24 @@
   <div class="kod-cards" id="kod-cards"></div>
 </section>
 
-<!-- ============ 05 グループ体制 ============ -->
-<section id="group" style="background:linear-gradient(180deg,#fff,var(--bg-2))">
+<!-- ============ 08 SNS・最新動画 ============ -->
+<section id="video" style="background:linear-gradient(180deg,#fff,var(--bg-2))">
   <div class="sec-head rv">
-    <span class="sec-num">05</span>
+    <span class="sec-num">08</span>
+    <h2 class="sec-title" id="t-video"></h2>
+    <span class="sec-sub">LATEST VIDEO</span>
+  </div>
+  <p class="sec-lead rv" id="t-video-lead"></p>
+  <div class="video-main rv" id="player"></div>
+  <h3 class="sub-head rv" id="t-pickup"></h3>
+  <div class="vids" id="vids"></div>
+  <div class="more-wrap rv"><a class="btn btn-o" id="t-more-sns" href="sns.html"></a></div>
+</section>
+
+<!-- ============ 09 グループ体制 ============ -->
+<section id="group" style="background:var(--bg)">
+  <div class="sec-head rv">
+    <span class="sec-num">09</span>
     <h2 class="sec-title" id="t-group"></h2>
     <span class="sec-sub">GROUP</span>
   </div>
@@ -111,10 +162,10 @@
   <div class="svc" id="svc-list"></div>
 </section>
 
-<!-- ============ 06 ブログ ============ -->
-<section id="blog">
+<!-- ============ 10 ブログ ============ -->
+<section id="blog" style="background:#fff">
   <div class="sec-head rv">
-    <span class="sec-num">06</span>
+    <span class="sec-num">10</span>
     <h2 class="sec-title" id="t-blog"></h2>
     <span class="sec-sub">BLOG</span>
   </div>
@@ -123,10 +174,10 @@
   <div class="more-wrap rv"><a class="btn btn-o" id="t-more-blog" href="blog.html"></a></div>
 </section>
 
-<!-- ============ 07 ギャラリー ============ -->
+<!-- ============ 11 ギャラリー ============ -->
 <section id="gallery" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
   <div class="sec-head rv">
-    <span class="sec-num">07</span>
+    <span class="sec-num">11</span>
     <h2 class="sec-title" id="t-gallery"></h2>
     <span class="sec-sub">GALLERY</span>
   </div>
@@ -134,10 +185,10 @@
   <div class="more-wrap rv"><a class="btn btn-o" id="t-more-gal" href="gallery.html"></a></div>
 </section>
 
-<!-- ============ 08 お問い合わせ ============ -->
+<!-- ============ 12 お問い合わせ ============ -->
 <section id="contact">
   <div class="sec-head rv">
-    <span class="sec-num">08</span>
+    <span class="sec-num">12</span>
     <h2 class="sec-title" id="t-contact"></h2>
     <span class="sec-sub">CONTACT</span>
   </div>
@@ -154,6 +205,7 @@
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script src="form.js"></script>
+<script src="parts.js"></script>
 <script>
 function renderPage(){
   /* ---- HERO ---- */
@@ -162,14 +214,16 @@ function renderPage(){
     <h1><span class="sur">${T('nameSur')}</span><em>${T('nameGiven')}</em></h1>
     <div class="romaji">YURI SAWAMURA</div>
     <div class="role">
-      <b>${T('roleLine1')}</b><br>
-      ${T('roleLine2')}<br>
-      ${T('roleLine3')}
+      <b>${T('roleLine1')}</b><br>${T('roleLine2')}<br>${T('roleLine3')}
     </div>
     <p class="hero-lead">${T('heroLead')}</p>
     <div class="hero-cta">
       <a class="btn btn-r" href="#contact">${T('heroBtn1')} →</a>
       <a class="btn btn-o" href="lecture.html">${T('heroBtn2')}</a>
+    </div>
+    <div class="theme-chips">
+      <span class="lbl">${T('secTopics')}</span>
+      ${TOPICS.map(t=>`<a href="#topics">${esc(L(t.title))}</a>`).join('')}
     </div>`;
 
   /* ---- STATS ---- */
@@ -183,33 +237,50 @@ function renderPage(){
   /* ---- 目次 ---- */
   document.getElementById('t-toc').textContent = T('secIndex');
   document.getElementById('toc').innerHTML = [
-    ['#topics',T('secTopics')],['#lecture',T('secLecture')],['#profile',T('secProfile')],
-    ['#kodawari',T('secKodawari')],['#group',T('secGroup')],['#blog',T('secBlog')],
-    ['#gallery',T('secGallery')],['#contact',T('secContact')]
+    ['#topics',T('secTopics')],['#packages',T('secPackage')],['#steps',T('secSteps')],
+    ['#lecture',T('secLecture')],['#media',T('secMedia')],['#profile',T('secProfile')],
+    ['#kodawari',T('secKodawari')],['#video',T('secVideo')],['#group',T('secGroup')],
+    ['#blog',T('secBlog')],['#gallery',T('secGallery')],['#contact',T('secContact')]
   ].map((x,i)=>`<a href="${x[0]}">${String(i+1).padStart(2,'0')}　${x[1]}</a>`).join('');
 
   /* ---- 01 講演テーマ ---- */
   document.getElementById('t-topics').textContent = T('secTopics');
   document.getElementById('t-topics-lead').textContent = T('secTopicsLead');
-  document.getElementById('topics-list').innerHTML = TOPICS.map(t=>`
-    <article class="card topic rv">
-      <div class="no">TOPIC ${t.no}</div>
-      <h3>${esc(L(t.title))}</h3>
-      <p>${esc(L(t.body))}</p>
-      <div class="tags">${L(t.tags).map(g=>`<span class="tag">${esc(g)}</span>`).join('')}</div>
-    </article>`).join('');
+  document.getElementById('topics-list').innerHTML = TOPICS.map(topicCard).join('');
 
-  /* ---- 02 講演実績（直近4件） ---- */
+  /* ---- 02 パッケージ ---- */
+  document.getElementById('t-package').textContent = T('secPackage');
+  document.getElementById('t-package-lead').textContent = T('secPackageLead');
+  document.getElementById('packs').innerHTML = PACKAGES.map(packCard).join('');
+
+  /* ---- 03 ご依頼の流れ ---- */
+  document.getElementById('t-steps').textContent = T('secSteps');
+  document.getElementById('t-steps-lead').textContent = T('secStepsLead');
+  document.getElementById('t-steps-cta').textContent = T('navCta') + ' →';
+  document.getElementById('steps-list').innerHTML = STEPS.map(stepCard).join('');
+
+  /* ---- 04 講演実績（直近4件） ---- */
   document.getElementById('t-lecture').textContent = T('secLecture');
   document.getElementById('t-more-lec').textContent = T('moreLecture');
   document.getElementById('lec-sample').innerHTML = sampleNote();
   const recent = LECTURES.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,4);
   document.getElementById('lec-list').innerHTML = recent.map(lecRow).join('');
 
-  /* ---- 03 プロフィール ---- */
-  document.getElementById('t-profile').textContent = T('secProfile');
-  document.getElementById('t-story').textContent = T('secStory');
-  document.getElementById('prof-body').innerHTML = profileText();
+  /* ---- 05 メディア ---- */
+  document.getElementById('t-media').textContent = T('secMedia');
+  document.getElementById('media-sample').innerHTML = sampleNote();
+  document.getElementById('media-list').innerHTML = MEDIA.slice()
+    .sort((a,b)=>b.date.localeCompare(a.date)).map(mediaRow).join('');
+
+  /* ---- 06 プロフィール ---- */
+  document.getElementById('t-profile').textContent   = T('secProfile');
+  document.getElementById('t-bio').textContent       = T('secBio');
+  document.getElementById('t-story').textContent     = T('secStory');
+  document.getElementById('t-speaker').textContent   = T('secSpeaker');
+  document.getElementById('t-speaker-lead').textContent = T('secSpeakerLead');
+  document.getElementById('prof-body').innerHTML     = profileText();
+  document.getElementById('bio-spec').innerHTML      = PROFILE_SPEC.map(specRow).join('');
+  document.getElementById('speaker-spec').innerHTML  = SPEAKER_SPEC.map(specRow).join('');
   document.getElementById('timeline').innerHTML = TIMELINE.map(t=>`
     <div class="tl-item rv">
       <div class="tl-year">${t.year}</div>
@@ -224,7 +295,7 @@ function renderPage(){
     vi:`<h3>Không ai đến một mình, không ai làm việc một mình. <em>Luôn có đồng đội bên cạnh.</em></h3>`
   }[LANG] + `<p>WITH OUR MEMBERS ／ VIETNAM × JAPAN</p>`;
 
-  /* ---- 04 こだわり ---- */
+  /* ---- 07 こだわり ---- */
   document.getElementById('t-kodawari').textContent = T('secKodawari');
   document.getElementById('kod-lead').innerHTML = `
     <h3 class="kod-title rv">${{ja:'こだわり、<em>真心をかたちに。</em>',
@@ -238,36 +309,30 @@ function renderPage(){
       <p>${esc(L(k.body))}</p>
     </article>`).join('');
 
-  /* ---- 05 グループ ---- */
+  /* ---- 08 動画 ---- */
+  document.getElementById('t-video').textContent      = T('secVideo');
+  document.getElementById('t-video-lead').textContent = T('secVideoLead');
+  document.getElementById('t-pickup').textContent     = T('secPickup');
+  document.getElementById('t-more-sns').textContent   = T('moreSns');
+  renderPlayer();
+  document.getElementById('vids').innerHTML = VIDEOS.slice(0,6).map(videoCard).join('');
+  bindVideoClicks();
+
+  /* ---- 09 グループ ---- */
   document.getElementById('t-group').textContent = T('secGroup');
   document.getElementById('t-group-lead').textContent = T('secGroupLead');
   document.getElementById('t-services').textContent = T('secServices');
-  document.getElementById('grp-list').innerHTML = GROUP.map(g=>{
-    const link = g.url
-      ? `<a class="go" href="${g.url}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '';
-    return `<article class="card grp-item rv">
-      <div class="yr">${esc(L(g.est))}</div>
-      <h4>${esc(L(g.name))}</h4>
-      <div class="en">${esc(g.en)}</div>
-      <p>${esc(L(g.body))}</p>
-      <div class="foot"><span class="pos">${esc(L(g.role))}</span>${link}</div>
-    </article>`;}).join('');
-  document.getElementById('svc-list').innerHTML = SERVICES.map(s=>`
-    <a class="card svc-item rv" href="${s.url}" target="_blank" rel="noopener" style="padding:22px 24px 24px;display:block">
-      <div class="en" style="font-size:9.5px;letter-spacing:.18em;color:var(--red);font-weight:700">${esc(s.en)}</div>
-      <h5 style="font-size:15px;margin:8px 0 7px">${esc(L(s.name))}</h5>
-      <p style="font-size:12.5px;color:var(--ink-2)">${esc(L(s.desc))}</p>
-      <span class="go" style="font-size:11px;color:var(--red);font-weight:700;margin-top:12px;display:inline-block">${T('visitSite')} ↗</span>
-    </a>`).join('');
+  document.getElementById('grp-list').innerHTML = GROUP.map(groupCard).join('');
+  document.getElementById('svc-list').innerHTML = SERVICES.map(serviceCard).join('');
 
-  /* ---- 06 ブログ ---- */
+  /* ---- 10 ブログ ---- */
   document.getElementById('t-blog').textContent = T('secBlog');
   document.getElementById('t-more-blog').textContent = T('moreBlog');
   document.getElementById('blog-sample').innerHTML = sampleNote();
   const posts = POSTS.slice().sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
   document.getElementById('blog-list').innerHTML = posts.map(postCard).join('');
 
-  /* ---- 07 ギャラリー ---- */
+  /* ---- 11 ギャラリー ---- */
   document.getElementById('t-gallery').textContent = T('secGallery');
   document.getElementById('t-more-gal').textContent = T('moreGallery');
   document.getElementById('gal-list').innerHTML = PHOTOS.slice(0,3).map(p=>`
@@ -275,42 +340,9 @@ function renderPage(){
       <figcaption>${esc(L(p.caption))}</figcaption></figure>`).join('');
   bindLightbox('#gal-list figure');
 
-  /* ---- 08 フォーム ---- */
+  /* ---- 12 フォーム ---- */
   document.getElementById('t-contact').textContent = T('secContact');
   renderForm();
-}
-
-/* 講演1行 */
-function lecRow(l){
-  const d = fmtDateShort(l.date);
-  const kind = L(KIND_LABELS[l.kind] || l.kind);
-  const cls = l.kind==='MC' ? 'b' : (l.upcoming ? '' : 'n');
-  const link = l.url ? `<a class="go" href="${l.url}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '';
-  return `<article class="card lec rv">
-    <div class="d"><b>${d.md}</b><span>${d.y}</span></div>
-    <div>
-      <h4>${esc(L(l.title))}</h4>
-      <div class="meta">
-        <span><i>${LANG==='ja'?'主催':'Host'}</i>${esc(L(l.host))}</span>
-        <span><i>${LANG==='ja'?'会場':'Venue'}</i>${esc(L(l.venue))}</span>
-        ${L(l.audience)?`<span><i>${LANG==='ja'?'対象':'Audience'}</i>${esc(L(l.audience))}</span>`:''}
-      </div>
-    </div>
-    <div class="right"><span class="tag ${cls}">${esc(kind)}</span>${link}</div>
-  </article>`;
-}
-
-/* ブログカード */
-function postCard(p){
-  const cat = (POST_CATS.find(c=>c.key===p.cat)||{}).label || p.cat;
-  return `<a class="card post rv" href="blog.html?p=${encodeURIComponent(p.slug)}">
-    ${p.image?`<div class="ph"><img src="${p.image}" alt=""></div>`:''}
-    <div class="bd">
-      <div class="top"><span class="tag">${esc(L(cat))}</span><time>${fmtDate(p.date)}</time></div>
-      <h3>${esc(L(p.title))}</h3>
-      <p>${esc(L(p.excerpt))}</p>
-      <span class="go">${T('readMore')} →</span>
-    </div></a>`;
 }
 
 /* プロフィール本文 */

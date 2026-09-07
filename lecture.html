@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>講演実績 ｜ 澤村 友里</title>
+<title>講演依頼・実績 ｜ 澤村 友里</title>
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -24,7 +24,7 @@
   <div class="toc rv" id="toc"></div>
 </section>
 
-<!-- 講演テーマ -->
+<!-- 01 講演テーマ -->
 <section id="topics" style="padding-top:clamp(40px,5vw,70px)">
   <div class="sec-head rv">
     <span class="sec-num">01</span>
@@ -35,10 +35,43 @@
   <div class="topics" id="topics-list"></div>
 </section>
 
-<!-- 開催予定 -->
-<section id="upcoming" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+<!-- 02 講演パッケージ -->
+<section id="packages" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
   <div class="sec-head rv">
     <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-package"></h2>
+    <span class="sec-sub">PACKAGES</span>
+  </div>
+  <p class="sec-lead rv" id="t-package-lead"></p>
+  <div class="packs" id="packs"></div>
+</section>
+
+<!-- 03 ご依頼の流れ -->
+<section id="steps" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">03</span>
+    <h2 class="sec-title" id="t-steps"></h2>
+    <span class="sec-sub">HOW TO BOOK</span>
+  </div>
+  <p class="sec-lead rv" id="t-steps-lead"></p>
+  <div class="steps" id="steps-list"></div>
+</section>
+
+<!-- 04 講師情報 -->
+<section id="speaker" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title" id="t-speaker"></h2>
+    <span class="sec-sub">SPEAKER INFO</span>
+  </div>
+  <p class="sec-lead rv" id="t-speaker-lead"></p>
+  <dl class="spec rv" id="speaker-spec"></dl>
+</section>
+
+<!-- 05 開催予定 -->
+<section id="upcoming" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">05</span>
     <h2 class="sec-title" id="t-upcoming"></h2>
     <span class="sec-sub">UPCOMING</span>
   </div>
@@ -46,10 +79,10 @@
   <div id="up-list"></div>
 </section>
 
-<!-- これまでの登壇 -->
-<section id="past" style="background:#fff">
+<!-- 06 これまでの登壇 -->
+<section id="past" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
   <div class="sec-head rv">
-    <span class="sec-num">03</span>
+    <span class="sec-num">06</span>
     <h2 class="sec-title" id="t-past"></h2>
     <span class="sec-sub">ARCHIVE</span>
   </div>
@@ -57,7 +90,7 @@
   <div id="past-list"></div>
 </section>
 
-<!-- 依頼CTA -->
+<!-- CTA -->
 <section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
   <div class="rv" id="cta-in"></div>
 </section>
@@ -66,38 +99,51 @@
 
 <script src="data.js"></script>
 <script src="app.js"></script>
+<script src="parts.js"></script>
 <script>
 let CUR_KIND = 'all';
 
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secLecture');
-  document.getElementById('ph-lead').textContent = T('secTopicsLead');
+  document.getElementById('ph-lead').textContent = {
+    ja:'テーマ・パッケージ・ご依頼の流れ・これまでの登壇まで、ご検討に必要な情報をまとめています。',
+    en:'Topics, packages, how to book and past appearances — everything you need in order to decide.',
+    vi:'Chủ đề, gói dịch vụ, quy trình đặt lịch và hoạt động đã qua — mọi thông tin bạn cần.'
+  }[LANG];
 
   document.getElementById('toc').innerHTML = [
-    ['#topics',T('secTopics')],['#upcoming',T('secUpcoming')],
-    ['#past',T('secPast')],['#cta',T('navCta')]
+    ['#topics',T('secTopics')],['#packages',T('secPackage')],['#steps',T('secSteps')],
+    ['#speaker',T('secSpeaker')],['#upcoming',T('secUpcoming')],['#past',T('secPast')]
   ].map((x,i)=>`<a href="${x[0]}">${String(i+1).padStart(2,'0')}　${x[1]}</a>`).join('');
 
-  /* 講演テーマ */
+  /* 01 テーマ */
   document.getElementById('t-topics').textContent = T('secTopics');
   document.getElementById('t-topics-lead').textContent = T('secTopicsLead');
-  document.getElementById('topics-list').innerHTML = TOPICS.map(t=>`
-    <article class="card topic rv">
-      <div class="no">TOPIC ${t.no}</div>
-      <h3>${esc(L(t.title))}</h3>
-      <p>${esc(L(t.body))}</p>
-      <div class="tags">${L(t.tags).map(g=>`<span class="tag">${esc(g)}</span>`).join('')}</div>
-    </article>`).join('');
+  document.getElementById('topics-list').innerHTML = TOPICS.map(topicCard).join('');
 
-  /* 開催予定 */
+  /* 02 パッケージ */
+  document.getElementById('t-package').textContent = T('secPackage');
+  document.getElementById('t-package-lead').textContent = T('secPackageLead');
+  document.getElementById('packs').innerHTML = PACKAGES.map(packCard).join('');
+
+  /* 03 流れ */
+  document.getElementById('t-steps').textContent = T('secSteps');
+  document.getElementById('t-steps-lead').textContent = T('secStepsLead');
+  document.getElementById('steps-list').innerHTML = STEPS.map(stepCard).join('');
+
+  /* 04 講師情報 */
+  document.getElementById('t-speaker').textContent = T('secSpeaker');
+  document.getElementById('t-speaker-lead').textContent = T('secSpeakerLead');
+  document.getElementById('speaker-spec').innerHTML = SPEAKER_SPEC.map(specRow).join('');
+
+  /* 05 開催予定 */
   document.getElementById('t-upcoming').textContent = T('secUpcoming');
   document.getElementById('lec-sample').innerHTML = sampleNote();
   const up = LECTURES.filter(l=>l.upcoming).sort((a,b)=>a.date.localeCompare(b.date));
   document.getElementById('up-list').innerHTML = up.length
-    ? up.map(lecRow).join('')
-    : `<p class="empty">${T('preparing')}</p>`;
+    ? up.map(lecRow).join('') : `<p class="empty">${T('preparing')}</p>`;
 
-  /* これまでの登壇 */
+  /* 06 これまでの登壇 */
   document.getElementById('t-past').textContent = T('secPast');
   const kinds = [...new Set(LECTURES.filter(l=>!l.upcoming).map(l=>l.kind))];
   document.getElementById('chips').innerHTML =
@@ -132,27 +178,7 @@ function drawPast(){
     .filter(l=>CUR_KIND==='all'||l.kind===CUR_KIND)
     .sort((a,b)=>b.date.localeCompare(a.date));
   document.getElementById('past-list').innerHTML = list.length
-    ? list.map(lecRow).join('')
-    : `<p class="empty">${T('preparing')}</p>`;
-}
-
-function lecRow(l){
-  const d = fmtDateShort(l.date);
-  const kind = L(KIND_LABELS[l.kind] || l.kind);
-  const cls = l.kind==='MC' ? 'b' : (l.upcoming ? '' : 'n');
-  const link = l.url ? `<a class="go" href="${l.url}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '';
-  return `<article class="card lec rv">
-    <div class="d"><b>${d.md}</b><span>${d.y}</span></div>
-    <div>
-      <h4>${esc(L(l.title))}</h4>
-      <div class="meta">
-        <span><i>${LANG==='ja'?'主催':'Host'}</i>${esc(L(l.host))}</span>
-        <span><i>${LANG==='ja'?'会場':'Venue'}</i>${esc(L(l.venue))}</span>
-        ${L(l.audience)?`<span><i>${LANG==='ja'?'対象':'Audience'}</i>${esc(L(l.audience))}</span>`:''}
-      </div>
-    </div>
-    <div class="right"><span class="tag ${cls}">${esc(kind)}</span>${link}</div>
-  </article>`;
+    ? list.map(lecRow).join('') : `<p class="empty">${T('preparing')}</p>`;
 }
 </script>
 </body>

@@ -34,6 +34,9 @@ const CONTACT_TEL_LABEL = "(+81) 096-234-8770";
 const TOPICS = [
   {
     no: "01",
+    catch: { ja: "なぜ、彼らは黙って辞めるのか。",
+             en: "Why do they quit without a word?",
+             vi: "Vì sao họ lặng lẽ nghỉ việc?" },
     title: {
       ja: "外国人材の雇用と定着",
       en: "Hiring and Retaining Foreign Talent",
@@ -42,26 +45,38 @@ const TOPICS = [
     body: {
       ja: "技能実習・特定技能の受入れ実務から、辞めない職場のつくり方まで。受入れの現場を支えてきた視点で、きれいごとではない実務をお話しします。",
       en: "From the practicalities of accepting technical intern and specified skilled workers, to building workplaces people don't leave. An honest, on-the-ground account — not the polished version.",
-      vi: "Từ thực tiễn tiếp nhận thực tập sinh và lao động kỹ năng đặc định, đến cách xây dựng nơi làm việc mà nhân viên không rời bỏ. Câu chuyện thực tế từ hiện trường."
+      vi: "Từ thực tiễn tiếp nhận thực tập sinh và lao động kỹ năng đặc định, đến cách xây dựng nơi làm việc mà nhân viên không rời bỏ."
     },
+    forwhom: { ja: "外国人材を受け入れている・これから受け入れる企業の経営者、人事、現場管理職の方へ",
+               en: "For executives, HR and frontline managers at companies employing foreign workers",
+               vi: "Dành cho lãnh đạo, nhân sự và quản lý hiện trường tại doanh nghiệp sử dụng lao động nước ngoài" },
     tags: { ja: ["企業研修", "経営者向け", "業界団体"], en: ["Corporate", "Executives", "Industry bodies"], vi: ["Đào tạo doanh nghiệp", "Lãnh đạo", "Hiệp hội"] }
   },
   {
     no: "02",
+    catch: { ja: "ふたつの故郷を持つ、ということ。",
+             en: "What it means to have two homelands.",
+             vi: "Mang trong mình hai quê hương." },
     title: {
       ja: "日本一ベトナム人を理解している会社のつくり方",
       en: "Building Japan's Most Vietnam-Literate Company",
       vi: "Xây dựng công ty thấu hiểu người Việt nhất Nhật Bản"
     },
     body: {
-      ja: "ベトナムに生まれ、日本で育った経営者だから見える、日越の文化のちがいと相互理解のヒント。「なぜ彼らは黙って辞めるのか」に答えます。",
-      en: "Cultural differences between Japan and Vietnam, seen through the eyes of someone born in one and raised in the other. Including an answer to: why do they quit without saying anything?",
-      vi: "Sự khác biệt văn hóa Nhật – Việt qua góc nhìn của người sinh ra ở Việt Nam và lớn lên tại Nhật. Trả lời câu hỏi: vì sao họ lặng lẽ nghỉ việc?"
+      ja: "ベトナムに生まれ、日本で育った経営者だから見える、日越の文化のちがいと相互理解のヒント。現場で本当に起きていることをお伝えします。",
+      en: "Cultural differences between Japan and Vietnam, seen through the eyes of someone born in one and raised in the other — and what really happens on the ground.",
+      vi: "Sự khác biệt văn hóa Nhật – Việt qua góc nhìn của người sinh ra ở Việt Nam và lớn lên tại Nhật."
     },
+    forwhom: { ja: "多国籍の職場づくりに悩む企業、ダイバーシティ研修をお考えの方へ",
+               en: "For companies building multinational workplaces and planning diversity training",
+               vi: "Dành cho doanh nghiệp xây dựng môi trường đa quốc gia, đào tạo đa dạng" },
     tags: { ja: ["企業研修", "多様性", "管理職向け"], en: ["Corporate", "Diversity", "Managers"], vi: ["Đào tạo", "Đa dạng", "Quản lý"] }
   },
   {
     no: "03",
+    catch: { ja: "就職活動をせず、会社をつくった。",
+             en: "I skipped job hunting and built a company.",
+             vi: "Tôi không đi xin việc, tôi lập công ty." },
     title: {
       ja: "学生起業のリアル",
       en: "The Reality of Founding a Company as a Student",
@@ -69,13 +84,19 @@ const TOPICS = [
     },
     body: {
       ja: "大学在学中に学生でありながら創業し、いまは日越3法人を経営するまで。失敗も資金繰りも包み隠さず、これから挑戦する若者へ。",
-      en: "From founding a company while still an undergraduate to running three entities across Japan and Vietnam. The failures and the cash-flow problems included — for young people about to take the leap.",
-      vi: "Từ khởi nghiệp khi còn là sinh viên đến điều hành 3 pháp nhân tại Nhật và Việt Nam. Kể cả thất bại và khó khăn tài chính — dành cho những người trẻ sắp dấn thân."
+      en: "From founding a company while still an undergraduate to running three entities across Japan and Vietnam. The failures and the cash-flow problems included.",
+      vi: "Từ khởi nghiệp khi còn là sinh viên đến điều hành 3 pháp nhân. Kể cả thất bại và khó khăn tài chính."
     },
+    forwhom: { ja: "高校・大学・専門学校、若手社員向けのキャリア研修に",
+               en: "For high schools, universities, vocational colleges and early-career training",
+               vi: "Dành cho trường phổ thông, đại học, cao đẳng và đào tạo nhân viên trẻ" },
     tags: { ja: ["学校", "大学", "若手向け"], en: ["Schools", "Universities", "Youth"], vi: ["Trường học", "Đại học", "Người trẻ"] }
   },
   {
     no: "04",
+    catch: { ja: "隣に住む外国人は、もう「お客さん」ではない。",
+             en: "Foreign residents are no longer guests.",
+             vi: "Cư dân nước ngoài không còn là khách." },
     title: {
       ja: "多文化共生のまちづくり",
       en: "Building Multicultural Communities",
@@ -83,9 +104,12 @@ const TOPICS = [
     },
     body: {
       ja: "外国人住民とともに生きる地域社会のあり方。行政・学校・地域の現場で起きている課題と、実際に効いた打ち手を共有します。",
-      en: "What it takes for a community to live well alongside foreign residents. The real problems facing local government, schools and neighbourhoods — and what actually worked.",
-      vi: "Cộng đồng chung sống cùng cư dân nước ngoài. Những vấn đề thực tế của chính quyền, trường học, khu dân cư — và giải pháp đã thực sự hiệu quả."
+      en: "What it takes for a community to live well alongside foreign residents — the real problems and what actually worked.",
+      vi: "Cộng đồng chung sống cùng cư dân nước ngoài — vấn đề thực tế và giải pháp hiệu quả."
     },
+    forwhom: { ja: "自治体、国際交流協会、学校、地域団体、社会福祉協議会の方へ",
+               en: "For municipalities, international associations, schools and community organisations",
+               vi: "Dành cho chính quyền, hiệp hội giao lưu quốc tế, trường học, đoàn thể" },
     tags: { ja: ["行政", "自治体", "地域団体"], en: ["Government", "Municipal", "Community"], vi: ["Chính quyền", "Địa phương", "Cộng đồng"] }
   }
 ];
@@ -487,7 +511,281 @@ const INQUIRY_TYPES = [
     desc:  { ja: "取材・対談・人材のご相談など",           en: "Interviews, discussions, talent enquiries", vi: "Phỏng vấn, đối thoại, tư vấn nhân lực" } }
 ];
 
-/* ▼ SNS */
-const SNS = {
-  instagram: "https://www.instagram.com/yuri_jpvn/"
-};
+/* =========================================================================
+   9. 略歴の詳細（プロフィール表）
+   ========================================================================= */
+const PROFILE_SPEC = [
+  { label: { ja: "氏名",     en: "Name",        vi: "Họ tên" },
+    value: { ja: "澤村 友里（さわむら ゆり）／ YURI SAWAMURA", en: "Yuri Sawamura", vi: "Yuri Sawamura" } },
+  { label: { ja: "出身",     en: "Born",        vi: "Nơi sinh" },
+    value: { ja: "ベトナム・ホーチミン市生まれ（ベトナム系日本人）", en: "Born in Ho Chi Minh City, Vietnam (Vietnamese-Japanese)", vi: "Sinh tại TP. Hồ Chí Minh (người Nhật gốc Việt)" } },
+  { label: { ja: "来日",     en: "Moved to Japan", vi: "Sang Nhật" },
+    value: { ja: "2003年（熊本県で中学・高校時代を過ごす）", en: "2003 — junior high and high school in Kumamoto", vi: "2003 — học cấp 2, cấp 3 tại Kumamoto" } },
+  { label: { ja: "学歴",     en: "Education",   vi: "Học vấn" },
+    value: { ja: "熊本県立大学 卒業", en: "Prefectural University of Kumamoto", vi: "Đại học tỉnh lập Kumamoto" } },
+  { label: { ja: "現在の役職", en: "Current roles", vi: "Chức vụ hiện tại" },
+    value: { ja: "ベトナムトレーディング株式会社 代表取締役社長／日越協同組合 理事長／VIETNAM TRADING CO., LTD.（ホーチミン）会長",
+             en: "President & CEO, Vietnam Trading Co., Ltd. / Chairperson, Nichietsu Cooperative / Chairperson, Vietnam Trading Co., Ltd. (HCMC)",
+             vi: "Tổng giám đốc Việt Nam Trading / Chủ tịch Nghiệp đoàn Nichietsu / Chủ tịch VIETNAM TRADING CO., LTD. (TP.HCM)" } },
+  { label: { ja: "事業領域", en: "Focus",       vi: "Lĩnh vực" },
+    value: { ja: "外国人材の職業紹介・採用支援／技能実習生の受入れ・監理／ベトナム人材の教育・日本語研修／ベトナム進出支援",
+             en: "Recruitment for foreign talent / technical intern supervision / Japanese-language education / Vietnam market-entry support",
+             vi: "Giới thiệu việc làm / quản lý thực tập sinh / đào tạo tiếng Nhật / hỗ trợ đầu tư vào Việt Nam" } },
+  { label: { ja: "拠点",     en: "Based in",    vi: "Trụ sở" },
+    value: { ja: "熊本県熊本市 ／ ベトナム・ホーチミン市", en: "Kumamoto, Japan / Ho Chi Minh City, Vietnam", vi: "Kumamoto, Nhật Bản / TP.HCM, Việt Nam" } },
+  { label: { ja: "使用言語", en: "Languages",   vi: "Ngôn ngữ" },
+    value: { ja: "日本語（ネイティブ）／ベトナム語（ネイティブ）", en: "Japanese (native) / Vietnamese (native)", vi: "Tiếng Nhật (bản ngữ) / Tiếng Việt (bản ngữ)" } },
+  { label: { ja: "発信",     en: "Media",       vi: "Kênh" },
+    value: { ja: "YouTube「YURI SAWAMURA Channel」でビジネス日本語のポッドキャストを配信中",
+             en: "Hosts a business-Japanese podcast on the YURI SAWAMURA Channel (YouTube)",
+             vi: "Phát podcast tiếng Nhật thương mại trên kênh YouTube YURI SAWAMURA Channel" } }
+];
+
+/* =========================================================================
+   10. 講師情報の詳細（依頼時に必要な実務情報）
+   ========================================================================= */
+const SPEAKER_SPEC = [
+  { label: { ja: "講演形式", en: "Formats", vi: "Hình thức" },
+    value: { ja: "講演／パネルディスカッション／ワークショップ型研修／対談／MC・司会",
+             en: "Keynote / panel discussion / workshop-style training / dialogue / MC",
+             vi: "Diễn thuyết / tọa đàm / đào tạo workshop / đối thoại / dẫn chương trình" } },
+  { label: { ja: "講演時間", en: "Duration", vi: "Thời lượng" },
+    value: { ja: "30分〜120分（ご要望に合わせて構成します）", en: "30 to 120 minutes, tailored to your programme", vi: "30–120 phút, thiết kế theo yêu cầu" } },
+  { label: { ja: "対象",     en: "Audience", vi: "Đối tượng" },
+    value: { ja: "企業（経営者・人事・現場管理職）／学校・大学・専門学校／行政・自治体／業界団体・地域団体",
+             en: "Companies (executives, HR, frontline managers) / schools and universities / government / industry and community bodies",
+             vi: "Doanh nghiệp / trường học / chính quyền / hiệp hội và đoàn thể" } },
+  { label: { ja: "対応言語", en: "Languages", vi: "Ngôn ngữ" },
+    value: { ja: "日本語／ベトナム語（日越二言語での進行も可能）", en: "Japanese / Vietnamese (bilingual delivery available)", vi: "Tiếng Nhật / Tiếng Việt (có thể song ngữ)" } },
+  { label: { ja: "対応エリア", en: "Area", vi: "Khu vực" },
+    value: { ja: "全国（九州を中心に全国対応）／ベトナム国内も対応可", en: "Nationwide across Japan, and within Vietnam", vi: "Toàn Nhật Bản và tại Việt Nam" } },
+  { label: { ja: "オンライン", en: "Online", vi: "Trực tuyến" },
+    value: { ja: "Zoom・Teams等でのオンライン登壇に対応（録画配信のご相談も可）", en: "Available via Zoom, Teams and similar; recorded delivery on request", vi: "Có thể qua Zoom, Teams; hỗ trợ ghi hình theo yêu cầu" } },
+  { label: { ja: "ご用意いただくもの", en: "Please provide", vi: "Bên tổ chức chuẩn bị" },
+    value: { ja: "プロジェクター・スクリーン・マイク（パソコンは持参します）", en: "Projector, screen and microphone (laptop provided by the speaker)", vi: "Máy chiếu, màn chiếu, micro (diễn giả tự mang máy tính)" } },
+  { label: { ja: "事前打合せ", en: "Pre-event call", vi: "Trao đổi trước" },
+    value: { ja: "オンラインで30分程度・無料。目的と対象をうかがって内容を調整します。",
+             en: "About 30 minutes online, free of charge, to tailor the content to your goals and audience.",
+             vi: "Khoảng 30 phút trực tuyến, miễn phí, để điều chỉnh nội dung." } },
+  { label: { ja: "謝金・交通費", en: "Fee & travel", vi: "Thù lao & đi lại" },
+    value: { ja: "内容・時間・地域により個別にお見積りします。まずはご予算をお聞かせください。",
+             en: "Quoted individually based on content, duration and location. Please share your budget.",
+             vi: "Báo giá riêng theo nội dung, thời lượng và địa điểm." } }
+];
+
+/* =========================================================================
+   11. 講演パッケージ
+   ------------------------------------------------------------------------
+   price に金額を入れると表示されます。空なら「個別お見積り」になります。
+   featured: true にすると、そのパッケージが強調表示されます。
+   ========================================================================= */
+const PACKAGES = [
+  {
+    key: "standard", featured: true,
+    name: { ja: "スタンダード講演", en: "Standard Keynote", vi: "Diễn thuyết tiêu chuẩn" },
+    time: { ja: "60〜90分", en: "60–90 min", vi: "60–90 phút" },
+    lead: { ja: "いちばん多くご依頼いただく形です。講演のあとに質疑応答の時間をお取りします。",
+            en: "The most frequently requested format, with time for questions afterwards.",
+            vi: "Hình thức được yêu cầu nhiều nhất, có thời gian hỏi đáp." },
+    items: { ja: ["ご希望テーマでの講演（60〜90分）", "質疑応答（15分程度）", "事前オンライン打合せ（無料）", "当日の投影資料", "写真撮影・SNS掲載OK"],
+             en: ["Keynote on your chosen topic (60–90 min)", "Questions and answers (about 15 min)", "Free online pre-event call", "Presentation slides", "Photography and social posting welcome"],
+             vi: ["Diễn thuyết theo chủ đề (60–90 phút)", "Hỏi đáp (khoảng 15 phút)", "Trao đổi trước miễn phí", "Tài liệu trình chiếu", "Được chụp ảnh và đăng mạng xã hội"] },
+    best: { ja: "経営者セミナー、業界団体の研修会、行政の講演会", en: "Executive seminars, industry training days, public lectures", vi: "Hội thảo doanh nhân, tập huấn hiệp hội, buổi nói chuyện công" },
+    price: ""
+  },
+  {
+    key: "workshop", featured: false,
+    name: { ja: "ワークショップ型研修", en: "Workshop Training", vi: "Đào tạo workshop" },
+    time: { ja: "90〜120分", en: "90–120 min", vi: "90–120 phút" },
+    lead: { ja: "聞くだけで終わらせない形式です。グループワークとケース検討で、自社の課題に落とし込みます。",
+            en: "Not a lecture you simply sit through — group work and case studies applied to your own situation.",
+            vi: "Không chỉ ngồi nghe — làm nhóm và phân tích tình huống áp dụng vào thực tế của bạn." },
+    items: { ja: ["導入講義（30分）", "グループワーク・ケース検討", "全体共有とフィードバック", "事前ヒアリング（貴社の課題整理）", "ワークシートのご提供"],
+             en: ["Opening lecture (30 min)", "Group work and case studies", "Plenary share-back and feedback", "Pre-event needs interview", "Worksheets provided"],
+             vi: ["Bài giảng mở đầu (30 phút)", "Làm nhóm và phân tích tình huống", "Chia sẻ và phản hồi chung", "Phỏng vấn trước sự kiện", "Cung cấp phiếu bài tập"] },
+    best: { ja: "管理職研修、受入れ企業の社内研修、教職員研修", en: "Manager training, in-house training, teacher training", vi: "Đào tạo quản lý, đào tạo nội bộ, đào tạo giáo viên" },
+    price: ""
+  },
+  {
+    key: "mc", featured: false,
+    name: { ja: "MC・司会", en: "MC / Host", vi: "Dẫn chương trình" },
+    time: { ja: "半日〜1日", en: "Half day – full day", vi: "Nửa ngày – cả ngày" },
+    lead: { ja: "日本語とベトナム語、両方で会場をあたためます。二言語イベントの進行は、翻訳とはまったく別の仕事です。",
+            en: "Warming up the room in both Japanese and Vietnamese. Hosting a bilingual event is a different craft from translating.",
+            vi: "Hâm nóng khán phòng bằng cả tiếng Nhật và tiếng Việt — khác hoàn toàn với phiên dịch." },
+    items: { ja: ["日越二言語での総合司会", "台本の確認・ご提案", "リハーサルへの参加", "登壇者インタビューの進行", "開会・閉会の進行"],
+             en: ["Bilingual MC in Japanese and Vietnamese", "Script review and suggestions", "Rehearsal attendance", "On-stage interviews", "Opening and closing"],
+             vi: ["Dẫn chương trình song ngữ Nhật – Việt", "Rà soát và góp ý kịch bản", "Tham gia tổng duyệt", "Phỏng vấn khách mời", "Khai mạc và bế mạc"] },
+    best: { ja: "国際交流イベント、フェスティバル、企業式典、表彰式", en: "International events, festivals, corporate ceremonies, award nights", vi: "Sự kiện giao lưu quốc tế, lễ hội, lễ kỷ niệm doanh nghiệp" },
+    price: ""
+  },
+  {
+    key: "online", featured: false,
+    name: { ja: "オンライン講演", en: "Online Talk", vi: "Diễn thuyết trực tuyến" },
+    time: { ja: "30〜60分", en: "30–60 min", vi: "30–60 phút" },
+    lead: { ja: "遠方でも、少人数でも。移動時間がないぶん、短時間・小さめのご予算でもご依頼いただけます。",
+            en: "For distant or smaller audiences. No travel time means shorter formats and smaller budgets work.",
+            vi: "Dành cho nơi xa hoặc nhóm nhỏ. Không mất thời gian di chuyển nên linh hoạt hơn." },
+    items: { ja: ["Zoom・Teams等での登壇（30〜60分）", "チャットでの質疑応答", "投影資料のデータ提供", "録画・社内共有のご相談可"],
+             en: ["Delivery via Zoom, Teams, etc. (30–60 min)", "Questions via chat", "Slide data provided", "Recording and internal sharing negotiable"],
+             vi: ["Trình bày qua Zoom, Teams (30–60 phút)", "Hỏi đáp qua chat", "Cung cấp dữ liệu slide", "Có thể ghi hình và chia sẻ nội bộ"] },
+    best: { ja: "全国の拠点をつなぐ社内研修、学校のオンライン授業", en: "Multi-site internal training, online classes", vi: "Đào tạo nội bộ nhiều chi nhánh, lớp học trực tuyến" },
+    price: ""
+  }
+];
+
+/* =========================================================================
+   12. 講演依頼のステップ
+   ========================================================================= */
+const STEPS = [
+  { no: "01",
+    title: { ja: "お問い合わせ", en: "Enquiry", vi: "Liên hệ" },
+    body:  { ja: "フォームまたはお電話でご連絡ください。日程が未定・内容が固まっていない段階でも大丈夫です。",
+             en: "Send the form or call us. It is fine if the date or content is not yet decided.",
+             vi: "Gửi biểu mẫu hoặc gọi điện. Chưa có ngày hoặc nội dung cụ thể cũng không sao." },
+    note:  { ja: "2〜3営業日以内にご返信", en: "Reply within 2–3 business days", vi: "Phản hồi trong 2–3 ngày làm việc" } },
+  { no: "02",
+    title: { ja: "ヒアリング・ご提案", en: "Consultation", vi: "Trao đổi & đề xuất" },
+    body:  { ja: "目的・対象・お時間・ご予算をうかがい、テーマと構成をご提案します。オンラインで30分程度、無料です。",
+             en: "We discuss your goals, audience, timing and budget, then propose a topic and structure. About 30 minutes online, free.",
+             vi: "Trao đổi mục tiêu, đối tượng, thời lượng, ngân sách rồi đề xuất chủ đề. Khoảng 30 phút, miễn phí." },
+    note:  { ja: "オンライン30分・無料", en: "30 min online, free", vi: "30 phút trực tuyến, miễn phí" } },
+  { no: "03",
+    title: { ja: "お見積り・ご契約", en: "Quote & agreement", vi: "Báo giá & hợp đồng" },
+    body:  { ja: "内容が固まりましたら、お見積りをお出しします。ご承諾いただいた時点で日程を確定します。",
+             en: "Once the content is settled we issue a quote, and the date is confirmed on your approval.",
+             vi: "Sau khi thống nhất nội dung, chúng tôi báo giá và chốt ngày khi bạn đồng ý." },
+    note:  { ja: "書面でお出しします", en: "Issued in writing", vi: "Cung cấp bằng văn bản" } },
+  { no: "04",
+    title: { ja: "事前打合せ", en: "Final briefing", vi: "Họp trước sự kiện" },
+    body:  { ja: "開催の2週間前をめどに、当日の進行と会場設備を確認します。投影資料もこの時点でお渡しします。",
+             en: "Around two weeks before, we confirm the run sheet and venue setup, and hand over the materials.",
+             vi: "Khoảng 2 tuần trước, xác nhận kịch bản và thiết bị, bàn giao tài liệu." },
+    note:  { ja: "開催2週間前が目安", en: "About 2 weeks prior", vi: "Khoảng 2 tuần trước" } },
+  { no: "05",
+    title: { ja: "当日", en: "On the day", vi: "Ngày diễn ra" },
+    body:  { ja: "開始1時間前には会場に入り、音響と投影を確認します。写真撮影・SNSへの掲載も歓迎です。",
+             en: "We arrive an hour early to check sound and projection. Photography and social posts are welcome.",
+             vi: "Đến trước 1 tiếng để kiểm tra âm thanh, máy chiếu. Hoan nghênh chụp ảnh và đăng mạng." },
+    note:  { ja: "1時間前に会場入り", en: "Arrive 1 hour early", vi: "Đến sớm 1 tiếng" } },
+  { no: "06",
+    title: { ja: "アフターフォロー", en: "Follow-up", vi: "Sau sự kiện" },
+    body:  { ja: "アンケート結果を共有いただければ、次回に向けた改善点をご一緒に振り返ります。継続的なご相談も歓迎です。",
+             en: "Share your feedback survey and we will review improvements together. Ongoing consultation is welcome.",
+             vi: "Chia sẻ kết quả khảo sát để cùng rút kinh nghiệm. Hoan nghênh trao đổi lâu dài." },
+    note:  { ja: "ご相談は無料です", en: "Free of charge", vi: "Miễn phí" } }
+];
+
+/* =========================================================================
+   13. SNSアカウント
+   ------------------------------------------------------------------------
+   ここに書いたものが、ヘッダー・フッター・SNS紹介ページに出ます。
+   使わないアカウントは行ごと消してください。
+   ========================================================================= */
+
+/* ▼ YouTubeチャンネルID
+   これを入れておくと「最新動画」が自動で更新されます（手入力は不要です）。
+   チャンネルIDは YouTubeのチャンネルページ →「共有」→「チャンネルIDをコピー」で取得できます。 */
+const YT_CHANNEL_ID = "UCYE6NspnrKTGlC8osbHdvaQ";
+
+const SNS_ACCOUNTS = [
+  {
+    key: "youtube",
+    name: "YURI SAWAMURA Channel",
+    handle: "@yurisawamurachannel",
+    url: "https://www.youtube.com/@yurisawamurachannel",
+    lead: { ja: "ビジネス日本語のポッドキャストを配信中",
+            en: "A business-Japanese podcast, published regularly",
+            vi: "Podcast tiếng Nhật thương mại, cập nhật thường xuyên" },
+    body: { ja: "「ゆりと学ぶビジネス日本語」を毎週配信しています。シャドーイングで自然な聞き取りと会話力が身につく内容で、日本語版とベトナム語版の両方をお届けしています。日本で働くベトナム人の方はもちろん、外国人材を受け入れている企業のみなさまにも見ていただいています。",
+            en: "I publish “Business Japanese with Yuri” every week — shadowing practice for natural listening and conversation, in both Japanese and Vietnamese editions. It is watched by Vietnamese people working in Japan and by the companies that employ them.",
+            vi: "Tôi phát “Học tiếng Nhật thương mại cùng Yuri” hàng tuần — luyện shadowing để nghe và nói tự nhiên, có cả bản tiếng Nhật và tiếng Việt." },
+    cta: { ja: "チャンネル登録する", en: "Subscribe", vi: "Đăng ký kênh" }
+  },
+  {
+    key: "instagram",
+    name: "Instagram",
+    handle: "@yuri_jpvn",
+    url: "https://www.instagram.com/yuri_jpvn/",
+    lead: { ja: "日々の仕事と、ふたつの国のあいだの景色",
+            en: "Daily work, and the view from between two countries",
+            vi: "Công việc thường ngày và khung cảnh giữa hai quốc gia" },
+    body: { ja: "講演やイベントの様子、ベトナム出張の記録、社内のできごとなどを投稿しています。かしこまらない、素のままの日常をいちばん近くでご覧いただけます。",
+            en: "Talks and events, trips to Vietnam, and moments from inside the company. This is the least formal, closest view of my everyday life.",
+            vi: "Hình ảnh các buổi diễn thuyết, sự kiện, chuyến công tác Việt Nam và đời sống công ty." },
+    cta: { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
+  },
+  {
+    key: "tiktok",
+    name: "TikTok",
+    handle: "@kodawari.jp",
+    url: "https://www.tiktok.com/@kodawari.jp",
+    lead: { ja: "日本で働くための情報を、短い動画で",
+            en: "Short videos about working in Japan",
+            vi: "Video ngắn về việc làm tại Nhật Bản" },
+    body: { ja: "求人サイト「こだわり」の公式アカウントです。在留資格のこと、日本での暮らしのこと、仕事の探し方などを、短い動画でわかりやすくお伝えしています。",
+            en: "The official account of our job site “Kodawari”. Short, clear videos about visa status, living in Japan and finding work.",
+            vi: "Tài khoản chính thức của trang tuyển dụng “Kodawari”. Video ngắn về tư cách lưu trú, cuộc sống và tìm việc tại Nhật." },
+    cta: { ja: "TikTokで見る", en: "View on TikTok", vi: "Xem trên TikTok" }
+  },
+  {
+    key: "facebook",
+    name: "Facebook",
+    handle: "vietnamtrading",
+    url: "https://www.facebook.com/vietnamtrading/",
+    lead: { ja: "会社のお知らせとイベント情報",
+            en: "Company news and event announcements",
+            vi: "Thông báo công ty và sự kiện" },
+    body: { ja: "ベトナムトレーディング株式会社の公式ページです。イベントの告知、採用のお知らせ、会社の取り組みなどを発信しています。",
+            en: "The official page of Vietnam Trading Co., Ltd. — event announcements, hiring news and what the company is working on.",
+            vi: "Trang chính thức của Công ty Việt Nam Trading — thông báo sự kiện, tuyển dụng và hoạt động công ty." },
+    cta: { ja: "ページを見る", en: "Visit page", vi: "Xem trang" }
+  }
+];
+
+/* ▼ ピックアップ動画
+   YouTubeの動画IDを入れると、サムネイル付きで並びます。
+   動画IDは https://www.youtube.com/watch?v=●●●●● の ●●●●● の部分です。
+   ※「最新動画」の枠は YT_CHANNEL_ID から自動更新されるので、ここは
+     とくに見てほしい回だけ入れておけば十分です。               */
+const VIDEOS = [
+  { id: "MFX3ySZ9Z54", date: "2026-09-04", title: { ja: "【EP80】ゆりと学ぶビジネス日本語 — シャドーイングで聞き取り・会話力を身につけよう" } },
+  { id: "nr5tGnTUjZc", date: "2026-08-28", title: { ja: "【EP79】ゆりと学ぶビジネス日本語 — シャドーイングで聞き取り・会話力を身につけよう" } },
+  { id: "L_GjVNjT9wI", date: "2026-08-24", title: { ja: "【EP78】ゆりと学ぶビジネス日本語 — シャドーイングで聞き取り・会話力を身につけよう" } },
+  { id: "UrijXNrQYvA", date: "2026-08-21", title: { ja: "【EP77】ゆりと学ぶビジネス日本語 — シャドーイングで聞き取り・会話力を身につけよう" } },
+  { id: "fxyKPnW2NoQ", date: "2026-08-03", title: { ja: "【EP62】Podcast tiếng Nhật văn phòng cùng Yuri（ベトナム語版）" } },
+  { id: "obDiJQNdTJA", date: "2026-07-27", title: { ja: "【EP70】Podcast tiếng Nhật văn phòng cùng Yuri（ベトナム語版）" } }
+];
+
+/* =========================================================================
+   14. メディア出演
+   ------------------------------------------------------------------------
+   kind : "テレビ" / "新聞" / "雑誌" / "Web" / "ラジオ" / "podcast"
+   url  : 記事や動画のリンク。なければ "" （リンクなしで表示されます）
+   ========================================================================= */
+const MEDIA = [
+  { date: "2026-09", kind: "podcast",
+    outlet: { ja: "YURI SAWAMURA Channel（YouTube）", en: "YURI SAWAMURA Channel (YouTube)", vi: "YURI SAWAMURA Channel (YouTube)" },
+    title: { ja: "「ゆりと学ぶビジネス日本語」レギュラー配信中",
+             en: "Host of the regular series “Business Japanese with Yuri”",
+             vi: "Chương trình định kỳ “Học tiếng Nhật thương mại cùng Yuri”" },
+    url: "https://www.youtube.com/@yurisawamurachannel" },
+  { date: "2026-06", kind: "新聞",
+    outlet: { ja: "熊本日日新聞", en: "Kumamoto Nichinichi Shimbun", vi: "Báo Kumamoto Nichinichi" },
+    title: { ja: "県内企業の外国人材受入れをめぐる取材記事に、代表のコメントが掲載されました",
+             en: "Quoted in a feature on foreign-talent employment among companies in the prefecture",
+             vi: "Được trích dẫn trong bài viết về tiếp nhận nhân lực nước ngoài" },
+    url: "" },
+  { date: "2026-03", kind: "テレビ",
+    outlet: { ja: "熊本県内テレビ局 情報番組", en: "Regional TV information programme", vi: "Chương trình truyền hình địa phương" },
+    title: { ja: "ベトナムフェスティバル熊本の総合司会として出演しました",
+             en: "Appeared as master of ceremonies for Vietnam Festival Kumamoto",
+             vi: "Xuất hiện với vai trò dẫn chương trình Lễ hội Việt Nam Kumamoto" },
+    url: "" },
+  { date: "2025-10", kind: "Web",
+    outlet: { ja: "ビジネス系Webメディア", en: "Online business media", vi: "Trang tin kinh doanh" },
+    title: { ja: "学生起業から日越3法人の経営まで — 経営者インタビュー",
+             en: "Interview: from student founder to running three entities across Japan and Vietnam",
+             vi: "Phỏng vấn: từ sinh viên khởi nghiệp đến điều hành 3 pháp nhân" },
+    url: "" }
+];
