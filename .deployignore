@@ -1,0 +1,11 @@
+# エックスサーバーへ転送しないもの（rsync --exclude-from）
+.git/
+.github/
+.gitignore
+.deployignore
+README.md
+社長確認事項.md
+Xserver公開手順.md
+フォーム受信.gs
+*.bak
+*.md.orig

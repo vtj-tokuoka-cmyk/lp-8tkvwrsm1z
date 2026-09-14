@@ -265,3 +265,16 @@ Google Fonts から3種類を読み込んでいます（各HTMLの `<head>` に�
 | 英字のアクセント（数字・ラベル） | Cormorant Garamond |
 
 変えたいときは `style.css` の `:root` にある `--serif` `--sans` `--latin` と、各HTMLの Google Fonts のリンクを書き換えてください。
+
+---
+
+## 公開先について
+
+| 公開先 | URL | 更新方法 |
+|---|---|---|
+| GitHub Pages | https://vtj-tokuoka-cmyk.github.io/lp-8tkvwrsm1z/ | main に push すると自動 |
+| エックスサーバー（独自ドメイン） | 設定後のドメイン | main に push すると GitHub Actions が rsync（SSH・ポート10022）で転送 |
+
+エックスサーバーへの転送は `.github/workflows/deploy-xserver.yml`。
+接続情報は GitHub の Secrets（`XSERVER_HOST` / `XSERVER_USER` / `XSERVER_PATH` / `XSERVER_SSH_KEY` / 任意で `XSERVER_PORT`）に入れます。
+初回の設定手順は **Xserver公開手順.md** を参照。転送しないファイルは `.deployignore` で指定します。

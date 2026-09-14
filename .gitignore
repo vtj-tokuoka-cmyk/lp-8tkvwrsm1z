@@ -1,0 +1,7 @@
+# 秘密鍵は絶対にコミットしない（このリポジトリは Public です）
+*.key
+*.pem
+id_rsa*
+id_ed25519*
+xserver_deploy*
+.env

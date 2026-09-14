@@ -1,0 +1,109 @@
+name: Deploy to Xserver
+
+# GitHub(main) に push すると、エックスサーバーへ rsync（SSH）で転送します。
+# 手動実行（Actions タブ → Run workflow）では、既定で「お試し転送（dry-run）」になります。
+#
+# 必要な Secrets（Settings → Secrets and variables → Actions）
+#   XSERVER_HOST     例) xsample.xsrv.jp          ← サーバーID.xsrv.jp または sv****.xserver.jp
+#   XSERVER_USER     例) xsample                  ← サーバーID
+#   XSERVER_PATH     例) /home/xsample/example.com/public_html
+#   XSERVER_SSH_KEY  秘密鍵の中身（-----BEGIN ... END----- まで全部）
+#   XSERVER_PORT     省略可（既定 10022）
+#
+# 詳しい手順は「Xserver公開手順.md」を参照。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "お試し（実際には転送しない）"
+        type: boolean
+        default: true
+      delete:
+        description: "サーバー側の余分なファイルを削除する（--delete）"
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-xserver
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリを取得
+        uses: actions/checkout@v4
+
+      - name: 設定を確認
+        id: check
+        env:
+          HOST: ${{ secrets.XSERVER_HOST }}
+          USER: ${{ secrets.XSERVER_USER }}
+          TARGET: ${{ secrets.XSERVER_PATH }}
+          KEY: ${{ secrets.XSERVER_SSH_KEY }}
+        run: |
+          miss=""
+          [ -n "$HOST" ]   || miss="$miss XSERVER_HOST"
+          [ -n "$USER" ]   || miss="$miss XSERVER_USER"
+          [ -n "$TARGET" ] || miss="$miss XSERVER_PATH"
+          [ -n "$KEY" ]    || miss="$miss XSERVER_SSH_KEY"
+          if [ -n "$miss" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::Secrets が未設定のため転送しません（未設定:$miss）。Xserver公開手順.md を参照してください。"
+            echo "### エックスサーバーへの転送はスキップしました" >> "$GITHUB_STEP_SUMMARY"
+            echo "未設定の Secrets:$miss" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          # 事故防止：転送先が public_html 配下でなければ止める
+          case "$TARGET" in
+            *public_html*) : ;;
+            *) echo "::error::XSERVER_PATH に public_html が含まれていません（$TARGET）。転送先を確認してください。"; exit 1 ;;
+          esac
+
+      - name: SSH鍵を用意
+        if: steps.check.outputs.skip != 'true'
+        env:
+          KEY: ${{ secrets.XSERVER_SSH_KEY }}
+          HOST: ${{ secrets.XSERVER_HOST }}
+          PORT: ${{ secrets.XSERVER_PORT || '10022' }}
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$KEY" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p "$PORT" "$HOST" >> ~/.ssh/known_hosts 2>/dev/null
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: rsync で転送
+        if: steps.check.outputs.skip != 'true'
+        env:
+          HOST: ${{ secrets.XSERVER_HOST }}
+          USER: ${{ secrets.XSERVER_USER }}
+          TARGET: ${{ secrets.XSERVER_PATH }}
+          PORT: ${{ secrets.XSERVER_PORT || '10022' }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          DELETE: ${{ inputs.delete }}
+        run: |
+          set -euo pipefail
+          TARGET="${TARGET%/}"
+          FLAGS="-rltvz --human-readable --no-perms --no-owner --no-group --chmod=D755,F644"
+          if [ "${DRY_RUN:-false}" = "true" ]; then
+            FLAGS="$FLAGS --dry-run"
+            echo "### お試し転送（dry-run）：実際のファイルは変更されません" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${DELETE:-false}" = "true" ]; then
+            FLAGS="$FLAGS --delete"
+            echo "### --delete あり：サーバー側の余分なファイルを削除します" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "転送先: $USER@$HOST:$TARGET/ （ポート $PORT）"
+          rsync $FLAGS \
+            --exclude-from=.deployignore \
+            -e "ssh -i ~/.ssh/id_deploy -p $PORT -o StrictHostKeyChecking=yes" \
+            ./ "$USER@$HOST:$TARGET/"
+
+      - name: 鍵を消す
+        if: always()
+        run: rm -f ~/.ssh/id_deploy
