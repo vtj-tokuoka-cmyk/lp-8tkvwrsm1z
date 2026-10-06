@@ -44,21 +44,81 @@ function stepCard(s) {
 /* ---------- 講演・出演の実績 1行 ---------- */
 function lecRow(l) {
   const d = fmtDateShort(l.date);
+  const up = isUpcoming(l);
   const kind = L(KIND_LABELS[l.kind] || l.kind);
-  const cls = l.kind === 'MC' ? 'b' : (l.upcoming ? '' : 'n');
-  const link = l.url ? `<a class="go" href="${l.url}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '';
-  return `<article class="card lec rv">
+  const cls = l.kind === 'MC' ? 'b' : (up ? '' : 'n');
+
+  /* 情報行：中身がある項目だけ並べる */
+  const meta = [];
+  const add = (key, v) => { const t = L(v); if (t) meta.push(`<span><i>${T(key)}</i>${esc(t)}</span>`); };
+  add('lblHost', l.host);
+  add('lblVenue', l.venue);
+  if (up) {
+    add('lblTime', l.time);
+    add('lblFee', l.fee);
+    if (l.deadline && !isClosed(l)) meta.push(`<span><i>${T('lblDeadline')}</i>${esc(fmtDeadline(l.deadline))}</span>`);
+  }
+  add('lblAudience', l.audience);
+
+  const desc = L(l.desc);
+  const acts = lecActions(l, up);
+  const thumb = l.flyer
+    ? `<button type="button" class="lec-flyer" data-flyer="${esc(l.flyer)}" data-cap="${esc(L(l.title))}" aria-label="${esc(T('btnFlyer'))}"><img src="${esc(l.flyer)}" alt="" loading="lazy"></button>`
+    : '';
+  const rich = desc || acts || thumb;
+
+  return `<article class="card lec${rich ? ' rich' : ''} rv">
     <div class="d"><b>${d.md}</b><span>${d.y}</span></div>
     <div>
       <h4>${esc(L(l.title))}</h4>
-      <div class="meta">
-        <span><i>${LANG === 'ja' ? '主催' : 'Host'}</i>${esc(L(l.host))}</span>
-        <span><i>${LANG === 'ja' ? '会場' : 'Venue'}</i>${esc(L(l.venue))}</span>
-        ${L(l.audience) ? `<span><i>${LANG === 'ja' ? '対象' : 'Audience'}</i>${esc(L(l.audience))}</span>` : ''}
-      </div>
+      <div class="meta">${meta.join('')}</div>
+      ${desc ? `<p class="lec-desc">${esc(desc)}</p>` : ''}
+      ${acts}
     </div>
-    <div class="right"><span class="tag ${cls}">${esc(kind)}</span>${link}</div>
+    <div class="right"><span class="tag ${cls}">${esc(kind)}</span>${thumb}</div>
   </article>`;
+}
+
+/* 登壇カードのボタン列：情報があるものだけ出す */
+function lecActions(l, up) {
+  const a = [];
+  if (up && l.apply) {
+    a.push(isClosed(l)
+      ? `<span class="lec-closed">${T('regClosed')}</span>`
+      : `<a class="lec-btn pri" href="${esc(l.apply)}" target="_blank" rel="noopener">${T('btnApply')} →</a>`);
+  }
+  const site = l.site || l.url;
+  if (site) a.push(`<a class="lec-btn" href="${esc(site)}" target="_blank" rel="noopener">${T(l.site ? 'btnSite' : 'visitSite')} ↗</a>`);
+  if (l.flyer) a.push(`<button type="button" class="lec-btn" data-flyer="${esc(l.flyer)}" data-cap="${esc(L(l.title))}">${T('btnFlyer')}</button>`);
+  return a.length ? `<div class="lec-act">${a.join('')}</div>` : '';
+}
+
+/* チラシを拡大表示（ページに #lb が無ければ作る。言語切替で再描画しても二重登録しない） */
+let _flyerBound = false;
+function bindFlyers() {
+  if (_flyerBound) return;
+  _flyerBound = true;
+  let lb = document.getElementById('lb');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'lb';
+    lb.innerHTML = '<span class="x">×</span><img alt=""><div class="cap"></div>';
+    document.body.appendChild(lb);
+  }
+  const im = lb.querySelector('img'), cap = lb.querySelector('.cap');
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-flyer]');
+    if (!b) return;
+    e.preventDefault();
+    im.src = b.dataset.flyer;
+    im.alt = b.dataset.cap || '';
+    cap.innerHTML = `${esc(b.dataset.cap || '')}　<a href="${esc(b.dataset.flyer)}" target="_blank" rel="noopener" class="lb-full">${T('openFull')} ↗</a>`;
+    lb.classList.add('on');
+  });
+  lb.addEventListener('click', e => {
+    if (e.target !== im && !e.target.closest('.lb-full')) lb.classList.remove('on');
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('on'); });
 }
 
 /* ---------- メディア出演 1行 ---------- */

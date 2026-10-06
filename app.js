@@ -60,6 +60,17 @@ const UI = {
   moreBlog:    { ja: "ブログをすべて見る",   en: "Read all posts",            vi: "Xem tất cả bài viết" },
   moreGallery: { ja: "ギャラリーをすべて見る", en: "View full gallery",       vi: "Xem toàn bộ thư viện" },
   visitSite:   { ja: "サイトを見る",         en: "Visit site",                vi: "Xem trang" },
+  btnApply:    { ja: "申し込む",             en: "Register",                  vi: "Đăng ký" },
+  btnSite:     { ja: "イベントHP",           en: "Event website",             vi: "Trang sự kiện" },
+  btnFlyer:    { ja: "チラシを見る",         en: "View flyer",                vi: "Xem tờ rơi" },
+  openFull:    { ja: "原寸で開く",           en: "Open full size",            vi: "Mở kích thước gốc" },
+  regClosed:   { ja: "申込受付は終了しました", en: "Registration closed",     vi: "Đã hết hạn đăng ký" },
+  lblHost:     { ja: "主催",                 en: "Host",                      vi: "Đơn vị tổ chức" },
+  lblVenue:    { ja: "会場",                 en: "Venue",                     vi: "Địa điểm" },
+  lblAudience: { ja: "対象",                 en: "Audience",                  vi: "Đối tượng" },
+  lblTime:     { ja: "時間",                 en: "Time",                      vi: "Thời gian" },
+  lblFee:      { ja: "参加費",               en: "Fee",                       vi: "Phí tham dự" },
+  lblDeadline: { ja: "申込締切",             en: "Register by",               vi: "Hạn đăng ký" },
   viewAlbum:   { ja: "写真集を見る",         en: "View photo book",           vi: "Xem bộ ảnh" },
   readMore:    { ja: "続きを読む",           en: "Read more",                 vi: "Đọc tiếp" },
   backToList:  { ja: "← 一覧にもどる",       en: "← Back to list",            vi: "← Quay lại danh sách" },
@@ -196,6 +207,30 @@ function fmtDate(s) {
 function fmtDateShort(s) {
   const p = String(s).split("-");
   return { y: p[0], md: p[2] ? `${+p[1]}.${+p[2]}` : `${+p[1]}` };
+}
+
+/* ---------- 今日の日付と「開催予定かどうか」 ---------- */
+function todayStr() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+/* upcoming: true でも、開催日を過ぎたら自動で「これまでの登壇」扱いにする */
+function isUpcoming(l) {
+  if (!l.upcoming) return false;
+  const d = String(l.date);
+  return d >= todayStr().slice(0, d.length);
+}
+/* 申込締切を過ぎたか */
+function isClosed(l) {
+  return !!l.deadline && String(l.deadline) < todayStr();
+}
+/* 締切の表示（例：10/16（金）まで） */
+function fmtDeadline(s) {
+  const p = String(s).split("-").map(Number);
+  const dt = new Date(p[0], p[1] - 1, p[2]);
+  if (LANG === "en") return `${dt.toLocaleDateString("en-US", { month: "short", day: "numeric" })} (${dt.toLocaleDateString("en-US", { weekday: "short" })})`;
+  if (LANG === "vi") return `${p[2]}/${p[1]}/${p[0]}`;
+  return `${p[1]}/${p[2]}（${"日月火水木金土"[dt.getDay()]}）まで`;
 }
 
 /* ---------- HTMLエスケープ ---------- */

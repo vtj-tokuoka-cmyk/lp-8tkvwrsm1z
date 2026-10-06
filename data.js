@@ -120,7 +120,17 @@ const TOPICS = [
    date    : "2026-05-20" の形式（日付が未定なら "2026-05" でもOK）
    kind    : "講演" / "MC" / "パネル" / "研修" / "取材" のいずれか
    upcoming: true にすると「開催予定」に並びます
+             （開催日を過ぎると自動で「これまでの登壇」へ移り、登壇回数にも数えられます）
    url     : 告知ページなどがあれば。なければ ""
+
+   ▼ ここから下は「あれば書く」項目。書かなければ、そのボタンや行は表示されません
+   site    : イベントや主催者のホームページ        → 「イベントHP」ボタン
+   apply   : 申込ページ（Googleフォーム等）          → 「申し込む」ボタン（開催予定のみ）
+   deadline: 申込締切 "2026-10-16"                   → 締切を過ぎると「受付終了」表示
+   flyer   : チラシ画像（img/ に置いたファイル）     → サムネイル＋「チラシを見る」
+   time    : 時間 { ja: "15:00〜16:30", ... }        → 開催予定のみ表示
+   fee     : 参加費 { ja: "無料", ... }              → 開催予定のみ表示
+   desc    : ひとこと概要 { ja: "...", ... }
    ========================================================================= */
 const LECTURES = [
   {
@@ -130,8 +140,14 @@ const LECTURES = [
              vi: "Vượt qua thiếu hụt nhân lực tại nhà máy bằng nhân sự nước ngoài — hiểu đúng chế độ, giữ chân và đào tạo" },
     host:  { ja: "モノづくりフェア2026（日刊工業新聞社）", en: "Monozukuri Fair 2026 (The Nikkan Kogyo Shimbun)", vi: "Monozukuri Fair 2026 (Báo Nikkan Kogyo)" },
     venue: { ja: "福岡市 ／ マリンメッセ福岡 B館1F セミナー会場B", en: "Marine Messe Fukuoka, Hall B 1F", vi: "Marine Messe Fukuoka, nhà B tầng 1" },
-    audience: { ja: "製造業の経営者・採用担当者（11:00〜12:00）", en: "Manufacturing executives and HR (11:00–12:00)", vi: "Lãnh đạo và phụ trách nhân sự ngành sản xuất (11:00–12:00)" },
-    url: "https://mono2026.nikkan.co.jp/webinar/detail/1948"
+    audience: { ja: "製造業の経営者・採用担当者", en: "Manufacturing executives and HR", vi: "Lãnh đạo và phụ trách nhân sự ngành sản xuất" },
+    time:  { ja: "11:00〜12:00", en: "11:00–12:00", vi: "11:00–12:00" },
+    desc:  { ja: "技能実習・特定技能・技人国の違いや育成就労制度への移行といった制度の基本から、定着率を左右する生活・教育サポート、現場での多文化マネジメントまでを実務目線で解説します。",
+             en: "From the basics — how Technical Intern Training, Specified Skilled Worker and Engineer/Specialist visas differ, and the shift to the new Employment for Skill Development system — to the living and training support that decides retention, and managing a multicultural shop floor.",
+             vi: "Từ kiến thức nền tảng — sự khác nhau giữa thực tập kỹ năng, kỹ năng đặc định, kỹ sư/chuyên gia và việc chuyển sang chế độ đào tạo việc làm mới — đến hỗ trợ đời sống, đào tạo giúp giữ chân nhân sự và cách quản lý môi trường đa văn hóa tại xưởng." },
+    site:  "https://www.nikkanseibu-eve.com/mono/",
+    apply: "https://mono2026.nikkan.co.jp/webinar/detail/1948",
+    url: ""
   },
   {
     date: "2026-10-20", kind: "講演", upcoming: true,
@@ -140,7 +156,16 @@ const LECTURES = [
              vi: "Câu chuyện tăng trưởng chỉ có tại đây — xây dựng tổ chức vững mạnh để tăng tốc doanh nghiệp" },
     host:  { ja: "一般社団法人 熊本イノベーションベース（KUIB）", en: "Kumamoto Innovation Base (KUIB)", vi: "Kumamoto Innovation Base (KUIB)" },
     venue: { ja: "熊本市 ／ くまもと交流会館パレア 9階 3会議室", en: "Kumamoto City / Parea, 9F Room 3", vi: "TP. Kumamoto / Parea, tầng 9 phòng 3" },
-    audience: { ja: "経営者（15:00〜16:30・参加無料）", en: "Business owners (15:00–16:30, free)", vi: "Doanh nhân (15:00–16:30, miễn phí)" },
+    audience: { ja: "経営者", en: "Business owners", vi: "Doanh nhân" },
+    time:  { ja: "15:00〜16:30（懇親会 17:15〜）", en: "15:00–16:30 (networking from 17:15)", vi: "15:00–16:30 (giao lưu từ 17:15)" },
+    fee:   { ja: "セミナー無料 ／ 懇親会 4,500円", en: "Seminar free / networking ¥4,500", vi: "Hội thảo miễn phí / giao lưu 4.500 yên" },
+    deadline: "2026-10-16",
+    desc:  { ja: "事業成長に本気で向き合ってきた熊本の経営者3名が、それぞれの経験を語るセミナーです。澤村は「会社の成長を加速させる、強い組織のつくり方」を担当します。",
+             en: "Three Kumamoto business owners who have taken growth seriously share what they actually did. Yuri speaks on building the strong organisation that accelerates a company.",
+             vi: "Ba doanh nhân Kumamoto chia sẻ trải nghiệm thực tế trong việc phát triển doanh nghiệp. Yuri trình bày về cách xây dựng tổ chức vững mạnh để tăng tốc doanh nghiệp." },
+    site:  "https://kumamoto-cen.or.jp/",
+    apply: "https://forms.gle/6MwB2RYGBKUAByvq8",
+    flyer: "img/flyer_20261020_kuib.jpg",
     url: ""
   },
   {

@@ -141,13 +141,13 @@ function renderPage(){
   /* 05 開催予定 */
   document.getElementById('t-upcoming').textContent = T('secUpcoming');
   document.getElementById('lec-sample').innerHTML = sampleNote();
-  const up = LECTURES.filter(l=>l.upcoming).sort((a,b)=>a.date.localeCompare(b.date));
+  const up = LECTURES.filter(isUpcoming).sort((a,b)=>a.date.localeCompare(b.date));
   document.getElementById('up-list').innerHTML = up.length
     ? up.map(lecRow).join('') : `<p class="empty">${T('preparing')}</p>`;
 
   /* 06 これまでの登壇 */
   document.getElementById('t-past').textContent = T('secPast');
-  const kinds = [...new Set(LECTURES.filter(l=>!l.upcoming).map(l=>l.kind))];
+  const kinds = [...new Set(LECTURES.filter(l=>!isUpcoming(l)).map(l=>l.kind))];
   document.getElementById('chips').innerHTML =
     [`<button class="chip${CUR_KIND==='all'?' on':''}" data-k="all">${LANG==='ja'?'すべて':(LANG==='en'?'All':'Tất cả')}</button>`]
     .concat(kinds.map(k=>`<button class="chip${CUR_KIND===k?' on':''}" data-k="${esc(k)}">${esc(L(KIND_LABELS[k]||k))}</button>`))
@@ -158,6 +158,7 @@ function renderPage(){
     drawPast(); bindReveal();
   });
   drawPast();
+  bindFlyers();
 
   /* CTA */
   document.getElementById('cta-in').innerHTML = `
@@ -176,7 +177,7 @@ function renderPage(){
 }
 
 function drawPast(){
-  const list = LECTURES.filter(l=>!l.upcoming)
+  const list = LECTURES.filter(l=>!isUpcoming(l))
     .filter(l=>CUR_KIND==='all'||l.kind===CUR_KIND)
     .sort((a,b)=>b.date.localeCompare(a.date));
   document.getElementById('past-list').innerHTML = list.length

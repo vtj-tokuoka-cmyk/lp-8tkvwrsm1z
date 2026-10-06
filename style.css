@@ -212,11 +212,28 @@ footer{background:#fff;border-top:1px solid var(--line);padding:52px var(--pad) 
 .lec .meta i{font-style:normal;color:var(--red);margin-right:5px;font-weight:700}
 .lec .right{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none}
 .lec a.go{font-size:11.5px;color:var(--red);font-weight:700;white-space:nowrap}
+.lec.rich{align-items:start}
+.lec .lec-desc{font-size:14px;color:var(--ink-2);line-height:1.85;margin-top:10px;max-width:46em}
+.lec-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.lec-btn{display:inline-flex;align-items:center;gap:6px;font:700 13px/1 var(--sans);letter-spacing:.04em;
+  padding:11px 18px;border-radius:999px;border:1.5px solid var(--red);color:var(--red);background:#fff;
+  cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.lec-btn:hover{background:var(--red);color:#fff}
+.lec-btn.pri{background:var(--red);color:#fff;padding:11px 24px;box-shadow:0 8px 20px rgba(215,25,45,.22)}
+.lec-btn.pri:hover{background:var(--red-bright);border-color:var(--red-bright)}
+.lec-closed{display:inline-flex;align-items:center;font-size:12.5px;color:var(--muted);padding:0 4px}
+.lec-flyer{display:block;width:104px;aspect-ratio:1/1.414;border:0;padding:0;border-radius:6px;overflow:hidden;
+  cursor:zoom-in;box-shadow:var(--shadow);background:var(--bg-2)}
+.lec-flyer img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s}
+.lec-flyer:hover img{transform:scale(1.05)}
+#lb .cap .lb-full{color:#fff;text-decoration:underline;margin-left:6px;letter-spacing:.06em}
 @media(max-width:760px){
   .lec{grid-template-columns:1fr;gap:10px}
   .lec .d{text-align:left;display:flex;align-items:baseline;gap:10px}
   .lec .d b{font-size:22px}
   .lec .right{flex-direction:row;align-items:center;justify-content:flex-start}
+  .lec .right .lec-flyer{display:none}
+  .lec-btn{padding:10px 15px;font-size:12.5px}
 }
 
 /* ---------- timeline ---------- */

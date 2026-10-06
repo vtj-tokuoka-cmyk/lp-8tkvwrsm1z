@@ -170,7 +170,7 @@ function renderPage(){
     </div>`;
 
   /* ---- STATS ---- */
-  const done = LECTURES.filter(l=>!l.upcoming).length;
+  const done = LECTURES.filter(l=>!isUpcoming(l)).length;
   document.getElementById('stats').innerHTML = STATS.map(st=>{
     const v = st.value==='auto:lectures' ? done : L(st.value);
     return `<div class="stat rv"><b>${esc(String(v))}<small>${esc(L(st.unit))}</small></b><p>${esc(L(st.label))}</p></div>`;
