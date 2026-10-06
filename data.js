@@ -124,6 +124,26 @@ const TOPICS = [
    ========================================================================= */
 const LECTURES = [
   {
+    date: "2026-10-14", kind: "講演", upcoming: true,
+    title: { ja: "製造現場の人手不足を『外国人材』で勝ち抜く！ 〜制度の正しい理解と定着・育成ノウハウ〜",
+             en: "Beating the factory labour shortage with foreign talent — getting the rules right, and making people stay",
+             vi: "Vượt qua thiếu hụt nhân lực tại nhà máy bằng nhân sự nước ngoài — hiểu đúng chế độ, giữ chân và đào tạo" },
+    host:  { ja: "モノづくりフェア2026（日刊工業新聞社）", en: "Monozukuri Fair 2026 (The Nikkan Kogyo Shimbun)", vi: "Monozukuri Fair 2026 (Báo Nikkan Kogyo)" },
+    venue: { ja: "福岡市 ／ マリンメッセ福岡 B館1F セミナー会場B", en: "Marine Messe Fukuoka, Hall B 1F", vi: "Marine Messe Fukuoka, nhà B tầng 1" },
+    audience: { ja: "製造業の経営者・採用担当者（11:00〜12:00）", en: "Manufacturing executives and HR (11:00–12:00)", vi: "Lãnh đạo và phụ trách nhân sự ngành sản xuất (11:00–12:00)" },
+    url: "https://mono2026.nikkan.co.jp/webinar/detail/1948"
+  },
+  {
+    date: "2026-10-20", kind: "講演", upcoming: true,
+    title: { ja: "ここでしか聞けない、社長の成長ストーリー 〜会社の成長を加速させる、強い組織のつくり方〜",
+             en: "Growth stories you can only hear here — building the strong organisation that accelerates a company",
+             vi: "Câu chuyện tăng trưởng chỉ có tại đây — xây dựng tổ chức vững mạnh để tăng tốc doanh nghiệp" },
+    host:  { ja: "一般社団法人 熊本イノベーションベース（KUIB）", en: "Kumamoto Innovation Base (KUIB)", vi: "Kumamoto Innovation Base (KUIB)" },
+    venue: { ja: "熊本市 ／ くまもと交流会館パレア 9階 3会議室", en: "Kumamoto City / Parea, 9F Room 3", vi: "TP. Kumamoto / Parea, tầng 9 phòng 3" },
+    audience: { ja: "経営者（15:00〜16:30・参加無料）", en: "Business owners (15:00–16:30, free)", vi: "Doanh nhân (15:00–16:30, miễn phí)" },
+    url: ""
+  },
+  {
     date: "2026-07-28", kind: "講演", upcoming: false,
     title: { ja: "人手不足を『外国人材』で勝ち抜く経営戦略 〜制度の正しい理解から定着のノウハウ、海外展開までを現場目線で語る〜",
              en: "Winning the Labour Shortage with Foreign Talent: from getting the rules right to retention and overseas expansion",
