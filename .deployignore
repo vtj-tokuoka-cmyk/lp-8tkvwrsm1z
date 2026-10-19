@@ -10,3 +10,6 @@ Xserver公開手順.md
 *.bak
 *.md.orig
 社長確認事項.pdf
+tools/
+_en_list_tmp.json
+LP本文_赤入れ用.pdf

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<title>LP本文 確認用（赤入れ用）</title>
+<style>
+@page { size: A4; margin: 14mm 12mm 14mm; }
+* { box-sizing: border-box; }
+body { font-family: "Yu Gothic", "Meiryo", sans-serif; font-size: 9.6pt; line-height: 1.75; color: #1d1d1f; margin: 0; }
+.cover { padding: 6mm 2mm 0; }
+.cover h1 { font-size: 20pt; margin: 0 0 4pt; letter-spacing: .02em; }
+.cover .sub { color: #555; margin-bottom: 14pt; }
+.cover .how { border: 1pt solid #222; padding: 9pt 12pt; margin: 10pt 0 14pt; }
+.cover .how p { margin: 3pt 0; }
+.cover table { border-collapse: collapse; width: 60%; }
+.cover td { border: .6pt solid #999; padding: 4pt 8pt; }
+section { break-before: page; }
+h2 { font-size: 14pt; margin: 0 0 6pt; padding-bottom: 4pt; border-bottom: 1.6pt solid #222; }
+h3 { font-size: 10.6pt; margin: 12pt 0 4pt; }
+table.items { width: 100%; border-collapse: collapse; table-layout: fixed; }
+table.items th, table.items td { border: .6pt solid #8a8a8a; padding: 4pt 6pt; vertical-align: top; text-align: left; }
+table.items th { background: #efefef; font-size: 8.6pt; }
+table.items td.no { width: 11%; font-weight: 700; white-space: nowrap; }
+table.items td.txt { width: 63%; white-space: pre-wrap; word-break: break-word; }
+table.items td.memo { width: 26%;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 17pt, #d6d6d6 17pt, #d6d6d6 17.6pt); }
+table.items tr { break-inside: avoid; }
+.lb { display: inline-block; font-size: 8pt; color: #444; border: .6pt solid #999; padding: 0 4pt; margin-right: 5pt; border-radius: 2pt; }
+.fld { margin: 0 0 3pt; }
+.fld:last-child { margin-bottom: 0; }
+.date { color: #444; font-size: 8.6pt; }
+</style>
+</head>
+<body>
+<div id="doc"></div>
+
+<script src="../data.js"></script>
+<script src="../app.js"></script>
+<script>
+/* LPに表示される日本語の文言を、ページごとに番号付きで並べる（印刷して赤入れしてもらう用） */
+const LABEL = {
+  title: 'タイトル', body: '本文', lead: 'リード文', catch: 'キャッチ', short: '短い名前', forwhom: '対象',
+  record: '実績', tags: 'タグ', name: '名称', role: '役職', desc: '説明', items: '内容', best: 'こんな場面に',
+  time: '時間', note: '補足', label: '項目', value: '内容', year: '年', outlet: '媒体', host: '主催', venue: '会場',
+  audience: '対象', excerpt: '概要', caption: 'キャプション', sub: 'サブ', eyebrow: '小見出し', roles: '肩書き',
+  btnPrimary: 'ボタン1', btnSecondary: 'ボタン2', cta: 'ボタン', fee: '参加費', handle: 'アカウント', est: '設立',
+  unit: '単位', price: '料金', date: '日付'
+};
+const SKIP = new Set(['src','image','img','url','cover','href','pos','key','featured','apply','site','flyer','upcoming',
+  'deadline','id','slug','count','no','cat','kind','value_auto']);
+
+/* 画面に出ていないUI文言（旧「登壇回数」・サンプル注意書き） */
+const UI_SKIP = new Set(['statTalks', 'sampleNote']);
+
+function ja(v) {
+  if (v === null || v === undefined) return '';
+  if (typeof v === 'string' || typeof v === 'number') return String(v);
+  if (Array.isArray(v)) return v.map(ja).filter(Boolean).join('\n');
+  if ('ja' in v) return ja(v.ja);
+  return '';
+}
+function plain(s) {
+  return s.replace(/<br\s*\/?>/g, '\n').replace(/<h3>(.*?)<\/h3>/g, '\n■ $1\n').replace(/<\/p>\s*/g, '\n')
+          .replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\n{3,}/g, '\n\n').trim();
+}
+function esc2(s) { return String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c])); }
+
+/* 1件分（オブジェクト）を「項目名：本文」の行にする */
+function fields(o) {
+  if (typeof o !== 'object' || Array.isArray(o) || 'ja' in o) return esc2(plain(ja(o)));
+  const out = [];
+  if (o.date) out.push(`<div class="fld date">${esc2(o.date)}</div>`);
+  for (const k in o) {
+    if (SKIP.has(k) || k === 'date') continue;
+    let t = k === 'tags' ? ja(o[k]).replace(/\n/g, '／') : plain(ja(o[k]));
+    if (k === 'value' && o[k] === 'auto:lectures') continue;
+    if (!t) continue;
+    out.push(`<div class="fld"><span class="lb">${LABEL[k] || k}</span>${esc2(t)}</div>`);
+  }
+  return out.join('');
+}
+
+const PAGES = [
+  { page: 'トップページ', code: 'T', parts: [
+    ['ヒーロー（最初の画面）', HERO, 'keys'],
+    ['数字の帯', STATS],
+    ['写真の帯', STRIP],
+    ['講演のご案内', { title: UI.secLectureInfo, lead: UI.secLectureInfoLead }, 'keys'],
+    ['帯のメッセージ', BAND, 'keys'],
+    ['こだわり（見出し）', { title: KODAWARI_TITLE, lead: KODAWARI_LEAD }, 'keys'],
+    ['こだわり', KODAWARI],
+    ['メディア出演', MEDIA],
+    ['グループ', GROUP],
+    ['関連サービス', SERVICES],
+    ['お問い合わせの種類', INQUIRY_TYPES]
+  ]},
+  { page: 'プロフィール', code: 'P', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.profile }, 'keys'],
+    ['本文', PROFILE_TEXT],
+    ['略歴', PROFILE_SPEC],
+    ['歩み（年表）', TIMELINE]
+  ]},
+  { page: '講演実績', code: 'L', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.lecture }, 'keys'],
+    ['講演テーマ', TOPICS],
+    ['講演パッケージ', PACKAGES],
+    ['ご依頼の流れ', STEPS],
+    ['講師情報', SPEAKER_SPEC],
+    ['登壇の一覧（新しい順）', LECTURES.slice().sort((a, b) => b.date.localeCompare(a.date))]
+  ]},
+  { page: 'SNS・動画', code: 'S', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.sns }, 'keys'],
+    ['各SNSの紹介', SNS_ACCOUNTS]
+  ]},
+  { page: 'ブログ', code: 'B', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.blog }, 'keys'],
+    ['記事', POSTS]
+  ]},
+  { page: 'ギャラリー', code: 'G', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.gallery }, 'keys'],
+    ['写真集', ALBUMS],
+    ['写真のキャプション', PHOTOS]
+  ]},
+  { page: '全ページ共通の見出し・ボタン・フォーム', code: 'C', parts: [
+    ['見出し・ボタン・フォームの文言', UI, 'keys']
+  ]}
+];
+
+function renderPage() {
+  LANG = 'ja';
+  const counts = [];
+  const secs = PAGES.map(pg => {
+    let n = 0;
+    const blocks = pg.parts.map(([title, src, mode]) => {
+      const rows = [];
+      const push = (html) => { if (!html) return; n++; rows.push(
+        `<tr><td class="no">${pg.code}-${String(n).padStart(2, '0')}</td><td class="txt">${html}</td><td class="memo"></td></tr>`); };
+      if (mode === 'keys') {
+        for (const k in src) {
+          if (pg.code === 'C' && UI_SKIP.has(k)) continue;
+          const t = plain(ja(src[k]));
+          if (!t || /^[A-Z ]+$/.test(t)) continue;
+          push(LABEL[k] && pg.code !== 'C' ? `<span class="lb">${LABEL[k]}</span>${esc2(t)}` : esc2(t));
+        }
+      } else if (Array.isArray(src)) {
+        src.forEach(it => push(fields(it)));
+      } else {
+        push(fields(src));
+      }
+      if (!rows.length) return '';
+      return `<h3>${title}</h3><table class="items"><colgroup><col style="width:9%"><col style="width:63%"><col style="width:28%"></colgroup><thead><tr><th>番号</th><th>本文（いまLPに出ている文章）</th><th>修正メモ</th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
+    }).join('');
+    counts.push([pg.page, pg.code, n]);
+    return `<section><h2>${pg.code}. ${pg.page}</h2>${blocks}</section>`;
+  }).join('');
+
+  const d = new Date();
+  document.getElementById('doc').innerHTML = `
+    <div class="cover">
+      <h1>社長個人LP 本文確認用（赤入れ用）</h1>
+      <div class="sub">作成日：${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日　／　確認用URL：https://vtj-tokuoka-cmyk.github.io/lp-8tkvwrsm1z/</div>
+      <div class="how">
+        <p><b>お願い</b>　LPに表示されている日本語の文章を、ページごとにすべて並べています。</p>
+        <p>1. 直したい箇所に、赤ペンで直接書き込んでください（右の「修正メモ」欄もお使いください）。</p>
+        <p>2. 載せたくない項目は、番号に × を付けてください。</p>
+        <p>3. 追加したいこと（講演実績・記事・司会実績など）は、余白か最後のページにお書きください。</p>
+        <p>英語・ベトナム語・中国語・フランス語・韓国語は、日本語が決まってから合わせて直します。</p>
+      </div>
+      <table>${counts.map(c => `<tr><td>${c[1]}. ${c[0]}</td><td>${c[2]} 項目</td></tr>`).join('')}
+        <tr><td><b>合計</b></td><td><b>${counts.reduce((a, c) => a + c[2], 0)} 項目</b></td></tr></table>
+    </div>
+    ${secs}
+    <section><h2>追加・ご要望（自由記入）</h2><table class="items"><tbody>${'<tr><td class="memo" style="width:100%;height:34pt"></td></tr>'.repeat(18)}</tbody></table></section>`;
+}
+</script>
+</body>
+</html>

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261006">
+<link rel="stylesheet" href="style.css?v=20261019">
 </head>
 <body>
 <div id="bar"></div>
@@ -74,9 +74,10 @@
 
 <footer id="site-footer"></footer>
 
-<script src="data.js?v=20261006"></script>
-<script src="app.js?v=20261006"></script>
-<script src="parts.js?v=20261006"></script>
+<script src="data.js?v=20261019"></script>
+<script src="i18n-extra.js?v=20261019"></script>
+<script src="app.js?v=20261019"></script>
+<script src="parts.js?v=20261019"></script>
 <script>
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secProfile');
@@ -102,13 +103,9 @@ function renderPage(){
 
   document.getElementById('cta-in').innerHTML = `
     <h2 style="font-family:var(--serif);font-size:clamp(30px,5vw,58px);font-weight:500;line-height:1.35;margin-bottom:18px">
-      ${{ja:'講演・MCのご依頼を<br>お待ちしています。',
-         en:'I would love to speak<br>at your event.',
-         vi:'Rất mong được<br>đồng hành cùng sự kiện của bạn.'}[LANG]}</h2>
+      ${T('ctaTitle')}</h2>
     <p style="max-width:36em;margin:0 auto 34px;font-size:16px;opacity:.95">
-      ${{ja:'テーマ・時間・ご予算はご相談に応じます。まずはお気軽にお問い合わせください。',
-         en:'Topic, length and budget are all negotiable. Please get in touch.',
-         vi:'Chủ đề, thời lượng và ngân sách đều có thể trao đổi. Xin vui lòng liên hệ.'}[LANG]}</p>
+      ${esc(T('ctaLead'))}</p>
     <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
       <a class="btn btn-w" href="index.html#contact">${T('navCta')} →</a>
       <a class="btn btn-gh" href="lecture.html">${T('navLecture')}</a>

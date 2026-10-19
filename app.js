@@ -18,7 +18,7 @@ const UI = {
   navGallery:  { ja: "ギャラリー",   en: "Gallery",   vi: "Thư viện ảnh" },
   navGroup:    { ja: "グループ",     en: "Group",     vi: "Tập đoàn" },
   navContact:  { ja: "お問い合わせ", en: "Contact",   vi: "Liên hệ" },
-  navCta:      { ja: "講演を依頼する", en: "Book a talk", vi: "Mời diễn thuyết" },
+  navCta:      { ja: "講演の相談をする", en: "Enquire about a talk", vi: "Trao đổi về diễn thuyết" },
 
   /* ヒーロー */
   scroll:      { ja: "SCROLL", en: "SCROLL", vi: "SCROLL" },
@@ -164,15 +164,39 @@ const UI = {
   secThemes:     { ja: "お話しできるテーマ", en: "Topics I speak on", vi: "Chủ đề tôi có thể chia sẻ" },
   secMediaMini:  { ja: "メディア出演", en: "In the media", vi: "Truyền thông" },
   watchOnYt:   { ja: "YouTubeで見る", en: "Watch on YouTube", vi: "Xem trên YouTube" },
-  followUs:    { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
+  followUs:    { ja: "フォローする", en: "Follow", vi: "Theo dõi" },
+  watchVideo:  { ja: "動画を見る", en: "Watch", vi: "Xem video" },
+  readArticle: { ja: "記事を読む", en: "Read", vi: "Đọc bài" },
+  chipAll:     { ja: "すべて", en: "All", vi: "Tất cả" },
+  ctaTitle:    { ja: "講演・MCのご相談を<br>お待ちしています。",
+                 en: "Planning an event?<br>Let's talk.",
+                 vi: "Rất mong nhận được<br>sự trao đổi từ bạn." },
+  ctaLead:     { ja: "テーマ・時間・ご予算はご相談に応じます。まずはお気軽にお問い合わせください。",
+                 en: "Topic, length and budget are all negotiable. Please get in touch.",
+                 vi: "Chủ đề, thời lượng và ngân sách đều có thể trao đổi. Xin vui lòng liên hệ." },
+  secAccounts: { ja: "各SNSのご紹介", en: "My Accounts", vi: "Các tài khoản" },
+  secAccountsLead: { ja: "それぞれ発信している内容がちがいます。目的に合わせてフォローしてください。",
+                 en: "Each account carries different content — follow whichever fits your interest.",
+                 vi: "Mỗi tài khoản có nội dung khác nhau — hãy theo dõi kênh phù hợp với bạn." },
+  langMenu:    { ja: "表示言語", en: "Language", vi: "Ngôn ngữ" },
+  autoNote:    { ja: "中文・Français・한국어 はAIによる自動翻訳です。",
+                 en: "Chinese, French and Korean are machine-translated by AI.",
+                 vi: "Tiếng Trung, tiếng Pháp và tiếng Hàn được dịch tự động bằng AI." }
 };
 
 /* ---------- 言語 ---------- */
 const LANGS = [
-  { key: "ja", label: "日本語" },
-  { key: "en", label: "EN" },
-  { key: "vi", label: "VN" }
+  { key: "ja", label: "日本語",     code: "JA" },
+  { key: "en", label: "English",    code: "EN" },
+  { key: "vi", label: "Tiếng Việt", code: "VI" },
+  { key: "zh", label: "简体中文",   code: "ZH" },
+  { key: "fr", label: "Français",   code: "FR" },
+  { key: "ko", label: "한국어",     code: "KO" }
 ];
+/* 中・仏・韓は data.js に書かず、英語の文言を i18n-extra.js の辞書で自動翻訳して表示する。
+   辞書に無い文言は英語のまま出る */
+const EXTRA_LANGS = ["zh", "fr", "ko"];
+const HTML_LANG = { zh: "zh-CN" };
 let LANG = "ja";
 try { LANG = localStorage.getItem("yslp_lang") || "ja"; } catch (e) { }
 if (!LANGS.some(l => l.key === LANG)) LANG = "ja";
@@ -182,7 +206,14 @@ function L(v) {
   if (v === null || v === undefined) return "";
   if (typeof v === "string" || Array.isArray(v)) return v;
   if (Object.prototype.hasOwnProperty.call(v, LANG)) return v[LANG];   // 空文字も「その言語では表示しない」として尊重
+  if (EXTRA_LANGS.includes(LANG) && v.en !== undefined) return Array.isArray(v.en) ? v.en.map(tr) : tr(v.en);
   return v.ja !== undefined ? v.ja : (v.en !== undefined ? v.en : "");
+}
+/* 英語の文言を、中・仏・韓の辞書で置き換える（無ければ英語のまま） */
+function tr(x) {
+  if (typeof x !== "string" || typeof I18N_EXTRA === "undefined") return x;
+  const e = I18N_EXTRA[x];
+  return (e && e[LANG]) || x;
 }
 /* UI文言のショートカット */
 function T(key) { return L(UI[key]); }
@@ -190,7 +221,7 @@ function T(key) { return L(UI[key]); }
 function setLang(lang) {
   LANG = lang;
   try { localStorage.setItem("yslp_lang", lang); } catch (e) { }
-  document.documentElement.lang = lang;
+  document.documentElement.lang = HTML_LANG[lang] || lang;
   render();
 }
 
@@ -198,7 +229,13 @@ function setLang(lang) {
 function fmtDate(s) {
   const p = String(s).split("-");
   const y = p[0], m = p[1], d = p[2];
-  if (LANG === "ja") return d ? `${y}年${+m}月${+d}日` : `${y}年${+m}月`;
+  if (!m) return y;
+  if (LANG === "ja" || LANG === "zh") return d ? `${y}年${+m}月${+d}日` : `${y}年${+m}月`;
+  if (LANG === "ko") return d ? `${y}년 ${+m}월 ${+d}일` : `${y}년 ${+m}월`;
+  if (LANG === "fr") {
+    const MF = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
+    return d ? `${+d} ${MF[+m - 1]} ${y}` : `${MF[+m - 1]} ${y}`;
+  }
   const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const mm = MON[+m - 1] || m;
   if (LANG === "vi") return d ? `${+d}/${+m}/${y}` : `${+m}/${y}`;
@@ -230,6 +267,9 @@ function fmtDeadline(s) {
   const dt = new Date(p[0], p[1] - 1, p[2]);
   if (LANG === "en") return `${dt.toLocaleDateString("en-US", { month: "short", day: "numeric" })} (${dt.toLocaleDateString("en-US", { weekday: "short" })})`;
   if (LANG === "vi") return `${p[2]}/${p[1]}/${p[0]}`;
+  if (LANG === "zh") return `${p[1]}月${p[2]}日（周${"日一二三四五六"[dt.getDay()]}）截止`;
+  if (LANG === "ko") return `${p[1]}월 ${p[2]}일(${"일월화수목금토"[dt.getDay()]})까지`;
+  if (LANG === "fr") return `jusqu'au ${dt.toLocaleDateString("fr-FR", { weekday: "short", day: "numeric", month: "short" })}`;
   return `${p[1]}/${p[2]}（${"日月火水木金土"[dt.getDay()]}）まで`;
 }
 
@@ -268,9 +308,15 @@ function renderHeader() {
     const isCur = cur && href.indexOf(cur) === 0;
     return `<a class="navlink${isCur ? " cur" : ""}" href="${href}">${T(it.key)}</a>`;
   }).join("");
-  const langBtns = LANGS.map(l =>
-    `<button type="button" data-lang="${l.key}" class="${l.key === LANG ? "on" : ""}">${l.label}</button>`
-  ).join("");
+  const curL = LANGS.find(l => l.key === LANG) || LANGS[0];
+  const langBtns = `
+    <button type="button" class="lang-cur" aria-haspopup="true" aria-expanded="false" aria-label="${esc(T("langMenu"))}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/></svg>
+      <span>${esc(curL.label)}</span><i class="car"></i></button>
+    <div class="lang-menu" role="menu">
+      ${LANGS.map(l => `<button type="button" role="menuitemradio" aria-checked="${l.key === LANG}" data-lang="${l.key}" class="${l.key === LANG ? "on" : ""}"><span>${esc(l.label)}</span><small>${l.code}</small></button>`).join("")}
+      <p class="lang-note">${esc(T("autoNote"))}</p>
+    </div>`;
   const snsBtns = SNS_ACCOUNTS.map(a =>
     `<a href="${a.url}" target="_blank" rel="noopener" aria-label="${esc(a.name)}" title="${esc(a.name)}">${snsIcon(a.key)}</a>`
   ).join("");
@@ -285,8 +331,22 @@ function renderHeader() {
       <a class="navlink nav-cta" href="${onTop ? "#contact" : "index.html#contact"}">${T("navCta")}</a>
       <div class="lang">${langBtns}</div>
     </nav>`;
-  host.querySelectorAll(".lang button").forEach(b =>
-    b.onclick = () => setLang(b.dataset.lang));
+  const langEl = host.querySelector(".lang"), langCur = langEl.querySelector(".lang-cur");
+  langCur.onclick = e => {
+    e.stopPropagation();
+    langCur.setAttribute("aria-expanded", langEl.classList.toggle("open"));
+  };
+  langEl.querySelectorAll(".lang-menu button").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+  if (!window._langDocBound) {
+    window._langDocBound = true;
+    document.addEventListener("click", e => {
+      const l = document.querySelector("#site-header .lang");
+      if (l && !l.contains(e.target)) l.classList.remove("open");
+    });
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") { const l = document.querySelector("#site-header .lang"); if (l) l.classList.remove("open"); }
+    });
+  }
   const burger = document.getElementById("burger"), navEl = document.getElementById("nav");
   burger.onclick = () => { burger.classList.toggle("on"); navEl.classList.toggle("open"); };
   navEl.querySelectorAll("a").forEach(a =>
@@ -352,7 +412,7 @@ function sampleNote() {
 
 /* ---------- 起動 ---------- */
 function render() {
-  document.documentElement.lang = LANG;
+  document.documentElement.lang = HTML_LANG[LANG] || LANG;
   renderHeader();
   renderFooter();
   if (typeof renderPage === "function") renderPage();

@@ -18,9 +18,11 @@
 
 var SETTINGS = {
   // 通知メールの宛先（カンマ区切りで複数可）
+  // 10/19打合せ：窓口は秘書チーム（村田さん）。徳岡さんも内容を見られるようにする。
+  // 例）'murata@…, tokuoka@…' または秘書チームのグループメール1つ
   MAIL_TO: 'info@vietnamtrading.co.jp',
 
-  // 記録用スプレッドシートのID。
+  // 記録用スプレッドシートのID。秘書チームと徳岡さんで共有しておくと、全員が受信一覧を見られます。
   // 空にすると保存せずメール通知だけ行います。
   // スプレッドシートのURL /d/ と /edit の間の文字列がIDです。
   SHEET_ID: '',
@@ -28,7 +30,8 @@ var SETTINGS = {
 
   // 送信者へ自動返信するか
   AUTO_REPLY: true,
-  REPLY_FROM_NAME: '澤村友里 / ベトナムトレーディング株式会社'
+  // 自動返信の差出人名（10/19打合せ：社長個人名）
+  REPLY_FROM_NAME: '澤村友里'
 };
 
 var FIELDS = [
@@ -109,24 +112,25 @@ function notify_(d) {
 /* ---------- 送信者へ自動返信 ---------- */
 function autoReply_(d) {
   var lang = d.lang || 'ja';
-  var t = {
+  var all = {
     ja: {
       sub: '【自動返信】お問い合わせありがとうございます',
       body: d.name + ' 様\n\n'
         + 'このたびはお問い合わせいただき、誠にありがとうございます。\n'
-        + '以下の内容で承りました。2〜3営業日以内に、担当よりご返信いたします。\n\n'
+        + '以下の内容で承りました。2〜3営業日以内に、広報担当よりご連絡いたします。\n\n'
         + '【ご依頼の種類】' + (d.type || '') + '\n'
         + '【ご相談内容】\n' + (d.message || '') + '\n\n'
         + '--------------------------------\n'
-        + SETTINGS.REPLY_FROM_NAME + '\n'
-        + 'TEL (+81) 096-234-8770\n'
+        + '澤村 友里\n'
+        + 'ベトナムトレーディング株式会社 代表取締役社長\n'
+        + '（広報窓口）TEL (+81) 096-234-8770\n'
         + 'https://www.vietnamtrading.co.jp/'
     },
     en: {
       sub: '[Auto-reply] Thank you for your enquiry',
       body: 'Dear ' + d.name + ',\n\n'
         + 'Thank you very much for getting in touch. We have received your enquiry below\n'
-        + 'and will reply within two to three business days.\n\n'
+        + 'and our PR team will contact you within two to three business days.\n\n'
         + '[Type] ' + (d.type || '') + '\n'
         + '[Message]\n' + (d.message || '') + '\n\n'
         + '--------------------------------\n'
@@ -138,7 +142,7 @@ function autoReply_(d) {
       sub: '[Tự động] Cảm ơn bạn đã liên hệ',
       body: 'Kính gửi ' + d.name + ',\n\n'
         + 'Cảm ơn bạn đã liên hệ với chúng tôi. Chúng tôi đã nhận được nội dung dưới đây\n'
-        + 'và sẽ phản hồi trong vòng 2–3 ngày làm việc.\n\n'
+        + 'và bộ phận truyền thông sẽ liên hệ với bạn trong vòng 2–3 ngày làm việc.\n\n'
         + '[Loại yêu cầu] ' + (d.type || '') + '\n'
         + '[Nội dung]\n' + (d.message || '') + '\n\n'
         + '--------------------------------\n'
@@ -146,8 +150,9 @@ function autoReply_(d) {
         + 'TEL (+81) 96-234-8770\n'
         + 'https://www.vietnamtrading.co.jp/'
     }
-  }[lang] || null;
-  if (!t) return;
+  };
+  // 中国語・フランス語・韓国語のページから送られたときは英語で返信する
+  var t = all[lang] || all.en;
 
   MailApp.sendEmail({ to: d.email, subject: t.sub, body: t.body, name: SETTINGS.REPLY_FROM_NAME });
 }

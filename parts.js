@@ -123,17 +123,17 @@ function bindFlyers() {
 
 /* ---------- メディア出演 1行 ---------- */
 function mediaRow(m) {
-  const link = m.url
-    ? `<a class="go" href="${m.url}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '<span></span>';
-  return `<div class="media-item">
+  const kind = L((typeof MEDIA_KINDS !== 'undefined' && MEDIA_KINDS[m.kind]) || m.kind);
+  const inner = `
     <div class="d">${fmtDate(m.date)}</div>
-    <div><span class="tag n">${esc(m.kind)}</span></div>
+    <div><span class="tag n">${esc(kind)}</span></div>
     <div>
       <h4>${esc(L(m.title))}</h4>
       <div class="out">${esc(L(m.outlet))}</div>
-    </div>
-    ${link}
-  </div>`;
+    </div>`;
+  if (!m.url) return `<div class="media-item">${inner}<span></span></div>`;
+  const label = /youtube\.com|youtu\.be/.test(m.url) ? 'watchVideo' : (m.kind === '記事' ? 'readArticle' : 'visitSite');
+  return `<a class="media-item is-link" href="${esc(m.url)}" target="_blank" rel="noopener">${inner}<span class="go">${T(label)} ↗</span></a>`;
 }
 
 /* ---------- 情報テーブル 1行 ---------- */

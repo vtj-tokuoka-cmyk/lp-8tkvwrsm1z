@@ -457,9 +457,8 @@ const PHOTOS = [
    「見る」ボタンからそこへ飛びます。空なら準備中の表示になります。   */
 const ALBUMS = [
   {
-    title: "PORTRAIT 2026",
+    title: "PORTRAIT",
     cover: "img/q_299.jpg",
-    date: "2026",
     count: "",
     desc: { ja: "百合の花とともに撮影したポートレートシリーズ。柔らかい光の中で、自然体の表情を切り取っていただきました。",
             en: "A portrait series shot with lilies, capturing natural expressions in soft light.",
@@ -469,7 +468,6 @@ const ALBUMS = [
   {
     title: "ÁO DÀI",
     cover: "img/q_9244.jpg",
-    date: "2026",
     count: "",
     desc: { ja: "ベトナムの民族衣装アオザイをまとった撮影シリーズ。もうひとつの故郷への想いを込めて。",
             en: "A series in áo dài, Vietnam's national dress — a tribute to my other home.",
@@ -477,9 +475,8 @@ const ALBUMS = [
     url: ""
   },
   {
-    title: "VIETNAM TRADING の日々",
+    title: { ja: "VIETNAM TRADING の日々", en: "Life at VIETNAM TRADING", vi: "Một ngày tại VIETNAM TRADING" },
     cover: "img/p_49.jpg",
-    date: "2026",
     count: "",
     desc: { ja: "熊本本社とスタッフたちの記録。日本とベトナム、ふたつの国の仲間が働く風景です。",
             en: "Life at our Kumamoto head office — colleagues from two countries at work.",
@@ -676,9 +673,9 @@ const PROFILE_SPEC = [
              en: "President & CEO, Vietnam Trading Co., Ltd. / Representative Director, Nichietsu Cooperative / Chairperson, Vietnam Trading Co., Ltd. (Vietnam)",
              vi: "Tổng giám đốc Việt Nam Trading / Chủ tịch Nghiệp đoàn Nichietsu / Chủ tịch pháp nhân tại Việt Nam" } },
   { label: { ja: "社外の役職", en: "Other appointments", vi: "Chức vụ khác" },
-    value: { ja: "熊本イノベーションベース（KUIB）代表理事／熊本県立大学 総合管理学部OBOG会 代表幹事／熊本経済同友会 会員",
-             en: "Representative Director, Kumamoto Innovation Base / Representative Secretary of her university alumni association / Member, Kumamoto Association of Corporate Executives",
-             vi: "Chủ tịch Kumamoto Innovation Base / Đại diện Hội cựu sinh viên / Thành viên Hiệp hội doanh nhân Kumamoto" } },
+    value: { ja: "熊本県立大学 総合管理学部OBOG会 代表幹事／熊本経済同友会 会員／熊本イノベーションベース（KUIB）代表理事（2023〜2024年）",
+             en: "Representative Secretary of her university alumni association / Member, Kumamoto Association of Corporate Executives / Representative Director, Kumamoto Innovation Base (2023–2024)",
+             vi: "Đại diện Hội cựu sinh viên / Thành viên Hiệp hội doanh nhân Kumamoto / Chủ tịch Kumamoto Innovation Base (2023–2024)" } },
   { label: { ja: "これまでの経験", en: "Background", vi: "Kinh nghiệm" },
     value: { ja: "学生時代にモデル・タレント業、日本語およびベトナム語の講師を経験。人前で話し、伝える仕事を長く続けている。",
              en: "Worked as a model and TV personality in her student years, and taught both Japanese and Vietnamese. Speaking and communicating in front of an audience has been part of her work for a long time.",
@@ -874,28 +871,28 @@ const SNS_ACCOUNTS = [
   {
     key: "tiktok",
     name: "TikTok",
-    handle: "@kodawari.jp",
-    url: "https://www.tiktok.com/@kodawari.jp",
-    lead: { ja: "日本で働くための情報を、短い動画で",
-            en: "Short videos about working in Japan",
-            vi: "Video ngắn về việc làm tại Nhật Bản" },
-    body: { ja: "求人サイト「こだわり」の公式アカウントです。在留資格のこと、日本での暮らしのこと、仕事の探し方などを、短い動画でわかりやすくお伝えしています。",
-            en: "The official account of our job site “Kodawari”. Short, clear videos about visa status, living in Japan and finding work.",
-            vi: "Tài khoản chính thức của trang tuyển dụng “Kodawari”. Video ngắn về tư cách lưu trú, cuộc sống và tìm việc tại Nhật." },
+    handle: "@yuri_sawamura",
+    url: "https://www.tiktok.com/@yuri_sawamura",
+    lead: { ja: "美容の秘訣と、女性社長の仕事のリアル",
+            en: "Beauty tips and the real work of a woman CEO",
+            vi: "Bí quyết làm đẹp và công việc thật của một nữ giám đốc" },
+    body: { ja: "美容の秘訣や、女性社長としての日々の仕事、日本の企業とベトナムの人材をつなぐ現場の様子を、短い動画で発信しています。",
+            en: "Short videos on beauty, a day in the life of a woman CEO, and the work of connecting Japanese companies with Vietnamese talent.",
+            vi: "Video ngắn về bí quyết làm đẹp, công việc thường ngày của một nữ giám đốc và hành trình kết nối doanh nghiệp Nhật với lao động Việt." },
     cta: { ja: "TikTokで見る", en: "View on TikTok", vi: "Xem trên TikTok" }
   },
   {
     key: "facebook",
     name: "Facebook",
-    handle: "vietnamtrading",
-    url: "https://www.facebook.com/vietnamtrading/",
-    lead: { ja: "会社のお知らせとイベント情報",
-            en: "Company news and event announcements",
-            vi: "Thông báo công ty và sự kiện" },
-    body: { ja: "ベトナムトレーディング株式会社の公式ページです。イベントの告知、採用のお知らせ、会社の取り組みなどを発信しています。",
-            en: "The official page of Vietnam Trading Co., Ltd. — event announcements, hiring news and what the company is working on.",
-            vi: "Trang chính thức của Công ty Việt Nam Trading — thông báo sự kiện, tuyển dụng và hoạt động công ty." },
-    cta: { ja: "ページを見る", en: "Visit page", vi: "Xem trang" }
+    handle: "yurisawamura.jpvn",
+    url: "https://www.facebook.com/yurisawamura.jpvn",
+    lead: { ja: "日々の活動と、講演・イベントのご報告",
+            en: "Day-to-day activities and reports from talks and events",
+            vi: "Hoạt động hằng ngày và tin về các buổi diễn thuyết, sự kiện" },
+    body: { ja: "講演やイベントへの登壇、経営者としての日々の活動、日本とベトナムを行き来する様子などを発信しています。",
+            en: "Talks and events, daily life as a business owner, and travels between Japan and Vietnam.",
+            vi: "Các buổi diễn thuyết, sự kiện, công việc thường ngày của một nhà quản lý và những chuyến đi giữa Nhật Bản và Việt Nam." },
+    cta: { ja: "フォローする", en: "Follow", vi: "Theo dõi" }
   }
 ];
 
@@ -920,19 +917,57 @@ const VIDEOS = [
    url  : 記事や動画のリンク。なければ "" （リンクなしで表示されます）
    ========================================================================= */
 const MEDIA = [
-  { date: "2026-09", kind: "podcast",
+  { date: "2026-09", kind: "配信",
     outlet: { ja: "YURI SAWAMURA Channel（YouTube）", en: "YURI SAWAMURA Channel (YouTube)", vi: "YURI SAWAMURA Channel (YouTube)" },
     title: { ja: "「ゆりと学ぶビジネス日本語」レギュラー配信中（日本語版・ベトナム語版）",
              en: "Host of the regular series “Business Japanese with Yuri”, in Japanese and Vietnamese editions",
              vi: "Chương trình định kỳ “Học tiếng Nhật thương mại cùng Yuri” (bản Nhật và Việt)" },
     url: "https://www.youtube.com/@yurisawamurachannel" },
+  { date: "2024-10-12", kind: "ラジオ",
+    outlet: { ja: "FM791「ミモザ倶楽部」キーパーソンファイル #11", en: "FM791 radio, “Mimosa Club” Key Person File #11", vi: "Đài FM791, “Mimosa Club” Key Person File #11" },
+    title: { ja: "ゲスト出演。学生起業から、日本とベトナムの架け橋となる事業づくりまでを語りました",
+             en: "Guest appearance — from starting a business as a student to building a company that bridges Japan and Vietnam.",
+             vi: "Khách mời — từ khởi nghiệp thời sinh viên đến xây dựng doanh nghiệp làm cầu nối Nhật – Việt." },
+    url: "https://note.com/fm791mimozaclub/n/nebab07ea841a" },
   { date: "2024-07", kind: "テレビ",
     outlet: { ja: "くまもとLive touch", en: "Kumamoto Live Touch (TV)", vi: "Kumamoto Live Touch (truyền hình)" },
     title: { ja: "外国人材の受入れをめぐる取材で、当グループの取り組みが紹介されました",
              en: "The group's work was featured in a report on employing foreign talent.",
              vi: "Hoạt động của tập đoàn được giới thiệu trong phóng sự về tiếp nhận nhân lực nước ngoài." },
-    url: "" }
+    url: "" },
+  { date: "2024-03", kind: "テレビ",
+    outlet: { ja: "KAB熊本朝日放送 ニュース", en: "KAB Kumamoto Asahi Broadcasting, news", vi: "Bản tin đài KAB Kumamoto" },
+    title: { ja: "「3割以上がベトナムから！熊本県内の外国人労働者増加と広がるベトナムの味」で取材を受けました",
+             en: "Interviewed for a news feature on the rise of foreign workers in Kumamoto, more than 30% of them from Vietnam.",
+             vi: "Được phỏng vấn trong phóng sự về lao động nước ngoài tăng tại Kumamoto, hơn 30% đến từ Việt Nam." },
+    url: "https://www.youtube.com/watch?v=eTeCKnA-SBw" },
+  { date: "2022-10-07", kind: "記事",
+    outlet: { ja: "熊本マーケティング研究所 コラム「蹞訪」第5回", en: "Kumamoto Marketing Institute, column “Kiho” No. 5", vi: "Viện Marketing Kumamoto, chuyên mục “Kiho” số 5" },
+    title: { ja: "社員の「人間教育」と、任せる組織づくりについてインタビューを受けました",
+             en: "Interview on character education for staff and building an organisation that trusts people to lead.",
+             vi: "Phỏng vấn về giáo dục con người cho nhân viên và xây dựng tổ chức biết giao quyền." },
+    url: "https://www.kumamoto-marketing.co.jp/column/1603/" },
+  { date: "2021-03-26", kind: "記事",
+    outlet: { ja: "くまにち すぱいす 568号「すてきびと」", en: "Kumanichi Spice No. 568, “Suteki-bito” profile", vi: "Kumanichi Spice số 568, mục “Suteki-bito”" },
+    title: { ja: "日本とベトナムの懸け橋へ。事業を通じて両国の友好関係を築く経営者として紹介されました",
+             en: "Profiled as a bridge between Japan and Vietnam, building friendship between the two countries through business.",
+             vi: "Được giới thiệu là cầu nối Nhật – Việt, vun đắp tình hữu nghị hai nước qua kinh doanh." },
+    url: "https://spice.kumanichi.com/human-culture/suteki-bito/101762" },
+  { date: "2018-01", kind: "テレビ",
+    outlet: { ja: "J:COMチャンネル「熊本人図鑑」第32回", en: "J:COM Channel, “Kumamoto Jinzukan” No. 32", vi: "Kênh J:COM, “Kumamoto Jinzukan” số 32" },
+    title: { ja: "12歳で来日し、大学在学中に起業した経緯と、日越両方の視点を持つ経営者としての想いを語りました",
+             en: "On coming to Japan at twelve, founding a company as a university student, and seeing business from both the Japanese and Vietnamese side.",
+             vi: "Chia sẻ về việc sang Nhật năm 12 tuổi, khởi nghiệp khi còn là sinh viên và góc nhìn của người hiểu cả Nhật lẫn Việt." },
+    url: "https://www.youtube.com/watch?v=dVO9IdZa1Xw" }
 ];
+
+/* メディアの種別ラベル（kind に書く言葉 → 表示名）。講演・登壇とは区別して見せる */
+const MEDIA_KINDS = {
+  "テレビ": { ja: "テレビ出演", en: "TV", vi: "Truyền hình" },
+  "ラジオ": { ja: "ラジオ出演", en: "Radio", vi: "Phát thanh" },
+  "記事":   { ja: "取材記事",   en: "Interview", vi: "Phỏng vấn" },
+  "配信":   { ja: "番組配信",   en: "Own channel", vi: "Kênh riêng" }
+};
 
 /* =========================================================================
    15. トップページの文言（ヒーロー・数字・帯・本文）
@@ -940,24 +975,21 @@ const MEDIA = [
    ここを書き換えれば、トップページの主要な文章がすべて変わります。
    ========================================================================= */
 const HERO = {
-  eyebrow: { ja: "講演・イベント出演のご依頼を承ります", en: "Available for talks and events", vi: "Nhận lời mời diễn thuyết và sự kiện" },
+  eyebrow: { ja: "講演・出演のご相談を承ります", en: "Available for talks and events", vi: "Nhận trao đổi về diễn thuyết và sự kiện" },
   roles: [
     { ja: "ベトナムトレーディング株式会社 代表取締役社長", en: "President & CEO, Vietnam Trading Co., Ltd.", vi: "Tổng giám đốc Công ty CP Việt Nam Trading" },
-    { ja: "日越協同組合 代表理事", en: "Representative Director, Nichietsu Cooperative", vi: "Chủ tịch Nghiệp đoàn Nichietsu" },
-    { ja: "熊本イノベーションベース（KUIB）代表理事", en: "Representative Director, Kumamoto Innovation Base", vi: "Chủ tịch Kumamoto Innovation Base" }
+    { ja: "日越協同組合 代表理事", en: "Representative Director, Nichietsu Cooperative", vi: "Chủ tịch Nghiệp đoàn Nichietsu" }
   ],
   lead: { ja: "ベトナムに生まれ、12歳で熊本へ。<br>ことばも文化も分からない場所から始めた経営者が、<br>現場で見てきたことを、そのままお話しします。",
           en: "Born in Vietnam, in Kumamoto from the age of twelve.<br>An executive who started from a place where she understood neither the language nor the culture, speaking plainly about what she has actually seen.",
           vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi.<br>Một nhà quản lý khởi đầu từ nơi không hiểu cả ngôn ngữ lẫn văn hóa, kể lại đúng những gì đã thấy." },
-  btnPrimary:   { ja: "講演を依頼する", en: "Book a talk",    vi: "Mời diễn thuyết" },
+  btnPrimary:   { ja: "講演の相談をする", en: "Enquire about a talk", vi: "Trao đổi về diễn thuyết" },
   btnSecondary: { ja: "講演実績を見る", en: "See past talks", vi: "Xem hoạt động" }
 };
 
 /* ▼ ヒーロー下の4つの数字
    value に "auto:lectures" と書くと、LECTURES の件数が自動で入ります。   */
 const STATS = [
-  { value: "auto:lectures", unit: { ja: "回", en: "",  vi: "" },
-    label: { ja: "これまでの登壇", en: "Talks delivered", vi: "Buổi đã diễn thuyết" } },
   { value: "2011",          unit: { ja: "年", en: "",  vi: "" },
     label: { ja: "学生起業から", en: "Founded as a student", vi: "Khởi nghiệp sinh viên" } },
   { value: "1,050",         unit: { ja: "名", en: "",  vi: "" },
@@ -973,19 +1005,19 @@ const PROFILE_TEXT = {
         `<p>北稜高校を経て、熊本県立大学 総合管理学部へ。2011年、大学3年生のときに、学生でありながら創業しました。就職活動をせず、自分で会社をつくる道を選んだのです。</p>`,
         `<p>2013年に大学を卒業し、同じ年にベトナムトレーディング株式会社を設立。専門学校でベトナム人留学生に日本語を教えた経験から母国の若者のニーズを知ったことが、人材事業の出発点になりました。2016年に日越協同組合、2017年にはベトナム現地法人を設立しています。</p>`,
         `<p>2016年には、第一子を出産した10日後に日越協同組合を設立しました。その3か月後に熊本地震。人生でも事業でもいちばん大きな出来事が、わずか3か月のあいだに重なった年でした。</p>`,
-        `<p>現在はグループ3法人を率いながら、熊本イノベーションベース（KUIB）代表理事、熊本県立大学 総合管理学部OBOG会 代表幹事も務めています。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>`,
+        `<p>現在はグループ3法人を率いながら、熊本県立大学 総合管理学部OBOG会 代表幹事も務めています。2023年から2024年にかけては熊本イノベーションベース（KUIB）の代表理事として、若手経営者の学びの場づくりにも携わりました。掲げる方針は一貫して「日本一ベトナム人を理解している会社」であること。</p>`,
         `<p>講演では、この現場で見てきたことを、きれいごとではない言葉でお話しします。</p>`],
     en:[`<p class="lead">Born in Vietnam, in Kumamoto from the age of twelve. <em>I want to be the bridge between my two homes.</em></p>`,
         `<p>I was born in Vietnam in 1989. In 2003, at twelve, I came to Japan with my family and settled in Tamana City, Kumamoto. I entered a Japanese school partway through my first year of junior high, barely able to speak the language. Those years — in a place where I understood neither the words nor the customs — are the origin of everything I do now.</p>`,
         `<p>After Hokuryo High School I entered the Faculty of Administration at the Prefectural University of Kumamoto. In 2011, in my third year and still a student, I founded my first company. I chose to build something rather than go through recruitment season.</p>`,
         `<p>I graduated in 2013 and founded Vietnam Trading Co., Ltd. the same year. Teaching Japanese to Vietnamese students at a vocational college had shown me what young people back home actually needed, and that became the starting point of the recruitment business. Nichietsu Cooperative followed in 2016, and our Vietnamese entity in 2017.</p>`,
-        `<p>Today I lead three group entities while also serving as Representative Director of Kumamoto Innovation Base and as Representative Secretary of my university's alumni association. The principle has never changed: to be the company in Japan that understands Vietnamese people best.</p>`,
+        `<p>Today I lead three group entities while also serving as Representative Secretary of my university's alumni association. From 2023 to 2024 I was Representative Director of Kumamoto Innovation Base, a learning community for young business owners. The principle has never changed: to be the company in Japan that understands Vietnamese people best.</p>`,
         `<p>When I speak, I talk about what I have actually seen on the ground — not the polished version.</p>`],
     vi:[`<p class="lead">Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. <em>Tôi muốn là nhịp cầu nối hai quê hương.</em></p>`,
         `<p>Tôi sinh năm 1989 tại Việt Nam. Năm 2003, khi 12 tuổi, tôi cùng gia đình sang Nhật và đến TP. Tamana, Kumamoto. Tôi vào học trường Nhật từ giữa năm lớp 7 khi hầu như chưa biết tiếng. Những năm tháng ở nơi không hiểu cả ngôn ngữ lẫn văn hóa chính là khởi nguồn của công việc hiện tại.</p>`,
         `<p>Sau THPT Hokuryo, tôi vào Khoa Quản trị tổng hợp, Đại học tỉnh lập Kumamoto. Năm 2011, khi đang là sinh viên năm 3, tôi đã khởi nghiệp thay vì đi xin việc.</p>`,
         `<p>Năm 2013 tôi tốt nghiệp và thành lập Công ty Việt Nam Trading. Kinh nghiệm dạy tiếng Nhật cho du học sinh Việt đã cho tôi thấy nhu cầu thực sự của người trẻ quê nhà — đó là điểm khởi đầu của mảng nhân lực. Tiếp đó là Nghiệp đoàn Nichietsu (2016) và pháp nhân tại Việt Nam (2017).</p>`,
-        `<p>Hiện tôi dẫn dắt 3 pháp nhân, đồng thời là Chủ tịch Kumamoto Innovation Base và Đại diện Hội cựu sinh viên. Phương châm không đổi: trở thành công ty thấu hiểu người Việt nhất tại Nhật Bản.</p>`,
+        `<p>Hiện tôi dẫn dắt 3 pháp nhân, đồng thời là Đại diện Hội cựu sinh viên. Từ 2023 đến 2024, tôi là Chủ tịch Kumamoto Innovation Base — nơi học hỏi của các doanh nhân trẻ. Phương châm không đổi: trở thành công ty thấu hiểu người Việt nhất tại Nhật Bản.</p>`,
         `<p>Khi diễn thuyết, tôi kể đúng những gì đã thấy tại hiện trường.</p>`]
   };
 

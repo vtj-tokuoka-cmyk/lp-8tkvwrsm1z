@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>澤村 友里 ｜ 講演・イベント出演のご依頼</title>
-<meta name="description" content="ベトナムトレーディング株式会社 代表取締役社長 澤村友里。外国人材の雇用、日越の相互理解、学生起業、多文化共生。講演・MCのご依頼を承ります。">
+<meta name="description" content="ベトナムトレーディング株式会社 代表取締役社長 澤村友里。外国人材の雇用、日越の相互理解、学生起業、多文化共生。講演・MCのご相談を承ります。">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261006">
+<link rel="stylesheet" href="style.css?v=20261019">
 </head>
 <body>
 <div id="bar"></div>
@@ -151,10 +151,11 @@
 
 <div id="lb"><span class="x">×</span><span class="nv prev">‹</span><img alt=""><span class="nv next">›</span><div class="cap"></div></div>
 
-<script src="data.js?v=20261006"></script>
-<script src="app.js?v=20261006"></script>
-<script src="form.js?v=20261006"></script>
-<script src="parts.js?v=20261006"></script>
+<script src="data.js?v=20261019"></script>
+<script src="i18n-extra.js?v=20261019"></script>
+<script src="app.js?v=20261019"></script>
+<script src="form.js?v=20261019"></script>
+<script src="parts.js?v=20261019"></script>
 <script>
 function renderPage(){
   /* ---- HERO ---- */
@@ -171,7 +172,10 @@ function renderPage(){
 
   /* ---- STATS ---- */
   const done = LECTURES.filter(l=>!isUpcoming(l)).length;
-  document.getElementById('stats').innerHTML = STATS.map(st=>{
+  const statsEl = document.getElementById('stats');
+  statsEl.style.setProperty('--cols', STATS.length);
+  statsEl.classList.toggle('c3', STATS.length === 3);
+  statsEl.innerHTML = STATS.map(st=>{
     const v = st.value==='auto:lectures' ? done : L(st.value);
     return `<div class="stat rv"><b>${esc(String(v))}<small>${esc(L(st.unit))}</small></b><p>${esc(L(st.label))}</p></div>`;
   }).join('');

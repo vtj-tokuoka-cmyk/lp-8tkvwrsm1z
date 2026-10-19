@@ -24,11 +24,13 @@
 | gallery.html | フォトギャラリー |
 | style.css | 色・レイアウト |
 | app.js | 言語切替、ヘッダー・フッターの共通部分 |
+| i18n-extra.js | 中国語・フランス語・韓国語の翻訳辞書（英語の文言 → 3言語） |
 | parts.js | 各ページ共通のカード表示部品 |
 | sns.html | SNS・動画ページ |
 | form.js | お問い合わせフォームの動き |
 | フォーム受信.gs | Apps Scriptに貼るコード（フォームの受信側） |
 | img/ | 写真 |
+| tools/ | 作業用（公開されません）：翻訳チェック・本文の赤入れ用PDF・MarkdownのPDF化 |
 
 ---
 
@@ -226,8 +228,9 @@ python -m http.server 8783
 
 ### メディア出演（MEDIA）
 
-`kind` は「テレビ」「新聞」「雑誌」「Web」「ラジオ」「podcast」など自由に書けます。
-`url` を入れると「サイトを見る ↗」のリンクが出ます。
+`kind` は `"テレビ"` `"ラジオ"` `"記事"` `"配信"` のどれかにします。表示は「テレビ出演」「ラジオ出演」「取材記事」「番組配信」になり、講演・登壇とは区別して見せます（表示名は `MEDIA_KINDS` で変更）。
+`url` を入れると行全体がリンクになり、YouTubeなら「動画を見る」、記事なら「記事を読む」が付きます。`url` が空の行はクリックできない表示になります。
+`date` は `"2024-10-12"` のように日まで書いても、`"2024-07"` のように月まででもかまいません。
 
 ---
 
@@ -269,8 +272,8 @@ const YT_CHANNEL_ID = "UCYE6NspnrKTGlC8osbHdvaQ";
 |---|---|
 | YouTube | @yurisawamurachannel（ご本人のチャンネル） |
 | Instagram | @yuri_jpvn |
-| TikTok | @kodawari.jp（求人サイト「こだわり」の公式アカウント） |
-| Facebook | vietnamtrading（会社の公式ページ） |
+| TikTok | @yuri_sawamura（ご本人のアカウント。2026-10-19に差し替え） |
+| Facebook | yurisawamura.jpvn（ご本人の「澤村友里」。2026-10-19に差し替え） |
 
 ---
 
@@ -298,3 +301,33 @@ Google Fonts から3種類を読み込んでいます（各HTMLの `<head>` に�
 エックスサーバーへの転送は `.github/workflows/deploy-xserver.yml`。
 接続情報は GitHub の Secrets（`XSERVER_HOST` / `XSERVER_USER` / `XSERVER_PATH` / `XSERVER_SSH_KEY` / 任意で `XSERVER_PORT`）に入れます。
 初回の設定手順は **Xserver公開手順.md** を参照。転送しないファイルは `.deployignore` で指定します。
+
+---
+
+## 言語（6言語）
+
+右上のメニューで **日本語・English・Tiếng Việt・简体中文・Français・한국어** を切り替えます（スマホではメニューの中に6つのボタン）。
+
+| 言語 | 文章の置き場所 | 更新のしかた |
+|---|---|---|
+| 日本語・英語・ベトナム語 | `data.js` / `app.js` の `ja` `en` `vi` | 今までどおり |
+| 中国語・フランス語・韓国語 | `i18n-extra.js`（英語の文言をキーにした辞書。AIで翻訳） | 英語を書き換えた・増やしたときだけ、辞書に足す |
+
+- 中・仏・韓は**英語の文言を辞書で置き換えて**表示します。辞書にない文言は英語のまま出るので、表示が崩れることはありません。
+- 英語を変えたあと、訳が足りない文言は次のコマンドで一覧できます（固有名詞など10件は英語のままにしています）。
+
+```bash
+python tools/i18n_check.py
+```
+
+- 日付の書き方（年月日の順や曜日）は言語ごとに `app.js` の `fmtDate` / `fmtDeadline` で切り替えています。
+- 中国語・韓国語は日本語フォントに無い字があるため、OS標準の各国語フォントで表示します（`style.css` の `html:lang(...)`）。
+
+## 社長に渡す資料を作る
+
+| 資料 | 作り方 |
+|---|---|
+| 本文の赤入れ用PDF（LPの日本語をページ別・番号付きで全部並べたもの） | ローカルで確認用サーバーを起動し、Chromeで `http://localhost:8783/tools/proof.html` を開いて印刷 → PDFに保存。`data.js` を直せば内容も自動で変わります |
+| 確認事項のPDF | `python tools/md2pdf.py 社長確認事項.md` |
+
+できたPDF（`社長確認事項.pdf` / `LP本文_赤入れ用.pdf`）はGitHubに上げない設定にしています。
