@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261019">
+<link rel="stylesheet" href="style.css?v=20261020">
 </head>
 <body>
 <div id="bar"></div>
@@ -61,6 +61,16 @@
   <div class="tl" id="timeline"></div>
 </section>
 
+<!-- 04 関わっている会社・団体 -->
+<section id="affil" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">04</span>
+    <h2 class="sec-title" id="t-affil"></h2>
+    <span class="sec-sub">ORGANISATIONS</span>
+  </div>
+  <div class="affil rv" id="affil-list"></div>
+</section>
+
 <!-- 帯 -->
 <section class="band">
   <img src="img/p_49.jpg" alt="">
@@ -74,10 +84,10 @@
 
 <footer id="site-footer"></footer>
 
-<script src="data.js?v=20261019"></script>
-<script src="i18n-extra.js?v=20261019"></script>
-<script src="app.js?v=20261019"></script>
-<script src="parts.js?v=20261019"></script>
+<script src="data.js?v=20261020"></script>
+<script src="i18n-extra.js?v=20261020"></script>
+<script src="app.js?v=20261020"></script>
+<script src="parts.js?v=20261020"></script>
 <script>
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secProfile');
@@ -86,7 +96,8 @@ function renderPage(){
   document.getElementById('t-about').textContent = T('secProfile');
   document.getElementById('prof-body').innerHTML =
     L(PROFILE_TEXT).join('') +
-    `<div class="sign"><span>${esc(L(HERO.roles[0]))}</span><strong>${T('name')}</strong></div>`;
+    `<div class="sign"><span>${esc(L(HERO.roles[0]))}</span><strong>${T('name')}</strong></div>` +
+    `<div class="prof-more"><a class="btn btn-o" href="story.html">${T('moreStory')} →</a></div>`;
 
   document.getElementById('t-bio').textContent = T('secBio');
   document.getElementById('bio-spec').innerHTML = PROFILE_SPEC.map(specRow).join('');
@@ -98,6 +109,13 @@ function renderPage(){
       <h3>${esc(L(t.title))}</h3>
       <p>${esc(L(t.body))}</p>
     </div>`).join('');
+
+  document.getElementById('t-affil').textContent = T('secAffil');
+  document.getElementById('affil-list').innerHTML = GROUP.map(g=>`
+    <a class="affil-row" href="${g.url}" target="_blank" rel="noopener">
+      <b>${esc(L(g.name))}</b><span>${esc(L(g.role))}</span><i>${esc(L(g.est))}</i><em>↗</em>
+    </a>`).join('') +
+    `<div class="svc-pills">${SERVICES.map(x=>`<a href="${x.url}" target="_blank" rel="noopener">${esc(L(x.name))} ↗</a>`).join('')}</div>`;
 
   document.getElementById('band').innerHTML = `<h3>${L(BAND.title)}</h3><p>${esc(BAND.sub)}</p>`;
 

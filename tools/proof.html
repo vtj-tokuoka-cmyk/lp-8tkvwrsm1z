@@ -45,7 +45,7 @@ const LABEL = {
   time: '時間', note: '補足', label: '項目', value: '内容', year: '年', outlet: '媒体', host: '主催', venue: '会場',
   audience: '対象', excerpt: '概要', caption: 'キャプション', sub: 'サブ', eyebrow: '小見出し', roles: '肩書き',
   btnPrimary: 'ボタン1', btnSecondary: 'ボタン2', cta: 'ボタン', fee: '参加費', handle: 'アカウント', est: '設立',
-  unit: '単位', price: '料金', date: '日付'
+  unit: '単位', price: '料金', date: '日付', q: '質問', a: '答え', text: 'ことば', label: '項目'
 };
 const SKIP = new Set(['src','image','img','url','cover','href','pos','key','featured','apply','site','flyer','upcoming',
   'deadline','id','slug','count','no','cat','kind','value_auto']);
@@ -91,15 +91,22 @@ const PAGES = [
     ['こだわり（見出し）', { title: KODAWARI_TITLE, lead: KODAWARI_LEAD }, 'keys'],
     ['こだわり', KODAWARI],
     ['メディア出演', MEDIA],
-    ['グループ', GROUP],
-    ['関連サービス', SERVICES],
     ['お問い合わせの種類', INQUIRY_TYPES]
   ]},
   { page: 'プロフィール', code: 'P', parts: [
     ['ページ冒頭', { lead: PAGE_LEADS.profile }, 'keys'],
     ['本文', PROFILE_TEXT],
     ['略歴', PROFILE_SPEC],
-    ['歩み（年表）', TIMELINE]
+    ['歩み（年表）', TIMELINE],
+    ['関わっている会社・団体', GROUP],
+    ['関連サービス', SERVICES]
+  ]},
+  { page: '素顔', code: 'F', parts: [
+    ['ページ冒頭', { lead: PAGE_LEADS.story }, 'keys'],
+    ['4つの顔', FACES],
+    ['大切にしていることば', WORDS],
+    ['10の質問', QA],
+    ['これからの夢', DREAM, 'keys']
   ]},
   { page: '講演実績', code: 'L', parts: [
     ['ページ冒頭', { lead: PAGE_LEADS.lecture }, 'keys'],

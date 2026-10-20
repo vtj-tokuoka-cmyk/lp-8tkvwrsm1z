@@ -2143,5 +2143,310 @@ const I18N_EXTRA = {
   "zh": "<p>如今我领导着集团旗下三家机构，同时担任母校校友会代表干事。2023年至2024年，我曾担任熊本创新基地代表理事，参与打造年轻经营者的学习平台。我的原则从未改变：成为日本最懂越南人的公司。</p>",
   "fr": "<p>Aujourd’hui, je dirige les trois entités du groupe tout en étant secrétaire représentante de l’association des anciens de mon université. De 2023 à 2024, j’ai été directrice représentante de la Kumamoto Innovation Base, une communauté d’apprentissage pour jeunes chefs d’entreprise. Le principe n’a jamais changé : être l’entreprise qui, au Japon, comprend le mieux les Vietnamiens.</p>",
   "ko": "<p>지금은 그룹의 세 법인을 이끌면서 모교 동문회 대표간사를 맡고 있습니다. 2023년부터 2024년까지는 젊은 경영자들의 배움터인 구마모토 이노베이션 베이스의 대표이사를 지냈습니다. 원칙은 한 번도 바뀌지 않았습니다. 일본에서 베트남 사람을 가장 잘 이해하는 회사가 되는 것입니다.</p>"
+ },
+ "Student founder, woman entrepreneur, career woman and working mother — the person behind the titles, in her own words from talks and interviews.": {
+  "zh": "学生创业者、女性创业者、职业女性，以及职场妈妈。从她在演讲和采访中讲过的话语里，走近头衔背后的真实面貌。",
+  "fr": "Entrepreneuse étudiante, femme entrepreneure, femme de carrière et mère qui travaille — la personne derrière les titres, à travers ses propres mots en conférence et en interview.",
+  "ko": "학생 창업가, 여성 창업가, 커리어우먼, 그리고 일하는 엄마. 강연과 취재에서 해 온 말들로, 직함 너머의 맨얼굴을 따라갑니다."
+ },
+ "Joins Seiwajuku": {
+  "zh": "加入盛和塾",
+  "fr": "Entrée au Seiwajuku",
+  "ko": "세이와주쿠 입숙"
+ },
+ "She began studying management at Seiwajuku, the school for business owners led by Kazuo Inamori. What she learned there sustained her when she set up Nichietsu Cooperative with a tiny team.": {
+  "zh": "加入由稻盛和夫主持的经营塾“盛和塾”，开始学习经营。以极少人手创立日越协同组合的那段时期，支撑她的也正是在这里的学习。",
+  "fr": "Elle commence à étudier la gestion au Seiwajuku, l’école de dirigeants animée par Kazuo Inamori. Ce qu’elle y apprend la soutiendra lorsqu’elle créera la coopérative Nichietsu avec une toute petite équipe.",
+  "ko": "이나모리 가즈오가 이끈 경영 학당 ‘세이와주쿠’에 들어가 경영을 배우기 시작했습니다. 니치에츠 협동조합을 소수 인원으로 세운 시기를 버티게 해 준 것도 이곳에서의 배움이었습니다."
+ },
+ "As a student founder": {
+  "zh": "作为学生创业者",
+  "fr": "Entrepreneuse dès ses études",
+  "ko": "학생 창업가로서"
+ },
+ "It all started with “I’d like to earn about 500,000 yen a month.”": {
+  "zh": "创业，始于一句“想每个月赚50万日元左右”。",
+  "fr": "Tout a commencé par : « J’aimerais gagner environ 500 000 yens par mois. »",
+  "ko": "“한 달에 50만 엔쯤 벌고 싶다”에서 시작된 창업."
+ },
+ "As a child she wanted to be a schoolteacher; in high school she dreamed of interpreting at the United Nations. When she was unsure which way to go, a teacher told her she should do work that put her own words out into the world — and that set her on the path to running a company.": {
+  "zh": "她小时候的梦想是当老师，上高中后又向往成为联合国的口译员。在为前途犹豫时，高中老师的一句“你应该做能发出自己声音的工作”，成为她立志当社长的契机。",
+  "fr": "Enfant, elle voulait devenir institutrice ; au lycée, elle rêvait d’être interprète aux Nations unies. Alors qu’elle hésitait sur son avenir, un professeur lui a conseillé de choisir un métier où faire entendre sa propre voix — c’est ce qui l’a mise sur la voie de la direction d’entreprise.",
+  "ko": "어릴 적 꿈은 학교 선생님이었고, 고등학생이 되어서는 유엔 통역사를 동경했습니다. 진로를 고민하던 때 고등학교 선생님이 건넨 “자신의 말을 세상에 전하는 일을 하는 게 좋겠다”는 한마디가 사장을 꿈꾸게 된 계기가 되었습니다."
+ },
+ "By her final year of high school she was already working as a Vietnamese interpreter in court, travelling to Mie, Nagoya, Fukuoka and beyond. In 2011, while still at university, she opened a gift shop called Lily on the grounds of a hot-spring facility near her family home, selling goods sourced in Vietnam and running Vietnamese classes.": {
+  "zh": "高三时，她已作为越南语口译员出入法庭，足迹遍及三重、名古屋、福冈等地。2011年大学在读期间，她在老家附近一处温泉设施的场地内开了杂货店“Lily”，销售从越南采购的杂货，还开办了越南语课堂。",
+  "fr": "En terminale, elle était déjà interprète de vietnamien dans les tribunaux, de Mie à Nagoya et Fukuoka. En 2011, encore étudiante, elle ouvre la boutique Lily dans l’enceinte d’un établissement thermal près de la maison familiale : elle y vend des objets achetés au Viêt Nam et y donne des cours de vietnamien.",
+  "ko": "고등학교 3학년 무렵에는 이미 베트남어 통역사로 법정에 서며 미에, 나고야, 후쿠오카 등 전국을 다녔습니다. 대학 재학 중이던 2011년에는 본가 근처 온천 시설 부지에 잡화점 ‘Lily’를 열어, 베트남에서 들여온 잡화를 팔고 베트남어 교실도 열었습니다."
+ },
+ "Rent and wages weighed heavily, the shop never earned what she had hoped, and she closed it after a year and a half. She had jumped in without a thought for business registration or tax returns. The lesson about fixed costs stayed with her — and shaped the decision in 2013 to launch Vietnam Trading from her own home.": {
+  "zh": "然而房租和人工成本负担沉重，收入未能如愿，一年半后店铺关门。那是一次连开业登记和报税都没想过就一头扎进去的创业。当时切身体会到的固定成本之可怕，影响了她2013年以自家为办公室创立Vietnam Trading时的判断。",
+  "fr": "Mais le loyer et les salaires pesaient lourd : la boutique n’a jamais rapporté ce qu’elle espérait et a fermé au bout d’un an et demi. Elle s’était lancée sans même penser aux formalités ni aux déclarations fiscales. La leçon sur les coûts fixes lui est restée — et a guidé sa décision, en 2013, de créer Vietnam Trading depuis son domicile.",
+  "ko": "하지만 임대료와 인건비 부담이 커서 생각만큼 벌지 못했고, 1년 반 만에 가게를 닫았습니다. 개업 신고도 세금 신고도 전혀 생각하지 않고 뛰어든 창업이었습니다. 이때 뼈저리게 느낀 고정비의 무서움이, 2013년 자택을 사무실로 삼아 베트남트레이딩을 세울 때의 판단으로 이어졌습니다."
+ },
+ "As a woman entrepreneur": {
+  "zh": "作为女性创业者",
+  "fr": "Femme entrepreneure",
+  "ko": "여성 창업가로서"
+ },
+ "A woman with roots abroad, leading three companies from Kumamoto.": {
+  "zh": "一位有着海外背景的女性，从熊本带领三家机构。",
+  "fr": "Une femme venue d’ailleurs, à la tête de trois entreprises depuis Kumamoto.",
+  "ko": "외국에 뿌리를 둔 여성이, 구마모토에서 세 법인을 이끌다."
+ },
+ "In her student years she also worked as a model and TV personality; standing in front of people and communicating has long been part of her work. Today she shares beauty tips and the daily work of a woman CEO on TikTok.": {
+  "zh": "学生时代她还做过模特和电视艺人，站在人前表达本就是她长久以来工作的一部分。如今她在TikTok上分享美容秘诀，以及作为女社长的日常工作。",
+  "fr": "Étudiante, elle a aussi été mannequin et personnalité de télévision : se tenir face au public et communiquer fait depuis longtemps partie de son métier. Aujourd’hui, elle partage sur TikTok ses conseils beauté et le quotidien d’une femme dirigeante.",
+  "ko": "학창 시절에는 모델과 방송인으로도 활동해, 사람들 앞에 서서 전하는 일은 예전부터 그녀의 일이었습니다. 지금은 TikTok에서 뷰티 비결과 여성 사장의 일상 업무도 전하고 있습니다."
+ },
+ "In 2019 she joined Kumamoto Innovation Base (KUIB), where young Kumamoto business owners learn from each other. She became Deputy Representative Director in 2022 and Representative Director in 2023, leading the community until 2024. A local radio programme introduced her as “a wonderful role model for women entrepreneurs.”": {
+  "zh": "2019年，她加入了熊本年轻经营者互相学习的熊本创新基地（KUIB），2022年任副代表理事，2023年任代表理事，带领这个经营者社群直到2024年。当地电台节目称她为“女性创业者的绝佳榜样”。",
+  "fr": "En 2019, elle rejoint la Kumamoto Innovation Base (KUIB), où les jeunes dirigeants de Kumamoto apprennent les uns des autres. Vice-directrice représentante en 2022, directrice représentante en 2023, elle mène cette communauté jusqu’en 2024. Une émission de radio locale l’a présentée comme « un formidable modèle pour les femmes entrepreneures ».",
+  "ko": "2019년에는 구마모토의 젊은 경영자들이 함께 배우는 구마모토 이노베이션 베이스(KUIB)에 가입했습니다. 2022년 부대표이사, 2023년 대표이사가 되어 2024년까지 경영자 커뮤니티를 이끌었습니다. 지역 라디오 프로그램에서는 “여성 창업가의 훌륭한 롤모델”로 소개되었습니다."
+ },
+ "Born in Vietnam and brought to Japan at twelve, she started out somewhere she understood neither the language nor the culture — and now runs companies in both Japan and Vietnam.": {
+  "zh": "她生于越南，12岁来到日本。这位从语言和文化都不懂的地方起步的女性，如今在日本和越南两地经营着公司。",
+  "fr": "Née au Viêt Nam, arrivée au Japon à douze ans, elle est partie d’un lieu dont elle ne comprenait ni la langue ni la culture — et dirige aujourd’hui des entreprises au Japon comme au Viêt Nam.",
+  "ko": "베트남에서 태어나 12살에 일본으로. 말도 문화도 모르는 곳에서 출발한 여성이, 지금은 일본과 베트남 양쪽에서 회사를 경영하고 있습니다."
+ },
+ "As a career woman": {
+  "zh": "作为职业女性",
+  "fr": "Femme de carrière",
+  "ko": "커리어우먼으로서"
+ },
+ "“Finding people you can trust with the work — that is a president’s job.”": {
+  "zh": "“找到可以托付的人，才是社长的工作。”",
+  "fr": "« Trouver des personnes à qui confier le travail, c’est cela, le métier de dirigeant. »",
+  "ko": "“맡길 수 있는 사람을 찾는 것이 사장의 일.”"
+ },
+ "While teaching Japanese to Vietnamese students at a vocational college, she saw how many were pushed into illegal work or very low wages to pay their fees. “It made me hate money,” she recalls. Out of that frustration she spent two years building Nichietsu Cooperative, so that Vietnamese people could work in proper conditions.": {
+  "zh": "她在专门学校教越南留学生日语时，了解到许多人为了学费被迫非法打工或忍受低薪。“我开始讨厌钱了。”出于这份不甘，她花了两年时间创立日越协同组合，为越南人打造能够正当工作的环境。",
+  "fr": "En enseignant le japonais à des étudiants vietnamiens dans une école professionnelle, elle découvre que beaucoup sont poussés vers le travail illégal ou des salaires de misère pour payer leurs études. « J’en suis venue à détester l’argent », se souvient-elle. Révoltée, elle consacre deux ans à fonder la coopérative Nichietsu, pour que les Vietnamiens puissent travailler dans de bonnes conditions.",
+  "ko": "전문학교에서 베트남 유학생들에게 일본어를 가르치던 때, 학비를 벌기 위해 불법 노동이나 저임금을 강요받는 현실을 알게 되었습니다. “돈이 싫어졌습니다.” 그 분함에서, 베트남 사람들이 제대로 일할 수 있는 환경을 만들고자 2년에 걸쳐 니치에츠 협동조합을 세웠습니다."
+ },
+ "At the start it was just her and one employee. What held her up was what she had learned at Seiwajuku, which she joined in 2014: “Helping people comes first; profit follows.” It is still the axis of how she runs the business.": {
+  "zh": "创立之初只有她和一名员工。支撑她的，是2014年加入盛和塾后学到的东西：“先为他人着想，利益自然随之而来。”这一理念至今仍是她经营的核心。",
+  "fr": "Au début, il n’y avait qu’elle et un salarié. Ce qui l’a portée, c’est ce qu’elle avait appris au Seiwajuku, rejoint en 2014 : « Aider les autres d’abord, le profit suit. » C’est toujours l’axe de sa manière de diriger.",
+  "ko": "설립 초기에는 자신과 직원 한 명뿐이었습니다. 버팀목이 된 것은 2014년에 들어간 세이와주쿠에서의 배움이었습니다. “사람에게 도움이 되는 것이 먼저이고, 이익은 나중에 따라온다.” 이 생각이 지금도 경영의 중심입니다."
+ },
+ "Since around 2020 she has put real effort into character education for her staff, with sessions built on nine credos and three viewpoints — the client, the Vietnamese workers and the company — read aloud at every morning meeting. People address each other by name rather than title; she shares the goal and trusts them with the rest. Every Friday she meets her team leaders to stay in touch with the front line.": {
+  "zh": "大约从2020年起，她致力于员工的“人格教育”，开展以9条信条为基础的讲习，晨会上朗读“客户、越南人、公司”三个视角。大家不以职位而以“某某さん”相称；她只传达目标，其余放手交给员工。每周五她都会与各位负责人交流信息，确认一线的感受。",
+  "fr": "Depuis 2020 environ, elle mise sur l’éducation humaine de ses équipes : des séances fondées sur neuf credo, et trois points de vue — le client, les Vietnamiens, l’entreprise — lus à voix haute à chaque réunion du matin. On s’appelle par son nom plutôt que par son titre ; elle fixe l’objectif et fait confiance pour le reste. Chaque vendredi, elle échange avec ses responsables pour garder le contact avec le terrain.",
+  "ko": "2020년 무렵부터는 직원들의 ‘인간 교육’에 힘을 쏟아, 9가지 크레도를 바탕으로 한 강습을 하고 조회 때는 ‘고객·베트남인·회사’라는 세 가지 관점을 소리 내어 읽습니다. 직함이 아니라 ‘○○ 씨’로 부르고, 목적만 전한 뒤 맡깁니다. 매주 금요일에는 리더들과 정보를 나누며 현장의 감각을 확인합니다."
+ },
+ "As a working mother": {
+  "zh": "作为职场妈妈",
+  "fr": "Mère et cheffe d’entreprise",
+  "ko": "일하는 엄마로서"
+ },
+ "Ten days after giving birth, she founded a cooperative.": {
+  "zh": "产后第十天，她创立了协同组合。",
+  "fr": "Dix jours après son accouchement, elle fondait une coopérative.",
+  "ko": "출산 열흘 뒤, 협동조합을 세웠다."
+ },
+ "She gave birth to her first child on 17 January 2016. Ten days later she founded Nichietsu Cooperative, and three months after that the Kumamoto earthquakes damaged her office. The biggest events of her life and her business all fell within those three months.": {
+  "zh": "2016年1月17日，她生下第一个孩子。十天后创立日越协同组合，三个月后熊本地震又让公司办公楼受损。人生与事业中最重大的事件，都集中在短短三个月里。",
+  "fr": "Elle donne naissance à son premier enfant le 17 janvier 2016. Dix jours plus tard, elle fonde la coopérative Nichietsu ; trois mois après, les séismes de Kumamoto endommagent ses bureaux. Les plus grands événements de sa vie et de son entreprise tiennent en ces trois mois.",
+  "ko": "2016년 1월 17일 첫아이를 출산했습니다. 그 열흘 뒤 니치에츠 협동조합을 설립했고, 석 달 뒤에는 구마모토 지진으로 사옥이 피해를 입었습니다. 인생과 사업의 가장 큰 일들이 단 석 달 사이에 겹친 해였습니다."
+ },
+ "Mornings start with the drop-off at nursery before work; evenings end with reading picture books aloud — a daily rhythm described in a 2021 interview. She married in 2023 and runs three companies while raising her family.": {
+  "zh": "早上先把孩子送到托儿所再去上班，晚上给孩子读绘本——2021年的采访中也介绍过她这样的一天。2023年她步入婚姻，在经营家庭的同时经营着三家机构。",
+  "fr": "Le matin, elle dépose son enfant à la crèche avant le travail ; le soir, elle lui lit des albums illustrés — un rythme décrit dans une interview de 2021. Mariée en 2023, elle dirige trois entreprises tout en élevant sa famille.",
+  "ko": "아침에는 아이를 어린이집에 맡기고 출근하고, 밤에는 그림책을 읽어 줍니다. 2021년 취재에서는 이런 하루의 흐름도 소개되었습니다. 2023년에 결혼해, 가정을 꾸리며 세 법인을 경영하고 있습니다."
+ },
+ "“Hardship is the gate to happiness.”": {
+  "zh": "“苦难是幸福之门”",
+  "fr": "« L’épreuve est la porte du bonheur. »",
+  "ko": "“고난은 행복의 문”"
+ },
+ "The phrase she chose as the title of her talk.": {
+  "zh": "她也用作演讲标题的一句话。",
+  "fr": "La phrase qu’elle a choisie comme titre de sa conférence.",
+  "ko": "강연 제목으로도 내건 말."
+ },
+ "“Helping people comes first; profit follows.”": {
+  "zh": "“先为他人着想，利益自然随之而来”",
+  "fr": "« Aider les autres d’abord, le profit suit. »",
+  "ko": "“사람에게 도움이 되는 것이 먼저, 이익은 나중에 따라온다”"
+ },
+ "The principle she learned at Seiwajuku.": {
+  "zh": "在盛和塾学到的经营核心。",
+  "fr": "Le principe appris au Seiwajuku.",
+  "ko": "세이와주쿠에서 배운 경영의 중심."
+ },
+ "“Finding people you can trust with the work is a president’s job.”": {
+  "zh": "“找到可以托付的人，才是社长的工作”",
+  "fr": "« Trouver à qui confier le travail, c’est le métier de dirigeant. »",
+  "ko": "“맡길 수 있는 사람을 찾는 것이 사장의 일”"
+ },
+ "Share the goal, then trust people with the rest.": {
+  "zh": "只传达目标，其余放手交给员工。",
+  "fr": "Donner l’objectif, puis faire confiance pour le reste.",
+  "ko": "목적만 전하고, 나머지는 맡긴다."
+ },
+ "“We are the company in Japan that cares most about Vietnamese people.”": {
+  "zh": "“我们是日本最为越南人着想的公司”",
+  "fr": "« Nous sommes l’entreprise du Japon qui se soucie le plus des Vietnamiens. »",
+  "ko": "“우리는 일본에서 베트남 사람을 가장 생각하는 회사입니다”"
+ },
+ "Her company’s values in a single line.": {
+  "zh": "用一句话概括公司的价值观。",
+  "fr": "Les valeurs de son entreprise en une phrase.",
+  "ko": "회사의 가치관을 한마디로 말하면."
+ },
+ "Childhood dream?": {
+  "zh": "小时候的梦想？",
+  "fr": "Votre rêve d’enfant ?",
+  "ko": "어릴 적 꿈은?"
+ },
+ "To be a schoolteacher.": {
+  "zh": "当老师。",
+  "fr": "Devenir institutrice.",
+  "ko": "학교 선생님."
+ },
+ "Dream in high school?": {
+  "zh": "高中时的梦想？",
+  "fr": "Votre rêve au lycée ?",
+  "ko": "고등학생 때의 꿈은?"
+ },
+ "Interpreting at the United Nations.": {
+  "zh": "当联合国口译员。",
+  "fr": "Interprète aux Nations unies.",
+  "ko": "유엔 통역사."
+ },
+ "What made you aim to run a company?": {
+  "zh": "立志当社长的契机？",
+  "fr": "Pourquoi avoir voulu diriger une entreprise ?",
+  "ko": "사장을 꿈꾼 계기는?"
+ },
+ "A teacher telling me I should do work that puts my own words out there.": {
+  "zh": "高中老师的一句“你应该做能发出自己声音的工作”。",
+  "fr": "Un professeur qui m’a dit de choisir un métier où faire entendre ma voix.",
+  "ko": "“자신의 말을 전하는 일을 하는 게 좋겠다”는 고등학교 선생님의 한마디."
+ },
+ "First job?": {
+  "zh": "第一份工作？",
+  "fr": "Votre premier travail ?",
+  "ko": "첫 일은?"
+ },
+ "Vietnamese interpreting in court, from my last year of high school.": {
+  "zh": "从高三开始，在法庭上做越南语口译。",
+  "fr": "Interprète de vietnamien au tribunal, dès la terminale.",
+  "ko": "고등학교 3학년부터 한 법정 베트남어 통역."
+ },
+ "Your first shop?": {
+  "zh": "第一家店？",
+  "fr": "Votre première boutique ?",
+  "ko": "첫 가게는?"
+ },
+ "A gift shop called Lily. I closed it after a year and a half.": {
+  "zh": "杂货店“Lily”，一年半后关门了。",
+  "fr": "Une boutique de cadeaux, Lily. Fermée au bout d’un an et demi.",
+  "ko": "잡화점 ‘Lily’. 1년 반 만에 닫았습니다."
+ },
+ "Something you’re not good at?": {
+  "zh": "不擅长的事？",
+  "fr": "Ce que vous ne savez pas faire ?",
+  "ko": "서툰 일은?"
+ },
+ "Paperwork. Still not my strong point.": {
+  "zh": "文书处理，到现在也不擅长。",
+  "fr": "Les tâches administratives. Toujours pas mon fort.",
+  "ko": "사무 처리. 지금도 잘하지 못합니다."
+ },
+ "Where did you learn management?": {
+  "zh": "在哪里学习经营？",
+  "fr": "Où avez-vous appris à diriger ?",
+  "ko": "경영을 배운 곳은?"
+ },
+ "Seiwajuku, which I joined in 2014.": {
+  "zh": "2014年加入的盛和塾。",
+  "fr": "Au Seiwajuku, rejoint en 2014.",
+  "ko": "2014년에 들어간 세이와주쿠."
+ },
+ "Evening routine?": {
+  "zh": "晚上的习惯？",
+  "fr": "Votre rituel du soir ?",
+  "ko": "밤의 습관은?"
+ },
+ "Reading picture books to my child.": {
+  "zh": "给孩子读绘本。",
+  "fr": "Lire des albums à mon enfant.",
+  "ko": "아이에게 그림책 읽어 주기."
+ },
+ "Languages?": {
+  "zh": "会说的语言？",
+  "fr": "Vos langues ?",
+  "ko": "할 수 있는 언어는?"
+ },
+ "Japanese and Vietnamese.": {
+  "zh": "日语和越南语。",
+  "fr": "Le japonais et le vietnamien.",
+  "ko": "일본어와 베트남어."
+ },
+ "Your dream from here?": {
+  "zh": "今后的梦想？",
+  "fr": "Votre rêve pour la suite ?",
+  "ko": "앞으로의 꿈은?"
+ },
+ "To create a scholarship programme in Vietnam.": {
+  "zh": "在越南设立奖学金制度。",
+  "fr": "Créer un programme de bourses au Viêt Nam.",
+  "ko": "베트남에 장학금 제도를 만드는 것."
+ },
+ "A scholarship programme for Vietnam.": {
+  "zh": "在越南设立奖学金制度。",
+  "fr": "Des bourses d’études pour le Viêt Nam.",
+  "ko": "베트남에 장학금 제도를."
+ },
+ "Because she knows hardship from her own childhood, she understands the worries of Vietnamese people working in Japan. Looking further ahead, she wants to create a scholarship programme in Vietnam: “I want to give young people who have the drive and the ability, but not the money, the chance to study.”": {
+  "zh": "正因为亲身经历过童年的艰辛，她理解在日本工作的越南人的烦恼。她更远的愿景，是在越南设立奖学金制度：“我想给那些有干劲、有能力，却因经济原因无法升学的年轻人提供受教育的机会。”",
+  "fr": "Parce qu’elle a connu la difficulté enfant, elle comprend les soucis des Vietnamiens qui travaillent au Japon. Plus loin encore, elle souhaite créer un programme de bourses au Viêt Nam : « Je veux offrir la chance d’étudier aux jeunes qui ont la motivation et les capacités, mais pas les moyens. »",
+  "ko": "어린 시절의 고생을 알기에, 일본에서 일하는 베트남 사람들의 고민을 이해합니다. 그 너머에 그리는 것은 베트남에 장학금 제도를 만드는 일입니다. “의욕과 능력이 있어도 경제적인 이유로 진학하지 못하는 젊은이들에게 교육의 기회를 주고 싶습니다.”"
+ },
+ "Her Story": {
+  "zh": "真实的她",
+  "fr": "Portrait",
+  "ko": "맨얼굴"
+ },
+ "Yuri, Up Close": {
+  "zh": "真实的泽村友里",
+  "fr": "Yuri, au plus près",
+  "ko": "맨얼굴의 사와무라 유리"
+ },
+ "Student founder, woman entrepreneur, career woman and working mother — four sides of Yuri Sawamura.": {
+  "zh": "学生创业者、女性创业者、职业女性、职场妈妈——从四个侧面认识泽村友里。",
+  "fr": "Entrepreneuse étudiante, femme entrepreneure, femme de carrière et mère qui travaille — quatre facettes de Yuri Sawamura.",
+  "ko": "학생 창업가, 여성 창업가, 커리어우먼, 그리고 일하는 엄마. 네 가지 얼굴로 사와무라 유리를 소개합니다."
+ },
+ "Read her story": {
+  "zh": "查看她的故事",
+  "fr": "Lire son portrait",
+  "ko": "맨얼굴 페이지 보기"
+ },
+ "Words she lives by": {
+  "zh": "她珍视的话语",
+  "fr": "Les mots qui la guident",
+  "ko": "소중히 여기는 말"
+ },
+ "Ten questions": {
+  "zh": "十个问题",
+  "fr": "Dix questions",
+  "ko": "열 가지 질문"
+ },
+ "What comes next": {
+  "zh": "今后的梦想",
+  "fr": "Et maintenant",
+  "ko": "앞으로의 꿈"
+ },
+ "The words and episodes on this page come from her talks and the following interviews.": {
+  "zh": "本页的话语与故事，均依据演讲资料及以下采访。",
+  "fr": "Les mots et anecdotes de cette page proviennent de ses conférences et des interviews suivantes.",
+  "ko": "이 페이지의 말과 에피소드는 강연 자료와 다음 취재를 바탕으로 했습니다."
+ },
+ "Companies and organisations": {
+  "zh": "相关公司与团体",
+  "fr": "Entreprises et organisations",
+  "ko": "관련 회사·단체"
  }
 };

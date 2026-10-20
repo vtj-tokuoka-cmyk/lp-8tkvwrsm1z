@@ -521,6 +521,11 @@ const TIMELINE = [
     body:  { ja: "熊本県立大学を卒業。同年9月20日、ベトナムトレーディング株式会社を設立し代表取締役社長に就任。専門学校でベトナム人留学生に日本語を教えた経験から母国の若者のニーズを知ったことが、その後の人材事業の原点となる。",
              en: "Graduated and, on 20 September the same year, founded Vietnam Trading Co., Ltd. as President & CEO. Teaching Japanese to Vietnamese students at a vocational college had shown her what young people back home actually needed — the origin of the recruitment business.",
              vi: "Tốt nghiệp và ngày 20/9 cùng năm thành lập Công ty Việt Nam Trading, giữ chức Tổng giám đốc. Kinh nghiệm dạy tiếng Nhật cho du học sinh Việt là khởi nguồn của mảng nhân lực." } },
+  { year: "2014",
+    title: { ja: "盛和塾に入塾", en: "Joins Seiwajuku", vi: "Gia nhập Seiwajuku" },
+    body:  { ja: "稲盛和夫氏が主宰した経営塾「盛和塾」に入り、経営を学びはじめる。日越協同組合を少人数で立ち上げた時期を支えたのも、ここでの学びだった。",
+             en: "She began studying management at Seiwajuku, the school for business owners led by Kazuo Inamori. What she learned there sustained her when she set up Nichietsu Cooperative with a tiny team.",
+             vi: "Bắt đầu học quản trị tại Seiwajuku, trường kinh doanh do ông Inamori Kazuo dẫn dắt. Những bài học tại đây đã tiếp sức cho cô khi thành lập Nghiệp đoàn Nichietsu với đội ngũ rất nhỏ." } },
   { year: "2016",
     title: { ja: "日越協同組合 設立", en: "Nichietsu Cooperative established", vi: "Thành lập Nghiệp đoàn Nichietsu" },
     body:  { ja: "1月17日に第一子を出産し、その10日後の1月27日、技能実習生の受入れを担う日越協同組合を設立して代表理事に就任。さらに3か月後には熊本地震が発生し、社屋も被災した。人生と事業のいちばん大きな出来事が、わずか3か月のあいだに重なった年。",
@@ -1040,6 +1045,9 @@ const KODAWARI_TITLE = {ja:'こだわり、<em>真心をかたちに。</em>',
    16. 各ページの冒頭文
    ========================================================================= */
 const PAGE_LEADS = {
+  story: { ja: "学生起業家、女性起業家、キャリアウーマン、そして働く母。講演や取材で語ってきた言葉から、肩書きの向こうにある素顔をたどります。",
+             en: "Student founder, woman entrepreneur, career woman and working mother — the person behind the titles, in her own words from talks and interviews.",
+             vi: "Doanh nhân khởi nghiệp từ thời sinh viên, nữ doanh nhân, người phụ nữ của sự nghiệp và người mẹ đi làm — con người phía sau các chức danh, qua chính lời cô kể trong các buổi nói chuyện và phỏng vấn." },
   profile: { ja: "ベトナムに生まれ、12歳で熊本へ。学生起業から3法人の経営まで、これまでの歩みをまとめています。",
              en: "Born in Vietnam, in Kumamoto from twelve. From founding a company as a student to running three entities — the journey so far.",
              vi: "Sinh ra ở Việt Nam, đến Kumamoto năm 12 tuổi. Từ khởi nghiệp sinh viên đến điều hành 3 pháp nhân." },
@@ -1078,3 +1086,129 @@ const STRIP = [
   { src: "img/q_9244.jpg", pos: "45% 35%",
     label: { ja: "ふたつの故郷", en: "Two homelands", vi: "Hai quê hương" }, sub: "VIETNAM × JAPAN" }
 ];
+
+/* =========================================================================
+   18. 素顔のページ（story.html）とトップの「4つの顔」
+   ------------------------------------------------------------------------
+   講演資料と取材記事で本人が語った内容だけで書いています。
+   新しいエピソードを足すときは body の段落を増やします（ja / en / vi を同じ数に）。
+   ========================================================================= */
+const FACES = [
+  { id: "student", no: "01", img: "img/p_8480.jpg", pos: "50% 22%", sub: "STUDENT FOUNDER",
+    label: { ja: "学生起業家として", en: "As a student founder", vi: "Khởi nghiệp từ thời sinh viên" },
+    catch: { ja: "「月に50万くらい稼ぎたいなぁ」から始まった起業。",
+             en: "It all started with “I’d like to earn about 500,000 yen a month.”",
+             vi: "Khởi nghiệp bắt đầu từ câu: “Mình muốn kiếm khoảng 500.000 yên mỗi tháng.”" },
+    body: { ja: [
+      "子どもの頃の夢は、学校の先生。高校生になると国連の通訳にあこがれました。進路に迷っていたとき、高校の先生にかけられた「自分の言葉を発信する仕事をした方がいい」という一言が、社長を目指すきっかけになりました。",
+      "高校3年のころには、すでにベトナム語の通訳として裁判の場に立ち、三重・名古屋・福岡と全国を回っていました。大学在学中の2011年、実家近くの温泉施設の敷地に雑貨店「Lily」を開店。ベトナムで仕入れた雑貨を売り、ベトナム語教室も開きました。",
+      "けれど家賃と人件費が重く、思うようには稼げずに1年半で閉店。開業届も確定申告も、何も考えずに飛び込んだ起業でした。このとき身にしみた固定費の怖さが、2013年に自宅を事務所にしてベトナムトレーディングを立ち上げたときの判断につながっています。"],
+    en: [
+      "As a child she wanted to be a schoolteacher; in high school she dreamed of interpreting at the United Nations. When she was unsure which way to go, a teacher told her she should do work that put her own words out into the world — and that set her on the path to running a company.",
+      "By her final year of high school she was already working as a Vietnamese interpreter in court, travelling to Mie, Nagoya, Fukuoka and beyond. In 2011, while still at university, she opened a gift shop called Lily on the grounds of a hot-spring facility near her family home, selling goods sourced in Vietnam and running Vietnamese classes.",
+      "Rent and wages weighed heavily, the shop never earned what she had hoped, and she closed it after a year and a half. She had jumped in without a thought for business registration or tax returns. The lesson about fixed costs stayed with her — and shaped the decision in 2013 to launch Vietnam Trading from her own home."],
+    vi: [
+      "Hồi nhỏ, ước mơ của cô là trở thành giáo viên; lên cấp ba, cô mơ làm phiên dịch viên cho Liên Hợp Quốc. Khi còn phân vân về tương lai, một thầy giáo nói rằng cô nên làm công việc truyền tải tiếng nói của chính mình — câu nói ấy đã đưa cô đến con đường làm giám đốc.",
+      "Năm cuối cấp ba, cô đã làm phiên dịch tiếng Việt tại tòa án, đi khắp Mie, Nagoya, Fukuoka. Năm 2011, khi còn là sinh viên, cô mở cửa hàng tạp hóa “Lily” trong khuôn viên một khu suối nước nóng gần nhà, bán hàng nhập từ Việt Nam và mở lớp tiếng Việt.",
+      "Nhưng tiền thuê và lương nhân viên quá nặng, cửa hàng không đạt doanh thu mong muốn và đóng cửa sau một năm rưỡi. Cô đã lao vào kinh doanh mà chưa hề nghĩ đến đăng ký kinh doanh hay khai thuế. Bài học về chi phí cố định ấy đã dẫn đến quyết định năm 2013: thành lập Vietnam Trading ngay tại nhà mình."] } },
+  { id: "woman", no: "02", img: "img/q_9453.jpg", pos: "50% 25%", sub: "WOMAN ENTREPRENEUR",
+    label: { ja: "女性起業家として", en: "As a woman entrepreneur", vi: "Là một nữ doanh nhân" },
+    catch: { ja: "外国にルーツを持つ女性が、熊本から3つの法人を率いる。",
+             en: "A woman with roots abroad, leading three companies from Kumamoto.",
+             vi: "Một người phụ nữ gốc nước ngoài dẫn dắt ba pháp nhân từ Kumamoto." },
+    body: { ja: [
+      "学生時代はモデルやタレントとしても活動し、人前に立ち、伝えることは昔から仕事の一部でした。いまはTikTokで、美容の秘訣や女性社長としての日々の仕事も発信しています。",
+      "2019年に、熊本の若手経営者が学び合う熊本イノベーションベース（KUIB）に入会。2022年に副代表理事、2023年に代表理事となり、2024年まで経営者のコミュニティを率いました。地元のラジオ番組では「女性起業家の素晴らしいロールモデル」と紹介されています。",
+      "ベトナムで生まれ、12歳で日本へ。言葉も文化もわからない場所から出発した女性が、いまは日本とベトナムの両方で会社を経営しています。"],
+    en: [
+      "In her student years she also worked as a model and TV personality; standing in front of people and communicating has long been part of her work. Today she shares beauty tips and the daily work of a woman CEO on TikTok.",
+      "In 2019 she joined Kumamoto Innovation Base (KUIB), where young Kumamoto business owners learn from each other. She became Deputy Representative Director in 2022 and Representative Director in 2023, leading the community until 2024. A local radio programme introduced her as “a wonderful role model for women entrepreneurs.”",
+      "Born in Vietnam and brought to Japan at twelve, she started out somewhere she understood neither the language nor the culture — and now runs companies in both Japan and Vietnam."],
+    vi: [
+      "Thời sinh viên, cô từng làm người mẫu và người dẫn chương trình truyền hình; đứng trước đám đông và truyền đạt vốn đã là một phần công việc của cô. Hiện nay, trên TikTok cô chia sẻ bí quyết làm đẹp và công việc hằng ngày của một nữ giám đốc.",
+      "Năm 2019, cô gia nhập Kumamoto Innovation Base (KUIB) — nơi các doanh nhân trẻ Kumamoto học hỏi lẫn nhau. Cô làm Phó chủ tịch từ 2022, Chủ tịch từ 2023 và dẫn dắt cộng đồng này đến năm 2024. Một chương trình phát thanh địa phương đã giới thiệu cô là “hình mẫu tuyệt vời của nữ doanh nhân”.",
+      "Sinh ra ở Việt Nam, sang Nhật năm 12 tuổi, bắt đầu từ nơi không hiểu ngôn ngữ lẫn văn hóa — giờ đây cô điều hành doanh nghiệp ở cả Nhật Bản và Việt Nam."] } },
+  { id: "career", no: "03", img: "img/p_135.jpg", pos: "45% 40%", sub: "CAREER & LEADERSHIP",
+    label: { ja: "キャリアウーマンとして", en: "As a career woman", vi: "Người phụ nữ của sự nghiệp" },
+    catch: { ja: "「任せられる人を見つけるのが、社長の仕事」",
+             en: "“Finding people you can trust with the work — that is a president’s job.”",
+             vi: "“Tìm được người có thể giao phó — đó là việc của giám đốc.”" },
+    body: { ja: [
+      "専門学校でベトナム人留学生に日本語を教えていたとき、学費のために違法な働き方や低い賃金を強いられている実態を知りました。「お金が嫌いになりました」。その悔しさから、ベトナム人がきちんと働ける環境をつくろうと、2年をかけて日越協同組合を立ち上げました。",
+      "設立当初は自分と社員1人だけ。支えになったのは、2014年に入塾した盛和塾での学びでした。「人のためになるのが先で、利益はあとから付いてくる」。この考えが、いまも経営の軸になっています。",
+      "2020年ごろからは社員の「人間教育」に力を入れ、9つのクレドをもとにした講習を行い、朝礼では「お客様・ベトナム人・会社」の3つの視点を読み上げています。役職ではなく「さん」付けで呼び合い、目的だけを伝えて任せる。毎週金曜日にはリーダーたちと情報を交換し、現場の感覚を確かめています。"],
+    en: [
+      "While teaching Japanese to Vietnamese students at a vocational college, she saw how many were pushed into illegal work or very low wages to pay their fees. “It made me hate money,” she recalls. Out of that frustration she spent two years building Nichietsu Cooperative, so that Vietnamese people could work in proper conditions.",
+      "At the start it was just her and one employee. What held her up was what she had learned at Seiwajuku, which she joined in 2014: “Helping people comes first; profit follows.” It is still the axis of how she runs the business.",
+      "Since around 2020 she has put real effort into character education for her staff, with sessions built on nine credos and three viewpoints — the client, the Vietnamese workers and the company — read aloud at every morning meeting. People address each other by name rather than title; she shares the goal and trusts them with the rest. Every Friday she meets her team leaders to stay in touch with the front line."],
+    vi: [
+      "Khi dạy tiếng Nhật cho du học sinh Việt Nam ở một trường nghề, cô chứng kiến nhiều bạn phải làm việc bất hợp pháp hoặc nhận lương rất thấp để trả học phí. “Tôi đã ghét đồng tiền,” cô nhớ lại. Từ nỗi day dứt ấy, cô dành hai năm để thành lập Nghiệp đoàn Nichietsu, để người Việt được làm việc trong môi trường đàng hoàng.",
+      "Lúc đầu chỉ có cô và một nhân viên. Điều nâng đỡ cô là những bài học tại Seiwajuku, nơi cô gia nhập năm 2014: “Giúp người trước, lợi nhuận sẽ đến sau.” Đến nay, đó vẫn là kim chỉ nam trong kinh doanh của cô.",
+      "Từ khoảng năm 2020, cô chú trọng “giáo dục con người” cho nhân viên, với các buổi học dựa trên 9 nguyên tắc và 3 góc nhìn — khách hàng, người Việt và công ty — được đọc to mỗi buổi chào sáng. Mọi người gọi nhau bằng tên thay vì chức danh; cô chỉ nói mục tiêu và giao phó phần còn lại. Thứ Sáu hằng tuần, cô trao đổi với các trưởng nhóm để nắm sát thực tế."] } },
+  { id: "mother", no: "04", img: "img/q_8668.jpg", pos: "40% 35%", sub: "WORK & FAMILY",
+    label: { ja: "働く母として", en: "As a working mother", vi: "Là một người mẹ đi làm" },
+    catch: { ja: "出産の10日後に、組合を設立した。",
+             en: "Ten days after giving birth, she founded a cooperative.",
+             vi: "Mười ngày sau khi sinh con, cô thành lập nghiệp đoàn." },
+    body: { ja: [
+      "2016年1月17日に第一子を出産。その10日後に日越協同組合を設立し、3か月後には熊本地震で社屋が被災しました。人生と事業のいちばん大きな出来事が、わずか3か月のあいだに重なった年でした。",
+      "朝は子どもを保育園に預けてから出社し、夜は絵本の読み聞かせ。2021年の取材では、そんな一日の流れも紹介されています。2023年に結婚し、家庭を持ちながら3つの法人を経営しています。"],
+    en: [
+      "She gave birth to her first child on 17 January 2016. Ten days later she founded Nichietsu Cooperative, and three months after that the Kumamoto earthquakes damaged her office. The biggest events of her life and her business all fell within those three months.",
+      "Mornings start with the drop-off at nursery before work; evenings end with reading picture books aloud — a daily rhythm described in a 2021 interview. She married in 2023 and runs three companies while raising her family."],
+    vi: [
+      "Ngày 17/1/2016, cô sinh con đầu lòng. Mười ngày sau, cô thành lập Nghiệp đoàn Nichietsu; ba tháng sau đó, trận động đất Kumamoto làm hư hại văn phòng. Những sự kiện lớn nhất của cuộc đời và sự nghiệp đều dồn vào ba tháng ấy.",
+      "Buổi sáng đưa con đến nhà trẻ rồi mới đi làm, buổi tối đọc sách tranh cho con nghe — nhịp sống ấy từng được giới thiệu trong một bài phỏng vấn năm 2021. Cô kết hôn năm 2023 và điều hành ba pháp nhân trong khi chăm lo gia đình."] } }
+];
+
+/* 大切にしていることば */
+const WORDS = [
+  { text: { ja: "「苦難は幸福の門」",
+             en: "“Hardship is the gate to happiness.”",
+             vi: "“Gian khổ là cánh cửa dẫn đến hạnh phúc.”" },
+    note: { ja: "講演のタイトルにも掲げていることば。", en: "The phrase she chose as the title of her talk.", vi: "Câu nói cô chọn làm tên bài nói chuyện." } },
+  { text: { ja: "「人のためになるのが先で、利益はあとから付いてくる」",
+             en: "“Helping people comes first; profit follows.”",
+             vi: "“Giúp người trước, lợi nhuận sẽ đến sau.”" },
+    note: { ja: "盛和塾で学んだ、経営の軸。", en: "The principle she learned at Seiwajuku.", vi: "Nguyên tắc học được tại Seiwajuku." } },
+  { text: { ja: "「任せられる人を見つけるのが、社長の仕事」",
+             en: "“Finding people you can trust with the work is a president’s job.”",
+             vi: "“Tìm được người có thể giao phó là việc của giám đốc.”" },
+    note: { ja: "目的だけを伝えて、あとは任せる。", en: "Share the goal, then trust people with the rest.", vi: "Nói rõ mục tiêu, rồi tin tưởng giao phó." } },
+  { text: { ja: "「私たちは、日本一ベトナム人思いの会社です」",
+             en: "“We are the company in Japan that cares most about Vietnamese people.”",
+             vi: "“Chúng tôi là công ty quan tâm đến người Việt nhất Nhật Bản.”" },
+    note: { ja: "会社の価値観を、ひとことで表すと。", en: "Her company’s values in a single line.", vi: "Giá trị của công ty trong một câu." } }
+];
+
+/* 10の質問（答えは取材・講演で本人が語った内容） */
+const QA = [
+  { q: { ja: "子どもの頃の夢は？", en: "Childhood dream?", vi: "Ước mơ thời thơ ấu?" },
+    a: { ja: "学校の先生。", en: "To be a schoolteacher.", vi: "Trở thành giáo viên." } },
+  { q: { ja: "高校生のころの夢は？", en: "Dream in high school?", vi: "Ước mơ thời cấp ba?" },
+    a: { ja: "国連の通訳。", en: "Interpreting at the United Nations.", vi: "Làm phiên dịch viên cho Liên Hợp Quốc." } },
+  { q: { ja: "社長を目指したきっかけは？", en: "What made you aim to run a company?", vi: "Điều gì khiến bạn muốn làm giám đốc?" },
+    a: { ja: "高校の先生の「自分の言葉を発信する仕事をした方がいい」という一言。", en: "A teacher telling me I should do work that puts my own words out there.", vi: "Lời khuyên của thầy giáo cấp ba: nên làm công việc truyền tải tiếng nói của chính mình." } },
+  { q: { ja: "はじめての仕事は？", en: "First job?", vi: "Công việc đầu tiên?" },
+    a: { ja: "高校3年から、裁判の場でのベトナム語通訳。", en: "Vietnamese interpreting in court, from my last year of high school.", vi: "Phiên dịch tiếng Việt tại tòa án, từ năm cuối cấp ba." } },
+  { q: { ja: "最初のお店は？", en: "Your first shop?", vi: "Cửa hàng đầu tiên?" },
+    a: { ja: "雑貨店「Lily」。1年半で閉めました。", en: "A gift shop called Lily. I closed it after a year and a half.", vi: "Cửa hàng tạp hóa “Lily”. Đóng cửa sau một năm rưỡi." } },
+  { q: { ja: "苦手なことは？", en: "Something you’re not good at?", vi: "Điều bạn không giỏi?" },
+    a: { ja: "事務処理。いまも得意ではありません。", en: "Paperwork. Still not my strong point.", vi: "Giấy tờ hành chính. Đến giờ vẫn chưa giỏi." } },
+  { q: { ja: "経営を学んだ場所は？", en: "Where did you learn management?", vi: "Bạn học quản trị ở đâu?" },
+    a: { ja: "2014年に入塾した盛和塾。", en: "Seiwajuku, which I joined in 2014.", vi: "Seiwajuku, nơi tôi gia nhập năm 2014." } },
+  { q: { ja: "夜の習慣は？", en: "Evening routine?", vi: "Thói quen buổi tối?" },
+    a: { ja: "子どもへの絵本の読み聞かせ。", en: "Reading picture books to my child.", vi: "Đọc sách tranh cho con nghe." } },
+  { q: { ja: "話せることばは？", en: "Languages?", vi: "Ngôn ngữ?" },
+    a: { ja: "日本語とベトナム語。", en: "Japanese and Vietnamese.", vi: "Tiếng Nhật và tiếng Việt." } },
+  { q: { ja: "これからの夢は？", en: "Your dream from here?", vi: "Ước mơ sắp tới?" },
+    a: { ja: "ベトナムに奨学金制度をつくること。", en: "To create a scholarship programme in Vietnam.", vi: "Lập quỹ học bổng tại Việt Nam." } }
+];
+
+/* これからの夢 */
+const DREAM = {
+  title: { ja: "ベトナムに、奨学金制度を。", en: "A scholarship programme for Vietnam.", vi: "Một quỹ học bổng cho Việt Nam." },
+  body:  { ja: "幼いころの苦労を知っているからこそ、日本で働くベトナム人の悩みがわかる。その先に描いているのは、ベトナムに奨学金制度をつくることです。「やる気や能力はあっても、経済的に進学できない若者に、教育の機会を与えたい」。",
+             en: "Because she knows hardship from her own childhood, she understands the worries of Vietnamese people working in Japan. Looking further ahead, she wants to create a scholarship programme in Vietnam: “I want to give young people who have the drive and the ability, but not the money, the chance to study.”",
+             vi: "Chính vì từng trải qua khó khăn thời thơ ấu, cô thấu hiểu nỗi trăn trở của người Việt làm việc tại Nhật. Xa hơn, cô mong lập một quỹ học bổng tại Việt Nam: “Tôi muốn trao cơ hội học tập cho những bạn trẻ có ý chí và năng lực nhưng không đủ điều kiện kinh tế để tiếp tục học.”" }
+};

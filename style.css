@@ -56,7 +56,7 @@ nav a.navlink:hover,nav a.navlink.cur{opacity:1;color:var(--red)}
 .burger.on span:nth-child(1){transform:translateY(6px) rotate(45deg)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-@media(max-width:1200px){
+@media(max-width:1320px){
   .burger{display:block;order:3}
   nav{position:fixed;inset:56px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;
     background:rgba(253,251,249,.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
@@ -155,7 +155,7 @@ footer{background:#fff;border-top:1px solid var(--line);padding:52px var(--pad) 
 .lang-menu button.on{color:var(--red);font-weight:700}
 .lang-menu button.on small{color:var(--red)}
 .lang-note{font-size:11px;line-height:1.6;color:var(--muted);padding:9px 12px 6px;border-top:1px solid var(--line);margin-top:4px}
-@media(max-width:1200px){
+@media(max-width:1320px){
   .lang{margin-top:18px;align-self:stretch}
   .lang-cur{display:none}
   .lang-menu{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;box-shadow:none;border:0;padding:0;
@@ -493,7 +493,7 @@ form .btn{width:100%;margin-top:6px}
 .hd-sns{gap:6px}
 .hd-sns a{width:30px;height:30px;border:1px solid var(--line);color:var(--ink-2)}
 .hd-sns svg{width:14px;height:14px}
-@media(max-width:1200px){
+@media(max-width:1320px){
   .hd-sns{justify-content:center;margin-top:18px;gap:12px}
   .hd-sns a{width:42px;height:42px}
   .hd-sns svg{width:18px;height:18px}
@@ -706,3 +706,64 @@ a.media-item{color:inherit;text-decoration:none}
 
 /* 講演のご依頼の見出しは右カラム幅に収める */
 .lecinfo .sec-title{font-size:clamp(32px,4.2vw,52px)}
+
+/* =========================================================================
+   素顔（トップの4つの顔／story.html）
+   ========================================================================= */
+.faces-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.face-card{display:block;color:inherit;text-decoration:none;border-radius:var(--radius);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s}
+.face-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.face-card .ph{aspect-ratio:3/4;overflow:hidden;background:var(--bg-2)}
+.face-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.face-card:hover .ph img{transform:scale(1.05)}
+.face-card .bd{padding:18px 20px 24px}
+.face-card i{font-style:normal;font-family:var(--latin);color:var(--red);font-size:24px;line-height:1}
+.face-card b{display:block;font-family:var(--serif);font-size:clamp(18px,1.6vw,21px);font-weight:500;margin:6px 0 10px;line-height:1.45}
+.face-card p{font-size:14px;color:var(--ink-2);line-height:1.8}
+@media(max-width:980px){.faces-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.faces-grid{gap:12px}.face-card .bd{padding:12px 12px 16px}.face-card b{font-size:16px}.face-card p{font-size:12.5px;line-height:1.7}}
+
+.story-toc{justify-content:center;padding:30px var(--pad) 0;margin:0}
+.story-toc .chip{text-decoration:none;color:var(--ink)}
+.story-toc .chip:hover{border-color:var(--red);color:var(--red)}
+.face{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,84px);align-items:center;max-width:1180px;margin:0 auto}
+.face.rev .face-ph{order:2}
+.face-ph{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/5}
+.face-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.face-ph .no{position:absolute;left:22px;top:14px;font-family:var(--latin);font-size:clamp(52px,6vw,78px);color:#fff;line-height:1;
+  text-shadow:0 4px 24px rgba(20,10,10,.35)}
+.face-bd h2{font-family:var(--serif);font-size:clamp(30px,3.8vw,48px);font-weight:500;line-height:1.35;margin:0 0 16px}
+.face-bd .face-catch{font-family:var(--serif);font-size:clamp(18px,1.9vw,23px);color:var(--red);line-height:1.7;margin-bottom:22px}
+.face-bd p{font-size:16.5px;line-height:2.05;color:var(--ink-2)}
+.face-bd p + p{margin-top:14px}
+@media(max-width:900px){.face{grid-template-columns:1fr}.face.rev .face-ph{order:0}.face-ph{aspect-ratio:4/3}}
+
+.words{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1180px}
+.word{background:#fff;border-radius:var(--radius);padding:30px 32px;box-shadow:var(--shadow);border-left:3px solid var(--red);margin:0}
+.word blockquote{font-family:var(--serif);font-size:clamp(19px,2vw,25px);line-height:1.65;margin:0}
+.word figcaption{margin-top:14px;font-size:13.5px;color:var(--muted)}
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;max-width:1180px;margin:0}
+.qa > div{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;padding:20px 0;border-bottom:1px solid var(--line)}
+.qa b{grid-row:span 2;font-family:var(--latin);font-size:26px;color:var(--red);font-weight:500;line-height:1.1}
+.qa dt{font-size:13.5px;color:var(--muted);letter-spacing:.04em}
+.qa dd{margin:0;font-size:17px;line-height:1.7}
+@media(max-width:760px){.words,.qa{grid-template-columns:1fr}.word{padding:24px 22px}}
+.band.dream .band-in{max-width:1180px}
+.dream-eyebrow{font-size:13px;letter-spacing:.3em;font-weight:600;color:#FFD3D8;margin-bottom:14px}
+.band .dream-body{font-size:16px;letter-spacing:.02em;line-height:2;max-width:40em;margin-top:18px;color:#fff}
+.sources{max-width:1180px;font-size:13px;color:var(--muted);line-height:1.9}
+.sources ul{margin:8px 0 0;padding-left:18px}
+.sources a{color:var(--ink-2);text-decoration:underline}
+
+/* プロフィール：関わっている会社・団体 */
+.affil{max-width:1180px}
+.affil-row{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:16px;align-items:center;padding:20px 6px;
+  border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .25s}
+.affil-row:hover{background:var(--red-soft)}
+.affil-row b{font-family:var(--serif);font-size:19px;font-weight:500}
+.affil-row span{font-size:14px;color:var(--ink-2)}
+.affil-row i{font-style:normal;font-size:13px;color:var(--muted)}
+.affil-row em{font-style:normal;color:var(--red)}
+.affil .svc-pills{margin-top:26px}
+@media(max-width:760px){.affil-row{grid-template-columns:1fr auto;gap:4px 12px}.affil-row span,.affil-row i{grid-column:1}}

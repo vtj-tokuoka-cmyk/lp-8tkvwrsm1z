@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261019">
+<link rel="stylesheet" href="style.css?v=20261020">
 </head>
 <body>
 <div id="bar"></div>
@@ -29,7 +29,19 @@
 <!-- ============ PHOTO STRIP ============ -->
 <div class="strip" id="strip"></div>
 
-<!-- ============ 01 講演のご依頼 ============ -->
+<!-- ============ 01 素顔 ============ -->
+<section id="faces" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" id="t-faces"></h2>
+    <span class="sec-sub">BEYOND THE TITLE</span>
+  </div>
+  <p class="sec-lead rv" id="t-faces-lead"></p>
+  <div class="faces-grid" id="faces-grid"></div>
+  <div class="more-wrap rv"><a class="btn btn-r" id="t-more-story" href="story.html"></a></div>
+</section>
+
+<!-- ============ 02 講演のご依頼 ============ -->
 <section id="lecture-info">
   <div class="lecinfo">
     <div class="ph rv">
@@ -37,7 +49,7 @@
       <span class="tag2">SPEAKING</span>
     </div>
     <div class="rv">
-      <div class="eyebrow">01 &nbsp;SPEAKING</div>
+      <div class="eyebrow">02 &nbsp;SPEAKING</div>
       <h2 class="sec-title" id="t-lecinfo"></h2>
       <p class="sec-lead" id="t-lecinfo-lead" style="margin:18px 0 0"></p>
       <ul class="themes" id="themes"></ul>
@@ -46,10 +58,10 @@
   </div>
 </section>
 
-<!-- ============ 02 澤村友里について ============ -->
+<!-- ============ 03 澤村友里について ============ -->
 <section id="profile" style="background:#fff">
   <div class="sec-head rv">
-    <span class="sec-num">02</span>
+    <span class="sec-num">03</span>
     <h2 class="sec-title" id="t-profile"></h2>
     <span class="sec-sub">PROFILE</span>
   </div>
@@ -71,7 +83,7 @@
 <!-- ============ 03 こだわり ============ -->
 <section id="kodawari">
   <div class="sec-head rv">
-    <span class="sec-num">03</span>
+    <span class="sec-num">04</span>
     <h2 class="sec-title" id="t-kodawari"></h2>
     <span class="sec-sub">MY VALUES</span>
   </div>
@@ -88,7 +100,7 @@
 <!-- ============ 04 最新の動画・メディア ============ -->
 <section id="video" style="background:linear-gradient(180deg,#fff,var(--bg-2))">
   <div class="sec-head rv">
-    <span class="sec-num">04</span>
+    <span class="sec-num">05</span>
     <h2 class="sec-title" id="t-video"></h2>
     <span class="sec-sub">VIDEO &amp; MEDIA</span>
   </div>
@@ -99,17 +111,6 @@
     <div class="media-list" id="media-list"></div>
   </div>
   <div class="more-wrap rv"><a class="btn btn-o" id="t-more-sns" href="sns.html"></a></div>
-</section>
-
-<!-- ============ 05 グループ体制 ============ -->
-<section id="group" style="background:var(--bg)">
-  <div class="sec-head rv">
-    <span class="sec-num">05</span>
-    <h2 class="sec-title" id="t-group"></h2>
-    <span class="sec-sub">GROUP</span>
-  </div>
-  <div class="grp" id="grp-list"></div>
-  <div class="svc-pills rv" id="svc-list"></div>
 </section>
 
 <!-- ============ 06 ブログ ============ -->
@@ -151,11 +152,11 @@
 
 <div id="lb"><span class="x">×</span><span class="nv prev">‹</span><img alt=""><span class="nv next">›</span><div class="cap"></div></div>
 
-<script src="data.js?v=20261019"></script>
-<script src="i18n-extra.js?v=20261019"></script>
-<script src="app.js?v=20261019"></script>
-<script src="form.js?v=20261019"></script>
-<script src="parts.js?v=20261019"></script>
+<script src="data.js?v=20261020"></script>
+<script src="i18n-extra.js?v=20261020"></script>
+<script src="app.js?v=20261020"></script>
+<script src="form.js?v=20261020"></script>
+<script src="parts.js?v=20261020"></script>
 <script>
 function renderPage(){
   /* ---- HERO ---- */
@@ -185,7 +186,17 @@ function renderPage(){
     <figure class="rv"><img src="${p.src}" alt="" style="object-position:${p.pos||'50% 30%'}">
       <figcaption><b>${esc(L(p.label))}</b><span>${esc(p.sub||'')}</span></figcaption></figure>`).join('');
 
-  /* ---- 01 講演のご依頼 ---- */
+  /* ---- 01 素顔（4つの顔） ---- */
+  document.getElementById('t-faces').textContent = T('secFaces');
+  document.getElementById('t-faces-lead').textContent = T('secFacesLead');
+  document.getElementById('faces-grid').innerHTML = FACES.map(f=>`
+    <a class="face-card rv" href="story.html#face-${f.id}">
+      <div class="ph"><img src="${f.img}" alt="" style="object-position:${f.pos}" loading="lazy"></div>
+      <div class="bd"><i>${f.no}</i><b>${esc(L(f.label))}</b><p>${esc(L(f.catch))}</p></div>
+    </a>`).join('');
+  document.getElementById('t-more-story').textContent = T('moreStory') + ' →';
+
+  /* ---- 02 講演のご依頼 ---- */
   document.getElementById('t-lecinfo').textContent = T('secLectureInfo');
   document.getElementById('t-lecinfo-lead').textContent = T('secTopicsLead');
   document.getElementById('themes').innerHTML = TOPICS.map(t=>`
@@ -223,12 +234,6 @@ function renderPage(){
   bindVideoClicks();
   document.getElementById('media-list').innerHTML = MEDIA.slice()
     .sort((a,b)=>b.date.localeCompare(a.date)).map(mediaRow).join('');
-
-  /* ---- 05 グループ ---- */
-  document.getElementById('t-group').textContent = T('secGroup');
-  document.getElementById('grp-list').innerHTML = GROUP.map(groupCard).join('');
-  document.getElementById('svc-list').innerHTML = SERVICES.map(s=>
-    `<a href="${s.url}" target="_blank" rel="noopener">${esc(L(s.name))} ↗</a>`).join('');
 
   /* ---- 06 ブログ ---- */
   document.getElementById('t-blog').textContent = T('secBlog');

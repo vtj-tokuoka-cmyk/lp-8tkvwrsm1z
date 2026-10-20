@@ -181,7 +181,16 @@ const UI = {
   langMenu:    { ja: "表示言語", en: "Language", vi: "Ngôn ngữ" },
   autoNote:    { ja: "中文・Français・한국어 はAIによる自動翻訳です。",
                  en: "Chinese, French and Korean are machine-translated by AI.",
-                 vi: "Tiếng Trung, tiếng Pháp và tiếng Hàn được dịch tự động bằng AI." }
+                 vi: "Tiếng Trung, tiếng Pháp và tiếng Hàn được dịch tự động bằng AI." },
+  navStory: { ja: "素顔", en: "Her Story", vi: "Chân dung" },
+  secFaces: { ja: "素顔の澤村友里", en: "Yuri, Up Close", vi: "Chân dung Yuri" },
+  secFacesLead: { ja: "学生起業家、女性起業家、キャリアウーマン、そして働く母。4つの顔から、澤村友里をご紹介します。", en: "Student founder, woman entrepreneur, career woman and working mother — four sides of Yuri Sawamura.", vi: "Khởi nghiệp sinh viên, nữ doanh nhân, phụ nữ sự nghiệp và người mẹ đi làm — bốn góc nhìn về Yuri Sawamura." },
+  moreStory: { ja: "素顔のページを見る", en: "Read her story", vi: "Xem chân dung" },
+  secWords: { ja: "大切にしていることば", en: "Words she lives by", vi: "Những câu nói cô trân trọng" },
+  secQA: { ja: "10の質問", en: "Ten questions", vi: "10 câu hỏi" },
+  secDream: { ja: "これからの夢", en: "What comes next", vi: "Ước mơ phía trước" },
+  storySources: { ja: "このページの言葉とエピソードは、講演資料と次の取材にもとづいています。", en: "The words and episodes on this page come from her talks and the following interviews.", vi: "Những câu nói và câu chuyện trên trang này dựa trên các bài nói chuyện và các bài phỏng vấn sau." },
+  secAffil: { ja: "関わっている会社・団体", en: "Companies and organisations", vi: "Công ty và tổ chức" }
 };
 
 /* ---------- 言語 ---------- */
@@ -291,6 +300,7 @@ function snsIcon(key) { return SNS_ICONS[key] || ""; }
 const NAV_ITEMS = [
   { key: "navHome",     href: "index.html" },
   { key: "navProfile",  href: "profile.html" },
+  { key: "navStory",    href: "story.html" },
   { key: "navLecture",  href: "lecture.html" },
   { key: "navSns",      href: "sns.html" },
   { key: "navBlog",     href: "blog.html" },

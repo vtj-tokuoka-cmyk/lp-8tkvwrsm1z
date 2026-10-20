@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>素顔 ｜ 澤村 友里</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261020">
+</head>
+<body>
+<div id="bar"></div>
+<header id="site-header" data-cur="story.html"></header>
+
+<div class="page-hero has-img">
+  <div class="in">
+    <div>
+      <div class="eyebrow">BEYOND THE TITLE</div>
+      <h1 id="ph-title"></h1>
+      <p id="ph-lead"></p>
+    </div>
+    <div class="ph-img rv"><img src="img/p_9002.jpg" alt="澤村友里" style="object-position:50% 18%"></div>
+  </div>
+</div>
+
+<nav class="chips story-toc rv" id="story-toc"></nav>
+
+<!-- 01〜04 4つの顔 -->
+<div id="faces"></div>
+
+<!-- 05 大切にしていることば -->
+<section id="words" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">05</span>
+    <h2 class="sec-title" id="t-words"></h2>
+    <span class="sec-sub">WORDS</span>
+  </div>
+  <div class="words" id="words-list"></div>
+</section>
+
+<!-- 06 10の質問 -->
+<section id="qa" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">06</span>
+    <h2 class="sec-title" id="t-qa"></h2>
+    <span class="sec-sub">10 QUESTIONS</span>
+  </div>
+  <dl class="qa" id="qa-list"></dl>
+</section>
+
+<!-- 夢 -->
+<section class="band dream">
+  <img src="img/p_9298.jpg" alt="" style="object-position:50% 10%">
+  <div class="band-in rv" id="dream"></div>
+</section>
+
+<!-- 出典 -->
+<section id="sources" style="background:#fff;padding-top:56px;padding-bottom:56px">
+  <div class="sources rv" id="src"></div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
+  <div class="rv" id="cta-in"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js?v=20261020"></script>
+<script src="i18n-extra.js?v=20261020"></script>
+<script src="app.js?v=20261020"></script>
+<script src="parts.js?v=20261020"></script>
+<script>
+function renderPage(){
+  document.getElementById('ph-title').textContent = T('secFaces');
+  document.getElementById('ph-lead').textContent  = L(PAGE_LEADS.story);
+
+  document.getElementById('story-toc').innerHTML = FACES.map(f=>
+    `<a class="chip" href="#face-${f.id}">${f.no}　${esc(L(f.label))}</a>`).join('');
+
+  document.getElementById('faces').innerHTML = FACES.map((f,i)=>`
+    <section class="face-sec" id="face-${f.id}" style="background:${i%2?'linear-gradient(180deg,var(--bg-2),var(--bg))':'#fff'}">
+      <div class="face${i%2?' rev':''}">
+        <div class="face-ph rv"><img src="${f.img}" alt="" style="object-position:${f.pos}"><span class="no">${f.no}</span></div>
+        <div class="face-bd rv">
+          <div class="eyebrow">${esc(f.sub)}</div>
+          <h2>${esc(L(f.label))}</h2>
+          <p class="face-catch">${esc(L(f.catch))}</p>
+          ${L(f.body).map(p=>`<p>${esc(p)}</p>`).join('')}
+        </div>
+      </div>
+    </section>`).join('');
+
+  document.getElementById('t-words').textContent = T('secWords');
+  document.getElementById('words-list').innerHTML = WORDS.map(w=>`
+    <figure class="word rv"><blockquote>${esc(L(w.text))}</blockquote><figcaption>${esc(L(w.note))}</figcaption></figure>`).join('');
+
+  document.getElementById('t-qa').textContent = T('secQA');
+  document.getElementById('qa-list').innerHTML = QA.map((x,i)=>`
+    <div class="rv"><b>${String(i+1).padStart(2,'0')}</b><dt>${esc(L(x.q))}</dt><dd>${esc(L(x.a))}</dd></div>`).join('');
+
+  document.getElementById('dream').innerHTML = `
+    <div class="dream-eyebrow">${esc(T('secDream'))}</div>
+    <h3>${esc(L(DREAM.title))}</h3>
+    <p class="dream-body">${esc(L(DREAM.body))}</p>`;
+
+  /* 出典：リンクのある取材と、講演 */
+  const talk = LECTURES.find(l=>l.date==='2024-12-06');
+  /* 本文で使った取材だけを出典に並べる */
+  const USED = ['note.com/fm791', 'kumamoto-marketing.co.jp', 'spice.kumanichi.com'];
+  const src = MEDIA.filter(m=>m.url && USED.some(u=>m.url.includes(u))).map(m=>
+    `<li><a href="${m.url}" target="_blank" rel="noopener">${esc(L(m.outlet))}</a> · ${fmtDate(m.date)}</li>`);
+  if (talk) src.push(`<li>${esc(L(talk.title))} · ${esc(L(talk.host))} · ${fmtDate(talk.date)}</li>`);
+  document.getElementById('src').innerHTML = `<p>${esc(T('storySources'))}</p><ul>${src.join('')}</ul>`;
+
+  document.getElementById('cta-in').innerHTML = `
+    <h2 style="font-family:var(--serif);font-size:clamp(26px,4.4vw,50px);font-weight:500;line-height:1.4;margin-bottom:18px">
+      ${T('ctaTitle')}</h2>
+    <p style="max-width:36em;margin:0 auto 34px;font-size:14.5px;opacity:.95">
+      ${esc(T('ctaLead'))}</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-w" href="index.html#contact">${T('navCta')} →</a>
+      <a class="btn btn-gh" href="lecture.html">${T('navLecture')}</a>
+    </div>`;
+}
+</script>
+</body>
+</html>
