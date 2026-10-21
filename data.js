@@ -118,7 +118,8 @@ const TOPICS = [
    2. 講演・出演の実績
    ------------------------------------------------------------------------
    date    : "2026-05-20" の形式（日付が未定なら "2026-05" でもOK）
-   kind    : "講演" / "MC" / "パネル" / "研修" / "取材" のいずれか
+   kind    : "講演" / "MC" / "パネル" / "研修" のいずれか（登壇したもの）
+             ※ テレビ・ラジオ・記事・イベントへの「出演」はここではなく 14. MEDIA に書きます
    upcoming: true にすると「開催予定」に並びます
              （開催日を過ぎると自動で「これまでの登壇」へ移り、登壇回数にも数えられます）
    url     : 告知ページなどがあれば。なければ ""
@@ -257,20 +258,12 @@ const LECTURES = [
     url: ""
   },
   {
-    date: "2023-01-08", kind: "出演", upcoming: false,
-    title: { ja: "ミスコンテスト 出演", en: "Beauty pageant appearance", vi: "Tham gia cuộc thi sắc đẹp" },
-    host:  { ja: "", en: "", vi: "" },
-    venue: { ja: "熊本県", en: "Kumamoto", vi: "Kumamoto" },
-    audience: { ja: "", en: "", vi: "" },
-    url: ""
-  },
-  {
     date: "2022-11-25", kind: "講演", upcoming: false,
     title: { ja: "差別と人権に関する講演", en: "On Discrimination and Human Rights", vi: "Về phân biệt đối xử và quyền con người" },
     host:  { ja: "熊本学園大学", en: "Kumamoto Gakuen University", vi: "Đại học Kumamoto Gakuen" },
     venue: { ja: "熊本市", en: "Kumamoto City", vi: "TP. Kumamoto" },
     audience: { ja: "学生・教職員", en: "Students and faculty", vi: "Sinh viên và giảng viên" },
-    url: ""
+    url: "https://www.youtube.com/watch?v=SXQXGo01Pb4"
   },
   {
     date: "2021-02-22", kind: "研修", upcoming: false,
@@ -916,10 +909,16 @@ const VIDEOS = [
 ];
 
 /* =========================================================================
-   14. メディア出演
+   14. メディア出演・イベント出演（講演実績ページの「出演・メディア掲載」）
    ------------------------------------------------------------------------
-   kind : "テレビ" / "新聞" / "雑誌" / "Web" / "ラジオ" / "podcast"
+   kind : "テレビ" / "ラジオ" / "記事" / "新聞" / "配信" / "イベント"
    url  : 記事や動画のリンク。なければ "" （リンクなしで表示されます）
+   scan : 紙面のスキャン画像またはPDF（img/press/ に置く）。あれば「紙面を見る」ボタンが出て、
+          画像はその場で拡大、PDFは別タブで開きます。新聞・雑誌の記事はこれで載せます
+          例） { date: "2025-03-12", kind: "新聞",
+                 outlet: { ja: "読売新聞（熊本版）", en: "The Yomiuri Shimbun (Kumamoto)", vi: "Báo Yomiuri (Kumamoto)" },
+                 title:  { ja: "見出し", en: "Headline", vi: "Tiêu đề" },
+                 url: "", scan: "img/press/20250312_yomiuri.jpg" },
    ========================================================================= */
 const MEDIA = [
   { date: "2026-09", kind: "配信",
@@ -963,7 +962,11 @@ const MEDIA = [
     title: { ja: "12歳で来日し、大学在学中に起業した経緯と、日越両方の視点を持つ経営者としての想いを語りました",
              en: "On coming to Japan at twelve, founding a company as a university student, and seeing business from both the Japanese and Vietnamese side.",
              vi: "Chia sẻ về việc sang Nhật năm 12 tuổi, khởi nghiệp khi còn là sinh viên và góc nhìn của người hiểu cả Nhật lẫn Việt." },
-    url: "https://www.youtube.com/watch?v=dVO9IdZa1Xw" }
+    url: "https://www.youtube.com/watch?v=dVO9IdZa1Xw" },
+  { date: "2023-01-08", kind: "イベント",
+    outlet: { ja: "ミスコンテスト（熊本県）", en: "Beauty pageant, Kumamoto", vi: "Cuộc thi sắc đẹp, Kumamoto" },
+    title: { ja: "ミスコンテストに出演しました", en: "Appeared at a beauty pageant.", vi: "Tham gia một cuộc thi sắc đẹp." },
+    url: "" }
 ];
 
 /* メディアの種別ラベル（kind に書く言葉 → 表示名）。講演・登壇とは区別して見せる */
@@ -971,8 +974,26 @@ const MEDIA_KINDS = {
   "テレビ": { ja: "テレビ出演", en: "TV", vi: "Truyền hình" },
   "ラジオ": { ja: "ラジオ出演", en: "Radio", vi: "Phát thanh" },
   "記事":   { ja: "取材記事",   en: "Interview", vi: "Phỏng vấn" },
-  "配信":   { ja: "番組配信",   en: "Own channel", vi: "Kênh riêng" }
+  "配信":   { ja: "番組配信",   en: "Own channel", vi: "Kênh riêng" },
+  "新聞":   { ja: "新聞掲載",   en: "Newspaper", vi: "Báo in" },
+  "イベント": { ja: "イベント出演", en: "Event", vi: "Sự kiện" }
 };
+
+/* =========================================================================
+   14-2. 登録講師（教育機関・自治体などの講師名簿への登録）
+   ------------------------------------------------------------------------
+   1件でも書くと、講演実績ページの「講師情報」の下と、プロフィールの略歴に出ます。
+   空のあいだは表示されません。
+   year : 登録年度（"2026" など）
+   name : 名簿・冊子の名前　　org : 発行元・登録先
+   url  : 掲載ページがあれば　　scan : 冊子の掲載ページの画像やPDF（img/press/ に置く）
+   例） { year: "2026",
+          name: { ja: "◯◯講師一覧 2026", en: "Speaker directory 2026", vi: "Danh sách giảng viên 2026" },
+          org:  { ja: "◯◯教育委員会", en: "◯◯ Board of Education", vi: "Sở Giáo dục ◯◯" },
+          url: "", scan: "img/press/2026_koushi.jpg" },
+   ========================================================================= */
+const REGISTRY = [
+];
 
 /* =========================================================================
    15. トップページの文言（ヒーロー・数字・帯・本文）
@@ -1065,6 +1086,11 @@ const PAGE_LEADS = {
     ja:'講演のご報告、日々のお知らせ、日本とベトナムのあいだで考えていること。',
     en:'Reports from talks, announcements, and thoughts from between Japan and Vietnam.',
     vi:'Báo cáo các buổi diễn thuyết, thông báo, và những suy nghĩ giữa Nhật Bản và Việt Nam.'
+  },
+  torikumi: {
+    ja:'事業や講演のほかに、日本とベトナムのために続けていること。寄付・チャリティの記録と、数字で見るいまのベトナムをまとめています。',
+    en:'What she does for Japan and Vietnam beyond business and speaking — giving and charity, and today’s Vietnam in numbers.',
+    vi:'Những việc cô làm vì Nhật Bản và Việt Nam ngoài kinh doanh và diễn thuyết — hoạt động từ thiện và Việt Nam hôm nay qua những con số.'
   },
   gallery: {
     ja:'ポートレート、講演やイベントの記録、写真集。写真をクリックすると拡大表示されます。',
@@ -1212,3 +1238,29 @@ const DREAM = {
              en: "Because she knows hardship from her own childhood, she understands the worries of Vietnamese people working in Japan. Looking further ahead, she wants to create a scholarship programme in Vietnam: “I want to give young people who have the drive and the ability, but not the money, the chance to study.”",
              vi: "Chính vì từng trải qua khó khăn thời thơ ấu, cô thấu hiểu nỗi trăn trở của người Việt làm việc tại Nhật. Xa hơn, cô mong lập một quỹ học bổng tại Việt Nam: “Tôi muốn trao cơ hội học tập cho những bạn trẻ có ý chí và năng lực nhưng không đủ điều kiện kinh tế để tiếp tục học.”" }
 };
+
+/* =========================================================================
+   20. これまでの取り組み（torikumi.html）
+   ------------------------------------------------------------------------
+   ACTIVITIES : 寄付・チャリティ・地域への支援など。1件ずつ足します。空なら「準備中」
+     date  : "2024-04" など　　title / partner（相手先） / body : 多言語
+     img   : 写真（img/ に置く。なければ ""）　　url : 報道や相手先の記事があれば
+   VIETNAM_FACTS : 数字で見るベトナム。出典（src）とリンク（url）を必ず書く
+   ========================================================================= */
+const ACTIVITIES = [
+];
+
+const VIETNAM_FACTS = [
+  { value: "8.02", unit: { ja: "%", en: "%", vi: "%" },
+    label: { ja: "2025年の実質GDP成長率", en: "Real GDP growth in 2025", vi: "Tăng trưởng GDP thực tế năm 2025" },
+    src: { ja: "ベトナム国家統計局（2026年1月発表）", en: "National Statistics Office of Viet Nam (January 2026)", vi: "Cục Thống kê Quốc gia (tháng 1/2026)" },
+    url: "https://en.baochinhphu.vn/viet-nam-posts-802-gdp-growth-in-2025-11126010515474478.htm" },
+  { value: "5,026", unit: { ja: "米ドル", en: "USD", vi: "USD" },
+    label: { ja: "2025年の1人あたりGDP", en: "GDP per capita in 2025", vi: "GDP bình quân đầu người năm 2025" },
+    src: { ja: "ベトナム国家統計局（2026年1月発表）", en: "National Statistics Office of Viet Nam (January 2026)", vi: "Cục Thống kê Quốc gia (tháng 1/2026)" },
+    url: "https://en.baochinhphu.vn/viet-nam-posts-802-gdp-growth-in-2025-11126010515474478.htm" },
+  { value: "660,483", unit: { ja: "人", en: "", vi: "người" },
+    label: { ja: "日本で暮らすベトナム人（2025年6月末・国籍別で2番目）", en: "Vietnamese residents in Japan (end of June 2025, second-largest nationality)", vi: "Người Việt sinh sống tại Nhật (cuối tháng 6/2025, đông thứ hai)" },
+    src: { ja: "出入国在留管理庁「在留外国人数」", en: "Immigration Services Agency of Japan", vi: "Cục Quản lý Xuất nhập cảnh Nhật Bản" },
+    url: "https://www.moj.go.jp/isa/publications/press/13_00057" }
+];

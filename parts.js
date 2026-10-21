@@ -88,7 +88,7 @@ function lecActions(l, up) {
       : `<a class="lec-btn pri" href="${esc(l.apply)}" target="_blank" rel="noopener">${T('btnApply')} →</a>`);
   }
   const site = l.site || l.url;
-  if (site) a.push(`<a class="lec-btn" href="${esc(site)}" target="_blank" rel="noopener">${T(l.site ? 'btnSite' : 'visitSite')} ↗</a>`);
+  if (site) a.push(`<a class="lec-btn" href="${esc(site)}" target="_blank" rel="noopener">${T(l.site ? 'btnSite' : (isVideo(site) ? 'watchVideo' : 'visitSite'))} ↗</a>`);
   if (l.flyer) a.push(`<button type="button" class="lec-btn" data-flyer="${esc(l.flyer)}" data-cap="${esc(L(l.title))}">${T('btnFlyer')}</button>`);
   return a.length ? `<div class="lec-act">${a.join('')}</div>` : '';
 }
@@ -131,9 +131,35 @@ function mediaRow(m) {
       <h4>${esc(L(m.title))}</h4>
       <div class="out">${esc(L(m.outlet))}</div>
     </div>`;
+  const label = isVideo(m.url) ? 'watchVideo' : (m.kind === '記事' || m.kind === '新聞' ? 'readArticle' : 'visitSite');
+  /* 紙面があるときは行全体をリンクにせず、右にボタンを縦に並べる */
+  if (m.scan) {
+    const link = m.url ? `<a class="go" href="${esc(m.url)}" target="_blank" rel="noopener">${T(label)} ↗</a>` : '';
+    return `<div class="media-item">${inner}<span class="go-col">${scanBtn(m.scan, L(m.outlet))}${link}</span></div>`;
+  }
   if (!m.url) return `<div class="media-item">${inner}<span></span></div>`;
-  const label = /youtube\.com|youtu\.be/.test(m.url) ? 'watchVideo' : (m.kind === '記事' ? 'readArticle' : 'visitSite');
   return `<a class="media-item is-link" href="${esc(m.url)}" target="_blank" rel="noopener">${inner}<span class="go">${T(label)} ↗</span></a>`;
+}
+
+function isVideo(url) { return /youtube\.com|youtu\.be/.test(url || ''); }
+
+/* 紙面・冊子のスキャン（scan）を開くボタン。画像はその場で拡大（bindFlyers）、PDFは別タブ */
+function scanBtn(src, cap) {
+  if (!src) return '';
+  return /\.pdf$/i.test(src)
+    ? `<a class="go" href="${esc(src)}" target="_blank" rel="noopener">${T('btnScan')} ↗</a>`
+    : `<button type="button" class="go go-btn" data-flyer="${esc(src)}" data-cap="${esc(cap)}">${T('btnScan')}</button>`;
+}
+
+/* ---------- 登録講師 1行 ---------- */
+function registryRow(r) {
+  const link = r.url ? `<a class="go" href="${esc(r.url)}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : '';
+  return `<div class="media-item">
+    <div class="d">${esc(r.year)}</div>
+    <div><span class="tag n">${T('secRegistry')}</span></div>
+    <div><h4>${esc(L(r.name))}</h4><div class="out">${esc(L(r.org))}</div></div>
+    <span class="go-col">${scanBtn(r.scan, L(r.name))}${link}</span>
+  </div>`;
 }
 
 /* ---------- 情報テーブル 1行 ---------- */

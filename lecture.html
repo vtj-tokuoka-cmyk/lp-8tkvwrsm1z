@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261020">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 <div id="bar"></div>
@@ -72,6 +72,11 @@
   </div>
   <p class="sec-lead rv" id="t-speaker-lead"></p>
   <dl class="spec rv" id="speaker-spec"></dl>
+  <div id="registry-wrap" hidden>
+    <h3 class="sub-head" id="t-registry" style="margin-top:44px"></h3>
+    <p class="sec-lead rv" id="t-registry-lead" style="margin-top:8px"></p>
+    <div class="media-list" id="registry-list"></div>
+  </div>
 </section>
 
 <!-- 05 開催予定 -->
@@ -96,6 +101,17 @@
   <div id="past-list"></div>
 </section>
 
+<!-- 07 出演・メディア掲載（登壇とは分けて表示） -->
+<section id="appear" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">07</span>
+    <h2 class="sec-title" id="t-appear"></h2>
+    <span class="sec-sub">MEDIA &amp; APPEARANCES</span>
+  </div>
+  <p class="sec-lead rv" id="t-appear-lead"></p>
+  <div class="media-list rv" id="appear-list"></div>
+</section>
+
 <!-- CTA -->
 <section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
   <div class="rv" id="cta-in"></div>
@@ -103,10 +119,10 @@
 
 <footer id="site-footer"></footer>
 
-<script src="data.js?v=20261020"></script>
-<script src="i18n-extra.js?v=20261020"></script>
-<script src="app.js?v=20261020"></script>
-<script src="parts.js?v=20261020"></script>
+<script src="data.js?v=20261022"></script>
+<script src="i18n-extra.js?v=20261022"></script>
+<script src="app.js?v=20261022"></script>
+<script src="parts.js?v=20261022"></script>
 <script>
 let CUR_KIND = 'all';
 
@@ -116,7 +132,7 @@ function renderPage(){
 
   document.getElementById('toc').innerHTML = [
     ['#topics',T('secTopics')],['#packages',T('secPackage')],['#steps',T('secSteps')],
-    ['#speaker',T('secSpeaker')],['#upcoming',T('secUpcoming')],['#past',T('secPast')]
+    ['#speaker',T('secSpeaker')],['#upcoming',T('secUpcoming')],['#past',T('secPast')],['#appear',T('secAppear')]
   ].map((x,i)=>`<a href="${x[0]}">${String(i+1).padStart(2,'0')}　${x[1]}</a>`).join('');
 
   /* 01 テーマ */
@@ -127,7 +143,9 @@ function renderPage(){
   /* 02 パッケージ */
   document.getElementById('t-package').textContent = T('secPackage');
   document.getElementById('t-package-lead').textContent = T('secPackageLead');
-  document.getElementById('packs').innerHTML = PACKAGES.map(packCard).join('');
+  /* featured（重点）のパッケージを先頭に。あとは data.js の並び順 */
+  document.getElementById('packs').innerHTML = PACKAGES.slice()
+    .sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)).map(packCard).join('');
 
   /* 03 流れ */
   document.getElementById('t-steps').textContent = T('secSteps');
@@ -138,6 +156,13 @@ function renderPage(){
   document.getElementById('t-speaker').textContent = T('secSpeaker');
   document.getElementById('t-speaker-lead').textContent = T('secSpeakerLead');
   document.getElementById('speaker-spec').innerHTML = SPEAKER_SPEC.map(specRow).join('');
+  /* 登録講師：data.js の REGISTRY に1件でもあれば表示 */
+  const reg = (typeof REGISTRY !== 'undefined') ? REGISTRY : [];
+  document.getElementById('registry-wrap').hidden = !reg.length;
+  document.getElementById('t-registry').textContent = T('secRegistry');
+  document.getElementById('t-registry-lead').textContent = T('secRegistryLead');
+  document.getElementById('registry-list').innerHTML = reg.slice()
+    .sort((a,b)=>String(b.year).localeCompare(String(a.year))).map(registryRow).join('');
 
   /* 05 開催予定 */
   document.getElementById('t-upcoming').textContent = T('secUpcoming');
@@ -148,7 +173,7 @@ function renderPage(){
 
   /* 06 これまでの登壇 */
   document.getElementById('t-past').textContent = T('secPast');
-  const kinds = [...new Set(LECTURES.filter(l=>!isUpcoming(l)).map(l=>l.kind))];
+  const kinds = [...new Set(pastTalks().map(l=>l.kind))];
   document.getElementById('chips').innerHTML =
     [`<button class="chip${CUR_KIND==='all'?' on':''}" data-k="all">${T('chipAll')}</button>`]
     .concat(kinds.map(k=>`<button class="chip${CUR_KIND===k?' on':''}" data-k="${esc(k)}">${esc(L(KIND_LABELS[k]||k))}</button>`))
@@ -159,6 +184,12 @@ function renderPage(){
     drawPast(); bindReveal();
   });
   drawPast();
+
+  /* 07 出演・メディア掲載 */
+  document.getElementById('t-appear').textContent = T('secAppear');
+  document.getElementById('t-appear-lead').textContent = T('secAppearLead');
+  document.getElementById('appear-list').innerHTML = MEDIA.slice()
+    .sort((a,b)=>b.date.localeCompare(a.date)).map(mediaRow).join('');
   bindFlyers();
 
   /* CTA */
@@ -173,8 +204,11 @@ function renderPage(){
     </div>`;
 }
 
+/* 登壇（講演・パネル・研修・MC）だけ。出演は 07 に分けて出す */
+function pastTalks(){ return LECTURES.filter(l=>!isUpcoming(l) && l.kind!=='出演'); }
+
 function drawPast(){
-  const list = LECTURES.filter(l=>!isUpcoming(l))
+  const list = pastTalks()
     .filter(l=>CUR_KIND==='all'||l.kind===CUR_KIND)
     .sort((a,b)=>b.date.localeCompare(a.date));
   document.getElementById('past-list').innerHTML = list.length

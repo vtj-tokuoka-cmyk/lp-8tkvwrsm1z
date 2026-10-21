@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>これまでの取り組み ｜ 澤村 友里</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261022">
+</head>
+<body>
+<div id="bar"></div>
+<header id="site-header" data-cur="torikumi.html"></header>
+
+<div class="page-hero has-img">
+  <div class="in">
+    <div>
+      <div class="eyebrow">INITIATIVES</div>
+      <h1 id="ph-title"></h1>
+      <p id="ph-lead"></p>
+    </div>
+    <div class="ph-img rv"><img src="img/p_32.jpg" alt="ベトナムトレーディングの仲間たち" style="object-position:50% 45%"></div>
+  </div>
+</div>
+
+<!-- 01 寄付・チャリティ -->
+<section id="charity" style="background:#fff">
+  <div class="sec-head rv">
+    <span class="sec-num">01</span>
+    <h2 class="sec-title" id="t-charity"></h2>
+    <span class="sec-sub">GIVING</span>
+  </div>
+  <div class="acts" id="act-list"></div>
+</section>
+
+<!-- 02 数字で見る、いまのベトナム -->
+<section id="vietnam" style="background:linear-gradient(180deg,var(--bg-2),var(--bg))">
+  <div class="sec-head rv">
+    <span class="sec-num">02</span>
+    <h2 class="sec-title" id="t-vietnam"></h2>
+    <span class="sec-sub">VIETNAM TODAY</span>
+  </div>
+  <div class="vn-facts" id="vn-facts"></div>
+</section>
+
+<!-- 夢 -->
+<section class="band dream">
+  <img src="img/p_9298.jpg" alt="" style="object-position:50% 10%">
+  <div class="band-in rv" id="dream"></div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="background:linear-gradient(135deg,var(--red) 0%,#E8354B 55%,var(--red-bright) 100%);color:#fff;text-align:center">
+  <div class="rv" id="cta-in"></div>
+</section>
+
+<footer id="site-footer"></footer>
+
+<script src="data.js?v=20261022"></script>
+<script src="i18n-extra.js?v=20261022"></script>
+<script src="app.js?v=20261022"></script>
+<script src="parts.js?v=20261022"></script>
+<script>
+function renderPage(){
+  document.getElementById('ph-title').textContent = T('navTorikumi');
+  document.getElementById('ph-lead').textContent  = L(PAGE_LEADS.torikumi);
+
+  /* 01 寄付・チャリティ（data.js の ACTIVITIES。空なら準備中） */
+  document.getElementById('t-charity').textContent = T('secCharity');
+  const acts = ACTIVITIES.slice().sort((a,b)=>b.date.localeCompare(a.date));
+  document.getElementById('act-list').innerHTML = acts.length ? acts.map(a=>`
+    <article class="card act rv">
+      ${a.img ? `<div class="ph"><img src="${esc(a.img)}" alt="" loading="lazy"></div>` : ''}
+      <div class="bd">
+        <time>${fmtDate(a.date)}</time>
+        <h3>${esc(L(a.title))}</h3>
+        ${L(a.partner) ? `<div class="out"><i>${T('lblPartner')}</i>${esc(L(a.partner))}</div>` : ''}
+        ${L(a.body) ? `<p>${esc(L(a.body))}</p>` : ''}
+        ${a.url ? `<a class="go" href="${esc(a.url)}" target="_blank" rel="noopener">${T('visitSite')} ↗</a>` : ''}
+      </div>
+    </article>`).join('') : `<p class="empty">${T('preparing')}</p>`;
+
+  /* 02 数字で見るベトナム（出典つき） */
+  document.getElementById('t-vietnam').textContent = T('secVietnamNow');
+  document.getElementById('vn-facts').innerHTML = VIETNAM_FACTS.map(f=>`
+    <div class="vn-fact rv">
+      <b>${esc(f.value)}<small>${esc(L(f.unit))}</small></b>
+      <p>${esc(L(f.label))}</p>
+      <a class="src" href="${esc(f.url)}" target="_blank" rel="noopener">${T('lblSource')}：${esc(L(f.src))} ↗</a>
+    </div>`).join('');
+
+  document.getElementById('dream').innerHTML = `
+    <div class="dream-eyebrow">${esc(T('secDream'))}</div>
+    <h3>${esc(L(DREAM.title))}</h3>
+    <p class="dream-body">${esc(L(DREAM.body))}</p>`;
+
+  document.getElementById('cta-in').innerHTML = `
+    <h2 style="font-family:var(--serif);font-size:clamp(26px,4.4vw,50px);font-weight:500;line-height:1.4;margin-bottom:18px">
+      ${T('ctaTitle')}</h2>
+    <p style="max-width:36em;margin:0 auto 34px;font-size:14.5px;opacity:.95">
+      ${esc(T('ctaLead'))}</p>
+    <div style="display:flex;gap:13px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-w" href="index.html#contact">${T('navCta')} →</a>
+      <a class="btn btn-gh" href="story.html">${T('moreStory')}</a>
+    </div>`;
+}
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261020">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 <div id="bar"></div>
@@ -152,11 +152,11 @@
 
 <div id="lb"><span class="x">×</span><span class="nv prev">‹</span><img alt=""><span class="nv next">›</span><div class="cap"></div></div>
 
-<script src="data.js?v=20261020"></script>
-<script src="i18n-extra.js?v=20261020"></script>
-<script src="app.js?v=20261020"></script>
-<script src="form.js?v=20261020"></script>
-<script src="parts.js?v=20261020"></script>
+<script src="data.js?v=20261022"></script>
+<script src="i18n-extra.js?v=20261022"></script>
+<script src="app.js?v=20261022"></script>
+<script src="form.js?v=20261022"></script>
+<script src="parts.js?v=20261022"></script>
 <script>
 function renderPage(){
   /* ---- HERO ---- */
@@ -169,7 +169,12 @@ function renderPage(){
     <div class="hero-cta">
       <a class="btn btn-r" href="#contact">${L(HERO.btnPrimary)} →</a>
       <a class="btn btn-o" href="lecture.html">${L(HERO.btnSecondary)}</a>
+    </div>
+    <div class="hero-langs">
+      <span>${esc(T('multiLang'))}</span>
+      ${LANGS.map(l=>`<button type="button" data-lang="${l.key}" class="${l.key===LANG?'on':''}" title="${esc(l.label)}" aria-label="${esc(l.label)}">${flagSvg(l.key)}</button>`).join('')}
     </div>`;
+  document.querySelectorAll('.hero-langs button').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 
   /* ---- STATS ---- */
   const done = LECTURES.filter(l=>!isUpcoming(l)).length;
@@ -234,6 +239,7 @@ function renderPage(){
   bindVideoClicks();
   document.getElementById('media-list').innerHTML = MEDIA.slice()
     .sort((a,b)=>b.date.localeCompare(a.date)).map(mediaRow).join('');
+  bindFlyers();
 
   /* ---- 06 ブログ ---- */
   document.getElementById('t-blog').textContent = T('secBlog');

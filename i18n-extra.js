@@ -552,9 +552,9 @@ const I18N_EXTRA = {
   "ko": "포트레이트 / 푸른 하늘 아래"
  },
  "Speaking": {
-  "zh": "演讲中",
-  "fr": "En conférence",
-  "ko": "강연 중"
+  "zh": "演讲实绩",
+  "fr": "Conférences",
+  "ko": "강연 실적"
  },
  "Áo dài / Veil of light": {
   "zh": "奥黛／光之纱",
@@ -2448,5 +2448,115 @@ const I18N_EXTRA = {
   "zh": "相关公司与团体",
   "fr": "Entreprises et organisations",
   "ko": "관련 회사·단체"
+ },
+ "Beauty pageant, Kumamoto": {
+  "zh": "选美比赛（熊本县）",
+  "fr": "Concours de beauté, Kumamoto",
+  "ko": "미인대회(구마모토현)"
+ },
+ "Appeared at a beauty pageant.": {
+  "zh": "出席选美比赛。",
+  "fr": "Participation à un concours de beauté.",
+  "ko": "미인대회에 출연했습니다."
+ },
+ "Newspaper": {
+  "zh": "报纸刊载",
+  "fr": "Presse écrite",
+  "ko": "신문 게재"
+ },
+ "Event": {
+  "zh": "活动出席",
+  "fr": "Événement",
+  "ko": "이벤트 출연"
+ },
+ "What she does for Japan and Vietnam beyond business and speaking — giving and charity, and today’s Vietnam in numbers.": {
+  "zh": "事业与演讲之外，为日本与越南持续在做的事——捐赠与慈善的记录，以及用数字看今天的越南。",
+  "fr": "Ce qu’elle fait pour le Japon et le Vietnam au-delà des affaires et des conférences — dons et actions caritatives, et le Vietnam d’aujourd’hui en chiffres.",
+  "ko": "사업과 강연 외에 일본과 베트남을 위해 이어 오고 있는 일 — 기부·자선 활동의 기록과, 숫자로 보는 지금의 베트남."
+ },
+ "Real GDP growth in 2025": {
+  "zh": "2025年实际GDP增长率",
+  "fr": "Croissance du PIB réel en 2025",
+  "ko": "2025년 실질 GDP 성장률"
+ },
+ "National Statistics Office of Viet Nam (January 2026)": {
+  "zh": "越南国家统计局（2026年1月发布）",
+  "fr": "Office national des statistiques du Vietnam (janvier 2026)",
+  "ko": "베트남 국가통계국(2026년 1월 발표)"
+ },
+ "USD": {
+  "zh": "美元",
+  "fr": "USD",
+  "ko": "달러"
+ },
+ "GDP per capita in 2025": {
+  "zh": "2025年人均GDP",
+  "fr": "PIB par habitant en 2025",
+  "ko": "2025년 1인당 GDP"
+ },
+ "Vietnamese residents in Japan (end of June 2025, second-largest nationality)": {
+  "zh": "在日越南人（2025年6月底，按国籍排第二）",
+  "fr": "Résidents vietnamiens au Japon (fin juin 2025, deuxième nationalité)",
+  "ko": "일본에 거주하는 베트남인(2025년 6월 말, 국적별 2위)"
+ },
+ "Immigration Services Agency of Japan": {
+  "zh": "日本出入国在留管理厅",
+  "fr": "Agence des services d’immigration du Japon",
+  "ko": "일본 출입국재류관리청"
+ },
+ "Media and appearances": {
+  "zh": "媒体与活动出席",
+  "fr": "Médias et apparitions",
+  "ko": "출연·미디어 게재"
+ },
+ "Separate from talks and training: TV, radio and print appearances, and appearances at events.": {
+  "zh": "与演讲、培训分开，汇总电视、广播、报纸等的出演与刊载，以及活动出席。",
+  "fr": "À part les conférences et formations : apparitions à la télévision, à la radio et dans la presse, et participations à des événements.",
+  "ko": "강연·연수 등의 등단과는 별도로, TV·라디오·신문 등의 출연·게재와 이벤트 출연을 정리했습니다."
+ },
+ "Registered speaker": {
+  "zh": "注册讲师",
+  "fr": "Intervenante référencée",
+  "ko": "등록 강사"
+ },
+ "Listed in the speaker directories of educational and public bodies.": {
+  "zh": "已登录于教育机构、地方政府等的讲师名册。",
+  "fr": "Inscrite dans les répertoires d’intervenants d’établissements d’enseignement et d’organismes publics.",
+  "ko": "교육기관·지자체 등의 강사 명부에 등록되어 있습니다."
+ },
+ "View clipping": {
+  "zh": "查看版面",
+  "fr": "Voir l’article",
+  "ko": "지면 보기"
+ },
+ "Initiatives": {
+  "zh": "社会活动",
+  "fr": "Engagements",
+  "ko": "지금까지의 활동"
+ },
+ "Giving and charity": {
+  "zh": "捐赠与慈善",
+  "fr": "Dons et actions caritatives",
+  "ko": "기부·자선"
+ },
+ "Vietnam today, in numbers": {
+  "zh": "用数字看今天的越南",
+  "fr": "Le Vietnam d’aujourd’hui en chiffres",
+  "ko": "숫자로 보는 지금의 베트남"
+ },
+ "Source": {
+  "zh": "出处",
+  "fr": "Source",
+  "ko": "출처"
+ },
+ "With": {
+  "zh": "对象",
+  "fr": "Partenaire",
+  "ko": "대상"
+ },
+ "This site is available in six languages": {
+  "zh": "本网站提供6种语言",
+  "fr": "Ce site est disponible en six langues",
+  "ko": "이 사이트는 6개 언어로 보실 수 있습니다"
  }
 };

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261020">
+<link rel="stylesheet" href="style.css?v=20261022">
 </head>
 <body>
 <div id="bar"></div>
@@ -49,6 +49,10 @@
     <span class="sec-sub">BIOGRAPHY</span>
   </div>
   <dl class="spec rv" id="bio-spec"></dl>
+  <div id="registry-wrap" hidden>
+    <h3 class="sub-head" id="t-registry" style="margin-top:44px"></h3>
+    <div class="media-list" id="registry-list"></div>
+  </div>
 </section>
 
 <!-- 03 歩み -->
@@ -84,10 +88,10 @@
 
 <footer id="site-footer"></footer>
 
-<script src="data.js?v=20261020"></script>
-<script src="i18n-extra.js?v=20261020"></script>
-<script src="app.js?v=20261020"></script>
-<script src="parts.js?v=20261020"></script>
+<script src="data.js?v=20261022"></script>
+<script src="i18n-extra.js?v=20261022"></script>
+<script src="app.js?v=20261022"></script>
+<script src="parts.js?v=20261022"></script>
 <script>
 function renderPage(){
   document.getElementById('ph-title').textContent = T('secProfile');
@@ -101,6 +105,12 @@ function renderPage(){
 
   document.getElementById('t-bio').textContent = T('secBio');
   document.getElementById('bio-spec').innerHTML = PROFILE_SPEC.map(specRow).join('');
+  const reg = (typeof REGISTRY !== 'undefined') ? REGISTRY : [];
+  document.getElementById('registry-wrap').hidden = !reg.length;
+  document.getElementById('t-registry').textContent = T('secRegistry');
+  document.getElementById('registry-list').innerHTML = reg.slice()
+    .sort((a,b)=>String(b.year).localeCompare(String(a.year))).map(registryRow).join('');
+  bindFlyers();
 
   document.getElementById('t-story').textContent = T('secStory');
   document.getElementById('timeline').innerHTML = TIMELINE.map(t=>`

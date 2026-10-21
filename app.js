@@ -190,7 +190,20 @@ const UI = {
   secQA: { ja: "10の質問", en: "Ten questions", vi: "10 câu hỏi" },
   secDream: { ja: "これからの夢", en: "What comes next", vi: "Ước mơ phía trước" },
   storySources: { ja: "このページの言葉とエピソードは、講演資料と次の取材にもとづいています。", en: "The words and episodes on this page come from her talks and the following interviews.", vi: "Những câu nói và câu chuyện trên trang này dựa trên các bài nói chuyện và các bài phỏng vấn sau." },
-  secAffil: { ja: "関わっている会社・団体", en: "Companies and organisations", vi: "Công ty và tổ chức" }
+  secAffil: { ja: "関わっている会社・団体", en: "Companies and organisations", vi: "Công ty và tổ chức" },
+  secAppear: { ja: "出演・メディア掲載", en: "Media and appearances", vi: "Truyền thông và sự kiện" },
+  secAppearLead: { ja: "講演・研修などの登壇とは分けて、テレビ・ラジオ・新聞などへの出演と掲載、イベントへの出演をまとめています。",
+                   en: "Separate from talks and training: TV, radio and print appearances, and appearances at events.",
+                   vi: "Tách riêng với các buổi diễn thuyết: xuất hiện trên truyền hình, phát thanh, báo chí và tại các sự kiện." },
+  secRegistry: { ja: "登録講師", en: "Registered speaker", vi: "Giảng viên đã đăng ký" },
+  secRegistryLead: { ja: "教育機関・自治体などの講師名簿に登録されています。", en: "Listed in the speaker directories of educational and public bodies.", vi: "Có tên trong danh sách giảng viên của các cơ quan giáo dục và chính quyền." },
+  btnScan: { ja: "紙面を見る", en: "View clipping", vi: "Xem bản báo" },
+  navTorikumi: { ja: "これまでの取り組み", en: "Initiatives", vi: "Hoạt động" },
+  secCharity: { ja: "寄付・チャリティ", en: "Giving and charity", vi: "Quyên góp và từ thiện" },
+  secVietnamNow: { ja: "数字で見る、いまのベトナム", en: "Vietnam today, in numbers", vi: "Việt Nam hôm nay qua những con số" },
+  lblSource: { ja: "出典", en: "Source", vi: "Nguồn" },
+  lblPartner: { ja: "相手先", en: "With", vi: "Đối tác" },
+  multiLang: { ja: "このサイトは6言語でご覧いただけます", en: "This site is available in six languages", vi: "Trang web có 6 ngôn ngữ" }
 };
 
 /* ---------- 言語 ---------- */
@@ -202,6 +215,18 @@ const LANGS = [
   { key: "fr", label: "Français",   code: "FR" },
   { key: "ko", label: "한국어",     code: "KO" }
 ];
+/* 言語ごとの国旗（30×20のSVG。英語は英国旗） */
+const FLAGS = {
+  ja: '<rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#BC002D"/>',
+  en: '<rect width="30" height="20" fill="#012169"/><path d="M0 0L30 20M30 0L0 20" stroke="#fff" stroke-width="4"/><path d="M0 0L30 20M30 0L0 20" stroke="#C8102E" stroke-width="1.5"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.4"/>',
+  vi: '<rect width="30" height="20" fill="#DA251D"/><polygon fill="#FF0" points="15.00,4.00 16.41,8.06 20.71,8.15 17.28,10.74 18.53,14.85 15.00,12.40 11.47,14.85 12.72,10.74 9.29,8.15 13.59,8.06"/>',
+  zh: '<rect width="30" height="20" fill="#EE1C25"/><g fill="#FF0"><polygon points="5.00,2.00 5.71,4.03 7.85,4.07 6.14,5.37 6.76,7.43 5.00,6.20 3.24,7.43 3.86,5.37 2.15,4.07 4.29,4.03"/><circle cx="10" cy="2" r=".8"/><circle cx="12" cy="4" r=".8"/><circle cx="12" cy="7" r=".8"/><circle cx="10" cy="9" r=".8"/></g>',
+  fr: '<rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ED2939"/>',
+  ko: '<rect width="30" height="20" fill="#fff"/><g transform="rotate(33.7 15 10)"><path d="M10 10a5 5 0 0 1 10 0a2.5 2.5 0 0 1-5 0a2.5 2.5 0 0 0-5 0z" fill="#CD2E3A"/><path d="M10 10a5 5 0 0 0 10 0a2.5 2.5 0 0 0-5 0a2.5 2.5 0 0 1-5 0z" fill="#0047A0"/></g><g fill="#000"><rect x="4.2" y="3.2" width="4.2" height=".7" transform="rotate(33.7 6.3 3.55)"/><rect x="4.9" y="2.2" width="4.2" height=".7" transform="rotate(33.7 7 2.55)"/><rect x="3.5" y="4.2" width="4.2" height=".7" transform="rotate(33.7 5.6 4.55)"/><rect x="21.6" y="15.8" width="4.2" height=".7" transform="rotate(33.7 23.7 16.15)"/><rect x="22.3" y="14.8" width="4.2" height=".7" transform="rotate(33.7 24.4 15.15)"/><rect x="20.9" y="16.8" width="4.2" height=".7" transform="rotate(33.7 23 17.15)"/><rect x="21.6" y="3.2" width="4.2" height=".7" transform="rotate(-33.7 23.7 3.55)"/><rect x="22.3" y="4.2" width="4.2" height=".7" transform="rotate(-33.7 24.4 4.55)"/><rect x="20.9" y="2.2" width="4.2" height=".7" transform="rotate(-33.7 23 2.55)"/><rect x="4.2" y="15.8" width="4.2" height=".7" transform="rotate(-33.7 6.3 16.15)"/><rect x="4.9" y="16.8" width="4.2" height=".7" transform="rotate(-33.7 7 17.15)"/><rect x="3.5" y="14.8" width="4.2" height=".7" transform="rotate(-33.7 5.6 15.15)"/></g>'
+};
+function flagSvg(key) {
+  return `<svg class="flag" viewBox="0 0 30 20" aria-hidden="true">${FLAGS[key] || ""}</svg>`;
+}
 /* 中・仏・韓は data.js に書かず、英語の文言を i18n-extra.js の辞書で自動翻訳して表示する。
    辞書に無い文言は英語のまま出る */
 const EXTRA_LANGS = ["zh", "fr", "ko"];
@@ -302,6 +327,7 @@ const NAV_ITEMS = [
   { key: "navProfile",  href: "profile.html" },
   { key: "navStory",    href: "story.html" },
   { key: "navLecture",  href: "lecture.html" },
+  { key: "navTorikumi", href: "torikumi.html" },
   { key: "navSns",      href: "sns.html" },
   { key: "navBlog",     href: "blog.html" },
   { key: "navGallery",  href: "gallery.html" }
@@ -321,10 +347,9 @@ function renderHeader() {
   const curL = LANGS.find(l => l.key === LANG) || LANGS[0];
   const langBtns = `
     <button type="button" class="lang-cur" aria-haspopup="true" aria-expanded="false" aria-label="${esc(T("langMenu"))}">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.9 5.8 3.9 9s-1.3 6.2-3.9 9c-2.6-2.8-3.9-5.8-3.9-9S9.4 5.8 12 3z"/></svg>
-      <span>${esc(curL.label)}</span><i class="car"></i></button>
+      ${flagSvg(curL.key)}<span>${esc(curL.label)}</span><i class="car"></i></button>
     <div class="lang-menu" role="menu">
-      ${LANGS.map(l => `<button type="button" role="menuitemradio" aria-checked="${l.key === LANG}" data-lang="${l.key}" class="${l.key === LANG ? "on" : ""}"><span>${esc(l.label)}</span><small>${l.code}</small></button>`).join("")}
+      ${LANGS.map(l => `<button type="button" role="menuitemradio" aria-checked="${l.key === LANG}" data-lang="${l.key}" class="${l.key === LANG ? "on" : ""}">${flagSvg(l.key)}<span>${esc(l.label)}</span><small>${l.code}</small></button>`).join("")}
       <p class="lang-note">${esc(T("autoNote"))}</p>
     </div>`;
   const snsBtns = SNS_ACCOUNTS.map(a =>
